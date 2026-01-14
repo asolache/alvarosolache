@@ -3,424 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Álvaro Solache | Desarrollo de Equipos, Web Semántica y Blockchain</title>
-  <!-- Meta descripción (155–160 caracteres) -->
-<meta name="description" content="Experto en desarrollo de equipos, pensamiento sistémico, contabilidad de valor, web semántica y soluciones blockchain. Consultoría, formación y desarrollo digital desde 1997.">
-
-<!-- Palabras clave (ayuda a motores antiguos e IA) -->
-<meta name="keywords" content="desarrollo de equipos, pensamiento sistémico, Value Network Analysis, contabilidad de valor, team building castells, web semántica, blockchain para empresas, NFTs, DAOs, formación digital, consultoría organizacional, Álvaro Solache">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://alvarosolache.netlify.app/" />
-
-<!-- Open Graph para redes e IA -->
-<meta property="og:title" content="Álvaro Solache | Desarrollo de Equipos y Web Semántica">
-<meta property="og:description" content="Consultoría en pensamiento sistémico, contabilidad de valor y tecnologías blockchain. +25 años transformando equipos y organizaciones.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://alvarosolache.netlify.app/">
-<meta property="og:image" content="https://alvarosolache.netlify.app/imagen-perfil-o-banner.jpg"> <!-- Reemplaza con URL real -->
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Álvaro Solache | Desarrollo de Equipos y Web Semántica">
-<meta name="twitter:description" content="Especialista en Value Network Analysis, contabilidad de valor, team building con castells y desarrollo web semántico desde 1997.">
-<meta name="twitter:image" content="https://alvarosolache.netlify.app/imagen-perfil-o-banner.jpg">
-
-<!-- Idioma y región -->
-<meta http-equiv="Content-Language" content="es-ES" />
-
-<!-- Derechos y autor -->
-<meta name="author" content="Álvaro Solache">
-<meta name="copyright" content="Álvaro Solache">
-
-<!-- Instrucciones para bots -->
-<meta name="robots" content="index, follow">
-
-<!-- Schema.org (JSON-LD) para IA y buscadores -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Álvaro Solache",
-  "url": "https://alvarosolache.netlify.app/",
-  "image": "https://alvarosolache.netlify.app/imagen-perfil-o-banner.jpg",
-  "jobTitle": "Consultor de Desarrollo Organizacional y Digital",
-  "description": "Experto en pensamiento sistémico, Value Network Analysis, contabilidad de valor, team building con castells, web semántica y soluciones blockchain para organizaciones.",
-  "knowsAbout": [
-    "Pensamiento sistémico",
-    "Value Network Analysis",
-    "Contabilidad de valor",
-    "Team building con castells",
-    "Web semántica",
-    "Blockchain y DAOs",
-    "Formación digital",
-    "Desarrollo de comunidades"
-  ],
-  "alumniOf": [
-    {
-      "@type": "EducationalOrganization",
-      "name": "Universitat Oberta de Catalunya (UOC)"
-    }
-  ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "TeamTowers"
-  },
-  "sameAs": [
-    "https://www.instagram.com/alvarosolacher",
-    "https://www.teamtowers.eu",
-    "https://timefounderlanding.netlify.app/",
-    "https://apptimefounder.netlify.app",
-    "https://pantheon.work"
-  ]
-}
-</script>
-  <style>
-    /* Reset y base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f9fafb;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      font-weight: 800;
-      line-height: 1.3;
-    }
-    a {
-      color: #4f46e5;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    section {
-      padding: 72px 0;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: white;
-      text-align: center;
-      padding: 100px 0;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto 24px;
-      opacity: 0.95;
-    }
-
-    /* Perfil */
-    .perfil-text {
-      font-size: 1.125rem;
-      color: #374151;
-      margin-bottom: 24px;
-    }
-
-    /* Servicios destacados */
-    .servicio-destacado {
-      background: white;
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.15);
-      margin: 48px 0;
-      border-left: 4px solid #4f46e5;
-    }
-    .servicio-destacado h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      color: #1f2937;
-    }
-    .servicio-destacado p {
-      font-size: 1rem;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-    .beneficios-list {
-      margin: 20px 0;
-      padding-left: 20px;
-    }
-    .beneficios-list li {
-      margin-bottom: 8px;
-      color: #4b5563;
-    }
-
-    /* Servicios */
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
-    }
-    .servicio-card {
-      background: white;
-      border-radius: 12px;
-      padding: 28px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .servicio-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-    .servicio-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 16px;
-      color: #1f2937;
-    }
-    .servicio-card p {
-      font-size: 0.95rem;
-      color: #4b5563;
-      margin-bottom: 16px;
-    }
-
-    /* Proyectos */
-    .proyectos-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-      justify-content: center;
-    }
-    .proyecto-tag {
-      background: #f0f9ff;
-      color: #0ea5e9;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #6b7280;
-      font-size: 0.9rem;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 40px;
-    }
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 3rem;
-      }
-      .hero p {
-        font-size: 1.375rem;
-      }
-    }
-  </style>
+  <title>Alvaro Solache – Experto en desarrollo de equipos y comunidades</title>
+  <meta name="description" content="Consultoría, formación y desarrollo web para empresas y comunidades. Especialista en redes de valor, contabilidad de valor y nuevas formas de trabajo." />
 </head>
 <body>
-  <!-- Hero -->
-  <div class="hero">
-    <div class="container">
-      <h1>Álvaro Solache Rodríguez</h1>
-      <p>Psicólogo • Arquitecto de redes de valor • Productor de experiencias transformadoras</p>
-      <div>
-        <a href="https://www.linkedin.com/in/alvarosolache" target="_blank" style="margin: 0 12px; color: white; text-decoration: underline;">LinkedIn</a>
-        <a href="#" id="email-link" style="margin: 0 12px; color: white; text-decoration: underline;">Enviar email</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Perfil -->
-  <section>
-    <div class="container">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 32px;">Mi perfil</h2>
-      <div class="perfil-text">
-        <p>
-          Soy licenciado en Psicología con formación especializada en <strong> gestión y desarrollo de personas y equipos así como en la creación de  webs semánticas preparadas para ser indexadas por buscadores e IA's </strong>, lo que me permite diseñar textos y estructuras comprensibles tanto para personas como para máquinas.
-        </p>
-        <p style="margin-top: 16px;">
-          Mi experiencia profesional incluye roles en <strong>Recursos Humanos</strong> en empresas como <strong>HP (a través de Manpower)</strong>, <strong>InfoJobs</strong>, <strong>UOC.edu</strong>, <strong>Myrurgia</strong>, <strong>Adbraintage</strong> y <strong>Foment del Treball</strong>.
-        </p>
-        <p style="margin-top: 16px;">
-          Como <strong>emprendedor</strong>, he fundado iniciativas como <a href="https://teamtowers.eu" target="_blank">TeamTowers</a> y la ya extinta <strong>Comunitats.org</strong> (premiada con el <em>Premio Emprende XXI de La Caixa</em> y el <em>Grow In Barcelona de ESADE y Nauta Capital</em>).
-        </p>
-        <p style="margin-top: 16px;">
-          Actualmente, colaboro en <strong>Pantheon.work</strong>, liderando proyectos de <strong>consultoría estratégica en Value Network Analysis</strong> —como los realizados para <strong>IKEA</strong>— y también trabajo como <strong>manager de producción de eventos</strong> para agencias como <strong>We Barcelona</strong> y el <strong>Aura Psy Festival</strong>.
-        </p>
-      </div>
-    </div>
-  </section>
+<h1>Alvaro Solache</h1>
+<h2>Experto en desarrollo de equipos y comunidades</h2>
+<p>Desde 1997  trabajando en formación y desarrollo de equipos y organizaciones , cultura digital,  desarrollo del trabajo en equipo, producción de eventos ,  desarollo de negocios digitales, desarrollo de webs, apps y dapps,  gestión del conocimiento , y nuevas formas de trabajo.</p>
+<p><strong><a href="/cv2">Descarga mi currículum profesional</a></strong> — ideal si buscas un perfil técnico-conceptual con 25+ años de experiencia en innovación sistémica.</p>
 
-  <!-- Servicios Destacados -->
-  <section style="background-color: #f3f4f6;">
-    <div class="container">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 32px;">Servicios Destacados</h2>
+<h1>Servicios</h1>
+<h4>Consultoría</h4>
+<p>Consultor, mentor, coach de equipos y organizaciones. Metodologías sistémicas y innovación digital. Trabajo con empresas y comunidades que necesitan <strong>superar silos, recuperar valor oculto y diseñar gobernanza colaborativa</strong>. Mi enfoque se basa en <a href="https://valuenetworklab.netlify.app/">Value Network Analysis</a>, una metodología pionera para mapear flujos tangibles e intangibles de valor.</p>
 
-      <!-- TeamTowers destacado -->
-      <div class="servicio-destacado">
-        <h3>🏆 TeamTowers: Desarrollo de Valores y Competencias de Equipo</h3>
-        <p>
-          <strong>TeamTowers</strong> es una metodología innovadora que transforma la dinámica de equipos mediante experiencias prácticas basadas en la construcción de torres humanas (castells). 
-          Esta metodología única combina psicología organizacional, trabajo en equipo y valores fundamentales como la <strong>confianza, el compromiso, la comunicación y la co-responsabilidad</strong>.
-        </p>
-        <p>
-          A través de talleres presenciales, los participantes experimentan de forma vivencial cómo construir estructuras complejas que requieren coordinación perfecta, 
-          revelando patrones de comportamiento, fortalezas ocultas y áreas de mejora en la colaboración.
-        </p>
-        <h4 style="margin: 24px 0 12px; font-size: 1.1rem; color: #1f2937;">Beneficios para su organización:</h4>
-        <ul class="beneficios-list">
-          <li>🔍 Diagnóstico real de la dinámica de equipo y cultura organizacional</li>
-          <li>🎯 Desarrollo de competencias clave: liderazgo distribuido, comunicación asertiva, resolución de conflictos</li>
-          <li>🤝 Fortalecimiento de la cohesión y confianza entre miembros del equipo</li>
-          <li>📈 Aplicación práctica a retos reales de la organización mediante formación-acción</li>
-          <li>💡 Experiencia memorable que genera engagement y transformación duradera</li>
-        </ul>
-        <p>
-          Ideal para equipos de 10 a 1000 personas en entornos corporativos, startups, ONGs y administración pública.
-        </p>
-        <a href="https://teamtowers.eu" target="_blank" style="margin-top: 20px; display: inline-block;">Explorar TeamTowers →</a>
-      </div>
+<h4>Formación</h4>
+<p>Experto en planificacion de formación y desarrollo de  equipos de trabajo y cultura digital. Diseño talleres vivenciales (como las torres humanas) y sesiones de <a href="https://valuenetworklab.netlify.app/vna-prototipado.html">prototipado de redes de valor</a> para equipos empresariales, cooperativas, DAOs y colectivos culturales.</p>
 
-      <!-- Value Network Analysis destacado -->
-      <div class="servicio-destacado">
-        <h3>📊 Value Network Analysis: Mapeo del Valor Invisible</h3>
-        <p>
-          El <strong>Value Network Analysis (VNA)</strong> es una metodología de consultoría estratégica que revela los flujos intangibles de valor que sostienen su organización: 
-          <strong>confianza, conocimiento, apoyo emocional, propósito compartido y co-creación</strong>.
-        </p>
-        <p>
-          Mientras que los sistemas tradicionales solo miden transacciones monetarias, el VNA mapea todas las contribuciones que realmente impulsan el éxito organizacional 
-          pero que permanecen invisibles en los informes financieros y KPIs convencionales.
-        </p>
-        <h4 style="margin: 24px 0 12px; font-size: 1.1rem; color: #1f2937;">¿Qué descubrirá con el VNA?</h4>
-        <ul class="beneficios-list">
-          <li>🧩 Los verdaderos cuellos de botella en sus procesos de colaboración</li>
-          <li>👥 Los roles críticos que aportan valor invisible pero esencial</li>
-          <li>🔄 Los flujos de conocimiento y confianza que activan la innovación</li>
-          <li>⚖️ Las descompensaciones en las contribuciones que generan frustración y desgaste</li>
-          <li>🎯 Las oportunidades para optimizar recursos y alinear incentivos con el valor real creado</li>
-        </ul>
-        <p>
-          Basado en mi experiencia con proyectos internacionales y casos reales como los desarrollados para <strong>IKEA</strong>, 
-          el VNA se implementa mediante talleres de formación-acción que combinan análisis riguroso con intervención práctica.
-        </p>
-        <a href="https://valuenetworklab.netlify.app" target="_blank" style="margin-top: 20px; display: inline-block;">Descubrir Value Network Lab →</a>
-      </div>
-    </div>
-  </section>
+<h4>Branding</h4>
+<p> Desarrollo de marcas, campañas y planes de fidelización y crecimiento orgánico, marketing digital. Especializado en modelos de negocio con NFTs, Fan Tokens y reputación distribuida —ideal para artistas, comunidades y startups Web3.</p>
 
-  <!-- Otros Servicios -->
-  <section style="background-color: #f9fafb;">
-    <div class="container">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 32px;">Otros Servicios</h2>
-      <div class="servicios-grid">
-        
-        <div class="servicio-card">
-          <h3>Producción de Eventos Transformadores</h3>
-          <p>Gestión integral de festivales y eventos con enfoque en experiencia, sostenibilidad y co-creación.</p>
-          <a href="https://www.aura-psy-festival.es" target="_blank">Aura Psy Festival →</a>
-        </div>
+<h4>Desarrollo</h4>
+<p>Conceptualización, diseño, gestión del desarrollo de webs, apps y dapps. Uso HTML semántico, GitHub y Netlify para entregar productos rápidos, accesibles y listos para SEO/AI.</p>
 
-        <div class="servicio-card">
-          <h3>Outsourcing Estratégico de RRHH</h3>
-          <p>Gestión ágil y personalizada de procesos de selección, onboarding y desarrollo organizacional.</p>
-          <a href="#" class="contact-link" data-service="RRHH">Contactar →</a>
-        </div>
+<h1>Consultoría</h1>
+<p>Consultor estratégico en gestión del talento y organización en la era del conocimiento</p>
 
-        <div class="servicio-card">
-          <h3>Desarrollo Web Semántico</h3>
-          <p>Maquetación HTML+CSS con enfoque semántico para IA, SEO y accesibilidad. MVPs, landings y dapps.</p>
-          <a href="#" class="contact-link" data-service="web">Proyectos web →</a>
-        </div>
+<h2>Pensamiento sistémico y análisis de mapas de valor</h2>
+<p>El desarrollo del pensamiento sistémicos nos ayuda a pensar no como individuos sinó como sistema. Somos los mayores expertos en España en la mejora de la comunicación y el trabajo en equipo mediante un programa de formacion y consultoría que emplea la revolucionaria metodología de análisis y diagnostico del flujo de valor en las  organizaciones llamada <a href="https://valuenetworklab.netlify.app/verna-allee.html">Value Network Analysis (VNA)</a>, creada por <a href="https://valuenetworklab.netlify.app/verna-allee.html">Verna Allee</a>.</p>
+<p>¿Tu organización pierde valor sin darse cuenta? <a href="https://valuenetworklab.netlify.app/">Descubre cómo identificar transacciones invisibles</a> que están atascando tu innovación.</p>
 
-        <div class="servicio-card">
-          <h3>Branding & Comunidades</h3>
-          <p>Estrategias de fidelización, marketing 3.0, NFTs, Fan Tokens y modelos de negocio descentralizados.</p>
-          <a href="#" class="contact-link" data-service="branding">Estrategia →</a>
-        </div>
+<h2>Contabilidad de valor</h2>
+<p>La contabilidad del valor es una forma de realizar un seguimiento de todas las contribuciones de valor a un proyecto.<br>
+Esto puede incluir todo tipo de valores que podamos definir como valiosos para nuestro proyecto. Puede ser trabajo realizado, asesoramiento, recursos, dinero en efectivo...<br>
+Es útil visualizar cómo se debe hacer una división equitativa. También se puede usar para involucrar a las partes interesadas para seguir agregando valor y obtener más acciones.<br>
+Como contabilidad de valor, estamos hablando de acciones contables que no son acciones legales y que ayudamos a contabilizar y certificar usando tecnologías como los tokens fungibles y no fungibles para usos contables pero con validez interna dentro de una comunidad o equipo.<br>
+<a href="https://tf.molekulon.club">Timefounder</a> ofrece la primera aplicación de contabilidad de valor  que se integra con Trello.</p>
+<p>La contabilidad de valor reduce el conflicto entre las partes de un proyecto evitando conflictos y ayudando a la diftribución justa de las recompensas del mismo.<br>
+La app  permite contabilizar las aportaciones que cualquier persona o entidad  que aporte "valor" al proyecto.</p>
 
-        <div class="servicio-card">
-          <h3>Timefounder: Contabilidad de Valor</h3>
-          <p>Aplicación para contabilizar aportaciones intangibles en proyectos usando tokens (integración con Trello).</p>
-          <a href="https://timefounderlanding.netlify.app/" target="_blank">Timefounder  →</a>
-        </div>
+<h1>Formación</h1>
+<p>Taller de torres humanas de trabajo en equipo donde tu equipo vivirá la experiencia de ser una Colla Castellera, bien cultural de la UNESCO para la humanidad.<br>
+Actividad formativa segura, épica, divertida y cultural ideal como  rompehielos, trabajo en equipo, eventos de empresa y para eventos especiales.<br>
+De 10 a 1.000 participantes. Todos los humanos bienvenidos.<br>
+Músicos, expertos en castillos humanos y experto en trabajo en equipo y dinamización ofrecemos el taller original de torres humanas.</p>
+<p><strong>¿Eres una comunidad, cooperativa o colectivo?</strong> Adaptamos la experiencia a contextos no empresariales, con enfoque en confianza, propósito y gobernanza horizontal.</p>
 
-        <div class="servicio-card">
-          <h3>Formación en Equipos</h3>
-          <p>Talleres de torres humanas (Colla Castellera), cultura digital y trabajo en equipo. De 10 a 1.000 personas.</p>
-          <a href="#" class="contact-link" data-service="formación">Solicitar taller →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<h1>Marketing</h1>
+<p>Consultoría de negocio y marketing 3.0, formación, desarrollo de comunidades, fidelizacion y modelos de negocios con NFT's y Fan Tokens, Campañas de Marketing y fidelización, campañas de branded content digital.</p>
 
-  <!-- Proyectos -->
-  <section>
-    <div class="container">
-      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 24px;">Proyectos Destacados</h2>
-      <div class="proyectos-list">
-        <a href="https://teamtowers.eu" class="proyecto-tag" target="_blank">TeamTowers</a>
-        <a href="https://valuenetworklab.netlify.app" class="proyecto-tag" target="_blank">Value Network Lab</a>
-        <a href="https://timefounderlanding.netlify.app" class="proyecto-tag" target="_blank">Timefounder</a>
-        <a href="https://www.aura-psy-festival.es" class="proyecto-tag" target="_blank">Aura Psy Festival</a>
-         <a href="https://soundcloud.com/comandomolekulon/tracks" class="proyecto-tag" target="_blank">Comado Molekulón</a>
-      </div>
-    </div>
-  </section>
+<h1>Desarrollo web</h1>
+<p>Tengo 25 años de experiencia en dirección de proyectos digitales, en empresas como Infojobs y la UOC con experiencia en prototipado, desarrollo de MPV’s, Landing, programación de web semántica, posicionamiento orgánico, herramientas de productividad, CMS, CRM, CVS, Blogs, Google, contratos inteligentes, NFT’s, Daos, Profesor e investigador.<br>
+He trabajando en empresas como Infojobs y la UOC y he dirigido el desarrollo de  web apps y dapps  Comunitats, Timefounder tf.molekulon.club o defi.molekulon.club o la biblioteca de las cosas.<br>
+Programador HTML con foco en la web semántica te puedo ayudar en el diseño del mockup y la maquetación web  de tu landing o web corporativa.<br>
+Tengo experiencia en roles de direccion de proyecto, project owner,  tester, community manager, prototipado, diseño de conrtendos.<br>
+Soy profesor y formador en  Innovación digital, blockchain, en  uso de redes blockchain y contratos inteligentes en universidades y escuelas como laSalle, UAB, UB, Complot o SAE.</p>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Álvaro Solache Rodríguez. Todos los derechos reservados.</p>
-      <p style="margin-top: 8px;">
-        <a href="https://www.linkedin.com/in/alvarosolache" target="_blank">LinkedIn</a> |
-        <a href="#" id="email-link-footer">Email</a> |
-        <a href="https://teamtowers.eu" target="_blank">TeamTowers</a>
-      </p>
-    </div>
-  </footer>
+<p>Estructuro  
+las webs de forma semántica usando bien el  HTML  para que los crawlers y boots de buscadores y sistemas de infromación e inteligencia artificial.<br>
+HTML para la maquetación y semántica<br>
+CSS para la maquetación. <br>
+Github para el control de versiones, <br>
+Netlify para el despliegue continuo de actualizaciones. <br>
+Trello para la gestión de proyectos, <br>
+Timefounder para la contabilidad de valor. <br>
+Google para el posicionamiento, comunicación y documentos.<br>
+Opensea como Marketplace,<br>
+Ethereum como plataforma de  blockchain y de  contratos inteligentes. <br>
+Metamask, y Trustwallet  como monedero y navegador 3.0.<br>
+Apps y Dapps especializadas   para creación y seguimiento de contratos inteligentes testeados y auditados.</p>
 
-  <script>
-    // Función para construir y mostrar el email de forma segura
-    function revealEmail(service = '') {
-      const localPart = 'asolache';
-      const domain = 'mac.com';
-      const email = localPart + '@' + domain;
-      const subject = service ? `Consulta sobre: ${service}` : 'Consulta profesional';
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-    }
+<h1>Mis proyectos</h1>
+<p>Valores y trabajo en equipo con Teamtowers<br>
+Gestión del conocimiento con <a href="https://valuenetworklab.netlify.app/pantheon-work.html">Pantheon.work</a><br>
+Contabilidad de valor con Timefounder<br>
+Marketing, branding con Cryptomarketing<br>
+Educación y arte Comando Molekulon<br>
+Música con House of Winds<br>
+Música Chobillies</p>
 
-    // Event listeners para los enlaces de contacto
-    document.getElementById('email-link').addEventListener('click', function(e) {
-      e.preventDefault();
-      revealEmail();
-    });
+<h1>Clientes</h1>
+<p>+ clientes, BBVA, Privalia, Letgo, Codorniu,  Orange, Vodafone, la UPC, Esade, Iese, Eada, Porsche, Manpower, Infojobs, Foment,  la UOC, Myrurgia,  Gestión del conocimiento SA, Teamlabs, Adbraintage, Novartis, Laureus Foundation, UPC, Universitat de Barcelona y Autónoma,  Universidad de Mondragón Teamlabs, Myrurgia, Seeliger y Conde…</p>
 
-    document.getElementById('email-link-footer').addEventListener('click', function(e) {
-      e.preventDefault();
-      revealEmail();
-    });
+<h1>¿Listo para transformar tu organización o comunidad?</h1>
+<p>Trabajo con:</p>
+<ul>
+  <li><strong>Empresas</strong> que quieren romper silos, alinear equipos y medir el impacto real de su innovación.</li>
+  <li><strong>Comunidades, cooperativas y colectivos</strong> que buscan gobernanza justa, reconocimiento del aporte y modelos de reparto equitativo.</li>
+</ul>
+<p><strong>➡️ Escríbeme a <a href="mailto:alvaro@solache.net">alvaro@solache.net</a></strong> para una primera sesión exploratoria sin compromiso.</p>
+<p>O si prefieres entender antes cómo funciona el análisis de redes de valor, <a href="https://valuenetworklab.netlify.app/">visita Value Network Lab</a> y descarga nuestra guía ejecutiva gratuita.</p>
 
-    // Enlaces de servicios específicos
-    document.querySelectorAll('.contact-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const service = this.getAttribute('data-service');
-        revealEmail(service);
-      });
-    });
-  </script>
+<h1>Contacto</h1>
+<p><a href="mailto:alvaro@solache.net">Enviar mensaje</a></p>
+
 </body>
 </html>
-
