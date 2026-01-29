@@ -961,57 +961,266 @@
         </div>
     </section>
 
-    <!-- Value Map Section -->
-    <section id="value-map">
-        <h2>Mapa de Valor <span class="highlight">Integral</span></h2>
-        <p class="fade-in">Mi enfoque único integra cuatro dimensiones estratégicas para crear una propuesta de valor exponencialmente más poderosa que la suma de sus partes</p>
-        
-        <div class="mindmap-container fade-in">
-            <!-- Connections -->
-            <div class="connection tangible"></div>
-            <div class="connection intangible"></div>
-            <div class="connection culture"></div>
-            <div class="connection systemic"></div>
-            
-            <!-- Central Node -->
-            <div class="central-node">
-                <span>AS</span>
-                ALVARO SOLACHE
-            </div>
-            
-            <!-- Tangible Node -->
-            <div class="node tangible" onclick="document.querySelector('#tangible').scrollIntoView({behavior: 'smooth'})">
-                <div class="node-service">VALUE NETWORK LAB</div>
-                <span class="node-title">VALOR TANGIBLE</span>
-                <span class="node-desc">ROI Medible • Optimización de Flujos • Modelos de Negocio</span>
-            </div>
-            
-            <!-- Intangible Node -->
-            <div class="node intangible" onclick="document.querySelector('#intangible').scrollIntoView({behavior: 'smooth'})">
-                <div class="node-service">VALUE NETWORK LAB</div>
-                <span class="node-title">VALOR INTANGIBLE</span>
-                <span class="node-desc">Reputación • Capital Relacional • Propiedad Intelectual</span>
-            </div>
-            
-            <!-- Culture Node -->
-            <div class="node culture" onclick="document.querySelector('#culture').scrollIntoView({behavior: 'smooth'})">
-                <div class="node-service">TEAMTOWERS</div>
-                <span class="node-title">VALORES CULTURALES</span>
-                <span class="node-desc">Propósito • Seguridad Psicológica • Agilidad Cultural</span>
-            </div>
-            
-            <!-- Systemic Node -->
-            <div class="node systemic" onclick="document.querySelector('#systemic').scrollIntoView({behavior: 'smooth'})">
-                <div class="node-service">TEAMTOWERS</div>
-                <span class="node-title">PENSAMIENTO SISTÉMICO</span>
-                <span class="node-desc">Interdependencia • Resiliencia • Innovación Emergente</span>
-            </div>
+   <!-- Value Map Section -->
+<section id="value-map">
+    <h2>Mapa de Valor <span class="highlight">Integral</span></h2>
+    <p class="fade-in">Mi enfoque único integra cuatro dimensiones estratégicas para crear una propuesta de valor exponencialmente más poderosa que la suma de sus partes</p>
+    
+    <div class="mindmap-container fade-in">
+        <!-- Central Node - Positioned higher to avoid overlap -->
+        <div class="central-node">
+            <span>AS</span>
+            ALVARO SOLACHE
         </div>
         
-        <p class="fade-in" style="max-width: 800px; margin-top: 2rem;">
-            Este mapa representa mi <span class="highlight">propuesta de valor integral</span>: ninguna dimensión funciona en aislamiento. El valor tangible se potencia con el intangible, sostenido por una cultura alineada y comprendido a través del pensamiento sistémico. Esta sinergia crea soluciones transformadoras que generan impacto inmediato y construyen capacidades duraderas.
-        </p>
-    </section>
+        <!-- Connections - Redrawn with precise positioning -->
+        <svg class="connections-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+            <!-- Tangible connection -->
+            <line x1="600" y1="400" x2="300" y2="200" stroke="url(#gradientTangible)" stroke-width="4" stroke-linecap="round"/>
+            <!-- Intangible connection -->
+            <line x1="600" y1="400" x2="900" y2="200" stroke="url(#gradientIntangible)" stroke-width="4" stroke-linecap="round"/>
+            <!-- Culture connection -->
+            <line x1="600" y1="400" x2="300" y2="600" stroke="url(#gradientCulture)" stroke-width="4" stroke-linecap="round"/>
+            <!-- Systemic connection -->
+            <line x1="600" y1="400" x2="900" y2="600" stroke="url(#gradientSystemic)" stroke-width="4" stroke-linecap="round"/>
+            
+            <defs>
+                <linearGradient id="gradientTangible" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ff56a8" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#ff56a8" stop-opacity="0.3"/>
+                </linearGradient>
+                <linearGradient id="gradientIntangible" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ff85bb" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#ff56a8" stop-opacity="0.3"/>
+                </linearGradient>
+                <linearGradient id="gradientCulture" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#6c56ff" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#4a3cbf" stop-opacity="0.3"/>
+                </linearGradient>
+                <linearGradient id="gradientSystemic" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#8a7bff" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#6c56ff" stop-opacity="0.3"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        
+        <!-- Tangible Node -->
+        <div class="node tangible" style="top: 18%; left: 22%;" onclick="document.querySelector('#tangible').scrollIntoView({behavior: 'smooth'})">
+            <div class="node-service">VALUE NETWORK LAB</div>
+            <span class="node-title">VALOR TANGIBLE</span>
+            <span class="node-desc">ROI Medible • Optimización de Flujos • Modelos de Negocio</span>
+        </div>
+        
+        <!-- Intangible Node -->
+        <div class="node intangible" style="top: 18%; right: 22%;" onclick="document.querySelector('#intangible').scrollIntoView({behavior: 'smooth'})">
+            <div class="node-service">VALUE NETWORK LAB</div>
+            <span class="node-title">VALOR INTANGIBLE</span>
+            <span class="node-desc">Reputación • Capital Relacional • Propiedad Intelectual</span>
+        </div>
+        
+        <!-- Culture Node -->
+        <div class="node culture" style="bottom: 28%; left: 22%;" onclick="document.querySelector('#culture').scrollIntoView({behavior: 'smooth'})">
+            <div class="node-service">TEAMTOWERS</div>
+            <span class="node-title">VALORES CULTURALES</span>
+            <span class="node-desc">Propósito • Seguridad Psicológica • Agilidad Cultural</span>
+        </div>
+        
+        <!-- Systemic Node - Positioned higher to avoid overlap -->
+        <div class="node systemic" style="bottom: 28%; right: 22%;" onclick="document.querySelector('#systemic').scrollIntoView({behavior: 'smooth'})">
+            <div class="node-service">TEAMTOWERS</div>
+            <span class="node-title">PENSAMIENTO SISTÉMICO</span>
+            <span class="node-desc">Interdependencia • Resiliencia • Innovación Emergente</span>
+        </div>
+    </div>
+    
+    <p class="fade-in" style="max-width: 800px; margin-top: 2.5rem;">
+        Este mapa representa mi <span class="highlight">propuesta de valor integral</span>: ninguna dimensión funciona en aislamiento. El valor tangible se potencia con el intangible, sostenido por una cultura alineada y comprendido a través del pensamiento sistémico. Esta sinergia crea soluciones transformadoras que generan impacto inmediato y construyen capacidades duraderas.
+    </p>
+</section>
+
+<style>
+    /* Add this to your existing style section */
+    .mindmap-container {
+        width: 100%;
+        max-width: 1200px;
+        height: 70vh; /* Reduced height to prevent overlap */
+        position: relative;
+        margin: 2.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .connections-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+    }
+    
+    .central-node {
+        position: absolute;
+        top: 42%; /* Adjusted upward to create space below */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, var(--accent), #00cc7a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 1.3rem;
+        box-shadow: 0 0 40px rgba(0, 255, 157, 0.5);
+        z-index: 10;
+        border: 4px solid var(--dark-bg);
+        color: var(--dark-bg);
+        letter-spacing: -0.5px;
+    }
+    
+    .central-node span {
+        display: block;
+        font-size: 2.5rem;
+        margin-bottom: 3px;
+        font-weight: 800;
+    }
+    
+    .node {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border: 2px solid var(--dark-bg);
+        z-index: 5;
+        color: var(--dark-bg);
+        font-size: 0.9rem;
+    }
+    
+    .node:hover {
+        transform: scale(1.07) translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+        z-index: 20;
+    }
+    
+    .node.tangible {
+        background: linear-gradient(135deg, var(--valuenetwork), #e0409b);
+    }
+    
+    .node.intangible {
+        background: linear-gradient(135deg, #ff85bb, var(--valuenetwork));
+    }
+    
+    .node.culture {
+        background: linear-gradient(135deg, var(--teamtowers), #4a3cbf);
+    }
+    
+    .node.systemic {
+        background: linear-gradient(135deg, #8a7bff, var(--teamtowers));
+    }
+    
+    .node-title {
+        font-size: 1.3rem;
+        margin: 8px 0 6px;
+        display: block;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+    }
+    
+    .node-service {
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        opacity: 0.95;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+    }
+    
+    .node-desc {
+        font-size: 0.75rem;
+        opacity: 0.92;
+        line-height: 1.4;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+        .mindmap-container {
+            height: 75vh;
+        }
+        
+        .central-node {
+            width: 170px;
+            height: 170px;
+            font-size: 1.15rem;
+            top: 45%;
+        }
+        
+        .central-node span {
+            font-size: 2.1rem;
+        }
+        
+        .node {
+            width: 150px;
+            height: 150px;
+            padding: 6px;
+        }
+        
+        .node-title {
+            font-size: 1.15rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .mindmap-container {
+            height: 80vh;
+        }
+        
+        .central-node {
+            width: 150px;
+            height: 150px;
+            font-size: 1.05rem;
+            top: 48%;
+        }
+        
+        .central-node span {
+            font-size: 1.8rem;
+        }
+        
+        .node {
+            width: 140px;
+            height: 140px;
+            font-size: 0.85rem;
+            padding: 5px;
+        }
+        
+        .node-title {
+            font-size: 1.1rem;
+        }
+        
+        .node-service {
+            font-size: 0.8rem;
+        }
+        
+        .node-desc {
+            font-size: 0.7rem;
+        }
+    }
+</style>
 
     <!-- Services Section -->
     <section id="services">
