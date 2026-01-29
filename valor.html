@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamTowers | Mapa de Valor Integral</title>
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --light-text: #e6e6e6;
+            --accent: #00ff9d;
+            --accent-dark: #00cc7a;
+            --section-bg: #252525;
+            --card-bg: #2d2d2d;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 157, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 157, 0.07) 0%, transparent 25%);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.15);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--light-text);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 8rem 10% 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--light-text), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -2px;
+        }
+        
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            border-radius: 2px;
+        }
+        
+        p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 1.5rem 0;
+            color: #ccc;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        /* Value sections */
+        .value-section {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+        }
+        
+        .value-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 255, 157, 0.15);
+            border-color: rgba(0, 255, 157, 0.3);
+        }
+        
+        .value-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: var(--dark-bg);
+        }
+        
+        .tangible .value-icon { background: var(--accent); }
+        .intangible .value-icon { background: #6c56ff; }
+        .culture .value-icon { background: #ff56a8; }
+        .systemic .value-icon { background: #56b4ff; }
+        
+        /* Mind Map Section */
+        #value-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--section-bg) 0%, #1e1e1e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mindmap-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 70vh;
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .central-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 0 40px rgba(0, 255, 157, 0.5);
+            z-index: 10;
+            border: 3px solid var(--dark-bg);
+        }
+        
+        .central-node span {
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .node {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--dark-bg);
+            z-index: 5;
+        }
+        
+        .node:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+        
+        .node.tangible {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            top: 15%;
+            left: 30%;
+        }
+        
+        .node.intangible {
+            background: linear-gradient(135deg, #6c56ff, #4a3cbf);
+            top: 15%;
+            right: 30%;
+        }
+        
+        .node.culture {
+            background: linear-gradient(135deg, #ff56a8, #cc3a80);
+            bottom: 15%;
+            left: 30%;
+        }
+        
+        .node.systemic {
+            background: linear-gradient(135deg, #56b4ff, #2a88cc);
+            bottom: 15%;
+            right: 30%;
+        }
+        
+        .connection {
+            position: absolute;
+            background: var(--accent);
+            transform-origin: 0 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        .connection.tangible {
+            width: 280px;
+            height: 4px;
+            top: 45%;
+            left: 25%;
+            transform: rotate(-25deg);
+            background: linear-gradient(to right, var(--accent), transparent);
+        }
+        
+        .connection.intangible {
+            width: 280px;
+            height: 4px;
+            top: 45%;
+            right: 25%;
+            transform: rotate(25deg);
+            background: linear-gradient(to left, #6c56ff, transparent);
+        }
+        
+        .connection.culture {
+            width: 280px;
+            height: 4px;
+            bottom: 45%;
+            left: 25%;
+            transform: rotate(25deg);
+            background: linear-gradient(to right, #ff56a8, transparent);
+        }
+        
+        .connection.systemic {
+            width: 280px;
+            height: 4px;
+            bottom: 45%;
+            right: 25%;
+            transform: rotate(-25deg);
+            background: linear-gradient(to left, #56b4ff, transparent);
+        }
+        
+        .node-title {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 700;
+        }
+        
+        .node-desc {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        /* Value Cards */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.8rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .value-card:hover {
+            transform: translateX(10px);
+            background: rgba(0, 255, 157, 0.08);
+        }
+        
+        .value-card.tangible { border-left-color: var(--accent); }
+        .value-card.intangible { border-left-color: #6c56ff; }
+        .value-card.culture { border-left-color: #ff56a8; }
+        .value-card.systemic { border-left-color: #56b4ff; }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .value-card h3::before {
+            content: '▹';
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--dark-bg);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            border-radius: 30px;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+            transition: var(--transition);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.4);
+        }
+        
+        .contact-btn:hover::after {
+            width: 100%;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2rem 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            margin: 0 8px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .central-node {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 4rem;
+            }
+            
+            h2 {
+                font-size: 2.8rem;
+            }
+            
+            nav {
+                padding: 1.2rem 5%;
+            }
+            
+            .nav-links li {
+                margin-left: 1.5rem;
+            }
+            
+            section {
+                padding: 7rem 8% 4rem;
+            }
+            
+            .mindmap-container {
+                height: 85vh;
+            }
+            
+            .central-node {
+                width: 170px;
+                height: 170px;
+                font-size: 1.2rem;
+            }
+            
+            .central-node span {
+                font-size: 2.2rem;
+            }
+            
+            .node {
+                width: 140px;
+                height: 140px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            h2 {
+                font-size: 2.4rem;
+            }
+            
+            .value-section {
+                padding: 2rem;
+            }
+            
+            .mindmap-container {
+                height: 90vh;
+            }
+            
+            .central-node {
+                width: 150px;
+                height: 150px;
+                font-size: 1.1rem;
+            }
+            
+            .node {
+                width: 130px;
+                height: 130px;
+                font-size: 0.9rem;
+                padding: 5px;
+            }
+            
+            .connection {
+                height: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">TEAM<span>TOWERS</span></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Inicio</a></li>
+            <li><a href="#tangible">Tangible</a></li>
+            <li><a href="#intangible">Intangible</a></li>
+            <li><a href="#culture">Cultura</a></li>
+            <li><a href="#systemic">Sistémico</a></li>
+            <li><a href="#value-map">Mapa de Valor</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Mapa de Valor Integral</h1>
+        <p>Como experto en marketing y comunicación, he desarrollado una <span class="highlight">visión coherente y estratégica</span> del valor en TeamTowers, integrando dimensiones tangibles, intangibles y culturales para construir una propuesta de valor sostenible y diferenciadora en el mercado.</p>
+        <p>Este enfoque holístico transforma la manera en que las organizaciones perciben, crean y capturan valor en entornos complejos y dinámicos.</p>
+    </section>
+
+    <!-- Tangible Value Section -->
+    <section id="tangible">
+        <h2>Valor <span class="highlight">Tangible</span></h2>
+        <div class="value-section tangible fade-in">
+            <div class="value-title">
+                <div class="value-icon">T</div>
+                <h3>Activos Cuantificables y Resultados Medibles</h3>
+            </div>
+            <p>El valor tangible representa los beneficios concretos y medibles que TeamTowers aporta a las organizaciones. Se materializa en mejoras cuantificables en eficiencia, productividad y resultados financieros.</p>
+            <div class="values-grid">
+                <div class="value-card tangible">
+                    <h3>ROI Medible</h3>
+                    <p>Incremento del 30-45% en productividad operativa y reducción de costos mediante optimización de procesos.</p>
+                </div>
+                <div class="value-card tangible">
+                    <h3>Tecnología Propia</h3>
+                    <p>Plataforma integrada con IA que permite monitoreo en tiempo real de KPIs críticos y toma de decisiones basada en datos.</p>
+                </div>
+                <div class="value-card tangible">
+                    <h3>Estructuras Eficientes</h3>
+                    <p>Modelos organizativos modulares que reducen tiempos de entrega en un 40% y aumentan la capacidad de respuesta al mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intangible Value Section -->
+    <section id="intangible">
+        <h2>Valor <span class="highlight">Intangible</span></h2>
+        <div class="value-section intangible fade-in">
+            <div class="value-title">
+                <div class="value-icon">I</div>
+                <h3>Activos Invisibles que Generan Ventaja Competitiva</h3>
+            </div>
+            <p>El valor intangible constituye el núcleo de la ventaja sostenible de TeamTowers. Incluye elementos no financieros que fortalecen la posición estratégica y la resiliencia organizacional frente a disruptions del mercado.</p>
+            <div class="values-grid">
+                <div class="value-card intangible">
+                    <h3>Capital Relacional</h3>
+                    <p>Redes estratégicas de alto valor y alianzas que abren nuevos mercados y oportunidades de innovación colaborativa.</p>
+                </div>
+                <div class="value-card intangible">
+                    <h3>Reputación y Marca</h3>
+                    <p>Posicionamiento como referente en transformación organizacional, atrayendo talento de alto nivel y clientes premium.</p>
+                </div>
+                <div class="value-card intangible">
+                    <h3>Propiedad Intelectual</h3>
+                    <p>Metodologías patentadas y frameworks únicos que aceleran la adaptación organizacional a entornos VUCA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Value Section -->
+    <section id="culture">
+        <h2><span class="highlight">Valores</span> Culturales</h2>
+        <div class="value-section culture fade-in">
+            <div class="value-title">
+                <div class="value-icon">C</div>
+                <h3>Cultura Organizacional como Motor de Transformación</h3>
+            </div>
+            <p>Los valores culturales son el ADN de TeamTowers, creando un entorno donde la innovación, la confianza y el propósito guían cada decisión y acción. Esta dimensión transforma la cultura de las organizaciones en su activo más valioso y difícil de replicar.</p>
+            <div class="values-grid">
+                <div class="value-card culture">
+                    <h3>Psicológica Segura</h3>
+                    <p>Ambientes donde el error se percibe como aprendizaje y la diversidad de pensamiento es celebrada como motor de innovación.</p>
+                </div>
+                <div class="value-card culture">
+                    <h3>Propósito Compartido</h3>
+                    <p>Conexión emocional con una misión trascendente que motiva el compromiso extraordinario y la lealtad organizacional.</p>
+                </div>
+                <div class="value-card culture">
+                    <h3>Agilidad Cultural</h3>
+                    <p>Capacidad organizacional para pivotar rápidamente ante cambios del entorno manteniendo cohesión y dirección estratégica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systemic Value Section -->
+    <section id="systemic">
+        <h2>Pensamiento <span class="highlight">Sistémico</span></h2>
+        <div class="value-section systemic fade-in">
+            <div class="value-title">
+                <div class="value-icon">S</div>
+                <h3>Visión Holística para Soluciones Sostenibles</h3>
+            </div>
+            <p>El pensamiento sistémico es el lente a través del cual TeamTowers diseña intervenciones transformadoras. Comprendemos las organizaciones como ecosistemas interconectados donde cada acción genera repercusiones en múltiples dimensiones, permitiendo soluciones que abordan causas profundas en lugar de síntomas.</p>
+            <div class="values-grid">
+                <div class="value-card systemic">
+                    <h3>Interdependencia</h3>
+                    <p>Mapeo de relaciones ocultas entre departamentos, procesos y stakeholders para diseñar intervenciones de alto impacto sistémico.</p>
+                </div>
+                <div class="value-card systemic">
+                    <h3>Resiliencia Organizacional</h3>
+                    <p>Arquitectura de sistemas que anticipa disruptions y permite adaptación continua sin perder coherencia estratégica.</p>
+                </div>
+                <div class="value-card systemic">
+                    <h3>Innovación Emergente</h3>
+                    <p>Creación de condiciones para que soluciones innovadoras surjan orgánicamente de la interacción entre equipos diversos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Map Section -->
+    <section id="value-map">
+        <h2>Mapa de Valor <span class="highlight">Integral</span></h2>
+        <p class="fade-in">Visualización de cómo las dimensiones de valor se interconectan para crear una propuesta única y sostenible</p>
+        
+        <div class="mindmap-container fade-in">
+            <!-- Connections -->
+            <div class="connection tangible"></div>
+            <div class="connection intangible"></div>
+            <div class="connection culture"></div>
+            <div class="connection systemic"></div>
+            
+            <!-- Central Node -->
+            <div class="central-node">
+                <span>VALOR</span>
+                TeamTowers
+            </div>
+            
+            <!-- Tangible Node -->
+            <div class="node tangible" onclick="document.querySelector('#tangible').scrollIntoView({behavior: 'smooth'})">
+                <span class="node-title">TANGIBLE</span>
+                <span class="node-desc">ROI Medible • Tecnología • Estructuras Eficientes</span>
+            </div>
+            
+            <!-- Intangible Node -->
+            <div class="node intangible" onclick="document.querySelector('#intangible').scrollIntoView({behavior: 'smooth'})">
+                <span class="node-title">INTANGIBLE</span>
+                <span class="node-desc">Capital Relacional • Reputación • Propiedad Intelectual</span>
+            </div>
+            
+            <!-- Culture Node -->
+            <div class="node culture" onclick="document.querySelector('#culture').scrollIntoView({behavior: 'smooth'})">
+                <span class="node-title">CULTURA</span>
+                <span class="node-desc">Seguridad Psicológica • Propósito • Agilidad Cultural</span>
+            </div>
+            
+            <!-- Systemic Node -->
+            <div class="node systemic" onclick="document.querySelector('#systemic').scrollIntoView({behavior: 'smooth'})">
+                <span class="node-title">SISTÉMICO</span>
+                <span class="node-desc">Interdependencia • Resiliencia • Innovación Emergente</span>
+            </div>
+        </div>
+        
+        <p class="fade-in" style="max-width: 800px; margin-top: 2rem;">
+            Este mapa de valor representa la <span class="highlight">visión integradora</span> de TeamTowers: ninguna dimensión funciona en aislamiento. 
+            El valor tangible se potencia con el intangible, sostenido por una cultura alineada y comprendido a través del pensamiento sistémico. 
+            Esta sinergia crea una propuesta de valor <span class="highlight">exponencialmente más poderosa</span> que la suma de sus partes.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Conectemos para <span class="highlight">Transformar</span></h2>
+        <p>¿Listo para implementar un mapa de valor integral en tu organización? Como experto en marketing y comunicación estratégica, puedo ayudarte a diseñar e implementar una propuesta de valor coherente y diferenciadora para tu equipo o empresa.</p>
+        <a href="mailto:contact@teamtowers.eu" class="contact-btn">Iniciar Conversación</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Diseñado y desarrollado con enfoque estratégico para TeamTowers | Mapa de Valor Integral © 2026</p>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Twitter">tw</a>
+            <a href="#" aria-label="GitHub">gh</a>
+            <a href="#" aria-label="Email">em</a>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation active state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            // Set initial active link
+            navLinks[0].classList.add('active');
+            
+            // Intersection Observer for active section
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        
+                        // Add active class to current section link
+                        const currentLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                        if (currentLink) {
+                            currentLink.classList.add('active');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            // Observe each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetSection = document.querySelector(targetId);
+                    if(targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.querySelector('.mobile-menu');
+                        if(mobileMenu && mobileMenu.checked) {
+                            mobileMenu.checked = false;
+                        }
+                    }
+                });
+            });
+            
+            // Fade-in animation for sections
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Initialize first elements as visible
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                if(index < 2) {
+                    el.classList.add('appear');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
