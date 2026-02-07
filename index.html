@@ -12,191 +12,127 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.8;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: #ffffff;
             padding: 20px;
         }
 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         header {
-            text-align: center;
-            padding: 80px 20px 40px;
-            color: white;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #000;
         }
 
         .subtitle {
-            font-size: 1.4em;
-            opacity: 0.95;
-            margin-bottom: 30px;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 5px;
         }
 
-        .profiles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+        .tagline {
+            color: #999;
+            font-size: 0.95em;
         }
 
-        .profile-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            display: block;
-            color: inherit;
+        .section {
+            margin-bottom: 40px;
         }
 
-        .profile-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .profile-header {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .profile-icon {
-            font-size: 4em;
+        h2 {
+            font-size: 1.8em;
             margin-bottom: 20px;
+            color: #000;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .profile {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #000;
         }
 
         .profile-title {
-            font-size: 1.8em;
+            font-size: 1.5em;
+            font-weight: bold;
             margin-bottom: 10px;
-            color: #667eea;
+            color: #000;
         }
 
         .profile-description {
-            color: #6c757d;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .profile-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+
+        .profile-link:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        ul {
+            margin-left: 20px;
             margin-bottom: 20px;
         }
 
-        .profile-body {
-            padding: 30px;
-            background: #f8f9fa;
-        }
-
-        .profile-highlights {
-            list-style: none;
-            padding: 0;
-        }
-
-        .profile-highlights li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e9ecef;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .profile-highlights li:last-child {
-            border-bottom: none;
-        }
-
-        .profile-highlights li:before {
-            content: "✓";
-            color: #667eea;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-
-        .profile-footer {
-            padding: 20px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            text-align: center;
-        }
-
-        .profile-footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 25px;
-            background: rgba(255,255,255,0.2);
-            transition: background 0.3s ease;
-        }
-
-        .profile-footer a:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .about-section {
-            background: white;
-            padding: 60px;
-            margin: 40px 0;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .about-section h2 {
-            color: #667eea;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            line-height: 1.8;
+        li {
+            margin-bottom: 8px;
+            color: #444;
         }
 
         .contact-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 15px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
         }
 
-        .contact-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2em;
+        .contact-info {
+            margin-top: 10px;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: #667eea;
+        .contact-info a {
+            color: #000;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
-            padding: 15px 30px;
-            border: 2px solid #667eea;
-            border-radius: 25px;
-            transition: all 0.3s ease;
         }
 
-        .contact-link:hover {
-            background: #667eea;
-            color: white;
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -208,137 +144,102 @@
                 font-size: 2em;
             }
             
-            .subtitle {
-                font-size: 1.1em;
+            h2 {
+                font-size: 1.5em;
             }
             
-            .profiles-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .profile-card {
-                margin: 10px 0;
-            }
-            
-            .about-section,
-            .contact-section {
-                padding: 30px 20px;
+            .profile {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Álvaro Solache</h1>
-            <p class="subtitle">Consultor | Productor de Eventos | Facilitador de Equipos</p>
-            <p style="font-size: 1.1em; opacity: 0.9;">Explora mis diferentes especializaciones profesionales</p>
-        </div>
-    </header>
-
     <div class="container">
-        <section class="about-section">
-            <h2>Perfil Integral</h2>
-            <div class="about-content">
-                <p>Profesional con más de 20 años de experiencia en gestión de proyectos, producción de eventos y desarrollo de equipos. Mi enfoque se centra en crear valor a través de metodologías innovadoras, experiencias memorables y comunidades colaborativas.</p>
-                <p style="margin-top: 20px; font-weight: 500;">Cada perfil profesional representa una faceta de mi expertise. Selecciona el área que más se ajuste a tus necesidades.</p>
+        <header>
+            <h1>Álvaro Solache</h1>
+            <p class="subtitle">Consultor | Productor de Eventos | Facilitador</p>
+            <p class="tagline">Portafolio profesional integrado - 20+ años de experiencia</p>
+        </header>
+
+        <section class="section">
+            <h2>Presentación</h2>
+            <p>Soy Álvaro Solache, profesional con más de 20 años de trayectoria diversificada en tres áreas complementarias: producción de eventos, facilitación de equipos y comunidades, y análisis de redes de valor mediante Value Network Analysis (VNA).</p>
+            <p>Mi enfoque profesional se basa en la creación de valor a través de experiencias significativas, metodologías colaborativas y análisis estratégico de flujos organizativos. Cada proyecto, ya sea un festival de música, un taller de team building o un análisis de red de valor, se aborda con el mismo compromiso de excelencia y orientación a resultados.</p>
+            <p>Esta página sirve como punto de entrada a mis diferentes especializaciones. Por favor, selecciona el perfil que mejor se adapte a tus necesidades específicas.</p>
+        </section>
+
+        <section class="section">
+            <h2>Perfiles Profesionales</h2>
+
+            <div class="profile">
+                <h3 class="profile-title">Equipos y Comunidades</h3>
+                <p class="profile-description"><strong>Facilitación, co-creación y desarrollo organizativo</strong></p>
+                <p>Me especializo en el diseño y facilitación de procesos colaborativos que fortalecen equipos y comunidades. Utilizo metodologías como Value Network Analysis (VNA) para mapear y optimizar flujos de valor en organizaciones, facilitando la toma de decisiones estratégicas basada en evidencia.</p>
+                <p>Mi trabajo incluye la facilitación de talleres, diseño de propuestas pedagógicas para ejecutivos, y la implementación de soluciones personalizadas para grandes empresas. He trabajado con metodologías que permiten "zooms" organizativos específicos, adaptando el enfoque según las necesidades de cada cliente.</p>
+                <p><strong>Áreas de especialización:</strong></p>
+                <ul>
+                    <li>Facilitación de equipos y comunidades</li>
+                    <li>Value Network Analysis (VNA)</li>
+                    <li>Diseño de propuestas pedagógicas para ejecutivos</li>
+                    <li>Desarrollo de capacidades organizativas</li>
+                    <li>Co-creación de soluciones estratégicas</li>
+                    <li>Consultoría para grandes organizaciones</li>
+                </ul>
+                <a href="https://alvarosolache.netlify.app/" class="profile-link">Acceder al perfil →</a>
+            </div>
+
+            <div class="profile">
+                <h3 class="profile-title">Producción de Eventos</h3>
+                <p class="profile-description"><strong>Gestión integral de experiencias y eventos corporativos</strong></p>
+                <p>Con más de 20 años de experiencia en la producción de eventos, he gestionado proyectos para una amplia cartera de agencias y clientes corporativos de primer nivel. Mi enfoque abarca todo el ciclo de vida de un evento, desde la conceptualización creativa hasta la ejecución operativa impecable.</p>
+                <p>He producido eventos para clientes como Amfivia, We Barcelona, Yeti, Dreams & Adventures, RTA Spanish Event & Incentive Organisers, Eventica, Oxigen Pro, Unit Element, GMR Marketing, Carlson Wagonlit, Magnetic, Laeski, Kivicom y John Deere. Esta experiencia me ha dotado de una visión integral, siempre con foco en los objetivos estratégicos del cliente y en la experiencia de los participantes.</p>
+                <p>Paralelamente, colaboro desde hace cinco años con Gastrofira en la producción de catering para eventos, lo que me ha permitido profundizar en la gestión logística, la calidad gastronómica y la coordinación de servicios especializados, aspectos cruciales para el éxito de cualquier evento.</p>
+                <p><strong>Experiencia destacada:</strong></p>
+                <ul>
+                    <li><strong>Aura Open Air Festival:</strong> Productor principal de este festival de música</li>
+                    <li><strong>TeamTowers.eu:</strong> 20 años gestionando eventos de team building corporativo</li>
+                    <li><strong>Eventos corporativos:</strong> Incentivos, convenciones, lanzamientos y activaciones de marca</li>
+                    <li><strong>Catering especializado:</strong> Colaboración con Gastrofira para eventos de alta gama</li>
+                    <li><strong>Festivales y eventos musicales:</strong> Producción integral de eventos en vivo</li>
+                </ul>
+                <a href="https://alvarosolache.netlify.app/events" class="profile-link">Acceder al perfil →</a>
+            </div>
+
+            <div class="profile">
+                <h3 class="profile-title">Value Network Analysis</h3>
+                <p class="profile-description"><strong>Análisis estratégico de flujos de valor organizativos</strong></p>
+                <p>El Value Network Analysis (VNA) es una metodología que permite visualizar, analizar y optimizar los flujos de valor dentro de una organización o entre múltiples organizaciones. A través del mapeo de redes de valor, se identifican ineficiencias, oportunidades de mejora y puntos críticos que impactan en el desempeño organizativo.</p>
+                <p>Mi especialización en VNA me permite acompañar a organizaciones en la comprensión profunda de sus estructuras relacionales, facilitando la toma de decisiones estratégicas basadas en datos concretos sobre cómo fluye el valor real dentro de la organización.</p>
+                <p><strong>Aplicaciones de VNA:</strong></p>
+                <ul>
+                    <li>Mapeo de flujos de valor tangibles e intangibles</li>
+                    <li>Identificación de cuellos de botella y redundancias</li>
+                    <li>Optimización de procesos organizativos</li>
+                    <li>Análisis de redes de stakeholders</li>
+                    <li>Diseño de estructuras organizativas más eficientes</li>
+                    <li>Evaluación de impacto de cambios organizativos</li>
+                </ul>
+                <a href="https://alvarosolache.netlify.app/valor" class="profile-link">Acceder al perfil →</a>
+            </div>
+
+            <div class="profile">
+                <h3 class="profile-title">Currículum General</h3>
+                <p class="profile-description"><strong>Perfil profesional completo y trayectoria detallada</strong></p>
+                <p>Esta sección contiene mi currículum vitae completo, con información detallada sobre mi formación académica, certificaciones profesionales, experiencia laboral cronológica, proyectos destacados y referencias. Es la opción ideal si buscas una visión completa y estructurada de mi trayectoria profesional.</p>
+                <p>El currículum incluye detalles sobre mi participación en Valuenetworklab como co-fundador junto a Alvaro Solache y Nerea T. Ruiz, así como mi experiencia trabajando con grandes organizaciones como IKEA y otras multinacionales.</p>
+                <a href="https://alvarosolache.netlify.app/cv2" class="profile-link">Acceder al currículum →</a>
             </div>
         </section>
 
-        <div class="profiles-grid">
-            <!-- Perfil 1: Equipos y Comunidades -->
-            <a href="https://alvarosolache.netlify.app/" class="profile-card">
-                <div class="profile-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    <div class="profile-icon">👥</div>
-                    <h2 class="profile-title">Equipos y Comunidades</h2>
-                    <p class="profile-description">Facilitación y Desarrollo Organizacional</p>
-                </div>
-                <div class="profile-body">
-                    <ul class="profile-highlights">
-                        <li>Facilitación de equipos y comunidades</li>
-                        <li>Metodologías colaborativas</li>
-                        <li>Desarrollo de capacidades organizativas</li>
-                        <li>Valor Network Analysis</li>
-                        <li>Co-creación de soluciones</li>
-                    </ul>
-                </div>
-                <div class="profile-footer">
-                    <a href="https://alvarosolache.netlify.app/">Ver Perfil →</a>
-                </div>
-            </a>
-
-            <!-- Perfil 2: Producción de Eventos -->
-            <a href="https://alvarosolache.netlify.app/events" class="profile-card">
-                <div class="profile-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <div class="profile-icon">🎪</div>
-                    <h2 class="profile-title">Producción de Eventos</h2>
-                    <p class="profile-description">Gestión Integral de Experiencias</p>
-                </div>
-                <div class="profile-body">
-                    <ul class="profile-highlights">
-                        <li>Festivales de música (Aura Open Air)</li>
-                        <li>Eventos corporativos y team building</li>
-                        <li>20+ años gestionando eventos</li>
-                        <li>Catering y logística especializada</li>
-                        <li>Producción para grandes marcas</li>
-                    </ul>
-                </div>
-                <div class="profile-footer">
-                    <a href="https://alvarosolache.netlify.app/events">Ver Perfil →</a>
-                </div>
-            </a>
-
-            <!-- Perfil 3: Valor Network Analysis -->
-            <a href="https://alvarosolache.netlify.app/valor" class="profile-card">
-                <div class="profile-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <div class="profile-icon">📊</div>
-                    <h2 class="profile-title">Valor Network Analysis</h2>
-                    <p class="profile-description">Análisis de Redes de Valor</p>
-                </div>
-                <div class="profile-body">
-                    <ul class="profile-highlights">
-                        <li>Metodología VNA especializada</li>
-                        <li>Mapeo de flujos de valor</li>
-                        <li>Optimización de redes organizativas</li>
-                        <li>Consultoría estratégica</li>
-                        <li>Implementación práctica</li>
-                    </ul>
-                </div>
-                <div class="profile-footer">
-                    <a href="https://alvarosolache.netlify.app/valor">Ver Perfil →</a>
-                </div>
-            </a>
-
-            <!-- Perfil 4: CV General -->
-            <a href="https://alvarosolache.netlify.app/cv2" class="profile-card">
-                <div class="profile-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    <div class="profile-icon">📄</div>
-                    <h2 class="profile-title">Currículum General</h2>
-                    <p class="profile-description">Perfil Profesional Completo</p>
-                </div>
-                <div class="profile-body">
-                    <ul class="profile-highlights">
-                        <li>Experiencia profesional completa</li>
-                        <li>Formación y certificaciones</li>
-                        <li>Proyectos destacados</li>
-                        <li>Referencias y casos de éxito</li>
-                        <li>Información de contacto</li>
-                    </ul>
-                </div>
-                <div class="profile-footer">
-                    <a href="https://alvarosolache.netlify.app/cv2">Ver Perfil →</a>
-                </div>
-            </a>
-        </div>
-
-        <section class="contact-section">
-            <h2>¿Necesitas más información?</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">Contacta directamente para consultas específicas</p>
-            <div class="contact-links">
-                <a href="mailto:asolache@mac.com" class="contact-link">📧 Email</a>
-                <a href="https://alvarosolache.netlify.app/" class="contact-link">🌐 Web Principal</a>
-                <a href="https://github.com/alvarosolache" class="contact-link">💻 GitHub</a>
+        <section class="section contact-section">
+            <h2>Contacto</h2>
+            <p>Para consultas específicas sobre cualquiera de mis áreas de especialización, no dudes en contactarme directamente:</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a></p>
+                <p><strong>Web principal:</strong> <a href="https://alvarosolache.netlify.app/" target="_blank">alvarosolache.netlify.app</a></p>
             </div>
+            <p style="margin-top: 20px;">Cada perfil profesional tiene su propia sección de contacto específica para facilitar la comunicación según el tipo de proyecto o consulta.</p>
         </section>
     </div>
 </body>
