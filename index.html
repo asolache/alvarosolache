@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álvaro Solache - Portafolio Profesional</title>
+    <title>Álvaro Solache - Director de RRHH | Consultor Estratégico | Experto en Desarrollo Organizacional</title>
+    <meta name="description" content="Director de Recursos Humanos con 25+ años de experiencia. Consultoría estratégica en RRHH, desarrollo de equipos, Value Network Analysis y producción de eventos corporativos.">
     <style>
         * {
             margin: 0;
@@ -115,6 +116,51 @@
             color: #444;
         }
 
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #000;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background-color: #000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .competency-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid #000;
+        }
+
+        .competency-card h4 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
         .contact-section {
             margin-top: 40px;
             padding-top: 30px;
@@ -151,6 +197,10 @@
             .profile {
                 padding: 15px;
             }
+            
+            .quick-links {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -158,35 +208,71 @@
     <div class="container">
         <header>
             <h1>Álvaro Solache</h1>
-            <p class="subtitle">Consultor | Productor de Eventos | Facilitador</p>
-            <p class="tagline">Portafolio profesional integrado - 20+ años de experiencia</p>
+            <p class="subtitle">Director de RRHH | Consultor Estratégico | Experto en Desarrollo Organizacional</p>
+            <p class="tagline">25+ años transformando organizaciones a través del talento, la colaboración y la innovación</p>
         </header>
 
         <section class="section">
-            <h2>Presentación</h2>
-            <p>Soy Álvaro Solache, profesional con más de 20 años de trayectoria diversificada en tres áreas complementarias: producción de eventos, facilitación de equipos y comunidades, y análisis de redes de valor mediante Value Network Analysis (VNA).</p>
-            <p>Mi enfoque profesional se basa en la creación de valor a través de experiencias significativas, metodologías colaborativas y análisis estratégico de flujos organizativos. Cada proyecto, ya sea un festival de música, un taller de team building o un análisis de red de valor, se aborda con el mismo compromiso de excelencia y orientación a resultados.</p>
-            <p>Esta página sirve como punto de entrada a mis diferentes especializaciones. Por favor, selecciona el perfil que mejor se adapte a tus necesidades específicas.</p>
+            <h2>Perfil Profesional</h2>
+            <p><strong>Director de Recursos Humanos y consultor estratégico con más de 25 años de experiencia liderando el desarrollo del talento y la transformación organizacional.</strong></p>
+            <p>Mi trayectoria profesional combina roles directivos en multinacionales (Myrurgia, GEC-UOC), consultoría estratégica para empresas líderes, producción de eventos corporativos con más de 20 años de experiencia, y formación especializada en liderazgo colaborativo y gestión del cambio.</p>
+            <p>Como experto en <strong>Value Network Analysis (VNA)</strong>, ayudo a organizaciones a mapear y optimizar sus flujos de valor intangible, identificando oportunidades de mejora y diseñando intervenciones estratégicas basadas en evidencia. Mi enfoque integra pensamiento sistémico, psicología social y metodologías innovadoras para construir organizaciones más humanas, colaborativas y resilientes.</p>
         </section>
 
         <section class="section">
-            <h2>Perfiles Profesionales</h2>
+            <h2>Áreas de Especialización</h2>
+            
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <h4>Recursos Humanos Estratégicos</h4>
+                    <p>Gestión integral de RRHH, desarrollo del talento, transformación cultural y People Analytics.</p>
+                </div>
+                
+                <div class="competency-card">
+                    <h4>Desarrollo Organizacional</h4>
+                    <p>Facilitación de equipos, liderazgo colaborativo, gestión del cambio y comunidades de práctica.</p>
+                </div>
+                
+                <div class="competency-card">
+                    <h4>Value Network Analysis</h4>
+                    <p>Mapeo de flujos de valor, optimización de procesos y análisis de redes organizativas.</p>
+                </div>
+                
+                <div class="competency-card">
+                    <h4>Producción de Eventos</h4>
+                    <p>Eventos corporativos, team building, festivales musicales y gestión logística integral.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Acceso Directo a Mis Servicios</h2>
+            
+            <div class="quick-links">
+                <a href="https://alvarosolache.netlify.app/equipos" class="quick-link">🎯 Equipos y Comunidades</a>
+                <a href="https://alvarosolache.netlify.app/events" class="quick-link">🎪 Producción de Eventos</a>
+                <a href="https://alvarosolache.netlify.app/valor" class="quick-link">📊 Value Network Analysis</a>
+                <a href="https://alvarosolache.netlify.app/cv2" class="quick-link">📄 Currículum Completo</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Mis Perfiles Profesionales</h2>
 
             <div class="profile">
                 <h3 class="profile-title">Equipos y Comunidades</h3>
                 <p class="profile-description"><strong>Facilitación, co-creación y desarrollo organizativo</strong></p>
-                <p>Me especializo en el diseño y facilitación de procesos colaborativos que fortalecen equipos y comunidades. Utilizo metodologías como Value Network Analysis (VNA) para mapear y optimizar flujos de valor en organizaciones, facilitando la toma de decisiones estratégicas basada en evidencia.</p>
-                <p>Mi trabajo incluye la facilitación de talleres, diseño de propuestas pedagógicas para ejecutivos, y la implementación de soluciones personalizadas para grandes empresas. He trabajado con metodologías que permiten "zooms" organizativos específicos, adaptando el enfoque según las necesidades de cada cliente.</p>
-                <p><strong>Áreas de especialización:</strong></p>
+                <p>Especializado en el diseño y facilitación de procesos colaborativos que fortalecen equipos y comunidades. Utilizo metodologías como Value Network Analysis (VNA) para mapear y optimizar flujos de valor en organizaciones, facilitando la toma de decisiones estratégicas basada en evidencia.</p>
+                <p>Mi trabajo incluye facilitación de talleres, diseño de propuestas pedagógicas para ejecutivos, implementación de soluciones personalizadas para grandes empresas, y acompañamiento en procesos de transformación cultural hacia modelos más colaborativos y centrados en las personas.</p>
+                <p><strong>Servicios principales:</strong></p>
                 <ul>
-                    <li>Facilitación de equipos y comunidades</li>
-                    <li>Value Network Analysis (VNA)</li>
-                    <li>Diseño de propuestas pedagógicas para ejecutivos</li>
-                    <li>Desarrollo de capacidades organizativas</li>
-                    <li>Co-creación de soluciones estratégicas</li>
-                    <li>Consultoría para grandes organizaciones</li>
+                    <li>Consultoría estratégica en RRHH y desarrollo organizacional</li>
+                    <li>Outsourcing de Recursos Humanos para PYMEs y startups</li>
+                    <li>Formación y desarrollo de equipos de alto rendimiento</li>
+                    <li>Facilitación de comunidades de práctica y redes de conocimiento</li>
+                    <li>Diseño de estrategias de talento y transformación cultural</li>
                 </ul>
-                <a href="https://alvarosolache.netlify.app/equipos.html" class="profile-link">Acceder al perfil →</a>
+                <a href="https://alvarosolache.netlify.app/equipos" class="profile-link">Explorar servicios →</a>
             </div>
 
             <div class="profile">
@@ -194,16 +280,15 @@
                 <p class="profile-description"><strong>Gestión integral de experiencias y eventos corporativos</strong></p>
                 <p>Con más de 20 años de experiencia en la producción de eventos, he gestionado proyectos para una amplia cartera de agencias y clientes corporativos de primer nivel. Mi enfoque abarca todo el ciclo de vida de un evento, desde la conceptualización creativa hasta la ejecución operativa impecable.</p>
                 <p>He producido eventos para clientes como Amfivia, We Barcelona, Yeti, Dreams & Adventures, RTA Spanish Event & Incentive Organisers, Eventica, Oxigen Pro, Unit Element, GMR Marketing, Carlson Wagonlit, Magnetic, Laeski, Kivicom y John Deere. Esta experiencia me ha dotado de una visión integral, siempre con foco en los objetivos estratégicos del cliente y en la experiencia de los participantes.</p>
-                <p>Paralelamente, colaboro desde hace cinco años con Gastrofira en la producción de catering para eventos, lo que me ha permitido profundizar en la gestión logística, la calidad gastronómica y la coordinación de servicios especializados, aspectos cruciales para el éxito de cualquier evento.</p>
                 <p><strong>Experiencia destacada:</strong></p>
                 <ul>
                     <li><strong>Aura Open Air Festival:</strong> Productor principal de este festival de música</li>
                     <li><strong>TeamTowers.eu:</strong> 20 años gestionando eventos de team building corporativo</li>
+                    <li><strong>Gastrofira:</strong> 5 años de colaboración en producción de catering para eventos</li>
                     <li><strong>Eventos corporativos:</strong> Incentivos, convenciones, lanzamientos y activaciones de marca</li>
-                    <li><strong>Catering especializado:</strong> Colaboración con Gastrofira para eventos de alta gama</li>
                     <li><strong>Festivales y eventos musicales:</strong> Producción integral de eventos en vivo</li>
                 </ul>
-                <a href="https://alvarosolache.netlify.app/events" class="profile-link">Acceder al perfil →</a>
+                <a href="https://alvarosolache.netlify.app/events" class="profile-link">Ver portfolio →</a>
             </div>
 
             <div class="profile">
@@ -219,27 +304,46 @@
                     <li>Análisis de redes de stakeholders</li>
                     <li>Diseño de estructuras organizativas más eficientes</li>
                     <li>Evaluación de impacto de cambios organizativos</li>
+                    <li>Contabilidad de valor con Timefounder</li>
                 </ul>
-                <a href="https://alvarosolache.netlify.app/valor" class="profile-link">Acceder al perfil →</a>
+                <a href="https://alvarosolache.netlify.app/valor" class="profile-link">Descubrir VNA →</a>
             </div>
 
             <div class="profile">
                 <h3 class="profile-title">Currículum General</h3>
                 <p class="profile-description"><strong>Perfil profesional completo y trayectoria detallada</strong></p>
-                <p>Esta sección contiene mi currículum vitae completo, con información detallada sobre mi formación académica, certificaciones profesionales, experiencia laboral cronológica, proyectos destacados y referencias. Es la opción ideal si buscas una visión completa y estructurada de mi trayectoria profesional.</p>
-                <p>El currículum incluye detalles sobre mi participación en Valuenetworklab como co-fundador junto a Alvaro Solache y Nerea T. Ruiz, así como mi experiencia trabajando con grandes organizaciones como IKEA y otras multinacionales.</p>
-                <a href="https://alvarosolache.netlify.app/cv2" class="profile-link">Acceder al currículum →</a>
+                <p>Mi currículum vitae completo incluye información detallada sobre mi formación académica, experiencia laboral cronológica, proyectos destacados y competencias profesionales. Es la opción ideal si buscas una visión completa y estructurada de mi trayectoria profesional.</p>
+                <p>La documentación incluye mi experiencia como Director de RRHH en Myrurgia y GEC-UOC, mi rol como Gerente de RRHH en multinacionales, mi trabajo como consultor independiente, y mi participación como co-fundador de Valuenetworklab junto a Nerea T. Ruiz.</p>
+                <a href="https://alvarosolache.netlify.app/cv2" class="profile-link">Descargar CV →</a>
             </div>
+        </section>
+
+        <section class="section">
+            <h2>Logros y Reconocimientos</h2>
+            <ul>
+                <li><strong>Más de 500 intervenciones</strong> con empresas líderes (SEAT, Danone, Novartis, entre otras) en programas de desarrollo de equipos y transformación cultural</li>
+                <li><strong>20 años consecutivos</strong> produciendo eventos de team building corporativo con TeamTowers</li>
+                <li><strong>Producción de Aura Open Air Festival</strong>, festival de música de reconocido prestigio</li>
+                <li><strong>Contribución al desarrollo</strong> del primer grado oficial en Team Entrepreneurship en España (Mondragón Team Academy)</li>
+                <li><strong>Formación y mentoría</strong> de más de 100 líderes y equipos directivos en competencias de gestión de personas</li>
+                <li><strong>Desarrollo de metodologías propias</strong> para la evaluación y desarrollo del capital humano y relacional</li>
+            </ul>
         </section>
 
         <section class="section contact-section">
             <h2>Contacto</h2>
-            <p>Para consultas específicas sobre cualquiera de mis áreas de especialización, no dudes en contactarme directamente:</p>
+            <p>Para consultas sobre proyectos, colaboraciones o información adicional sobre mis servicios:</p>
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a></p>
-                <p><strong>Web principal:</strong> <a href="https://alvarosolache.netlify.app/" target="_blank">alvarosolache.netlify.app</a></p>
+                <p><strong>📧 Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a></p>
+                <p><strong>📱 Teléfono:</strong> +34 629 86 77 15</p>
+                <p><strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/alvarosolache" target="_blank">linkedin.com/in/alvarosolache</a></p>
             </div>
-            <p style="margin-top: 20px;">Cada perfil profesional tiene su propia sección de contacto específica para facilitar la comunicación según el tipo de proyecto o consulta.</p>
+            <p style="margin-top: 20px; font-weight: bold;">¿Necesitas ayuda específica? Visita el perfil profesional que mejor se adapte a tus necesidades:</p>
+            <div class="quick-links" style="margin-top: 15px;">
+                <a href="https://alvarosolache.netlify.app/equipos" class="quick-link">RRHH y Equipos</a>
+                <a href="https://alvarosolache.netlify.app/events" class="quick-link">Eventos</a>
+                <a href="https://alvarosolache.netlify.app/valor" class="quick-link">VNA</a>
+            </div>
         </section>
     </div>
 </body>
