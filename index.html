@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Codificación y configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álvaro Solache - Director de RRHH | Consultor Estratégico | Experto en Desarrollo Organizacional</title>
-     <!-- Codificación y configuración básica -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Meta descripción (cambia según cada página) -->
+    <!-- Título optimizado para SEO -->
+    <title>Álvaro Solache - Director de RRHH | Consultor Estratégico | Barcelona y Penedès</title>
+    
+    <!-- Meta descripción optimizada -->
     <meta name="description" content="Director de RRHH con 25+ años de experiencia en Barcelona. Consultoría estratégica en recursos humanos, desarrollo de equipos, Value Network Analysis y producción de eventos corporativos.">
     
-    <!-- Palabras clave -->
+    <!-- Palabras clave estratégicas -->
     <meta name="keywords" content="Director RRHH Barcelona, Consultor RRHH Penedès, Desarrollo equipos, Value Network Analysis, Producción eventos, Team building, Consultoría estratégica, Transformación organizacional, Gestión talento, Outsourcing RRHH, Formación empresarial, Eventos corporativos, Barcelona, Penedès, Cataluña">
     
     <!-- Autor y derechos -->
@@ -22,7 +24,7 @@
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
     
-    <!-- Canonical URL (cambia según cada página) -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://alvarosolache.netlify.app/">
     
     <!-- Idioma -->
@@ -164,11 +166,7 @@
         "@type": "Offer",
         "businessFunction": "Consultoría",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "priceType": "starting"
-        }
+        "priceCurrency": "EUR"
       },
       "description": "Consultoría estratégica en RRHH, desarrollo de equipos, Value Network Analysis y transformación organizacional"
     }
@@ -176,40 +174,14 @@
     
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <!-- Preconnect para recursos externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Google Fonts (si usas) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics (si tienes) -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="/styles.css">
-    
-    <!-- RSS Feed (si tienes blog) -->
-    <link rel="alternate" type="application/rss+xml" title="Álvaro Solache - Blog" href="/feed.xml">
-    
-    <!-- Hreflang para internacionalización (si aplica) -->
-    <link rel="alternate" hreflang="es" href="https://alvarosolache.netlify.app/">
-    <link rel="alternate" hreflang="ca" href="https://alvarosolache.netlify.app/ca/">
-    <link rel="alternate" hreflang="en" href="https://alvarosolache.netlify.app/en/">
-    
-    <!-- Manifest para PWA (si aplica) -->
-    <link rel="manifest" href="/manifest.json">
-    
-    <meta name="description" content="Director de Recursos Humanos con 25+ años de experiencia. Consultoría estratégica en RRHH, desarrollo de equipos, Value Network Analysis y producción de eventos corporativos.">
     <style>
         * {
             margin: 0;
@@ -234,40 +206,87 @@
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e0e0e0;
+            text-align: center;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-bottom: 10px;
             color: #000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .subtitle {
-            font-size: 1.2em;
+            font-size: 1.4em;
             color: #666;
             margin-bottom: 5px;
+            font-weight: 500;
         }
 
         .tagline {
             color: #999;
-            font-size: 0.95em;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero-section h2 {
+            color: white;
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        .hero-section p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 30px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 2em;
+            margin-bottom: 30px;
             color: #000;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
         }
 
         h3 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
             color: #000;
         }
 
@@ -276,49 +295,72 @@
             font-size: 1.05em;
         }
 
-        .profile {
-            margin-bottom: 30px;
-            padding: 25px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #000;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
         }
 
-        .profile-title {
-            font-size: 1.5em;
+        .service-card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: #f0f0f0;
+        }
+
+        .service-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .service-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .service-card a:hover {
+            text-decoration: underline;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #000;
         }
 
-        .profile-description {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .profile-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            background-color: #fff;
-            border: 1px solid #000;
-        }
-
-        .profile-link:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: #444;
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
         }
 
         .quick-links {
@@ -326,64 +368,114 @@
             gap: 15px;
             margin: 30px 0;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .quick-link {
             display: inline-block;
-            padding: 12px 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #000;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             text-decoration: none;
-            color: #000;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 30px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         .quick-link:hover {
-            background-color: #000;
-            color: #fff;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .competencies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
-            margin: 25px 0;
+            justify-content: center;
+            margin: 40px 0;
+            align-items: center;
         }
 
-        .competency-card {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 3px solid #000;
-        }
-
-        .competency-card h4 {
-            font-size: 1.1em;
+        .client-logo {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 0.95em;
             font-weight: bold;
-            margin-bottom: 10px;
             color: #000;
+            text-align: center;
+            min-width: 120px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card blockquote {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #667eea;
+            font-style: normal;
         }
 
         .contact-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .contact-section h2 {
+            border-bottom: 2px solid #667eea;
         }
 
         .contact-info {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .contact-info a {
-            color: #000;
+            color: #667eea;
             text-decoration: none;
             font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
         }
 
         @media (max-width: 768px) {
@@ -395,16 +487,27 @@
                 font-size: 2em;
             }
             
-            h2 {
-                font-size: 1.5em;
+            .subtitle {
+                font-size: 1.1em;
             }
             
-            .profile {
-                padding: 15px;
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .services-grid,
+            .stats-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
             
             .quick-links {
                 flex-direction: column;
+            }
+            
+            .clients-grid {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -417,139 +520,174 @@
             <p class="tagline">25+ años transformando organizaciones a través del talento, la colaboración y la innovación</p>
         </header>
 
-        <section class="section">
-            <h2>Perfil Profesional</h2>
-            <p><strong>Director de Recursos Humanos y consultor estratégico con más de 25 años de experiencia liderando el desarrollo del talento y la transformación organizacional.</strong></p>
-            <p>Mi trayectoria profesional combina roles directivos en multinacionales (Myrurgia, GEC-UOC), consultoría estratégica para empresas líderes, producción de eventos corporativos con más de 20 años de experiencia, y formación especializada en liderazgo colaborativo y gestión del cambio.</p>
-            <p>Como experto en <strong>Value Network Analysis (VNA)</strong>, ayudo a organizaciones a mapear y optimizar sus flujos de valor intangible, identificando oportunidades de mejora y diseñando intervenciones estratégicas basadas en evidencia. Mi enfoque integra pensamiento sistémico, psicología social y metodologías innovadoras para construir organizaciones más humanas, colaborativas y resilientes.</p>
+        <section class="hero-section">
+            <h2>🚀 Transforma tu organización con expertise probado</h2>
+            <p><strong>Director de Recursos Humanos y consultor estratégico</strong> con más de 25 años de experiencia liderando el desarrollo del talento y la transformación organizacional en Barcelona y Penedès.</p>
+            <p>Mi enfoque combina <strong>metodologías innovadoras</strong> como Value Network Analysis con <strong>experiencias transformadoras</strong> únicas, para crear organizaciones más humanas, colaborativas y resilientes.</p>
+            <a href="mailto:asolache@mac.com" class="cta-button">📧 Solicita Consulta Gratuita →</a>
         </section>
 
         <section class="section">
-            <h2>Áreas de Especialización</h2>
+            <h2>🌟 Mis Servicios</h2>
+            <p>Ofrezco soluciones integrales para transformar tu organización y potenciar el rendimiento de tus equipos:</p>
             
-            <div class="competencies-grid">
-                <div class="competency-card">
-                    <h4>Recursos Humanos Estratégicos</h4>
-                    <p>Gestión integral de RRHH, desarrollo del talento, transformación cultural y People Analytics.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>🎯 Consultoría RRHH</h4>
+                    <p>Estrategias de talento, transformación cultural y People Analytics para organizaciones que buscan excelencia.</p>
+                    <a href="https://alvarosolache.netlify.app/equipos">→ Explorar servicios</a>
                 </div>
                 
-                <div class="competency-card">
-                    <h4>Desarrollo Organizacional</h4>
-                    <p>Facilitación de equipos, liderazgo colaborativo, gestión del cambio y comunidades de práctica.</p>
+                <div class="service-card">
+                    <h4>👥 Formación de Equipos</h4>
+                    <p>Programas transformadores que fortalecen la cohesión, comunicación y liderazgo colaborativo mediante metodologías únicas.</p>
+                    <a href="https://alvarosolache.netlify.app/equipos">→ Descubrir programas</a>
                 </div>
                 
-                <div class="competency-card">
-                    <h4>Value Network Analysis</h4>
-                    <p>Mapeo de flujos de valor, optimización de procesos y análisis de redes organizativas.</p>
+                <div class="service-card">
+                    <h4>🎪 Producción de Eventos</h4>
+                    <p>Eventos corporativos, team building y festivales con 20+ años de experiencia para empresas líderes como John Deere, Novartis y Vodafone.</p>
+                    <a href="https://alvarosolache.netlify.app/events">→ Ver portfolio</a>
                 </div>
                 
-                <div class="competency-card">
-                    <h4>Producción de Eventos</h4>
-                    <p>Eventos corporativos, team building, festivales musicales y gestión logística integral.</p>
+                <div class="service-card">
+                    <h4>📊 Value Network Analysis</h4>
+                    <p>Análisis estratégico de flujos de valor para optimizar procesos, identificar ineficiencias y tomar decisiones basadas en evidencia.</p>
+                    <a href="https://alvarosolache.netlify.app/valor">→ Aprender más</a>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2>Acceso Directo a Mis Servicios</h2>
+            <h2>📈 Resultados Impactantes</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Empresas atendidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60.000+</div>
+                    <div class="stat-label">Participantes transformados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfacción clientes</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎯 Acceso Directo a Mis Especializaciones</h2>
             
             <div class="quick-links">
-                <a href="https://alvarosolache.netlify.app/equipos" class="quick-link">🎯 Equipos y Comunidades</a>
-                <a href="https://alvarosolache.netlify.app/events" class="quick-link">🎪 Producción de Eventos</a>
+                <a href="https://alvarosolache.netlify.app/equipos" class="quick-link">👥 RRHH y Equipos</a>
+                <a href="https://alvarosolache.netlify.app/events" class="quick-link">🎪 Producción Eventos</a>
                 <a href="https://alvarosolache.netlify.app/valor" class="quick-link">📊 Value Network Analysis</a>
-                <a href="https://alvarosolache.netlify.app/cv" class="quick-link">📄 Currículum Completo</a>
+                <a href="https://alvarosolache.netlify.app/cv2" class="quick-link">📄 Currículum Completo</a>
             </div>
         </section>
 
         <section class="section">
-            <h2>Mis Perfiles Profesionales</h2>
-
-            <div class="profile">
-                <h3 class="profile-title">Equipos y Comunidades</h3>
-                <p class="profile-description"><strong>Facilitación, co-creación y desarrollo organizativo</strong></p>
-                <p>Especializado en el diseño y facilitación de procesos colaborativos que fortalecen equipos y comunidades. Utilizo metodologías como Value Network Analysis (VNA) para mapear y optimizar flujos de valor en organizaciones, facilitando la toma de decisiones estratégicas basada en evidencia.</p>
-                <p>Mi trabajo incluye facilitación de talleres, diseño de propuestas pedagógicas para ejecutivos, implementación de soluciones personalizadas para grandes empresas, y acompañamiento en procesos de transformación cultural hacia modelos más colaborativos y centrados en las personas.</p>
-                <p><strong>Servicios principales:</strong></p>
-                <ul>
-                    <li>Consultoría estratégica en RRHH y desarrollo organizacional</li>
-                    <li>Outsourcing de Recursos Humanos para PYMEs y startups</li>
-                    <li>Formación y desarrollo de equipos de alto rendimiento</li>
-                    <li>Facilitación de comunidades de práctica y redes de conocimiento</li>
-                    <li>Diseño de estrategias de talento y transformación cultural</li>
-                </ul>
-                <a href="https://alvarosolache.netlify.app/equipos" class="profile-link">Explorar servicios →</a>
-            </div>
-
-            <div class="profile">
-                <h3 class="profile-title">Producción de Eventos</h3>
-                <p class="profile-description"><strong>Gestión integral de experiencias y eventos corporativos</strong></p>
-                <p>Con más de 20 años de experiencia en la producción de eventos, he gestionado proyectos para una amplia cartera de agencias y clientes corporativos de primer nivel. Mi enfoque abarca todo el ciclo de vida de un evento, desde la conceptualización creativa hasta la ejecución operativa impecable.</p>
-                <p>He producido eventos para clientes como Amfivia, We Barcelona, Yeti, Dreams & Adventures, RTA Spanish Event & Incentive Organisers, Eventica, Oxigen Pro, Unit Element, GMR Marketing, Carlson Wagonlit, Magnetic, Laeski, Kivicom y John Deere. Esta experiencia me ha dotado de una visión integral, siempre con foco en los objetivos estratégicos del cliente y en la experiencia de los participantes.</p>
-                <p><strong>Experiencia destacada:</strong></p>
-                <ul>
-                    <li><strong>Aura Open Air Festival:</strong> Productor principal de este festival de música</li>
-                    <li><strong>TeamTowers.eu:</strong> 20 años gestionando eventos de team building corporativo</li>
-                    <li><strong>Gastrofira:</strong> 5 años de colaboración en producción de catering para eventos</li>
-                    <li><strong>Eventos corporativos:</strong> Incentivos, convenciones, lanzamientos y activaciones de marca</li>
-                    <li><strong>Festivales y eventos musicales:</strong> Producción integral de eventos en vivo</li>
-                </ul>
-                <a href="https://alvarosolache.netlify.app/events" class="profile-link">Ver portfolio →</a>
-            </div>
-
-            <div class="profile">
-                <h3 class="profile-title">Value Network Analysis</h3>
-                <p class="profile-description"><strong>Análisis estratégico de flujos de valor organizativos</strong></p>
-                <p>El Value Network Analysis (VNA) es una metodología que permite visualizar, analizar y optimizar los flujos de valor dentro de una organización o entre múltiples organizaciones. A través del mapeo de redes de valor, se identifican ineficiencias, oportunidades de mejora y puntos críticos que impactan en el desempeño organizativo.</p>
-                <p>Mi especialización en VNA me permite acompañar a organizaciones en la comprensión profunda de sus estructuras relacionales, facilitando la toma de decisiones estratégicas basadas en datos concretos sobre cómo fluye el valor real dentro de la organización.</p>
-                <p><strong>Aplicaciones de VNA:</strong></p>
-                <ul>
-                    <li>Mapeo de flujos de valor tangibles e intangibles</li>
-                    <li>Identificación de cuellos de botella y redundancias</li>
-                    <li>Optimización de procesos organizativos</li>
-                    <li>Análisis de redes de stakeholders</li>
-                    <li>Diseño de estructuras organizativas más eficientes</li>
-                    <li>Evaluación de impacto de cambios organizativos</li>
-                    <li>Contabilidad de valor con Timefounder</li>
-                </ul>
-                <a href="https://alvarosolache.netlify.app/valor" class="profile-link">Descubrir VNA →</a>
-            </div>
-
-            <div class="profile">
-                <h3 class="profile-title">Currículum General</h3>
-                <p class="profile-description"><strong>Perfil profesional completo y trayectoria detallada</strong></p>
-                <p>Mi currículum vitae completo incluye información detallada sobre mi formación académica, experiencia laboral cronológica, proyectos destacados y competencias profesionales. Es la opción ideal si buscas una visión completa y estructurada de mi trayectoria profesional.</p>
-                <p>La documentación incluye mi experiencia como Director de RRHH en Myrurgia y GEC-UOC, mi rol como Gerente de RRHH en multinacionales, mi trabajo como consultor independiente, y mi participación como co-fundador de Valuenetworklab junto a Nerea T. Ruiz.</p>
-                <a href="https://alvarosolache.netlify.app/cv" class="profile-link">Descargar CV →</a>
+            <h2>💼 Clientes Destacados</h2>
+            <p>He tenido el privilegio de trabajar con algunas de las empresas más reconocidas a nivel mundial:</p>
+            
+            <div class="clients-grid">
+                <div class="client-logo">IKEA</div>
+                <div class="client-logo">Telefónica</div>
+                <div class="client-logo">Vodafone</div>
+                <div class="client-logo">BBVA</div>
+                <div class="client-logo">Novartis</div>
+                <div class="client-logo">Porsche</div>
+                <div class="client-logo">Mercedes</div>
+                <div class="client-logo">John Deere</div>
+                <div class="client-logo">La Caixa</div>
+                <div class="client-logo">ESADE</div>
+                <div class="client-logo">IESE</div>
+                <div class="client-logo">EADA</div>
             </div>
         </section>
 
         <section class="section">
-            <h2>Logros y Reconocimientos</h2>
-            <ul>
-                <li><strong>Más de 500 intervenciones</strong> con empresas líderes (SEAT, Danone, Novartis, entre otras) en programas de desarrollo de equipos y transformación cultural</li>
-                <li><strong>20 años consecutivos</strong> produciendo eventos de team building corporativo con TeamTowers</li>
-                <li><strong>Producción de Aura Open Air Festival</strong>, festival de música de reconocido prestigio</li>
-                <li><strong>Contribución al desarrollo</strong> del primer grado oficial en Team Entrepreneurship en España (Mondragón Team Academy)</li>
-                <li><strong>Formación y mentoría</strong> de más de 100 líderes y equipos directivos en competencias de gestión de personas</li>
-                <li><strong>Desarrollo de metodologías propias</strong> para la evaluación y desarrollo del capital humano y relacional</li>
-            </ul>
+            <h2>💬 Testimonios</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <blockquote>"Una experiencia que une y motiva como ninguna otra. El taller de TeamTowers transformó completamente la dinámica de nuestro equipo directivo."</blockquote>
+                    <cite>- Equipo Directivo, Empresa Tecnológica</cite>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>"Las lecciones aprendidas en la experiencia castellera se aplicaron directamente a nuestros desafíos de comunicación interna. Resultados visibles en semanas."</blockquote>
+                    <cite>- Gerente de Recursos Humanos, Multinacional</cite>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>"La producción de nuestro evento corporativo fue impecable. Álvaro se encargó de cada detalle con profesionalismo y pasión."</blockquote>
+                    <cite>- Director de Eventos, Empresa Industrial</cite>
+                </div>
+            </div>
         </section>
 
-        <section class="section contact-section">
-            <h2>Contacto</h2>
-            <p>Para consultas sobre proyectos, colaboraciones o información adicional sobre mis servicios:</p>
+        <section class="section">
+            <h2>🔍 ¿Por qué elegirme?</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>💼 Experiencia Directiva</h4>
+                    <p>Director de RRHH en multinacionales como Myrurgia y GEC-UOC, con gestión integral de recursos humanos en entornos complejos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🎓 Formación Académica</h4>
+                    <p>Licenciado en Psicología Social por la Universidad de Barcelona y especializado en Team Coaching por la Universidad de Mondragón.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🚀 Metodologías Únicas</h4>
+                    <p>Experto en Value Network Analysis y creador de experiencias castelleras transformadoras con TeamTowers desde 2005.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h4>🤝 Enfoque Personalizado</h4>
+                    <p>Trabajo directamente contigo para entender tus desafíos y diseñar soluciones a medida que generan resultados tangibles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>📞 ¿Listo para transformar tu organización?</h2>
+            <p>Ofrezco una <strong>sesión exploratoria gratuita sin compromiso</strong> para entender tus necesidades y proponerte la solución perfecta para tu organización.</p>
+            
             <div class="contact-info">
                 <p><strong>📧 Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a></p>
-                <p><strong>📱 Teléfono:</strong> +34 629 86 77 15</p>
+                <p><strong>📱 Teléfono:</strong> <a href="tel:+34629867715">+34 629 86 77 15</a></p>
+                <p><strong>📍 Ubicación:</strong> Barcelona y Penedès</p>
                 <p><strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/alvarosolache" target="_blank">linkedin.com/in/alvarosolache</a></p>
             </div>
-            <p style="margin-top: 20px; font-weight: bold;">¿Necesitas ayuda específica? Visita el perfil profesional que mejor se adapte a tus necesidades:</p>
-            <div class="quick-links" style="margin-top: 15px;">
-                <a href="https://alvarosolache.netlify.app/equipos" class="quick-link">RRHH y Equipos</a>
-                <a href="https://alvarosolache.netlify.app/events" class="quick-link">Eventos</a>
-                <a href="https://alvarosolache.netlify.app/valor" class="quick-link">VNA</a>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.2);">
+                <p style="color: rgba(255,255,255,0.9);"><strong>¿Prefieres explorar primero?</strong></p>
+                <p style="color: rgba(255,255,255,0.9);">
+                    <a href="https://alvarosolache.netlify.app/equipos" style="color: white; font-weight: bold;">→ Consultoría RRHH</a> | 
+                    <a href="https://alvarosolache.netlify.app/events" style="color: white; font-weight: bold;">→ Producción de Eventos</a> | 
+                    <a href="https://alvarosolache.netlify.app/valor" style="color: white; font-weight: bold;">→ Value Network Analysis</a>
+                </p>
             </div>
         </section>
+
+        <footer>
+            <p>© 2026 Álvaro Solache - Todos los derechos reservados</p>
+            <p>Dirección: Calle Segre, Torrelles de Foix 08737, Barcelona</p>
+            <p>
+                <a href="https://alvarosolache.netlify.app/equipos" style="color: #667eea; margin: 0 10px;">RRHH y Equipos</a> | 
+                <a href="https://alvarosolache.netlify.app/events" style="color: #667eea; margin: 0 10px;">Eventos</a> | 
+                <a href="https://alvarosolache.netlify.app/valor" style="color: #667eea; margin: 0 10px;">VNA</a> | 
+                <a href="https://alvarosolache.netlify.app/cv2" style="color: #667eea; margin: 0 10px;">CV</a>
+            </p>
+        </footer>
     </div>
 </body>
 </html>
