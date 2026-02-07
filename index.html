@@ -1,189 +1,345 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alvaro Solache – Experto en desarrollo de equipos y comunidades</title>
-  <meta name="description" content="Consultoría, formación y desarrollo web para empresas y comunidades. Especialista en redes de valor, contabilidad de valor y nuevas formas de trabajo." />
-  <style>
-    :root {
-      --color-text: #2d3748;
-      --color-accent: #2a9d8f; /* verde VNL */
-      --color-link: #1d3557;   /* azul oscuro VNL */
-      --color-bg: #fff;
-      --color-border: #e2e8f0;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--color-text);
-      background-color: var(--color-bg);
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-    h1, h2, h3, h4 {
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      color: var(--color-link);
-    }
-    h1 {
-      font-size: 2.2rem;
-      border-bottom: 2px solid var(--color-accent);
-      padding-bottom: 0.5rem;
-    }
-    h2 {
-      font-size: 1.6rem;
-      position: relative;
-    }
-    h2::before {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 3px;
-      background: var(--color-accent);
-      margin-bottom: 0.5rem;
-    }
-    p, ul, ol {
-      margin-bottom: 1rem;
-    }
-    a {
-      color: var(--color-link);
-      text-decoration: underline;
-      font-weight: 500;
-    }
-    a:hover {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-    ul, ol {
-      padding-left: 1.5rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    .cta-box {
-      background: #f8f9fa;
-      border-left: 4px solid var(--color-accent);
-      padding: 1.2rem;
-      margin: 2rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--color-border);
-      font-size: 0.95rem;
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 1.5rem 1rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álvaro Solache - Portafolio Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .profile-header {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .profile-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .profile-description {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .profile-body {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .profile-highlights {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-highlights li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .profile-highlights li:last-child {
+            border-bottom: none;
+        }
+
+        .profile-highlights li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .profile-footer {
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .profile-footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.2);
+            transition: background 0.3s ease;
+        }
+
+        .profile-footer a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .about-section {
+            background: white;
+            padding: 60px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 15px 30px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .profiles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-card {
+                margin: 10px 0;
+            }
+            
+            .about-section,
+            .contact-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Álvaro Solache</h1>
+            <p class="subtitle">Consultor | Productor de Eventos | Facilitador de Equipos</p>
+            <p style="font-size: 1.1em; opacity: 0.9;">Explora mis diferentes especializaciones profesionales</p>
+        </div>
+    </header>
 
-<h1>Alvaro Solache</h1>
-<h2>Experto en desarrollo de equipos y comunidades</h2>
-<p>Desde 1997 trabajando en formación y desarrollo de equipos y organizaciones, cultura digital, desarrollo del trabajo en equipo, producción de eventos, desarrollo de negocios digitales, desarrollo de webs, apps y dapps, gestión del conocimiento y nuevas formas de trabajo.</p>
-<p><strong><a href="/cv2">Descarga mi currículum profesional</a></strong> — ideal si buscas un perfil técnico-conceptual con 25+ años de experiencia en innovación sistémica.</p>
+    <div class="container">
+        <section class="about-section">
+            <h2>Perfil Integral</h2>
+            <div class="about-content">
+                <p>Profesional con más de 20 años de experiencia en gestión de proyectos, producción de eventos y desarrollo de equipos. Mi enfoque se centra en crear valor a través de metodologías innovadoras, experiencias memorables y comunidades colaborativas.</p>
+                <p style="margin-top: 20px; font-weight: 500;">Cada perfil profesional representa una faceta de mi expertise. Selecciona el área que más se ajuste a tus necesidades.</p>
+            </div>
+        </section>
 
-<h1>Servicios</h1>
+        <div class="profiles-grid">
+            <!-- Perfil 1: Equipos y Comunidades -->
+            <a href="https://alvarosolache.netlify.app/" class="profile-card">
+                <div class="profile-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="profile-icon">👥</div>
+                    <h2 class="profile-title">Equipos y Comunidades</h2>
+                    <p class="profile-description">Facilitación y Desarrollo Organizacional</p>
+                </div>
+                <div class="profile-body">
+                    <ul class="profile-highlights">
+                        <li>Facilitación de equipos y comunidades</li>
+                        <li>Metodologías colaborativas</li>
+                        <li>Desarrollo de capacidades organizativas</li>
+                        <li>Valor Network Analysis</li>
+                        <li>Co-creación de soluciones</li>
+                    </ul>
+                </div>
+                <div class="profile-footer">
+                    <a href="https://alvarosolache.netlify.app/">Ver Perfil →</a>
+                </div>
+            </a>
 
-<h4>Consultoría</h4>
-<p>Consultor, mentor, coach de equipos y organizaciones. Metodologías sistémicas e innovación digital. Trabajo con empresas y comunidades que necesitan <strong>superar silos, recuperar valor oculto y diseñar gobernanza colaborativa</strong>. Mi enfoque se basa en <a href="https://valuenetworklab.netlify.app/">Value Network Analysis</a>, una metodología pionera para mapear flujos tangibles e intangibles de valor.</p>
+            <!-- Perfil 2: Producción de Eventos -->
+            <a href="https://alvarosolache.netlify.app/events" class="profile-card">
+                <div class="profile-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="profile-icon">🎪</div>
+                    <h2 class="profile-title">Producción de Eventos</h2>
+                    <p class="profile-description">Gestión Integral de Experiencias</p>
+                </div>
+                <div class="profile-body">
+                    <ul class="profile-highlights">
+                        <li>Festivales de música (Aura Open Air)</li>
+                        <li>Eventos corporativos y team building</li>
+                        <li>20+ años gestionando eventos</li>
+                        <li>Catering y logística especializada</li>
+                        <li>Producción para grandes marcas</li>
+                    </ul>
+                </div>
+                <div class="profile-footer">
+                    <a href="https://alvarosolache.netlify.app/events">Ver Perfil →</a>
+                </div>
+            </a>
 
-<h4>Formación</h4>
-<p>Experto en planificación de formación y desarrollo de equipos de trabajo y cultura digital. Diseño talleres vivenciales (como las torres humanas) y sesiones de <a href="https://valuenetworklab.netlify.app/vna-prototipado.html">prototipado de redes de valor</a> para equipos empresariales, cooperativas, DAOs y colectivos culturales.</p>
+            <!-- Perfil 3: Valor Network Analysis -->
+            <a href="https://alvarosolache.netlify.app/valor" class="profile-card">
+                <div class="profile-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="profile-icon">📊</div>
+                    <h2 class="profile-title">Valor Network Analysis</h2>
+                    <p class="profile-description">Análisis de Redes de Valor</p>
+                </div>
+                <div class="profile-body">
+                    <ul class="profile-highlights">
+                        <li>Metodología VNA especializada</li>
+                        <li>Mapeo de flujos de valor</li>
+                        <li>Optimización de redes organizativas</li>
+                        <li>Consultoría estratégica</li>
+                        <li>Implementación práctica</li>
+                    </ul>
+                </div>
+                <div class="profile-footer">
+                    <a href="https://alvarosolache.netlify.app/valor">Ver Perfil →</a>
+                </div>
+            </a>
 
-<h4>Branding</h4>
-<p>Desarrollo de marcas, campañas y planes de fidelización y crecimiento orgánico, marketing digital. Especializado en modelos de negocio con NFTs, Fan Tokens y reputación distribuida —ideal para artistas, comunidades y startups Web3.</p>
+            <!-- Perfil 4: CV General -->
+            <a href="https://alvarosolache.netlify.app/cv2" class="profile-card">
+                <div class="profile-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="profile-icon">📄</div>
+                    <h2 class="profile-title">Currículum General</h2>
+                    <p class="profile-description">Perfil Profesional Completo</p>
+                </div>
+                <div class="profile-body">
+                    <ul class="profile-highlights">
+                        <li>Experiencia profesional completa</li>
+                        <li>Formación y certificaciones</li>
+                        <li>Proyectos destacados</li>
+                        <li>Referencias y casos de éxito</li>
+                        <li>Información de contacto</li>
+                    </ul>
+                </div>
+                <div class="profile-footer">
+                    <a href="https://alvarosolache.netlify.app/cv2">Ver Perfil →</a>
+                </div>
+            </a>
+        </div>
 
-<h4>Desarrollo</h4>
-<p>Conceptualización, diseño, gestión del desarrollo de webs, apps y dapps. Uso HTML semántico, GitHub y Netlify para entregar productos rápidos, accesibles y listos para SEO/AI.</p>
-
-<h1>Consultoría</h1>
-<p>Consultor estratégico en gestión del talento y organización en la era del conocimiento.</p>
-
-<h2>Pensamiento sistémico y análisis de mapas de valor</h2>
-<p>El desarrollo del pensamiento sistémico nos ayuda a pensar no como individuos sino como sistema. Somos los mayores expertos en España en la mejora de la comunicación y el trabajo en equipo mediante un programa de formación y consultoría que emplea la revolucionaria metodología de análisis y diagnóstico del flujo de valor en las organizaciones llamada <a href="https://valuenetworklab.netlify.app/verna-allee.html">Value Network Analysis (VNA)</a>, creada por <a href="https://valuenetworklab.netlify.app/verna-allee.html">Verna Allee</a>.</p>
-<p>¿Tu organización pierde valor sin darse cuenta? <a href="https://valuenetworklab.netlify.app/">Descubre cómo identificar transacciones invisibles</a> que están atascando tu innovación.</p>
-
-<h2>Contabilidad de valor</h2>
-<p>La contabilidad del valor es una forma de realizar un seguimiento de todas las contribuciones de valor a un proyecto.<br>
-Esto puede incluir todo tipo de valores que podamos definir como valiosos para nuestro proyecto: trabajo realizado, asesoramiento, recursos, dinero en efectivo...<br>
-Es útil visualizar cómo se debe hacer una división equitativa. También se puede usar para involucrar a las partes interesadas para seguir agregando valor.<br>
-Como contabilidad de valor, estamos hablando de acciones contables que no son acciones legales y que ayudamos a contabilizar y certificar usando tecnologías como los tokens fungibles y no fungibles para usos contables pero con validez interna dentro de una comunidad o equipo.<br>
-<a href="https://timefounderlanding.netlify.app">Timefounder</a> ofrece la primera aplicación de contabilidad de valor que se integra con Trello.</p>
-<p>La contabilidad de valor reduce el conflicto entre las partes de un proyecto evitando conflictos y ayudando a la distribución justa de las recompensas del mismo.<br>
-La app permite contabilizar las aportaciones que cualquier persona o entidad que aporte "valor" al proyecto.</p>
-
-<h1>Formación</h1>
-<p>Taller de torres humanas de trabajo en equipo donde tu equipo vivirá la experiencia de ser una Colla Castellera, bien cultural de la UNESCO para la humanidad.<br>
-Actividad formativa segura, épica, divertida y cultural ideal como rompehielos, trabajo en equipo, eventos de empresa y para eventos especiales.<br>
-De 10 a 1.000 participantes. Todos los humanos bienvenidos.<br>
-Músicos, expertos en castillos humanos y experto en trabajo en equipo y dinamización ofrecemos el taller original de torres humanas.</p>
-<p><strong>¿Eres una comunidad, cooperativa o colectivo?</strong> Adaptamos la experiencia a contextos no empresariales, con enfoque en confianza, propósito y gobernanza horizontal.</p>
-
-<h1>Marketing</h1>
-<p>Consultoría de negocio y marketing 3.0, formación, desarrollo de comunidades, fidelización y modelos de negocios con NFTs y Fan Tokens. Hemos desarrollado <strong>smart contracts</strong>, creado <strong>tokens fungibles y no fungibles</strong>, y diseñado <strong>modelos tokenómicos</strong> como sistema más inteligente de desarrollo de modelos de negocio. <a href="https://valuenetworklab.netlify.app/">Explora cómo aplicamos esto en Value Network Lab</a>.</p>
-
-<h1>Desarrollo web</h1>
-<p>Tengo 25 años de experiencia en dirección de proyectos digitales, en empresas como Infojobs y la UOC, con experiencia en prototipado, desarrollo de MVPs, landing pages, programación de web semántica, posicionamiento orgánico, herramientas de productividad, CMS, CRM, CVS, blogs, Google, contratos inteligentes, NFTs, DAOs. Soy profesor e investigador.<br>
-He trabajado en empresas como Infojobs y la UOC y he dirigido el desarrollo de web apps y dapps: Comunitats, <a href="https://timefounderlanding.netlify.app">Timefounder</a>, <a href="https://defi.molekulon.club">defi.molekulon.club</a>, o la Biblioteca de las Cosas.<br>
-Programador HTML con foco en la web semántica. Puedo ayudarte en el diseño del mockup y la maquetación web de tu landing o web corporativa.<br>
-Tengo experiencia en roles de dirección de proyecto, project owner, tester, community manager, prototipado y diseño de contenidos.<br>
-Soy profesor y formador en Innovación digital, blockchain, uso de redes blockchain y contratos inteligentes en universidades y escuelas como La Salle, UAB, UB, Complot o SAE.</p>
-
-<p>Estructuro las webs de forma semántica usando bien el HTML para que los crawlers y bots de buscadores y sistemas de información e inteligencia artificial las entiendan.<br>
-HTML para la maquetación y semántica<br>
-CSS para la maquetación.<br>
-GitHub para el control de versiones,<br>
-Netlify para el despliegue continuo de actualizaciones.<br>
-Trello para la gestión de proyectos,<br>
-Timefounder para la contabilidad de valor.<br>
-Google para el posicionamiento, comunicación y documentos.<br>
-OpenSea como Marketplace,<br>
-Ethereum como plataforma de blockchain y de contratos inteligentes.<br>
-MetaMask y Trust Wallet como monedero y navegador Web3.<br>
-Apps y Dapps especializadas para creación y seguimiento de contratos inteligentes testeados y auditados.</p>
-
-<h1>Mis proyectos</h1>
-<ul>
-  <li>Valores y trabajo en equipo con <a href="https://teamtowers.eu">Teamtowers</a></li>
-  <li>Gestión del conocimiento con <a href="https://valuenetworklab.netlify.app/pantheon-work.html">Pantheon.work</a></li>
-  <li>Contabilidad de valor con <a href="https://timefounderlanding.netlify.app">Timefounder</a></li>
-  <li>Marketing y branding con Cryptomarketing</li>
-  <li>Educación y arte con Comando Molekulon</li>
-  <li>Música con House of Winds</li>
-  <li>Música con Chicobillies</li>
-</ul>
-
-<h1>Clientes</h1>
-<p>+ clientes: BBVA, Privalia, Letgo, Codorniu, Orange, Vodafone, UPC, Esade, IESE, EADA, Porsche, Manpower, Infojobs, Foment, UOC, Myrurgia, Gestión del Conocimiento SA, Teamlabs, Adbrainage, Novartis, Laureus Foundation, Universitat de Barcelona, Universidad Autónoma, Universidad de Mondragón, Seeliger y Conde…</p>
-
-<div class="cta-box">
-  <h2>¿Listo para transformar tu organización o comunidad?</h2>
-  <p>Trabajo con:</p>
-  <ul>
-    <li><strong>Empresas</strong> que quieren romper silos, alinear equipos y medir el impacto real de su innovación.</li>
-    <li><strong>Comunidades, cooperativas y colectivos</strong> que buscan gobernanza justa, reconocimiento del aporte y modelos de reparto equitativo.</li>
-  </ul>
-  <p><strong>➡️ Escríbeme a <a href="mailto:asolache@me.com">asolache@mac.com</a></strong> para una primera sesión exploratoria sin compromiso.</p>
-  <p>O si prefieres entender antes cómo funciona el análisis de redes de valor, <a href="https://valuenetworklab.netlify.app/">visita Value Network Lab</a> y descarga nuestra guía ejecutiva gratuita.</p>
-</div>
-
-<footer>
-  <h2>Contacto</h2>
-  <p><a href="mailto:asolache@me.com">Enviar mensaje</a></p>
-</footer>
-
+        <section class="contact-section">
+            <h2>¿Necesitas más información?</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Contacta directamente para consultas específicas</p>
+            <div class="contact-links">
+                <a href="mailto:asolache@mac.com" class="contact-link">📧 Email</a>
+                <a href="https://alvarosolache.netlify.app/" class="contact-link">🌐 Web Principal</a>
+                <a href="https://github.com/alvarosolache" class="contact-link">💻 GitHub</a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
