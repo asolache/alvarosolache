@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producción de Eventos - Álvaro Solache</title>
+    <title>Álvaro Solache - Producción de Eventos</title>
     <style>
         * {
             margin: 0;
@@ -12,122 +12,160 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.8;
             color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: #ffffff;
             padding: 20px;
         }
 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
             margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            color: #000;
         }
 
         .subtitle {
             font-size: 1.2em;
-            opacity: 0.9;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            color: #999;
+            font-size: 0.95em;
         }
 
         .section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
 
         h2 {
-            color: #667eea;
+            font-size: 1.8em;
             margin-bottom: 20px;
+            color: #000;
             padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 2px solid #000;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-left: none;
+        }
+
+        .experience-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .experience-company {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .experience-date {
+            color: #666;
+            font-style: italic;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .client-badge {
+            background-color: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid #e0e0e0;
         }
 
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-        }
-
-        .skill-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .skill-card h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
-        }
-
-        .experience-item {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .experience-title {
-            font-size: 1.3em;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .experience-company {
-            font-weight: bold;
-            color: #764ba2;
-        }
-
-        .experience-date {
-            color: #6c757d;
-            font-style: italic;
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
             margin-top: 20px;
         }
 
-        .client-badge {
-            background: #e9ecef;
-            padding: 10px 15px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 0.9em;
+        .skill-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 3px solid #000;
         }
 
-        .contact-info {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
+        .skill-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .specialization-list li:before {
+            content: "✓ ";
+            font-weight: bold;
+            color: #000;
+        }
+
+        .contact-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
         }
 
         .contact-info a {
-            color: white;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
             text-decoration: underline;
         }
 
@@ -136,29 +174,28 @@
                 padding: 10px;
             }
             
-            header {
-                padding: 40px 10px;
-            }
-            
             h1 {
                 font-size: 2em;
             }
             
-            .section {
-                padding: 20px;
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Álvaro Solache</h1>
-            <p class="subtitle">Experto en Producción de Eventos | Gestión Integral | 20+ años de experiencia</p>
-        </div>
-    </header>
-
     <div class="container">
+        <header>
+            <h1>Álvaro Solache</h1>
+            <p class="subtitle">Producción de Eventos</p>
+            <p class="tagline">Más de 20 años de experiencia en gestión integral de eventos</p>
+        </header>
+
         <section class="section">
             <h2>Perfil Profesional</h2>
             <p>Productor de eventos con más de 20 años de experiencia especializado en la gestión integral de proyectos, desde la conceptualización creativa hasta la ejecución operativa. Mi enfoque se centra en alcanzar los objetivos estratégicos del cliente y garantizar una experiencia excepcional para los participantes.</p>
@@ -169,14 +206,14 @@
             
             <div class="experience-item">
                 <h3 class="experience-title">Aura Open Air Festival</h3>
-                <p class="experience-date">Productor Principal | Música en Vivo</p>
+                <span class="experience-date">Productor Principal | Festival de Música</span>
                 <p>Responsable de la producción integral de este festival de música, gestionando todos los aspectos logísticos, artísticos y operativos para garantizar el éxito del evento.</p>
             </div>
 
             <div class="experience-item">
                 <h3 class="experience-title">TeamTowers.eu</h3>
-                <p class="experience-company">Gestión de Eventos de Team Building Corporativo</p>
-                <p class="experience-date">20 años de experiencia</p>
+                <span class="experience-company">Gestión de Eventos de Team Building Corporativo</span>
+                <span class="experience-date">20 años de experiencia</span>
                 <p>Especializado en la organización y producción de eventos de team building corporativos, desarrollando experiencias que fortalecen la cohesión y motivación de equipos empresariales.</p>
             </div>
 
@@ -199,11 +236,12 @@
                     <div class="client-badge">Kivicom</div>
                     <div class="client-badge">John Deere</div>
                 </div>
+                <p style="margin-top: 15px;">Esta experiencia me ha dotado de una visión integral, desde la conceptualización creativa hasta la ejecución operativa, siempre con foco en los objetivos estratégicos del cliente y en la experiencia de los participantes.</p>
             </div>
 
             <div class="experience-item">
                 <h3 class="experience-title">Gastrofira - Producción de Catering</h3>
-                <p class="experience-date">Colaboración desde hace 5 años</p>
+                <span class="experience-date">Colaboración desde hace 5 años</span>
                 <p>Producción de catering para eventos, profundizando en la gestión logística, la calidad gastronómica y la coordinación de servicios especializados, un aspecto crucial para el éxito de cualquier evento.</p>
             </div>
         </section>
@@ -212,42 +250,42 @@
             <h2>Habilidades y Competencias</h2>
             <div class="skills-container">
                 <div class="skill-card">
-                    <h3>Planificación Estratégica</h3>
+                    <h4>Planificación Estratégica</h4>
                     <p>Desarrollo de conceptos creativos alineados con objetivos de negocio y diseño de estrategias integrales para eventos.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Gestión de Proyectos</h3>
+                    <h4>Gestión de Proyectos</h4>
                     <p>Coordinación completa desde la fase inicial hasta la ejecución, garantizando el cumplimiento de plazos y presupuestos.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Logística de Eventos</h3>
+                    <h4>Logística de Eventos</h4>
                     <p>Organización de todos los aspectos operativos: ubicaciones, proveedores, transporte, seguridad y coordinación de equipos.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Producción Musical</h3>
+                    <h4>Producción Musical</h4>
                     <p>Especialización en festivales y eventos musicales, gestión de artistas, escenarios y producción técnica.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Team Building Corporativo</h3>
+                    <h4>Team Building Corporativo</h4>
                     <p>Diseño y ejecución de actividades que fortalecen equipos empresariales y mejoran la cultura organizacional.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Catering y Gastronomía</h3>
+                    <h4>Catering y Gastronomía</h4>
                     <p>Gestión de servicios de alimentación de alta calidad, coordinación con proveedores y control de estándares.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Relaciones con Clientes</h3>
+                    <h4>Relaciones con Clientes</h4>
                     <p>Gestión de carteras corporativas, desarrollo de relaciones a largo plazo y satisfacción del cliente.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Coordinación de Equipos</h3>
+                    <h4>Coordinación de Equipos</h4>
                     <p>Liderazgo de equipos multidisciplinarios, gestión de proveedores y coordinación de stakeholders.</p>
                 </div>
             </div>
@@ -255,39 +293,23 @@
 
         <section class="section">
             <h2>Áreas de Especialización</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                    <span style="position: absolute; left: 0; color: #667eea;">✓</span>
-                    <strong>Festivales de Música:</strong> Producción integral de eventos musicales al aire libre
-                </li>
-                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                    <span style="position: absolute; left: 0; color: #667eea;">✓</span>
-                    <strong>Eventos Corporativos:</strong> Team building, incentivos, convenciones y lanzamientos
-                </li>
-                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                    <span style="position: absolute; left: 0; color: #667eea;">✓</span>
-                    <strong>Eventos de Marca:</strong> Activaciones, experiential marketing y eventos de producto
-                </li>
-                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                    <span style="position: absolute; left: 0; color: #667eea;">✓</span>
-                    <strong>Catering de Eventos:</strong> Gestión gastronómica y servicios de alimentación especializados
-                </li>
-                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                    <span style="position: absolute; left: 0; color: #667eea;">✓</span>
-                    <strong>Eventos Incentivo:</strong> Diseño y ejecución de programas de motivación corporativa
-                </li>
+            <ul class="specialization-list">
+                <li><strong>Festivales de Música:</strong> Producción integral de eventos musicales al aire libre</li>
+                <li><strong>Eventos Corporativos:</strong> Team building, incentivos, convenciones y lanzamientos</li>
+                <li><strong>Eventos de Marca:</strong> Activaciones, experiential marketing y eventos de producto</li>
+                <li><strong>Catering de Eventos:</strong> Gestión gastronómica y servicios de alimentación especializados</li>
+                <li><strong>Eventos Incentivo:</strong> Diseño y ejecución de programas de motivación corporativa</li>
             </ul>
         </section>
 
-        <section class="contact-info">
-            <h2 style="margin-bottom: 20px;">Contacto</h2>
+        <section class="section contact-section">
+            <h2>Contacto</h2>
             <p>Para consultas sobre producción de eventos o colaboraciones:</p>
-            <p style="margin-top: 15px;">
-                <strong>Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a>
-            </p>
-            <p style="margin-top: 10px;">
-                <strong>Web:</strong> <a href="https://alvarosolache.netlify.app" target="_blank">alvarosolache.netlify.app</a>
-            </p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:asolache@mac.com">asolache@mac.com</a></p>
+                <p><strong>Web principal:</strong> <a href="https://alvarosolache.netlify.app/" target="_blank">alvarosolache.netlify.app</a></p>
+                <p style="margin-top: 15px;">También puedes visitar mi <a href="https://alvarosolache.netlify.app/cv2" target="_blank">currículum completo</a> para más información sobre mi trayectoria profesional.</p>
+            </div>
         </section>
     </div>
 </body>
