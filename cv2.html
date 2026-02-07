@@ -1,275 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Álvaro Solache - Arquitecto de Ecosistemas</title>
-  <meta name="description" content="CV de Álvaro Solache Rodríguez: Arquitecto de Ecosistemas de Conocimiento y Rendimiento Colectivo">
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álvaro Solache - Currículum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                  url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      padding: 2rem;
-    }
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
-      color: #1a56db;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
 
-    h2 {
-      font-size: 1.4rem;
-      margin: 1.8rem 0 1rem;
-      color: #2d3748;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 0.4rem;
-    }
+        .name {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000;
+        }
 
-    p, ul {
-      margin-bottom: 1.2rem;
-    }
+        .title {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+        }
 
-    ul {
-      padding-left: 1.5rem;
-    }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            color: #555;
+        }
 
-    li {
-      margin-bottom: 0.5rem;
-    }
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-    a {
-      color: #1a56db;
-      text-decoration: none;
-    }
+        .section {
+            margin-bottom: 30px;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .section-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
 
-    .header-contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      color: #4a5568;
-    }
+        .experience-item {
+            margin-bottom: 25px;
+        }
 
-    .quote {
-      font-style: italic;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #f8fafc;
-      border-left: 4px solid #cbd5e0;
-      color: #4a5568;
-    }
+        .job-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #000;
+        }
 
-    pre {
-      background: #f1f5f9;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-family: monospace;
-      font-size: 0.95rem;
-    }
+        .company {
+            font-weight: bold;
+            color: #333;
+        }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+        .date {
+            color: #666;
+            font-style: italic;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .responsibilities {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        .responsibilities li {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category h4 {
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .skill-category ul {
+            padding-left: 20px;
+            font-size: 0.95em;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .institution {
+            color: #333;
+        }
+
+        .year {
+            color: #666;
+            font-style: italic;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .languages ul {
+            padding-left: 20px;
+        }
+
+        .languages li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .project-item {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 4px;
+        }
+
+        .project-item strong {
+            display: block;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .project-item a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .project-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 1.8em;
+            }
+            
+            .skills-container,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Álvaro Solache Rodríguez</h1>
-    <p><em>Arquitecto de Ecosistemas de Conocimiento y Rendimiento Colectivo</em></p>
+    <div class="cv-container">
+        <div class="header">
+            <div class="name">Álvaro Solache Rodríguez</div>
+            <div class="title">Director de RRHH | Consultor Estratégico | Experto en Desarrollo Organizacional</div>
+            <div class="contact-info">
+                <span>📍 Barcelona, España</span>
+                <span>📧 asolache@mac.com</span>
+                <span>📱 +34 629 86 77 15</span>
+                <span>🔗 linkedin.com/in/alvarosolache</span>
+            </div>
+        </div>
 
-    <div class="header-contact">
-      <span>Barcelona, España</span>
-      <span>📧 <a href="mailto:asolache@mac.com">asolache@mac.com</a></span>
-      <span>📱 +34 629 86 77 15</span>
-      <span>🌐 <a href="https://linkedin.com/in/alvarosolache" target="_blank">linkedin.com/in/alvarosolache</a></span>
-      <span>🏗 <a href="https://teamtowers.eu" target="_blank">teamtowers.eu</a></span>
-      <span>🧠 <a href="https://valuenetworklab.netlify.app" target="_blank">valuenetworklab.netlify.app</a></span>
+        <section class="section">
+            <h2 class="section-title">Perfil Profesional</h2>
+            <p>Director de Recursos Humanos y consultor estratégico con más de 25 años de experiencia liderando el desarrollo del talento y la transformación organizacional. Especializado en construir organizaciones centradas en las personas, desarrollar equipos de alto rendimiento y aplicar metodologías innovadoras como Value Network Analysis para optimizar el capital humano y relacional.</p>
+            <p>Mi trayectoria combina roles directivos en multinacionales, consultoría estratégica para empresas líderes y formación especializada en liderazgo colaborativo y gestión del cambio.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experiencia Profesional</h2>
+
+            <div class="experience-item">
+                <div class="job-title">Fundador y Consultor Principal</div>
+                <div class="company">TeamTowers</div>
+                <span class="date">Mayo 2005 - Presente</span>
+                <ul class="responsibilities">
+                    <li>Diseño y facilitación de experiencias de transformación organizacional basadas en el modelo de torres humanas</li>
+                    <li>Más de 500 intervenciones con empresas como SEAT, Danone, Novartis y administraciones públicas</li>
+                    <li>Desarrollo de metodología propia que vincula psicología de equipos con metáfora física de construcción colectiva</li>
+                    <li>Laboratorio de investigación aplicada sobre dinámicas de colaboración</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Profesor Universitario y Team Coach</div>
+                <div class="company">TeamLabs / Mondragón Team Academy</div>
+                <span class="date">Junio 2016 - Septiembre 2017</span>
+                <ul class="responsibilities">
+                    <li>Co-diseño y facilitación del primer grado oficial en Team Entrepreneurship de España</li>
+                    <li>Mentoría de más de 40 estudiantes-emprendedores en creación de empresas y equipos de alto rendimiento</li>
+                    <li>Contribución al desarrollo del modelo pedagógico "learning by creating"</li>
+                    <li>Conexión del ecosistema universitario con redes empresariales</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">COO y Cofundador</div>
+                <div class="company">Comunitats Knowledge Management</div>
+                <span class="date">Enero 2012 - Septiembre 2014</span>
+                <ul class="responsibilities">
+                    <li>Startup social especializada en gestión del conocimiento y comunidades para organizaciones</li>
+                    <li>Diseño de metodologías para mapeo, captura y transferencia de conocimiento organizacional</li>
+                    <li>Implementación de plataformas y dinámicas para comunidades de práctica</li>
+                    <li>Desarrollo de modelo de negocio colaborativo basado en redes</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Director de RRHH</div>
+                <div class="company">GEC-UOC</div>
+                <span class="date">Septiembre 2002 - Abril 2005</span>
+                <ul class="responsibilities">
+                    <li>Consultoría en e-learning y transformación digital para el sector empresarial</li>
+                    <li>Diseño de programas de formación adaptados a entornos digitales</li>
+                    <li>Acompañamiento en procesos de transformación organizacional hacia modelos ágiles</li>
+                    <li>Implementación temprana de People Analytics y métricas de impacto</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Gestor de Comunidad de Directivos de RRHH</div>
+                <div class="company">Foment del Treball</div>
+                <span class="date">Enero 2001 - Abril 2001</span>
+                <ul class="responsibilities">
+                    <li>Coordinación del foro de directivos de RRHH de la principal organización empresarial de Cataluña</li>
+                    <li>Facilitación de intercambios y buenas prácticas entre líderes de personas</li>
+                    <li>Identificación de tendencias en gestión de personas</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Gerente de RRHH</div>
+                <div class="company">Myrurgia (Multinacional de perfumería y cosmética)</div>
+                <span class="date">Julio 1997 - Diciembre 1999</span>
+                <ul class="responsibilities">
+                    <li>Gestión integral de personas en entorno industrial y comercial</li>
+                    <li>Implementación de programas de formación y evaluación</li>
+                    <li>Facilitación de integración de culturas organizacionales tras fusiones</li>
+                    <li>Responsabilidad sobre todos los aspectos de RRHH en operaciones multinacionales</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Productor de Eventos</div>
+                <div class="company">Productor Independiente</div>
+                <span class="date">2000 - Presente</span>
+                <ul class="responsibilities">
+                    <li>Producción de Aura Open Air Festival (festival de música)</li>
+                    <li>20 años gestionando eventos de team building corporativo con TeamTowers</li>
+                    <li>Colaboración con Gastrofira en producción de catering para eventos (5 años)</li>
+                    <li>Producción para clientes como Amfivia, We Barcelona, Yeti, Dreams & Adventures, RTA, Eventica, Oxigen Pro, Unit Element, GMR Marketing, Carlson Wagonlit, Magnetic, Laeski, Kivicom y John Deere</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Formación Académica</h2>
+
+            <div class="education-item">
+                <div class="degree">Team Coaching</div>
+                <div class="institution">Universidad de Mondragón</div>
+                <span class="year">2018</span>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Gestión de la Formación en las Organizaciones (Posgrado)</div>
+                <div class="institution">Universidad de Barcelona</div>
+                <span class="year">1999</span>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Cooperación Internacional e Internet (Posgrado)</div>
+                <div class="institution">Universidad de Barcelona</div>
+                <span class="year">1996</span>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Bioenergética</div>
+                <div class="institution">Instituto Erica Froom, Barcelona</div>
+                <span class="year">1995</span>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Psicología Social</div>
+                <div class="institution">Universidad de Barcelona</div>
+                <span class="year">1996</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Habilidades y Competencias</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Recursos Humanos</h4>
+                    <ul>
+                        <li>Gestión estratégica del talento</li>
+                        <li>Reclutamiento y selección</li>
+                        <li>Desarrollo organizacional</li>
+                        <li>Gestión del desempeño</li>
+                        <li>Transformación cultural</li>
+                        <li>People Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Consultoría y Formación</h4>
+                    <ul>
+                        <li>Value Network Analysis (VNA)</li>
+                        <li>Facilitación de equipos</li>
+                        <li>Diseño de programas formativos</li>
+                        <li>Coaching de equipos</li>
+                        <li>Gestión del cambio</li>
+                        <li>Comunidades de práctica</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Liderazgo y Equipos</h4>
+                    <ul>
+                        <li>Liderazgo colaborativo</li>
+                        <li>Equipos de alto rendimiento</li>
+                        <li>Resolución de conflictos</li>
+                        <li>Construcción de confianza</li>
+                        <li>Inteligencia colectiva</li>
+                        <li>Metodologías ágiles</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Tecnología y Digital</h4>
+                    <ul>
+                        <li>HTML y CSS semántico</li>
+                        <li>Desarrollo web</li>
+                        <li>Blockchain y Web3</li>
+                        <li>Contratos inteligentes</li>
+                        <li>GitHub y Netlify</li>
+                        <li>Productividad digital</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <strong>TeamTowers</strong>
+                    <span>Laboratorio de colaboración extrema</span>
+                    <a href="https://teamtowers.eu" target="_blank">teamtowers.eu</a>
+                </div>
+                <div class="project-item">
+                    <strong>Value Network Lab</strong>
+                    <span>Plataforma de redes de valor</span>
+                    <a href="https://valuenetworklab.netlify.app" target="_blank">valuenetworklab.netlify.app</a>
+                </div>
+                <div class="project-item">
+                    <strong>Timefounder</strong>
+                    <span>Contabilidad de valor</span>
+                    <a href="https://timefounderlanding.netlify.app" target="_blank">timefounderlanding.netlify.app</a>
+                </div>
+                <div class="project-item">
+                    <strong>Pantheon.work</strong>
+                    <span>Gestión del conocimiento</span>
+                    <a href="https://valuenetworklab.netlify.app/pantheon-work.html" target="_blank">pantheon.work</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Clientes Principales</h2>
+            <p>BBVA, Privalia, Letgo, Codorniu, Orange, Vodafone, UPC, Esade, IESE, EADA, Porsche, Manpower, Infojobs, Foment, UOC, Myrurgia, Novartis, Laureus Foundation, Universitat de Barcelona, Universidad Autónoma, Universidad de Mondragón, Seeliger y Conde, entre otros.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Idiomas</h2>
+            <ul class="languages">
+                <li><strong>Español:</strong> Nativo</li>
+                <li><strong>Catalán:</strong> Nativo</li>
+                <li><strong>Inglés:</strong> Avanzado (C1)</li>
+                <li><strong>Francés:</strong> Intermedio (B1)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Publicaciones y Conferencias</h2>
+            <ul class="responsibilities">
+                <li>Blog de LinkedIn: Artículos sobre gestión del conocimiento, liderazgo colaborativo y dinámicas de equipo</li>
+                <li>Más de 100 conferencias y talleres sobre construcción de equipos, innovación colaborativa y organizaciones en red</li>
+                <li>Documentación de procesos y sistematización de metodologías en TeamTowers y Value Network Lab</li>
+            </ul>
+        </section>
     </div>
-
-    <h2>Declaración de Filosofía</h2>
-    <p>
-      Creo en las organizaciones como redes vivas de valor. Mi trabajo consiste en hacer visible lo intangible: los flujos de conocimiento, confianza y propósito que permiten a personas y equipos alcanzar su máximo potencial colectivo. Combinando psicología social, gestión del conocimiento y dinámicas de equipo, diseño ecosistemas donde el aprendizaje y la colaboración generan resultados extraordinarios.
-    </p>
-
-    <h2>Mapa de Valor en Red: Mi Ecosistema Profesional</h2>
-    <pre>
-CENTRO: Álvaro Solache - Arquitecto de Ecosistemas
-|
-|--- NODO 1: TeamTowers (2005-Ahora)
-|       |--- FLUJO: Liderazgo -> Activación de Capital Relacional
-|       |--- FLUJO: Aprendizaje -> Desarrollo de Capital Humano
-|
-|--- NODO 2: TeamLabs/MTA (2016-2017)
-|       |--- FLUJO: Innovación -> Creación de Capital Estructural
-|       |--- FLUJO: Comunidad -> Fortalecimiento de Capital Social
-|
-|--- NODO 3: Comunitats (2012-2014)
-|       |--- FLUJO: Conocimiento -> Sistematización de Capital Intelectual
-|
-|--- NODO 4: GEC-UOC (2002-2005)
-|       |--- FLUJO: Educación -> Transformación de Capital Cognitivo
-|
-TODOS LOS NODOS CONECTADOS ENTRE SÍ
-    </pre>
-
-    <h2>Dominios de Valor Intangible Generado</h2>
-    <ul>
-      <li><strong>Capital Humano:</strong> Desarrollo de capacidades, mentalidades y competencias colaborativas</li>
-      <li><strong>Capital Estructural:</strong> Metodologías, herramientas y sistemas para la innovación colectiva</li>
-      <li><strong>Capital Relacional:</strong> Redes de confianza, comunidades de práctica y alianzas estratégicas</li>
-      <li><strong>Capital Social:</strong> Cultura organizacional, valores compartidos y sentido de pertenencia</li>
-    </ul>
-
-    <h2>Trayectoria Profesional: Nodos de la Red</h2>
-
-    <p><strong>FUNDADOR Y CONSULTOR PRINCIPAL | TeamTowers | Mayo 2005 - Actualidad</strong><br>
-    Diseño y facilitación de experiencias de transformación organizacional basadas en el modelo de "castellers" (torres humanas)</p>
-    <ul>
-      <li><strong>Activación de Capital Relacional:</strong> Más de 500 intervenciones con empresas como SEAT, Danone, Novartis y diversas administraciones públicas, generando espacios de confianza radical y cooperación</li>
-      <li><strong>Metodología Propia:</strong> Desarrollo del modelo "TeamTowers" que vincula la psicología de equipos de alto rendimiento con la metáfora física de la construcción colectiva</li>
-      <li><strong>Laboratorio Viviente:</strong> TeamTowers funciona como plataforma de experimentación e investigación aplicada sobre dinámicas de colaboración</li>
-    </ul>
-
-    <p><strong>PROFESOR UNIVERSITARIO Y TEAM COACH | TeamLabs/Mondragón Team Academy | Junio 2016 - Septiembre 2017</strong><br>
-    Co-diseño y facilitación del aprendizaje en el primer grado oficial en Team Entrepreneurship de España</p>
-    <ul>
-      <li><strong>Creación de Capital Estructural:</strong> Contribución al desarrollo del modelo pedagógico "learning by creating" en entornos de emprendimiento en equipo</li>
-      <li><strong>Fortalecimiento de Capital Social:</strong> Mentoría de más de 40 estudiantes-emprendedores en la creación de empresas reales y equipos de alto rendimiento</li>
-      <li><strong>Puente Academia-Industria:</strong> Conexión del ecosistema universitario con redes empresariales y de innovación</li>
-    </ul>
-
-    <p><strong>COO Y COFUNDADOR | Comunitats Knowledge Management | Enero 2012 - Septiembre 2014</strong><br>
-    Startup social especializada en gestión del conocimiento y comunidades para organizaciones</p>
-    <ul>
-      <li><strong>Sistematización de Capital Intelectual:</strong> Diseño de metodologías para mapeo, captura y transferencia de conocimiento organizacional</li>
-      <li><strong>Activación de Comunidades:</strong> Implementación de plataformas y dinámicas para comunidades de práctica en entornos corporativos</li>
-      <li><strong>Modelo de Negocio Colaborativo:</strong> Desarrollo de una propuesta de valor basada en redes y economías de intercambio</li>
-    </ul>
-
-    <p><strong>DIRECTOR DE RRHH | GEC-UOC | Septiembre 2002 - Abril 2005</strong><br>
-    Consultoría en e-learning y transformación digital para el sector empresarial</p>
-    <ul>
-      <li><strong>Transformación de Capital Cognitivo:</strong> Diseño de programas de formación y desarrollo adaptados a entornos digitales y de aprendizaje continuo</li>
-      <li><strong>Gestión del Cambio Cultural:</strong> Acompañamiento en procesos de transformación organizacional hacia modelos más ágiles y colaborativos</li>
-      <li><strong>Innovación en People Analytics:</strong> Implementación temprana de métricas y seguimiento del impacto de iniciativas de desarrollo de personas</li>
-    </ul>
-
-    <p><strong>GESTOR DE COMUNIDAD DE DIRECTIVOS DE RRHH | Foment del Treball | Enero 2001 - Abril 2001</strong><br>
-    Coordinación del foro de directivos de RRHH de la principal organización empresarial de Cataluña</p>
-    <ul>
-      <li><strong>Conector de Capital Social:</strong> Facilitación de intercambios, buenas prácticas y colaboraciones entre líderes de personas</li>
-      <li><strong>Observatorio de Tendencias:</strong> Identificación temprana de retos y oportunidades en la gestión de personas en el contexto catalán</li>
-    </ul>
-
-    <p><strong>GERENTE DE RRHH | Myrurgia (Multinacional de perfumería y cosmética) | Julio 1997 - Diciembre 1999</strong><br>
-    Gestión integral de personas en entorno industrial y comercial</p>
-    <ul>
-      <li><strong>Sistemas de Desarrollo Tempranos:</strong> Implementación de programas de formación y evaluación que conectaban el desempeño con el crecimiento profesional</li>
-      <li><strong>Puente Cultural:</strong> Facilitación de la integración de culturas organizacionales tras procesos de fusión y expansión internacional</li>
-    </ul>
-
-    <h2>Proyectos de Alto Impacto</h2>
-    <p><strong><a href="https://teamtowers.eu" target="_blank">TeamTowers</a></strong><br>
-    Laboratorio vivo para la investigación y aplicación de dinámicas de colaboración extrema. Más que una consultoría, un espacio donde la metáfora física de construir torres humanas se traduce en principios aplicables a equipos empresariales, educativos y sociales.</p>
-
-    <p><strong><a href="https://valuenetworklab.netlify.app" target="_blank">Value Network Lab</a></strong><br>
-    Plataforma digital para explorar conceptos de redes de valor, capital intangible y gestión del conocimiento. Espacio de documentación, reflexión y conexión entre teoría y práctica inspirado en el trabajo de Verna Allee y otros pensadores de redes.</p>
-
-    <h2>Base de Conocimiento y Desarrollo</h2>
-    <h3>Formación Académica</h3>
-    <ul>
-      <li>Psicología Social | Universidad de Barcelona | 1996</li>
-      <li>Team Coaching | Universidad de Mondragón | 2018</li>
-      <li>Gestión de la Formación en las Organizaciones (Posgrado) | Universidad de Barcelona | 1999</li>
-      <li>Cooperación Internacional e Internet (Posgrado) | Universidad de Barcelona | 1996</li>
-      <li>Bioenergética | Instituto Erica Froom, Barcelona | 1995</li>
-    </ul>
-
-    <h3>Publicaciones y Conferencias</h3>
-    <ul>
-      <li>Blog de LinkedIn: Artículos sobre gestión del conocimiento, liderazgo colaborativo y dinámicas de equipo <a href="https://linkedin.com/in/alvarosolache" target="_blank">[enlace]</a></li>
-      <li>Conferencias y Talleres: Más de 100 intervenciones públicas sobre construcción de equipos, innovación colaborativa y organizaciones en red</li>
-      <li>Documentación de Procesos: Sistematización de metodologías y aprendizajes en TeamTowers y Value Network Lab</li>
-    </ul>
-
-    <h2>Competencias Nucleares</h2>
-    <h3>Gestión del Conocimiento y Capital Intangible</h3>
-    <ul>
-      <li>Mapeo de redes de valor y flujos de conocimiento</li>
-      <li>Diseño de sistemas para captura y transferencia de conocimiento tácito</li>
-      <li>Métricas para valor intangible y capital relacional</li>
-      <li>Comunidades de práctica y gestión de redes profesionales</li>
-    </ul>
-
-    <h3>Dinámica de Equipos y Colaboración</h3>
-    <ul>
-      <li>Facilitación de equipos de alto rendimiento</li>
-      <li>Diseño de experiencias de team building transformadoras</li>
-      <li>Resolución de conflictos y construcción de confianza</li>
-      <li>Metodologías ágiles y colaborativas</li>
-    </ul>
-
-    <h3>Desarrollo Organizacional y Liderazgo</h3>
-    <ul>
-      <li>Transformación cultural hacia modelos colaborativos</li>
-      <li>Diseño de experiencias de aprendizaje organizacional</li>
-      <li>Coaching de equipos y líderes</li>
-      <li>Gestión del cambio y adaptación organizacional</li>
-    </ul>
-
-    <h3>Pensamiento Sistémico y Estratégico</h3>
-    <ul>
-      <li>Análisis de ecosistemas organizacionales</li>
-      <li>Conexión entre estrategia, cultura y estructura</li>
-      <li>Diseño de intervenciones sistémicas</li>
-      <li>Integración de perspectivas multidisciplinares</li>
-    </ul>
-
-    <h2>Idiomas</h2>
-    <ul>
-      <li>Español: Nativo</li>
-      <li>Catalán: Nativo</li>
-      <li>Inglés: Avanzado (C1)</li>
-      <li>Francés: Intermedio (B1)</li>
-    </ul>
-
-    <div class="quote">
-      “Lo más poderoso que podemos hacer para cambiar una organización es hacer visible cómo realmente funciona – no en los organigramas, sino en los flujos de valor, conocimiento y relaciones humanas.”
-      <br><br>
-      Inspirado en el trabajo de Verna Allee y adaptado a mi trayectoria y contexto.
-    </div>
-  </div>
 </body>
 </html>
