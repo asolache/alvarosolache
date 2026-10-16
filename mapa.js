@@ -288,6 +288,10 @@
   var h = location.hash.match(/^#mapa\/([\w-]+)/);
   select(h && byId[h[1]] ? h[1] : "teamtowers", false);
   if (h && byId[h[1]]) document.getElementById("mapa").scrollIntoView();
+  window.addEventListener("hashchange", function(){
+    var m = location.hash.match(/^#mapa\/([\w-]+)/);
+    if (m && byId[m[1]]){ select(m[1], false); document.getElementById("mv-panel").scrollIntoView({block:"start"}); }
+  });
 
   /* ---------- Avatar: preguntas y respuestas ---------- */
   var log = document.getElementById("av-log"), form = document.getElementById("av-form"), inp = document.getElementById("av-q");
