@@ -27,7 +27,7 @@
   "@type": "Person",
   "name": "Álvaro Solache",
   "jobTitle": "Psicólogo social y consultor estratégico sistémico",
-  "description": "Psicólogo social y consultor estratégico sistémico. Value Network Analysis, desarrollo de equipos y comunidades, web 3.0 y el SOS. Fundador y CEO de TeamTowers.",
+  "description": "Psicólogo social y consultor estratégico sistémico. Value Network Analysis, desarrollo de equipos y comunidades, web 3.0 y el SOS. Cofundador, con Fèlix Miret, y CEO de TeamTowers.",
   "url": "https://alvarosolache.netlify.app/",
   "image": "https://alvarosolache.netlify.app/images/profile.jpg",
   "email": "mailto:asolache@mac.com",
@@ -42,6 +42,7 @@
     {"@type": "Organization", "name": "TeamTowers Humà", "url": "https://teamtowershuma.com"}
   ],
   "address": {"@type": "PostalAddress", "addressLocality": "Torrelles de Foix", "addressRegion": "Barcelona", "postalCode": "08737", "addressCountry": "ES"},
+  "birthPlace": {"@type": "Place", "name": "Barcelona"},
   "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universitat de Barcelona"},
   "knowsAbout": ["Value Network Analysis", "Psicología social y comunitaria", "Desarrollo de equipos", "Comunidades de práctica", "Dirección de personas", "Web 3.0", "Contratos inteligentes", "Pensamiento sistémico", "Castells"],
   "knowsLanguage": ["es", "ca", "en", "fr"]
@@ -129,7 +130,7 @@ nav ul a:hover{color:var(--ink)}
 .tl h3{font-family:Inter,sans-serif;font-size:1.05rem;font-weight:600;margin:.1rem 0 .2rem}
 .tl p{color:var(--muted);font-size:.95rem;max-width:66ch}
 .tag{display:inline-block;font-size:.72rem;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink);margin-right:4px}
-.t-personas{--dot:var(--c-ama)} .t-sistemas{--dot:var(--c-sabe)} .t-comunidad{--dot:var(--c-mundo)} .t-digital{--dot:var(--c-paga)}
+.t-personas{--dot:var(--c-ama)} .t-sistemas{--dot:var(--c-sabe)} .t-comunidad{--dot:var(--c-mundo)} .t-digital{--dot:var(--c-paga)} .t-raices{--dot:var(--muted)}
 
 /* cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
@@ -179,7 +180,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
   <div class="facts">
     <div class="fact"><b>1997</b><span>Dirigiendo personas y equipos</span></div>
-    <div class="fact"><b>2005</b><span>Fundador y CEO de TeamTowers</span></div>
+    <div class="fact"><b>2005</b><span>Cofundador y CEO de TeamTowers</span></div>
     <div class="fact"><b>150+</b><span>Organizaciones acompañadas</span></div>
     <div class="fact"><b>60.000+</b><span>Participantes en Fent Pinya</span></div>
   </div>
@@ -221,23 +222,31 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     <p class="lead">Cada rama del árbol es un tema. Filtra por uno para seguirlo en el tiempo.</p>
     <div class="chips" role="group" aria-label="Filtrar por tema">
       <button class="chip" data-f="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-f="raices" aria-pressed="false">Raíces</button>
       <button class="chip" data-f="personas" aria-pressed="false">Personas y grupos</button>
       <button class="chip" data-f="sistemas" aria-pressed="false">Sistemas y valor</button>
       <button class="chip" data-f="comunidad" aria-pressed="false">Comunidad y territorio</button>
       <button class="chip" data-f="digital" aria-pressed="false">Digital y web 3.0</button>
     </div>
     <ol class="tl" id="timeline">
-      <li class="t-personas" data-t="personas"><span class="y">1971</span><h3>Empieza el recorrido</h3><p>La raíz del árbol. Esta parte la contaré yo, con mi voz.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">1971</span><h3>Nazco en Barcelona</h3><p>En diciembre. La raíz del árbol.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">1974</span><h3>Verano en Ibiza</h3><p>Uno de los primeros recuerdos del recorrido.</p></li>
+      <li class="t-raices t-comunidad" data-t="raices comunidad"><span class="y">c. 1978</span><h3>Una masía en Canet d'Adri</h3><p>Vivimos en una masía en Girona. Educación libre en El Trast, en Sarrià. Inviernos de montaña: setas, fresas y excursiones.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">1981</span><h3>Llegada al Penedès</h3><p>El territorio desde el que trabajo hoy.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">Años 80</span><h3>Veranos en el Montgrí</h3><p>Illes Medes y Torroella de Montgrí. Primeros trabajos en el puerto de L'Estartit y en un camping de Platja de Pals.</p></li>
+      <li class="t-raices t-personas" data-t="raices personas"><span class="y">1989</span><h3>Vuelta a Barcelona y Universitat de Barcelona</h3><p>Empiezo Psicología y vuelvo a vivir en Barcelona, con mi abuelo y mi hermana.</p></li>
       <li class="t-personas" data-t="personas"><span class="y">1995</span><h3>Bioenergética</h3><p>Instituto Erich Fromm, Barcelona. El cuerpo también es parte del grupo.</p></li>
-      <li class="t-personas t-digital" data-t="personas digital"><span class="y">1996</span><h3>Psicología Social, Universitat de Barcelona</h3><p>Y un posgrado en herramientas telemáticas para la cooperación. Grupos e internet desde el principio.</p></li>
-      <li class="t-personas" data-t="personas"><span class="y">1996 – 2005</span><h3>Dirección de personas</h3><p>Manpower (selección para la planta de HP), Euromanager, Myrurgia, InfoJobs, Foment del Treball (grupo de benchmarking del Fòrum de RRHH) y director estratégico de RRHH en GEC–UOC. En 1999, posgrado en gestión de la formación.</p></li>
-      <li class="t-personas t-sistemas" data-t="personas sistemas"><span class="y">2005</span><h3>TeamTowers y Fent Pinya</h3><p>Fundador y CEO. El taller lo creó mi socio Fèlix Miret en Vilafranca; juntos lo hemos llevado a más de 150 organizaciones, con equipos directivos de IKEA, Novartis, Vodafone y Telefónica.</p></li>
+      <li class="t-personas t-digital" data-t="personas digital"><span class="y">1996</span><h3>Licenciado en Psicología Social</h3><p>Universitat de Barcelona. Y un posgrado en herramientas telemáticas para la cooperación. Grupos e internet desde el principio.</p></li>
+      <li class="t-personas" data-t="personas"><span class="y">1996 – 2005</span><h3>Dirección de personas</h3><p>Manpower (selección y nóminas para la planta de HP), Euromanager, Myrurgia (dirección de formación, contratación, salud y seguridad), InfoJobs, Adbraintage, cofundador del Fòrum de RRHH de Foment del Treball y director estratégico de RRHH en GEC–UOC. En 1999, posgrado en gestión de la formación.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">1997</span><h3>Me caso</h3><p>Una rama que también sostiene el árbol.</p></li>
+      <li class="t-personas t-sistemas" data-t="personas sistemas"><span class="y">2005</span><h3>TeamTowers y Fent Pinya</h3><p>La fundamos Fèlix Miret y yo, y soy su CEO. Fent Pinya nace en Vilafranca; juntos lo hemos llevado a más de 150 organizaciones, con equipos directivos de IKEA, Novartis, Vodafone y Telefónica.</p></li>
       <li class="t-comunidad" data-t="comunidad"><span class="y">2009</span><h3>Primer banco de tiempo de León</h3><p>Intercambiar conocimiento por tiempo, en una ciudad entera.</p></li>
       <li class="t-comunidad t-digital" data-t="comunidad digital"><span class="y">2010 – 2015</span><h3>comunitats.org</h3><p>Cofundador y product owner de una red de intercambio de conocimiento por tiempo, con la UOC, La Salle, la Universidad de León y la Agencia de Desarrollo Económico de Castilla y León.</p></li>
       <li class="t-personas" data-t="personas"><span class="y">2016 – 2018</span><h3>Mondragon Team Academy</h3><p>Team coach y profesor en el primer grado oficial de Team Entrepreneurship. Posgrado en Team Coaching.</p></li>
       <li class="t-sistemas" data-t="sistemas"><span class="y">2019 →</span><h3>Pantheon Work</h3><p>Director de proyectos de consultoría. Cocreé la metodología de mapa de valor: venta, planificación, producción y formación.</p></li>
       <li class="t-comunidad t-digital" data-t="comunidad digital"><span class="y">2019 – 2020</span><h3>Bibliotecas de las Cosas</h3><p>Project manager del software (Rescoio). La misma dinámica que hoy es una herramienta del SOS.</p></li>
-      <li class="t-digital t-sistemas" data-t="digital sistemas"><span class="y">2021 – 2024</span><h3>Web 3.0 y pensamiento sistémico</h3><p>Profesor en SAE Institute (2021–2023) y de innovación digital en Complot (2023–2024).</p></li>
+      <li class="t-digital t-sistemas" data-t="digital sistemas"><span class="y">2021 – 2024</span><h3>Web 3.0 y pensamiento sistémico</h3><p>Cofundador y smart contracts officer de Cryptomarketing (2021–2022). Profesor de web 3.0 y pensamiento sistémico en SAE Institute (2021–2023), con charla en Primavera Sound, y de innovación digital y blockchain en Complot (2023–2024). Mentor de doctorados de proyectos blockchain en la UAB.</p></li>
+      <li class="t-personas" data-t="personas"><span class="y">Docencia</span><h3>En las aulas</h3><p>Team coach en el máster de psicología de grupos de la UB, en el MBA de IESE y en másteres de La Salle. Profesor en el máster de dirección de RRHH de EADA.</p></li>
       <li class="t-comunidad" data-t="comunidad"><span class="y">Hoy</span><h3>TeamTowers Humà y Comando Molekulon</h3><p>El método llevado al territorio, y un relato para los 27 pueblos del Alt Penedès y los 6 del Garraf.</p></li>
       <li class="t-digital t-sistemas" data-t="digital sistemas"><span class="y">Hoy</span><h3>El SOS</h3><p>El sistema libre que mantiene vivo el mapa de valor: roles, entregas, avisos y una IA por rol, sin atarte a nadie.</p></li>
     </ol>
