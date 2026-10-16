@@ -55,18 +55,43 @@
 
 <style>
 :root{
-  --bg:#f7f4ee; --surface:#ffffff; --ink:#1d1b18; --muted:#6b655c; --line:#e3ddd2;
-  --accent:#b4471f; --accent-soft:#f3e2d8;
-  --c-ama:#c2410c; --c-sabe:#1d4ed8; --c-mundo:#15803d; --c-paga:#a16207;
+  --bg:#fbf6ec; --surface:#fffdf8; --ink:#1f1424; --muted:#6e6070; --line:#eadfcd;
+  --accent:#b4530a; --accent-soft:#fbe6c8; --maroon:#7a1f3d; --night:#1b1230;
+  --c-ama:#be185d; --c-sabe:#4338ca; --c-mundo:#15803d; --c-paga:#c2700a;
   --radius:14px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#15130f; --surface:#1f1c17; --ink:#f1ece3; --muted:#a8a092; --line:#36312a;
-    --accent:#f08a5d; --accent-soft:#3a251b;
-    --c-ama:#fb923c; --c-sabe:#60a5fa; --c-mundo:#4ade80; --c-paga:#facc15;
+    --bg:#120c1d; --surface:#1d1530; --ink:#f5ecdf; --muted:#b3a5bd; --line:#352a4a;
+    --accent:#f5a524; --accent-soft:#3a2617; --maroon:#f0708f; --night:#0b0714;
+    --c-ama:#f472b6; --c-sabe:#a5b4fc; --c-mundo:#4ade80; --c-paga:#fbbf24;
   }
 }
+:root[data-theme="dark"]{
+    --bg:#120c1d; --surface:#1d1530; --ink:#f5ecdf; --muted:#b3a5bd; --line:#352a4a;
+    --accent:#f5a524; --accent-soft:#3a2617; --maroon:#f0708f; --night:#0b0714;
+    --c-ama:#f472b6; --c-sabe:#a5b4fc; --c-mundo:#4ade80; --c-paga:#fbbf24;
+}
+/* escenario: hero y arte, siempre de noche */
+.stage{background:radial-gradient(120% 90% at 85% 0%,#c2410c 0%,#7a1f3d 38%,#1b1230 75%);color:#f8eedd}
+.stage .kicker{color:#fcd34d}
+.stage .intro,.stage .role{color:#f1e3cf}
+.stage .btn.primary{background:#f5a524;border-color:#f5a524;color:#1b1230}
+.stage .btn.ghost{color:#fcd34d;border-color:#fcd34d}
+.stage .fact{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
+.stage .fact span,.stage .source{color:#e7d5c0}
+.alter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.6rem}
+.alter span{font:600 .8rem Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid rgba(252,211,77,.5);color:#fcd34d}
+.artgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.artcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
+.artcard h3{font-size:1.35rem;margin-bottom:.3rem;color:#fff}
+.artcard .who{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#fcd34d;margin-bottom:.6rem}
+.artcard p{color:#eadbc8;font-size:.95rem}
+.artcard a{color:#fcd34d;font-weight:600;text-decoration:none;display:inline-block;margin-top:12px}
+.lineage{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line)}
+.lineage div{padding:20px 20px 20px 0;border-bottom:1px solid var(--line)}
+.lineage b{font-family:Fraunces,serif;font-size:1.15rem;display:block;margin-bottom:4px;color:var(--maroon)}
+.lineage span{color:var(--muted);font-size:.95rem}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
@@ -160,19 +185,22 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <a class="brand" href="#inicio">Álvaro Solache</a>
     <ul>
+      <li><a href="#linaje">Linaje</a></li>
       <li><a href="#ikigai">Ikigai</a></li>
       <li><a href="#recorrido">Recorrido</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#trabajar">Trabajar juntos</a></li>
+      <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero wrap" id="inicio">
+<div class="stage"><header class="hero wrap" id="inicio">
   <p class="kicker">Psicólogo social · Consultor estratégico sistémico · Penedès</p>
   <h1>Álvaro Solache</h1>
+  <div class="alter" aria-label="Otros nombres"><span>Mazinguer</span><span>Psykatxu</span><span>House of Winds</span><span>Chicobillies</span></div>
   <p class="thesis">Un castell no lo aguanta quien sube. Lo aguanta la pinya. Una organización tampoco.</p>
   <p class="intro">Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: <strong>¿quién sostiene qué?</strong> La respondo con el mapa de valor (el método VNA de Verna Allee), con la experiencia castellera de TeamTowers y con herramientas libres, como el SOS, para que lo aprendido no se vaya cuando se va el consultor.</p>
   <div class="btns">
@@ -186,7 +214,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     <div class="fact"><b>60.000+</b><span>Participantes en Fent Pinya</span></div>
   </div>
   <p class="source">Las dos últimas cifras salen del catálogo comercial de TeamTowers 2026.</p>
-</header>
+</header></div>
+
+<section id="linaje">
+  <div class="wrap">
+    <p class="kicker">De dónde vengo</p>
+    <h2>Linaje</h2>
+    <p class="lead">Oficio, viña, montaña y agua. Valores de una familia con raíces en Barcelona y en Villarramiel (Palencia), la tierra de mi padre.</p>
+    <div class="lineage">
+      <div><b>Pedro Rodríguez</b><span>Mi bisabuelo, modisto de alta costura. Conviví con él a diario hasta los 13 años: el oficio, el detalle y la exigencia.</span></div>
+      <div><b>Codorníu</b><span>Bisnieto del hereu de Codorníu. El modernismo, las bodegas y los túneles bajo la viña.</span></div>
+      <div><b>Montaña y agua</b><span>Abuelos deportistas de montaña y nadadores. Un abuelo atleta de gimnasia en los años 50 y 60.</span></div>
+      <div><b>La Floresta</b><span>Con mis hijos, hasta hoy.</span></div>
+    </div>
+  </div>
+</section>
 
 <section id="ikigai">
   <div class="wrap">
@@ -294,6 +336,20 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </section>
 
+<div class="stage"><section id="arte" style="border-top:0">
+  <div class="wrap">
+    <p class="kicker">El otro lado</p>
+    <h2>Música y personajes</h2>
+    <p class="lead" style="color:#eadbc8">Músico, DJ y performer. La misma pregunta, ¿quién sostiene qué?, contada en clave de banda y de cómic.</p>
+    <div class="artgrid">
+      <article class="artcard"><p class="who">Comando Molekulon</p><h3>Mazinguer</h3><p>Líder estratega y DJ. Baja a la Tierra con Horacio Motomachi a buscar 150.000 superhéroes reales, montando una banda que recorre los pueblos.</p><a href="https://molekulon.org/personatges.html">Ver el Comando →</a></article>
+      <article class="artcard"><p class="who">DJ</p><h3>Psykatxu</h3><p>Sesiones y temas propios.</p><a href="https://soundcloud.com/psykatxu">Escuchar en SoundCloud →</a></article>
+      <article class="artcard"><p class="who">Proyecto musical</p><h3>House of Winds</h3><p>Pronto, contado con mi voz.</p></article>
+      <article class="artcard"><p class="who">Banda</p><h3>Chicobillies</h3><p>Pronto, contado con mi voz.</p></article>
+    </div>
+  </div>
+</section></div>
+
 <section id="prensa">
   <div class="wrap">
     <p class="kicker">Lo que se ha dicho fuera</p>
@@ -340,7 +396,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <script>
 (function(){
   var IK = {
-    ama:   {t:"Lo que amo", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya","La música, la performance y la filosofía oriental","Aprender haciendo, y programar"]},
+    ama:   {t:"Lo que amo", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya","La música, el DJ y la performance: Mazinguer, Psykatxu","La filosofía oriental y el dharma","El oficio bien hecho, como mi bisabuelo modisto","Aprender haciendo, y programar"]},
     sabe:  {t:"Lo que sé hacer", c:"--c-sabe", l:["Psicología social y comunitaria","Mapas de valor (VNA de Verna Allee)","Dirección de personas y formación","Facilitar en la sala: Fent Pinya, team coaching","Web 3.0, contratos inteligentes y webs abiertas"]},
     mundo: {t:"Lo que el mundo necesita", c:"--c-mundo", l:["Ver quién sostiene lo que no sale en el organigrama","Que el conocimiento no se vaya con quien se va","Comunidades y pueblos que se aguanten solos","Herramientas libres, sin atarse a nadie"]},
     paga:  {t:"Por lo que me pagan", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
