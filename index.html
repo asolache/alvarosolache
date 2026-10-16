@@ -51,7 +51,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -89,6 +89,24 @@
 .artcard p{color:#dfe9e0;font-size:.95rem}
 .artcard a{color:#fde047;font-weight:600;text-decoration:none;display:inline-block;margin-top:12px}
 .lineage{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line)}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.hub div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.hub h3{font-size:1rem;margin-bottom:.6rem;color:var(--maroon)}
+.hub ul{list-style:none}
+.hub li{padding:5px 0;border-bottom:1px dashed var(--line);font-size:.93rem}
+.hub li:last-child{border:0}
+.hub a{text-decoration:none;font-weight:500}
+.hub a:hover{text-decoration:underline}
+.press{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 28px}
+.press li{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.press .m{font:500 .78rem "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--maroon);padding-top:3px}
+.press a{color:var(--ink);text-decoration:none;font-weight:600;font-family:"Space Grotesk",sans-serif}
+.press a:hover{color:var(--accent)}
+.press small{display:block;color:var(--muted);font-size:.85rem}
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
+.award{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:linear-gradient(135deg,var(--accent-soft),transparent)}
+.award b{font-family:"Space Grotesk",sans-serif;font-size:1.1rem;display:block}
+.award span{color:var(--muted);font-size:.9rem}
 .lineage div{padding:20px 20px 20px 0;border-bottom:1px solid var(--line)}
 .lineage b{font-family:Fraunces,serif;font-size:1.15rem;display:block;margin-bottom:4px;color:var(--maroon)}
 .lineage span{color:var(--muted);font-size:.95rem}
@@ -97,7 +115,11 @@ html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15}
+h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.02em}
+h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.hero h1{font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 0%,#fef9c3 45%,#bbf7d0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker,.tl .y,.artcard .who,.alter span,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
+.thesis,.lineage b{font-style:italic}
 h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:.6rem}
 .lead{color:var(--muted);max-width:62ch;margin-bottom:1.8rem}
 section{padding:72px 0;border-top:1px solid var(--line)}
@@ -106,7 +128,7 @@ section{padding:72px 0;border-top:1px solid var(--line)}
 /* nav */
 nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
-nav .brand{font-family:Fraunces,serif;font-weight:600;text-decoration:none;color:var(--ink)}
+nav .brand{font-family:Unbounded,sans-serif;font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink)}
 nav ul{display:flex;gap:20px;list-style:none;font-size:.92rem}
 nav ul a{color:var(--muted);text-decoration:none}
 nav ul a:hover{color:var(--ink)}
@@ -124,7 +146,7 @@ nav ul a:hover{color:var(--ink)}
 .btn.ghost{color:var(--accent);background:transparent}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:48px}
 .fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-.fact b{display:block;font-family:Fraunces,serif;font-size:1.8rem}
+.fact b{display:block;font-family:Unbounded,sans-serif;font-weight:600;font-size:1.6rem;letter-spacing:-.02em}
 .fact span{color:var(--muted);font-size:.9rem}
 .source{font-size:.8rem;color:var(--muted);margin-top:10px}
 
@@ -135,7 +157,7 @@ nav ul a:hover{color:var(--ink)}
 .ikigai circle{fill-opacity:.14;stroke-width:2;cursor:pointer;transition:fill-opacity .2s}
 .ikigai circle:hover,.ikigai circle.on{fill-opacity:.3}
 .ikigai text{font-family:Inter,sans-serif;font-size:13px;fill:var(--ink);pointer-events:none}
-.ikigai text.big{font-family:Fraunces,serif;font-size:15px;font-weight:600}
+.ikigai text.big{font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:600}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:240px}
 .panel h3{font-size:1.3rem;margin-bottom:.5rem}
 .panel ul{padding-left:1.1rem}
@@ -152,7 +174,7 @@ nav ul a:hover{color:var(--ink)}
 .tl li::before{content:"";position:absolute;left:-6px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--dot,var(--accent))}
 .tl li[hidden]{display:none}
 .tl .y{font-weight:600;font-size:.9rem;color:var(--muted)}
-.tl h3{font-family:Inter,sans-serif;font-size:1.05rem;font-weight:600;margin:.1rem 0 .2rem}
+.tl h3{font-family:"Space Grotesk",sans-serif;font-size:1.05rem;font-weight:600;margin:.1rem 0 .2rem}
 .tl p{color:var(--muted);font-size:.95rem;max-width:66ch}
 .tag{display:inline-block;font-size:.72rem;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink);margin-right:4px}
 .t-personas{--dot:var(--c-ama)} .t-sistemas{--dot:var(--c-sabe)} .t-comunidad{--dot:var(--c-mundo)} .t-digital{--dot:var(--c-paga)} .t-raices{--dot:var(--muted)}
@@ -192,6 +214,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li><a href="#trabajar">Trabajar juntos</a></li>
       <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
+      <li><a href="#recursos">Recursos</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </div>
@@ -353,13 +376,74 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <section id="prensa">
   <div class="wrap">
     <p class="kicker">Lo que se ha dicho fuera</p>
-    <h2>En prensa</h2>
-    <div class="grid">
-      <article class="card"><h3>«Castells integradors»</h3><p>El Periódico, 2007. TeamTowers y los castells como herramienta de integración.</p><a class="more" href="https://www.elperiodico.com/es/sociedad/20070121/castells-integradores-5420703">Leer →</a></article>
-      <article class="card"><h3>Nace en León el primer banco del tiempo</h3><p>Diario de León, 2009. El banco de tiempo que puse en marcha en la ciudad.</p><a class="more" href="https://www.diariodeleon.es/nacional/90531/459453/nace-leon-primer-banco-intercambiar-gratis-servicios-cosas.html">Leer →</a></article>
-      <article class="card"><h3>León Alternativo</h3><p>2010. Charla sobre bancos de tiempo y Comunitats en la exposición virtual.</p><a class="more" href="https://leonalternativo.blogspot.com/2010/11/alvaro-solache.html">Leer →</a></article>
-      <article class="card"><h3>Entrevista en León en red</h3><p>2011. Comunitats.org, el emprendimiento y el futuro de León.</p><a class="more" href="https://www.leonenred.com/entrevistas/alvaro-solache-en-espana-hay-operadoras-que-roban-y-hacen-que-cueste-mas-tener-internet-y-telefono-que-un-piso/4">Leer →</a></article>
-      <article class="card"><h3>The Castells of Catalonia</h3><p>Shareable, 2014. Los castells, los roles del equipo y la música, explicados por TeamTowers.</p><a class="more" href="https://www.shareable.net/the-castells-of-catalonia-inside-the-incredible-art-of-human-towers/">Leer →</a></article>
+    <h2>Prensa y premios</h2>
+    <p class="lead">Televisión, prensa nacional e internacional, sobre TeamTowers, los bancos de tiempo y comunitats.org.</p>
+    <ul class="press">
+      <li><span class="m">Wall Street Journal</span><span><a href="https://www.wsj.com/lifestyle/workplace/the-corporate-team-building-exercise-where-you-have-to-climb-on-the-boss-2dc8a5b8">The Corporate Team-Building Exercise Where You Have to Climb on the Boss</a><small>TeamTowers y Fent Pinya</small></span></li>
+      <li><span class="m">TV3</span><span><a href="https://www.youtube.com/watch?v=sCCeygsjzZI&amp;list=PL74B5AF79C6C0EE55&amp;index=3">TeamTowers en TV3</a><small>Vídeo</small></span></li>
+      <li><span class="m">RTVE · La 2</span><span><a href="https://www.rtve.es/play/videos/para-todos-la-2/para-todos-2-coloquio-aprendizaje-colaborativo/3119095/">Para Todos La 2: coloquio sobre aprendizaje colaborativo</a><small>Vídeo</small></span></li>
+      <li><span class="m">La Vanguardia</span><span><a href="https://www.lavanguardia.com/internet/20130424/54371495571/el-tiempo-es-el-valor-mas-preciado-en-el-mercado-del-conocimiento.html">El tiempo es el valor más preciado en el mercado del conocimiento</a><small>2013 · comunitats.org</small></span></li>
+      <li><span class="m">El Periódico</span><span><a href="https://www.elperiodico.com/es/sociedad/20070121/castells-integradores-5420703">Castells integradores</a><small>2007 · TeamTowers</small></span></li>
+      <li><span class="m">20 minutos</span><span><a href="https://www.20minutos.es/noticia/997348/0/">TeamTowers en 20 minutos</a><small>TeamTowers</small></span></li>
+      <li><span class="m">Jerusalem Post</span><span><a href="https://www.jpost.com/local-israel/in-jerusalem/article-9341">In Jerusalem</a><small>Internacional</small></span></li>
+      <li><span class="m">Shareable</span><span><a href="https://www.shareable.net/the-castells-of-catalonia-inside-the-incredible-art-of-human-towers/">The Castells of Catalonia</a><small>2014 · TeamTowers</small></span></li>
+      <li><span class="m">Diario de León</span><span><a href="https://www.diariodeleon.es/nacional/90531/459453/nace-leon-primer-banco-intercambiar-gratis-servicios-cosas.html">Nace en León el primer banco del tiempo</a><small>2009 · banco de tiempo</small></span></li>
+      <li><span class="m">Diario de León</span><span><a href="https://www.diariodeleon.es/leon/120105/1167049/trepar-horas-trabajo.html">Trepar en horas de trabajo</a><small>2012 · TeamTowers</small></span></li>
+      <li><span class="m">León en red</span><span><a href="https://www.leonenred.com/entrevistas/alvaro-solache-en-espana-hay-operadoras-que-roban-y-hacen-que-cueste-mas-tener-internet-y-telefono-que-un-piso/4">Entrevista sobre comunitats.org y León</a><small>2011</small></span></li>
+      <li><span class="m">León Alternativo</span><span><a href="https://leonalternativo.blogspot.com/2010/11/alvaro-solache.html">Charla sobre bancos de tiempo</a><small>2010</small></span></li>
+    </ul>
+    <div class="awards">
+      <div class="award"><b>Premio Emprendedor XXI · La Caixa</b><span>comunitats.org</span></div>
+      <div class="award"><b>Grow in Barcelona</b><span>comunitats.org</span></div>
+      <div class="award"><b>Ronda de inversión</b><span>150.000 € con cuatro inversores · comunitats.org</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="wrap">
+    <p class="kicker">Todo en un sitio</p>
+    <h2>Recursos</h2>
+    <p class="lead">Mis webs, herramientas, música, perfiles y las casas donde he trabajado.</p>
+    <div class="hub">
+      <div><h3>Webs y proyectos</h3><ul>
+        <li><a href="https://www.teamtowers.eu">teamtowers.eu</a></li>
+        <li><a href="https://teamtowershuma.com">teamtowershuma.com</a></li>
+        <li><a href="https://molekulon.org">molekulon.org</a></li>
+        <li><a href="https://eventspenedes.com">eventspenedes.com</a></li>
+        <li><a href="https://comunitats.org">comunitats.org</a></li>
+        <li><a href="https://pantheon.work">pantheon.work</a></li>
+      </ul></div>
+      <div><h3>Herramientas</h3><ul>
+        <li><a href="https://teamtowershuma.com/SOS/">El SOS</a></li>
+        <li><a href="https://valuenetworklab.netlify.app">Value Network Lab</a></li>
+        <li><a href="https://timefounderlanding.netlify.app">Timefounder</a></li>
+        <li><a href="valor.html">Value Network Analysis</a></li>
+        <li><a href="coops.html">Comunidades de práctica</a></li>
+        <li><a href="equipos.html">RRHH y equipos</a></li>
+        <li><a href="events.html">Producción de eventos</a></li>
+      </ul></div>
+      <div><h3>Música</h3><ul>
+        <li><a href="https://soundcloud.com/psykatxu">Psykatxu en SoundCloud</a></li>
+        <li><a href="https://soundcloud.com/chicobillies">Chicobillies en SoundCloud</a></li>
+        <li><a href="https://youtube.com/@comandomolekulon">Comando Molekulon en YouTube</a></li>
+        <li><a href="https://molekulon.org/musica.html">La música del Comando</a></li>
+      </ul></div>
+      <div><h3>Dónde he trabajado</h3><ul>
+        <li><a href="https://www.infojobs.net">InfoJobs</a> · RRHH</li>
+        <li><a href="https://www.uoc.edu">UOC</a> · GEC–UOC, RRHH</li>
+        <li><a href="https://www.foment.com">Foment del Treball</a> · Fòrum de RRHH</li>
+        <li><a href="https://www.mondragon.edu">Mondragon Team Academy</a></li>
+        <li><a href="https://www.sae.edu">SAE Institute</a></li>
+      </ul></div>
+      <div><h3>Perfiles</h3><ul>
+        <li><a href="https://www.linkedin.com/in/alvarosolache">LinkedIn</a></li>
+        <li><a href="https://github.com/asolache">GitHub</a></li>
+        <li><a href="https://clarity.fm/asolache">Clarity.fm</a></li>
+        <li><a href="https://wiki.p2pfoundation.net/User:Asolache">P2P Foundation</a></li>
+        <li><a href="https://teamtowershuma.com/qui-som">Qui som · TeamTowers Humà</a></li>
+        <li><a href="cv.html">CV completo</a></li>
+      </ul></div>
     </div>
   </div>
 </section>
