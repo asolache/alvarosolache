@@ -142,7 +142,7 @@ nav ul a:hover{color:var(--ink)}
 .hero p.intro{max-width:60ch;margin-bottom:2rem}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
-.btn.primary{background:var(--accent);color:#fff}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
 .btn.ghost{color:var(--accent);background:transparent}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:48px}
 .fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
@@ -197,6 +197,76 @@ nav ul a:hover{color:var(--ink)}
 .soon ol{padding-left:1.2rem;margin-top:10px}
 .soon li{margin:.35rem 0}
 
+/* mapa vivo */
+:root{--m-raices:#64748b;--m-personas:#b45309;--m-sistemas:#1d4ed8;--m-comunidad:#15803d;--m-digital:#0e7490;--m-arte:#65a30d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m-raices:#94a3b8;--m-personas:#facc15;--m-sistemas:#60a5fa;--m-comunidad:#4ade80;--m-digital:#22d3ee;--m-arte:#a3e635}}
+:root[data-theme="dark"]{--m-raices:#94a3b8;--m-personas:#facc15;--m-sistemas:#60a5fa;--m-comunidad:#4ade80;--m-digital:#22d3ee;--m-arte:#a3e635}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mv-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.mv-tab{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.mv-tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mv-graph{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch}
+#mv-svg{display:block;width:100%;height:auto}
+#mv-svg text{font-family:Inter,sans-serif}
+.mv-l{font-size:12px;fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.mv-n{cursor:pointer;transition:opacity .25s}
+.mv-n circle,.mv-n rect{stroke-width:2;fill-opacity:.9}
+.mv-n.saber rect{fill-opacity:.25}
+.mv-n:hover .mv-l,.mv-n:focus .mv-l,.mv-n.sel .mv-l{font-weight:600}
+.mv-n.sel circle,.mv-n.sel rect{stroke:var(--ink) !important;stroke-width:3}
+.mv-n:focus{outline:none}.mv-n:focus-visible circle,.mv-n:focus-visible rect{stroke:var(--accent) !important;stroke-width:4}
+.mv-n.dim{opacity:.32}
+.mv-e{stroke:var(--muted);stroke-opacity:.22;stroke-width:1}
+#mv-svg.tree .mv-e{stroke-opacity:0}
+.mv-e.on,#mv-svg.tree .mv-e.on{stroke:var(--accent);stroke-opacity:.8;stroke-width:1.6}
+.mv-e.dim-e{stroke-opacity:.05}
+.mv-branch{fill:none;stroke-width:6;stroke-linecap:round;opacity:.45}
+.mv-root{fill:none;stroke:var(--m-raices);stroke-width:2.5;opacity:.35;stroke-linecap:round}
+.mv-grid{stroke:var(--line);stroke-dasharray:3 5}
+.mv-band{fill:transparent}.mv-band.alt{fill:var(--bg);opacity:.6}
+.mv-box{fill:var(--bg);stroke:var(--line)}
+.mv-lane{font:600 13px "Space Grotesk",sans-serif !important;letter-spacing:.02em}
+.mv-cap{font:500 11px "JetBrains Mono",monospace !important;fill:var(--muted);letter-spacing:.06em}
+.mv-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--muted);margin:10px 0 22px}
+.mv-legend i{display:inline-block;width:10px;height:10px;margin-right:4px;background:var(--muted);vertical-align:-1px}
+.mv-legend .dot{border-radius:50%}.mv-legend .dia{transform:rotate(45deg);opacity:.5}
+.mv-swipe{display:none}@media(max-width:820px){.mv-swipe{display:inline}}
+.mv-panel{margin-bottom:40px}
+.mv-head p{max-width:66ch;color:var(--muted)}
+.mv-head h3{margin-bottom:.4rem}
+.mv-voz{font-size:.88rem;margin-top:10px;padding:8px 12px;border:1px dashed var(--line);border-radius:10px;display:inline-block}
+.mm{position:relative;display:grid;grid-template-columns:1fr minmax(120px,.7fr) 1fr;grid-template-rows:auto auto auto;gap:18px 40px;margin-top:26px;align-items:start}
+.mm-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.mm-lines path{fill:none;stroke-width:2;opacity:.55}
+.mm-c{grid-column:2;grid-row:2;align-self:center;text-align:center;font:600 1.05rem "Space Grotesk",sans-serif;padding:16px 12px;border:3px solid;border-radius:999px;background:var(--surface);position:relative}
+.mm-b{position:relative;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--bc);border-radius:10px;padding:10px 14px}
+.mm-b b{font:500 .75rem "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--bc)}
+.mm-b ul{list-style:none;padding:0;margin-top:4px}
+.mm-b li{font-size:.9rem;margin:.15rem 0}
+.mm-0{grid-column:1;grid-row:1}.mm-1{grid-column:3;grid-row:1}.mm-2{grid-column:1;grid-row:2}.mm-3{grid-column:3;grid-row:2}.mm-4{grid-column:1;grid-row:3}.mm-5{grid-column:3;grid-row:3}
+@media(max-width:720px){.mm{grid-template-columns:1fr;gap:10px}.mm-c,.mm-b{grid-column:1 !important;grid-row:auto !important}.mm-c{order:-1}.mm-lines{display:none}}
+.mv-pend{color:var(--muted);font-style:italic}
+.mv-go{font:500 .85rem Inter,sans-serif;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;cursor:pointer}
+.mv-go:hover{border-color:var(--accent)}
+.av{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:32px}
+.av-top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.av-top h3{font-size:1.3rem}
+.av-face{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 70% 20%,#facc15,#15803d 55%,#1e3a8a);color:#fff;font:600 .75rem Unbounded,sans-serif}
+.av-face.big{width:64px;height:64px;font-size:1.1rem}
+.av .chips{margin-bottom:16px}
+.av-turn{margin:12px 0}
+.av-me{margin-left:auto;max-width:80%;width:fit-content;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:16px 16px 4px 16px;font-size:.95rem}
+.av-it{display:flex;gap:10px;margin-top:8px}
+.av-it>div{background:var(--bg);border:1px solid var(--line);padding:10px 14px;border-radius:16px 16px 16px 4px;max-width:85%}
+.av-it p{font-size:.95rem}
+.av-see{margin-top:6px;font-size:.85rem;color:var(--muted)}
+.av-say{margin-top:6px;font:500 .82rem Inter,sans-serif;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:3px 12px;cursor:pointer}
+.av-it small{color:var(--muted);font-size:.78rem}
+.av-form{display:flex;gap:8px;margin-top:14px}
+.av-form input{flex:1;min-width:0;font:inherit;padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.av-form .btn{cursor:pointer}
+.soon b{font-family:"Space Grotesk",sans-serif}
+
 footer{padding:48px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 </style>
@@ -215,6 +285,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
       <li><a href="#recursos">Recursos</a></li>
+      <li><a href="#mapa">Mapa vivo</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </div>
@@ -228,7 +299,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <p class="intro">Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: <strong>¿quién sostiene qué?</strong> La respondo con el mapa de valor (el método VNA de Verna Allee), con la experiencia castellera de TeamTowers y con herramientas libres, como el SOS, para que lo aprendido no se vaya cuando se va el consultor.</p>
   <div class="btns">
     <a class="btn primary" href="mailto:asolache@mac.com">Escríbeme</a>
-    <a class="btn ghost" href="#ikigai">Recorre el mapa</a>
+    <a class="btn ghost" href="#mapa">Recorre el mapa</a>
   </div>
   <div class="facts">
     <div class="fact"><b>1997</b><span>Dirigiendo personas y equipos</span></div>
@@ -450,17 +521,49 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </section>
 
-<section id="pronto">
+<section id="mapa">
   <div class="wrap">
+    <p class="kicker">Lo que viene · versión 0.1</p>
+    <h2>El mapa vivo</h2>
+    <p class="lead">Esta página va a ser un mapa que se recorre. Estoy grabando mi historia en audios. Mientras llegan, esta primera versión ya funciona con lo que hay en la página: toca un nodo, cambia de vista y sigue las conexiones.</p>
+    <div class="mv-tabs" role="tablist" aria-label="Vista del mapa">
+      <button class="mv-tab" role="tab" data-v="arbol" aria-selected="true">Árbol</button>
+      <button class="mv-tab" role="tab" data-v="tiempo" aria-selected="false">Tiempo</button>
+      <button class="mv-tab" role="tab" data-v="tema" aria-selected="false">Tema</button>
+      <button class="mv-tab" role="tab" data-v="contexto" aria-selected="false">Contexto</button>
+    </div>
+    <div class="mv-graph">
+      <svg id="mv-svg" role="group" aria-label="Grafo de hitos y saberes de Álvaro Solache desde 1971">
+        <g id="mv-bg"></g><g id="mv-edges"></g><g id="mv-nodes"></g>
+      </svg>
+    </div>
+    <p class="mv-legend"><span><i class="dot"></i> Hito</span><span><i class="dia"></i> Saber</span><span>Las raíces van hacia abajo, las ramas hacia arriba.</span><span class="mv-swipe">Desliza el mapa a los lados.</span></p>
+    <div class="panel mv-panel" id="mv-panel" aria-live="polite"></div>
+
+    <div class="av" id="pregunta">
+      <div class="av-top">
+        <span class="av-face big" aria-hidden="true">ÁS</span>
+        <div>
+          <h3>Pregúntame</h3>
+          <p class="hint" style="margin-top:2px">Respondo con mis propias palabras, sacadas de esta página. Cuando lleguen los audios, responderé con mi voz.</p>
+        </div>
+      </div>
+      <div class="chips" id="av-sugg" role="group" aria-label="Preguntas sugeridas"></div>
+      <div id="av-log" aria-live="polite"></div>
+      <form id="av-form" class="av-form">
+        <label for="av-q" class="sr">Tu pregunta</label>
+        <input id="av-q" type="text" autocomplete="off" placeholder="Escribe tu pregunta">
+        <button class="btn primary" type="submit">Preguntar</button>
+      </form>
+    </div>
+
     <div class="soon">
-      <p class="kicker">En construcción</p>
-      <h2>Lo que viene</h2>
-      <p>Esta página va a ser un mapa que se recorre. Estoy grabando mi historia en audios para construir:</p>
+      <p class="kicker">Qué falta</p>
       <ol>
-        <li>El árbol de conocimientos completo desde 1971, con cada nodo enlazado a lo que existe.</li>
-        <li>El grafo de proyectos y red, con vista temporal, temática y por contexto.</li>
-        <li>Un mapa mental por nodo.</li>
-        <li>Un avatar con mi voz para responder preguntas, hecho con mis respuestas.</li>
+        <li><b>Árbol de conocimientos desde 1971.</b> Hecho con lo que ya hay. Con los audios: más nodos y «lo que aprendí» en cada uno.</li>
+        <li><b>Grafo de proyectos y red.</b> Vistas de tiempo, tema y contexto. Con los audios: la gente y los proyectos que faltan.</li>
+        <li><b>Mapa mental por nodo.</b> Cada nodo tiene el suyo y su propio enlace.</li>
+        <li><b>Avatar con mi voz.</b> Ya responde por escrito. Con los audios: mi voz en cada respuesta.</li>
       </ol>
     </div>
   </div>
@@ -479,6 +582,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </footer>
 
+<script src="mapa-datos.js"></script>
+<script src="mapa.js"></script>
 <script>
 (function(){
   var IK = {
@@ -514,7 +619,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   });
   show('centro');
 
-  var chips = document.querySelectorAll('.chip');
+  var chips = document.querySelectorAll('#recorrido .chip');
   var items = document.querySelectorAll('#timeline li');
   chips.forEach(function(ch){
     ch.addEventListener('click', function(){
