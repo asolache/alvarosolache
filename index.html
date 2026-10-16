@@ -127,12 +127,14 @@ section{padding:72px 0;border-top:1px solid var(--line)}
 
 /* nav */
 nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+nav>.wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
 nav .brand{font-family:Unbounded,sans-serif;font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink)}
-nav ul{display:flex;gap:20px;list-style:none;font-size:.92rem}
+nav ul{display:flex;gap:14px;list-style:none;font-size:.86rem;margin-left:auto;white-space:nowrap}
+nav .brand{white-space:nowrap}
 nav ul a{color:var(--muted);text-decoration:none}
 nav ul a:hover{color:var(--ink)}
-@media(max-width:720px){nav ul{display:none}}
+@media(max-width:1100px){nav ul{display:none}}
+@media(max-width:480px){.uni span{display:none}}
 
 /* hero */
 .hero{padding:88px 0 64px;border-top:0}
@@ -197,6 +199,19 @@ nav ul a:hover{color:var(--ink)}
 .soon ol{padding-left:1.2rem;margin-top:10px}
 .soon li{margin:.35rem 0}
 
+/* barra de flujos de valor */
+.uni{flex:none;font:600 .82rem "Space Grotesk",sans-serif;text-decoration:none;color:var(--on-accent);background:var(--accent);padding:7px 14px;border-radius:999px;white-space:nowrap}
+.flows{border-top:1px solid var(--line)}
+.flows .wrap{display:flex;align-items:center;gap:6px;height:auto;padding-top:7px;padding-bottom:7px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.flows .wrap::-webkit-scrollbar{display:none}
+.fl-k{font:500 .7rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.flows a{flex:none;font:600 .8rem "Space Grotesk",sans-serif;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--fc);border-radius:8px;padding:3px 9px;background:var(--surface)}
+.flows a i{font:italic 400 .82rem Fraunces,serif;color:var(--muted);margin-left:4px}
+@media(max-width:1180px){.fl-k{display:none}}
+.flows a:hover{border-color:var(--fc)}
+.flows b{flex:none;color:var(--muted);font-weight:400}
+@media(max-width:720px){.flows a i{display:none}}
+section[id],#mv-panel{scroll-margin-top:110px}
 /* mapa vivo */
 :root{--m-raices:#64748b;--m-personas:#b45309;--m-sistemas:#1d4ed8;--m-comunidad:#15803d;--m-digital:#0e7490;--m-arte:#65a30d}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m-raices:#94a3b8;--m-personas:#facc15;--m-sistemas:#60a5fa;--m-comunidad:#4ade80;--m-digital:#22d3ee;--m-arte:#a3e635}}
@@ -285,9 +300,19 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
       <li><a href="#recursos">Recursos</a></li>
-      <li><a href="#mapa">Mapa vivo</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
+    <a class="uni" href="#mapa">Universo<span> de conocimientos</span></a>
+  </div>
+  <div class="flows" aria-label="Flujos de valor">
+    <div class="wrap">
+      <span class="fl-k">Flujos de valor</span>
+      <a href="#mapa/castells" style="--fc:var(--m-personas)">Equipos <i>Fent Pinya</i></a><b aria-hidden="true">→</b>
+      <a href="#mapa/vna" style="--fc:var(--m-sistemas)">Organizaciones <i>VNA</i></a><b aria-hidden="true">→</b>
+      <a href="#mapa/huma" style="--fc:var(--m-comunidad)">Territorio <i>Humà</i></a><b aria-hidden="true">→</b>
+      <a href="#mapa/sos" style="--fc:var(--m-digital)">Conocimiento libre <i>SOS</i></a><b aria-hidden="true">→</b>
+      <a href="#mapa/molekulon" style="--fc:var(--m-arte)">Cultura <i>Molekulon</i></a>
+    </div>
   </div>
 </nav>
 
