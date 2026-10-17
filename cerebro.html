@@ -107,7 +107,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.2</span></div></nav>
+<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.3</span></div></nav>
 
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
@@ -155,6 +155,15 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </section>
 
+<section id="mias">
+  <div class="wrap">
+    <p class="kicker">Lo que aprende esta web</p>
+    <h2>Mis vedas</h2>
+    <p class="lead">Las que nacieron aquí, de lo que pedí para mi página: la más nueva arriba. Las que valen para todos suben a TeamTowers y vuelven heredadas.</p>
+    <div class="princ" id="mias-l"></div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <p class="kicker">Si aprendemos de los errores</p>
@@ -175,6 +184,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <div class="wrap">
     <p class="kicker">Qué falta</p>
     <ol>
+      <li><b>Que avise cuando se quede viejo.</b> Un paso del CI que lo regenera y falla si el codex cambió y esta página no. Está en mi <a href="index.html#sprint">sprint</a>.</li>
       <li><b>Pulir las capas.</b> Fijar a mano las que la propuesta coloca mal; lo fijado manda.</li>
       <li><b>Los otros cerebros.</b> Events Penedès, TeamTowers, Molekulon y cada cliente, cuando su codex tenga vedas propias. Lo que aprende uno sube a la matriz y vuelve a todos.</li>
       <li><b>Los saberes como dominios.</b> Mapa de valor, contabilidad de valor y tokenomics, DeFi P2P, conocimiento, personas, proyectos y kanban.</li>
@@ -238,6 +248,13 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
         return '<li>' + esc(p.es) + '<br>' + p.vedas.filter(function(v){ return byId[PUB.fuentes[0] + ":" + v]; }).map(function(v){
           var n = byId[PUB.fuentes[0] + ":" + v]; return '<button class="go" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</button>'; }).join("") + '</li>';
       }).join("") + '</ul></article>';
+    }).join("");
+
+    /* Mis vedas: las del hijo, no las de la matriz. */
+    document.getElementById("mias-l").innerHTML = PUB.nodos.filter(function(n){ return n.fuente !== PUB.fuentes[0]; }).reverse().map(function(n){
+      return '<article style="--c:' + col(n.capa) + '"><h3><a href="#" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</a></h3>' +
+        (n.aprende ? '<p>' + esc(n.aprende) + '</p>' : '') + '<p class="m">' + esc(capaDe[n.capa].n) +
+        n.saberes.map(function(s){ return ' · ' + esc(PUB.saberes[s]); }).join("") + (n.fecha ? ' · ' + n.fecha.split("-").reverse().join("/") : '') + '</p></article>';
     }).join("");
 
     /* Posiciones: x por orden, y por capa con un pequeño vaivén para que no se tapen. */

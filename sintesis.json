@@ -1112,6 +1112,33 @@
     "desarrollo"
    ],
    "aprende": "Lo que hace la IA se muestra leyéndolo del historial, y cada tarea va con el modelo más pequeño que la hace bien."
+  },
+  "Álvaro Solache:6": {
+   "saberes": [
+    "desarrollo",
+    "relato"
+   ],
+   "aprende": "La IA que trabaja en una web se dice en la web, con lo que cuesta."
+  },
+  "Álvaro Solache:7": {
+   "saberes": [
+    "desarrollo",
+    "relato"
+   ],
+   "aprende": "La paleta se hereda de la matriz; lo propio va encima, no en su lugar."
+  },
+  "Álvaro Solache:8": {
+   "saberes": [
+    "relato",
+    "personas"
+   ],
+   "aprende": "Un dato quitado se quita de todas las copias, y lo que no contó la persona no se deduce."
+  },
+  "Álvaro Solache:9": {
+   "saberes": [
+    "proyectos"
+   ],
+   "aprende": "Una tarea vive en una sola lista; lo demás la lee."
   }
  },
  "principios": {

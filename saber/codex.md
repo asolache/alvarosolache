@@ -67,9 +67,33 @@ contraste AA medido) la declara TeamTowers una vez en
 SOS/tools/build-pell.js, en el repositorio teamtowershuma. Aquí no se copia: la escribe
 `herramientas/pell.mjs` en `red.css` entre las marcas `TT-PELL`, y las páginas
 nuevas enlazan `red.css` en vez de declarar su propio `--bg`. Lo propio de esta
-web (el escenario de noche con los colores de su dharma, Unbounded y Fraunces)
-va encima, no en lugar de la piel. Es la veda 5 aplicada al diseño.
+web (los colores de su dharma, que desde el PR #16 son la trinidad `--brahma`,
+`--vishnu` y `--shiva` sobre el papel, y Unbounded y Fraunces) va encima, no en lugar de la piel. Es la veda 5 aplicada al diseño.
 
 **Guarda:** `node herramientas/pell.mjs --check` falla si `red.css` se queda
 vieja frente a la matriz. Sin la matriz al lado (el CI) avisa y no falla.
 
+## Veda 8 — Su vida la cuenta él: lo que pide quitar no vuelve
+
+**Dicho por Álvaro el 17/10/2026** al reescribir el linaje (PR #12). Un dato de
+su vida que él quita no se quita de una sección: se quita de todas las que lo
+repiten, que aquí son la portada, el mapa vivo (`mapa-datos.js`), las preguntas
+del avatar y el ikigai. El error que evita: borrarlo del texto y que vuelva por
+el mapa o por una respuesta del avatar. Lo que no ha contado él no se deduce, y
+lo que escribe Claude por él va al sprint como «revisar» hasta que lo lea.
+
+**Guarda:** al cerrar un cambio de su vida, buscar en todo el repositorio lo
+que se quitó. Una guarda automática queda en el backlog.
+
+## Veda 9 — Lo que está en movimiento vive en un solo sitio
+
+**Dicho por Álvaro el 17/10/2026** al pedir su sprint «con mis tareas
+pendientes» (PR #16). Las tareas de su vida y de esta web están en
+`sprint-datos.js` y nada más: la portada las pinta como tablero y el ikigai
+cuenta de ahí lo que está en marcha. El error que evita: una tarea cerrada en
+la conversación que sigue «por hacer» en la web, o la misma lista copiada en
+dos sitios que se separan. El desarrollo nace en `backlog.md` (veda 1); el
+sprint solo lo muestra.
+
+**Guarda:** el centro del ikigai lee el sprint; si la lista se queda vieja, se
+ve en la portada.
