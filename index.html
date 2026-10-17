@@ -355,7 +355,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <p class="kicker">El mapa</p>
     <h2>Mi ikigai</h2>
-    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Es la primera versión: se irá llenando con mi historia, contada con mi voz.</p>
+    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Es la primera versión: se irá llenando con mi historia, contada con mi voz, y crece sola con mi codex.</p>
     <div class="ikigai">
       <svg viewBox="0 0 400 400" role="img" aria-labelledby="ik-title">
         <title id="ik-title">Ikigai de Álvaro Solache: lo que amo, lo que sé hacer, lo que el mundo necesita y por lo que me pagan</title>
@@ -608,6 +608,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </footer>
 
+<script src="cerebro-datos.js"></script>
 <script src="mapa-datos.js"></script>
 <script src="mapa.js"></script>
 <script>
@@ -619,13 +620,29 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     paga:  {t:"Por lo que me pagan", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
     centro:{t:"El centro: quién sostiene qué", c:"--accent", l:["Hacer visible el valor tangible e intangible de un grupo, y dejar una herramienta para que no se pierda."]}
   };
+  /* El ikigai crece con el codex: lo que sé hacer cuenta las vedas de cada
+     saber y el centro dice cuántas llevo y cuál fue la última. Sale de
+     cerebro-datos.js, que se regenera cuando cambia el codex (veda 4). */
+  function delCodex(k){
+    var D = window.CEREBRO; if (!D || (k !== 'sabe' && k !== 'centro')) return '';
+    if (k === 'centro') {
+      var u = D.nodos[D.nodos.length - 1];
+      return '<p class="hint">Del codex: ' + D.nodos.length + ' vedas aprendidas. La última, «' + u.t + '». <a href="cerebro.html">Ver el cerebro</a>.</p>';
+    }
+    return '<p class="hint" style="margin-top:10px">Del codex, las vedas de cada saber:</p><ul>' +
+      Object.keys(D.saberes).map(function(s){
+        return [s, D.nodos.filter(function(n){ return n.saberes.indexOf(s) >= 0; }).length];
+      }).filter(function(x){ return x[1]; }).sort(function(a, b){ return b[1] - a[1]; }).map(function(x){
+        return '<li>' + D.saberes[x[0]] + ' · ' + x[1] + '</li>';
+      }).join('') + '</ul><p class="hint"><a href="cerebro.html#saberes">Verlas en el cerebro</a>.</p>';
+  }
   var panel = document.getElementById('ik-panel');
   var circles = document.querySelectorAll('.ikigai circle');
   function show(k){
     var d = IK[k];
     circles.forEach(function(c){ c.classList.toggle('on', c.dataset.k === k); });
     panel.innerHTML = '<h3 style="color:var(' + d.c + ')">' + d.t + '</h3><ul>' +
-      d.l.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+      d.l.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' + delCodex(k) +
       '<p class="hint">Toca otro círculo para cambiar.</p>';
   }
   var svg = document.querySelector('.ikigai svg');
