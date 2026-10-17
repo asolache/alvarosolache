@@ -32,6 +32,21 @@ tiene `/ia`.
 
 ## Hecho
 
+### El cerebro en tres dimensiones, por koshas (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «vista del cerebro tridimensional por koshas y las
+fuerzas gravitacionales y cuánticas… el SVG actual puede ser la castellera con
+3 [pisos] donde se integran las 5», y «pinya, tronc, pom de dalt».
+**Hecho:** `cerebro.html` 0.4 con cuatro vistas: tres dimensiones (cada kosha
+una esfera, el propósito en el centro), castellera (pinya = annamaya y
+pranamaya, tronc = manomaya y vijnanamaya, pom de dalt = anandamaya), cinco
+capas y en movimiento. Las fuerzas salen de `cerebro-fuerzas.js`, que se
+calcula del codex sin cifras inventadas: masa (citas), enlaces cuánticos
+(saberes y vecinos en común entre koshas distintas), disparo y potencial, y la
+optimización (citas que faltan, vedas sueltas, si la castellera aguanta). El
+3D es un lienzo propio, sin librerías ni CDN. **Medido:** sin errores de
+consola, sin scroll lateral a 390 px.
+
 ### El ikigai y el cerebro evolucionan (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «Evoluciona mi ikigai y cortex y merge». **Hecho:** el
