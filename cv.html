@@ -185,7 +185,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Google Fonts (si usas) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Google Analytics (si tienes) -->
     <!-- Google tag (gtag.js) -->
@@ -198,7 +197,6 @@
     </script>
     
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="/styles.css">
     
     <!-- RSS Feed (si tienes blog) -->
     <link rel="alternate" type="application/rss+xml" title="Álvaro Solache - Blog" href="/feed.xml">
@@ -210,7 +208,11 @@
     
     <!-- Manifest para PWA (si aplica) -->
     <link rel="manifest" href="/manifest.json">
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -218,17 +220,17 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-family: var(--sans);
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--text);
+            background-color: var(--bg);
             padding: 20px;
         }
 
         .cv-container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: var(--card);
             padding: 40px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
@@ -236,7 +238,7 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid var(--text);
             padding-bottom: 20px;
         }
 
@@ -244,12 +246,12 @@
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 5px;
-            color: #000;
+            color: var(--text);
         }
 
         .title {
             font-size: 1.2em;
-            color: #666;
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
@@ -259,7 +261,7 @@
             gap: 20px;
             flex-wrap: wrap;
             font-size: 0.95em;
-            color: #555;
+            color: var(--light);
         }
 
         .contact-info span {
@@ -275,10 +277,10 @@
         .section-title {
             font-size: 1.4em;
             font-weight: bold;
-            color: #000;
+            color: var(--text);
             margin-bottom: 15px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--border);
         }
 
         .experience-item {
@@ -288,16 +290,16 @@
         .job-title {
             font-size: 1.1em;
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .company {
             font-weight: bold;
-            color: #333;
+            color: var(--text);
         }
 
         .date {
-            color: #666;
+            color: var(--muted);
             font-style: italic;
             display: block;
             margin-top: 3px;
@@ -327,7 +329,7 @@
             font-size: 1em;
             font-weight: bold;
             margin-bottom: 8px;
-            color: #000;
+            color: var(--text);
         }
 
         .skill-category ul {
@@ -341,15 +343,15 @@
 
         .degree {
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .institution {
-            color: #333;
+            color: var(--text);
         }
 
         .year {
-            color: #666;
+            color: var(--muted);
             font-style: italic;
             display: block;
             margin-top: 3px;
@@ -371,19 +373,19 @@
         }
 
         .project-item {
-            background: #f5f5f5;
+            background: var(--panel);
             padding: 12px;
             border-radius: 4px;
         }
 
         .project-item strong {
             display: block;
-            color: #000;
+            color: var(--text);
             margin-bottom: 5px;
         }
 
         .project-item a {
-            color: #0066cc;
+            color: var(--blue);
             text-decoration: none;
             font-size: 0.9em;
         }
@@ -411,7 +413,11 @@
                 gap: 8px;
             }
         }
-    </style>
+    
+        h1, h2 { font-family: Unbounded, var(--sans); letter-spacing: -.02em; }
+        a { color: var(--blue); }
+        .red-pie { max-width: 1000px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
     <div class="cv-container">
@@ -709,5 +715,6 @@
             </ul>
         </section>
     </div>
+<footer class="red-pie"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="index.html">Álvaro Solache</a><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div></footer>
 </body>
 </html>

@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Álvaro Solache - Producción de Eventos | Eventos Corporativos Barcelona</title>
     <meta name="description" content="Producción de eventos corporativos, team building y festivales en Barcelona y Penedès. 20+ años de experiencia con clientes como John Deere, Novartis, Vodafone, Mercedes, Porsche y más.">
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +17,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: var(--sans);
             line-height: 1.8;
-            color: #333;
-            background-color: #ffffff;
+            color: var(--text);
+            background-color: var(--bg);
             padding: 20px;
         }
 
@@ -28,38 +32,38 @@
         header {
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border);
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--text);
         }
 
         .subtitle {
             font-size: 1.2em;
-            color: #666;
+            color: var(--muted);
             margin-bottom: 5px;
         }
 
         .tagline {
-            color: #999;
+            color: var(--muted);
             font-size: 0.95em;
         }
 
         .intro-box {
-            background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
-            color: white;
-            border-left: 4px solid #000;
+            background: var(--blue);
+            color: var(--on-accent);
+            border-left: 4px solid var(--text);
             padding: 2rem;
             margin: 2rem 0;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            box-shadow: 0 4px 15px rgba(0,87,149,0.3);
         }
 
         .intro-box h2 {
-            color: white;
+            color: var(--on-accent);
             margin-top: 0;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid rgba(255,255,255,0.3);
@@ -71,7 +75,7 @@
         }
 
         .intro-box a {
-            color: white;
+            color: var(--on-accent);
             text-decoration: none;
             font-weight: bold;
             padding: 10px 20px;
@@ -94,21 +98,21 @@
         h2 {
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #000;
+            color: var(--text);
             padding-bottom: 10px;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid var(--text);
         }
 
         h3 {
             font-size: 1.4em;
             margin-bottom: 15px;
-            color: #000;
+            color: var(--text);
         }
 
         h4 {
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
         }
 
@@ -124,13 +128,13 @@
 
         li {
             margin-bottom: 8px;
-            color: #444;
+            color: var(--light);
         }
 
         .experience-item {
             margin-bottom: 25px;
             padding-left: 15px;
-            border-left: 3px solid #000;
+            border-left: 3px solid var(--text);
             padding-bottom: 15px;
         }
 
@@ -144,16 +148,16 @@
             font-size: 1.3em;
             font-weight: bold;
             margin-bottom: 5px;
-            color: #000;
+            color: var(--text);
         }
 
         .experience-company {
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .experience-date {
-            color: #666;
+            color: var(--muted);
             font-style: italic;
             display: block;
             margin-top: 3px;
@@ -168,15 +172,15 @@
         }
 
         .client-logo {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 12px 20px;
             border-radius: 20px;
             font-size: 0.9em;
             font-weight: bold;
-            color: #000;
+            color: var(--text);
             text-align: center;
             min-width: 100px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border);
         }
 
         .skills-container {
@@ -187,27 +191,27 @@
         }
 
         .skill-card {
-            background-color: #f9f9f9;
+            background-color: var(--panel);
             padding: 20px;
-            border-left: 3px solid #000;
+            border-left: 3px solid var(--text);
         }
 
         .skill-card h4 {
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
         }
 
         .specialization-list li:before {
             content: "✓ ";
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .cta-box {
-            background: #f8f9fa;
-            border-left: 4px solid #000;
+            background: var(--panel);
+            border-left: 4px solid var(--text);
             padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 0 4px 4px 0;
@@ -223,8 +227,8 @@
         .quick-link {
             display: inline-block;
             padding: 12px 25px;
-            background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             text-decoration: none;
             font-weight: bold;
             border-radius: 25px;
@@ -233,7 +237,7 @@
 
         .quick-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+            box-shadow: 0 5px 20px rgba(0,87,149,0.4);
         }
 
         .benefits-grid {
@@ -244,20 +248,20 @@
         }
 
         .benefit-card {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #f5576c;
+            border-left: 4px solid var(--blue);
         }
 
         .benefit-card h4 {
-            color: #000;
+            color: var(--text);
             margin-bottom: 10px;
         }
 
         .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background: #f6edd2;
+            border-left: 4px solid var(--gold);
             padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 4px;
@@ -270,33 +274,33 @@
         }
 
         .testimonial-card {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #f5576c;
+            border-left: 4px solid var(--blue);
         }
 
         .testimonial-card blockquote {
             margin: 0;
             font-style: italic;
-            color: #555;
+            color: var(--light);
         }
 
         .testimonial-card cite {
             display: block;
             margin-top: 10px;
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .contact-section {
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border);
         }
 
         .contact-info a {
-            color: #000;
+            color: var(--text);
             text-decoration: none;
             font-weight: bold;
         }
@@ -330,7 +334,11 @@
                 flex-direction: column;
             }
         }
-    </style>
+    
+        h1, h2 { font-family: Unbounded, var(--sans); letter-spacing: -.02em; }
+        a { color: var(--blue); }
+        .red-pie { max-width: 1000px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
     <div class="container">
@@ -588,5 +596,6 @@
             <p style="margin-top: 20px; font-weight: bold;">¡No esperes más! Contáctame hoy para planificar tu próximo evento inolvidable.</p>
         </section>
     </div>
+<footer class="red-pie"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="index.html">Álvaro Solache</a><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div></footer>
 </body>
 </html>
