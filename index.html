@@ -59,25 +59,23 @@
 <style>
 :root{
   /* La base (papel, tinta, bordes, azul) es la piel de la red: red.css. Aquí, solo lo propio. */
-  --accent-soft:#f6edd2; --maroon:var(--green); --night:#0b1a3a;
+  --accent-soft:#f6edd2; --maroon:var(--green);
   --c-ama:var(--gold); --c-sabe:var(--blue); --c-mundo:var(--green); --c-paga:#0e6e85;
 }
 /* escenario: hero y arte, siempre de noche */
-.stage{background:radial-gradient(110% 90% at 85% 0%,#eab308 0%,#15803d 34%,#1e3a8a 66%,#0b1a3a 92%);color:#f3f7ee}
-.stage .kicker{color:#fde047}
-.stage .intro,.stage .role{color:#e6efe2}
-.stage .btn.primary{background:#facc15;border-color:#facc15;color:#0b1a3a}
-.stage .btn.ghost{color:#fde047;border-color:#fde047}
-.stage .fact{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
-.stage .fact span,.stage .source{color:#d7e3dc}
+/* el escenario ya no es de noche: papel de la red y los colores de la trinidad como acentos */
+.stage .kicker{color:var(--brahma)}
+.stage .intro,.stage .role{color:var(--light)}
 .alter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.6rem}
-.alter span{font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid rgba(252,211,77,.5);color:#fde047}
+.alter span{font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink);background:var(--card)}
+.alter span:nth-child(3n+1){border-left:4px solid var(--brahma-luz)}.alter span:nth-child(3n+2){border-left:4px solid var(--vishnu-luz)}.alter span:nth-child(3n){border-left:4px solid var(--shiva-luz)}
 .artgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.artcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
-.artcard h3{font-size:1.35rem;margin-bottom:.3rem;color:#fff}
-.artcard .who{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#fde047;margin-bottom:.6rem}
-.artcard p{color:#dfe9e0;font-size:.95rem}
-.artcard a{color:#fde047;font-weight:600;text-decoration:none;display:inline-block;margin-top:12px}
+.artcard{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--shiva-luz);border-radius:var(--radius);padding:22px}
+.artcard:nth-child(3n+1){border-top-color:var(--brahma-luz)}.artcard:nth-child(3n+2){border-top-color:var(--vishnu-luz)}
+.artcard h3{font-size:1.35rem;margin-bottom:.3rem}
+.artcard .who{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.6rem}
+.artcard p{color:var(--light);font-size:.95rem}
+.artcard a{color:var(--vishnu);font-weight:600;text-decoration:none;display:inline-block;margin-top:12px}
 .lineage{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--line)}
 .hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
 .hub div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
@@ -107,7 +105,7 @@ a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.02em}
 h3{font-family:var(--sans);font-weight:600;line-height:1.2;letter-spacing:-.01em}
-.hero h1{font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 0%,#fef9c3 45%,#bbf7d0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{font-weight:800;letter-spacing:-.035em;color:var(--ink)}
 .kicker,.tl .y,.artcard .who,.alter span,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
 .thesis,.lineage b{font-style:italic}
 h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:.6rem}
@@ -127,7 +125,7 @@ nav ul a:hover{color:var(--ink)}
 @media(max-width:480px){.uni span{display:none}}
 
 /* hero */
-.hero{padding:88px 0 64px;border-top:0}
+.hero{padding:88px 20px 64px;border-top:0}
 .hero h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:.4rem}
 .hero .role{font-size:1.1rem;color:var(--muted);margin-bottom:1.6rem}
 .hero .thesis{font-family:Fraunces,serif;font-size:clamp(1.35rem,2.8vw,1.8rem);max-width:30ch;margin-bottom:1.6rem}
@@ -254,7 +252,7 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .av{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:32px}
 .av-top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
 .av-top h3{font-size:1.3rem}
-.av-face{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 70% 20%,#facc15,#15803d 55%,#1e3a8a);color:#fff;font:600 .75rem Unbounded,sans-serif}
+.av-face{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 70% 20%,var(--brahma-luz),var(--shiva-luz) 55%,var(--vishnu-luz));color:#fff;font:600 .75rem Unbounded,sans-serif}
 .av-face.big{width:64px;height:64px;font-size:1.1rem}
 .av .chips{margin-bottom:16px}
 .av-turn{margin:12px 0}
@@ -282,16 +280,34 @@ section[id],#mv-panel{scroll-margin-top:110px}
 
 /* el camino del payaso */
 .payaso{padding:80px 0 24px;border-top:0}
-.payaso .quote{font:italic 400 clamp(1.5rem,3.4vw,2.3rem)/1.25 Fraunces,serif;max-width:28ch;margin:.4rem 0 1.4rem;color:#fff}
-.payaso .quote em{color:#fde047;font-style:italic}
-.nariz{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fca5a5,#dc2626 60%,#7f1d1d);vertical-align:.05em;margin-left:.15em;box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+.payaso .quote{font:italic 400 clamp(1.5rem,3.4vw,2.3rem)/1.25 Fraunces,serif;max-width:28ch;margin:.4rem 0 1.4rem;color:var(--ink)}
+.payaso .quote em{color:var(--brahma);font-style:italic}
+.nariz{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fca5a5,#dc2626 60%,#7f1d1d);vertical-align:.05em;margin-left:.15em;box-shadow:0 0 0 3px var(--panel)}
 .gestos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px}
-.gesto{border-top:2px solid #fde047;padding-top:14px}
-.gesto b{font:600 .78rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#fde047;display:block;margin-bottom:6px}
-.gesto p{color:#e6efe2;font-size:.97rem}
+.gesto{border-top:3px solid var(--brahma-luz);padding-top:14px}
+.gesto:nth-child(2){border-top-color:var(--vishnu-luz)}.gesto:nth-child(3){border-top-color:var(--shiva-luz)}
+.gesto b{font:600 .78rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+.gesto p{color:var(--light);font-size:.97rem}
 .payaso .source{margin-top:28px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 .ikigai circle:focus-visible{outline:none;stroke:var(--ink);stroke-width:4}
+
+/* el sprint: el tablero del SOS sobre el papel de la red */
+.sp-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+.kanban{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:860px){.kanban{grid-template-columns:1fr}}
+.kcol{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px}
+.kcol-head{display:flex;justify-content:space-between;margin-bottom:10px;font:500 .8rem "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kcol.doing .kcol-head{color:var(--orange)}.kcol.done .kcol-head{color:var(--green)}
+.kcard{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--kc,var(--border-strong));border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:.95rem;line-height:1.4}
+.kcard[hidden]{display:none}
+.kcard.brahma{--kc:var(--brahma-luz)}.kcard.vishnu{--kc:var(--vishnu-luz)}.kcard.shiva{--kc:var(--shiva-luz)}
+.kcard small{display:block;color:var(--muted);font-size:.85rem;margin-top:4px}
+.kc-meta{display:flex;gap:6px;margin-top:8px;font:500 .72rem "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kc-meta span{border:1px solid var(--border);border-radius:999px;padding:1px 8px}
+.kcol.done .kcard{opacity:.8}
+.ejes{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.9rem;color:var(--muted);margin-top:14px}
+.ejes i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 
 footer{padding:48px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
@@ -303,19 +319,20 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <a class="brand" href="#inicio">Álvaro Solache</a>
     <ul>
+      <li><a href="#sprint">Sprint</a></li>
       <li><a href="#linaje">Linaje</a></li>
       <li><a href="#ikigai">Ikigai</a></li>
       <li><a href="#recorrido">Recorrido</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#trabajar">Trabajar juntos</a></li>
-      <li><a href="#payaso">El payaso</a></li>
+      <li><a href="#trabajar">Trabajar</a></li>
+      <li><a href="#payaso">Payaso</a></li>
       <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
       <li><a href="#recursos">Recursos</a></li>
-      <li><a href="cv.html">CV</a></li>
     </ul>
     <details class="menu"><summary aria-label="Abrir el menú">Menú</summary>
       <ul>
+        <li><a href="#sprint">Sprint</a></li>
         <li><a href="#linaje">Linaje</a></li>
         <li><a href="#ikigai">Ikigai</a></li>
         <li><a href="#recorrido">Recorrido</a></li>
@@ -341,6 +358,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <a href="#mapa/molekulon" style="--fc:var(--m-arte)">Cultura <i>Molekulon</i></a>
     </div>
   </div>
+  <div class="trinidad" aria-hidden="true"></div>
 </nav>
 
 <div class="stage"><header class="hero wrap" id="inicio">
@@ -361,6 +379,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
   <p class="source">Las dos últimas cifras salen del catálogo comercial de TeamTowers 2026.</p>
 </header></div>
+
+<section id="sprint">
+  <div class="wrap">
+    <p class="kicker">En movimiento</p>
+    <h2 id="sp-nombre">El sprint</h2>
+    <p class="lead">Lo que tengo entre manos, como lo llevo en mis apps. Cada tarea es de un eje de la trinidad: crear, sostener o transformar.</p>
+    <div class="sp-top chips" role="group" aria-label="Filtrar tareas">
+      <button class="chip" data-q="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-q="yo" aria-pressed="false">Lo que me toca</button>
+      <button class="chip" data-q="claude" aria-pressed="false">Lo que hace Claude</button>
+    </div>
+    <div class="kanban" id="sp-board"></div>
+    <p class="ejes"><span><i style="background:var(--brahma-luz)"></i>Brahma · crear</span><span><i style="background:var(--vishnu-luz)"></i>Vishnu · sostener</span><span><i style="background:var(--shiva-luz)"></i>Shiva · transformar</span></p>
+  </div>
+</section>
 
 <section id="linaje">
   <div class="wrap">
@@ -496,7 +529,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     <p class="kicker">El hilo que lo une todo</p>
     <h2>El camino del payaso<span class="nariz" aria-hidden="true"></span></h2>
     <p class="quote">El payaso no finge que no se cae. Se cae delante de todos, <em>y por eso le creen</em>.</p>
-    <p class="lead" style="color:#e6efe2">Psicólogo, consultor, DJ, personaje de cómic. Parecen caminos distintos y son uno: quitarse la máscara de experto, reír juntos y decir lo que nadie dice en la sala.</p>
+    <p class="lead">Psicólogo, consultor, DJ, personaje de cómic. Parecen caminos distintos y son uno: quitarse la máscara de experto, reír juntos y decir lo que nadie dice en la sala.</p>
     <div class="gestos">
       <div class="gesto"><b>Caerse</b><p>En Fent Pinya el jefe hace de base y su equipo le sube encima. Nadie sube solo y nadie se libra de tocar al otro. La autoridad que queda después es otra.</p></div>
       <div class="gesto"><b>Reírse</b><p>La risa abre lo que una reunión cierra. Por eso Mazinguer baja a la Tierra a buscar superhéroes reales, y la historia se cuenta en clave de banda y de cómic.</p></div>
@@ -510,7 +543,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <p class="kicker">El otro lado</p>
     <h2>Música y personajes</h2>
-    <p class="lead" style="color:#dfe9e0">Músico, DJ y performer. La misma pregunta, ¿quién sostiene qué?, contada en clave de banda y de cómic.</p>
+    <p class="lead">Músico, DJ y performer. La misma pregunta, ¿quién sostiene qué?, contada en clave de banda y de cómic.</p>
     <div class="artgrid">
       <article class="artcard"><p class="who">Comando Molekulon</p><h3>Mazinguer</h3><p>Líder estratega y DJ. Baja a la Tierra con Horacio Motomachi a buscar 150.000 superhéroes reales, montando una banda que recorre los pueblos.</p><a href="https://molekulon.org/personatges.html">Ver el Comando →</a></article>
       <article class="artcard"><p class="who">DJ</p><h3>Psykatxu</h3><p>Sesiones y temas propios.</p><a href="https://soundcloud.com/psykatxu">Escuchar en SoundCloud →</a></article>
@@ -663,6 +696,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <script src="cerebro-datos.js"></script>
 <script src="mapa-datos.js"></script>
 <script src="mapa.js"></script>
+<script src="sprint-datos.js"></script>
 <script>
 (function(){
   var IK = {
@@ -714,6 +748,30 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   });
   show('centro');
 
+
+  /* El sprint: se pinta de sprint-datos.js, la única lista. */
+  var SP = window.SPRINT, board = document.getElementById('sp-board');
+  if (SP && board) {
+    document.getElementById('sp-nombre').textContent = SP.nombre;
+    var COLS = [['todo','Por hacer'],['doing','En marcha'],['done','Hecho']];
+    var EJE = {brahma:'Brahma', vishnu:'Vishnu', shiva:'Shiva'};
+    var esc = function(x){ return String(x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+    board.innerHTML = COLS.map(function(c){
+      var ts = SP.tareas.filter(function(t){ return t.col === c[0]; });
+      return '<div class="kcol ' + c[0] + '"><div class="kcol-head"><span>' + c[1] + '</span><span>' + ts.length + '</span></div>' +
+        ts.map(function(t){
+          return '<div class="kcard ' + t.eje + '" data-quien="' + t.quien + '">' + esc(t.t) + (t.n ? '<small>' + esc(t.n) + '</small>' : '') +
+            '<div class="kc-meta"><span>' + EJE[t.eje] + '</span><span>' + (t.quien === 'yo' ? 'Me toca' : 'Claude') + '</span>' + (t.f ? '<span>' + t.f.split('-').reverse().join('/') + '</span>' : '') + '</div></div>';
+        }).join('') + '</div>';
+    }).join('');
+    var spChips = document.querySelectorAll('#sprint .chip');
+    spChips.forEach(function(ch){
+      ch.addEventListener('click', function(){
+        spChips.forEach(function(x){ x.setAttribute('aria-pressed', x === ch ? 'true' : 'false'); });
+        board.querySelectorAll('.kcard').forEach(function(k){ k.hidden = ch.dataset.q !== 'all' && k.dataset.quien !== ch.dataset.q; });
+      });
+    });
+  }
   var menu = document.querySelector('.menu');
   menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') menu.open = false; });
 

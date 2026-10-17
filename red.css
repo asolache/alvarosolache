@@ -35,8 +35,15 @@
   --accent: var(--blue);
   --radius: 14px;
   --sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* La trinidad: los colores de su dharma, con nombre propio y sobre la piel.
+     Brahma crea (amarillo), Vishnu sostiene (azul), Shiva transforma (verde).
+     El tono de texto pasa AA sobre el papel; el «luz» es para rellenos y barras. */
+  --brahma: var(--gold);   --brahma-luz: #eab308;
+  --vishnu: var(--blue);   --vishnu-luz: #2563eb;
+  --shiva: var(--green);   --shiva-luz: #16a34a;
   color-scheme: light;
 }
+.trinidad{height:4px;border:0;background:linear-gradient(90deg,var(--brahma-luz) 0 33.33%,var(--vishnu-luz) 33.33% 66.66%,var(--shiva-luz) 66.66%)}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink)}
 
 /* El pie de la red: los mismos sitios, en el mismo orden, en todas las páginas. */

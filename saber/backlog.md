@@ -32,6 +32,18 @@ tiene `/ia`.
 
 ## Hecho
 
+### La trinidad y el sprint (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «quita esos colores de fondo e integra los mismos en la
+paleta trinidad Brahma, Vishnu, Shiva… Dale estilo de mis apps para ir creando
+mi sprint». **Hecho:** fuera los fondos de noche de la cabecera, el payaso y el
+arte; sus colores pasan a `--brahma`, `--vishnu` y `--shiva` en `red.css`, con
+una barra de tres colores bajo la navegación. Nueva sección «Sprint» con el
+tablero del SOS (Por hacer, En marcha, Hecho) leído de `sprint-datos.js`, con
+filtro «Lo que me toca». Imagen para compartir rehecha en papel.
+**Medido:** sin errores, la navegación cabe a 1280 px y no hay scroll lateral a
+390 px.
+
 ### El diseño de la red (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «Revisa diseño del site para integrar look and feel de
