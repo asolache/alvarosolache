@@ -32,6 +32,16 @@ tiene `/ia`.
 
 ## Hecho
 
+### El linaje, contado por él (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «En mi linaje quita Codorníu y los avis…».
+**Hecho:** fuera Codorníu y «Montaña y agua»; entran los abuelitos (el modisto
+y la mamita, bisabuelos), los litos (abuelos paternos), sus dos hermanas,
+Swami Tilak a los 6 años y Amma a los 20, la naturaleza, la música y el arte
+en León. Lo mismo en el recorrido y en el mapa vivo, sin nombres propios que
+él no haya dado. **Medido:** sin errores de consola, ninguna relación rota
+en `mapa-datos.js`, sin scroll lateral a 390 px.
+
 ### La home a su altura y el camino del payaso (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «Audita la home y mejórala y merge que esté a mi
