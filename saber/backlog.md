@@ -19,7 +19,22 @@ prensa, audios para el tramo biográfico, mapas mentales por nodo y el avatar
 con su voz. **Cómo se cierra:** cada enlace apunta a una fuente que existe y
 cada audio suena en su nodo.
 
+### La IA a la vista en los demás repositorios (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «quiero que en mis proyectos la IA se integre y se
+muestre que lo hacemos con transparencia». **Qué:** llevar la veda 6 a los
+otros proyectos y, si vale para todos, subirla a la matriz con `--recull`.
+Una guarda que compruebe que cada página enlaza `ia.html`.
+**Cómo se cierra:** cada web del proyecto tiene su «Cómo uso la IA» leyendo
+su propio historial.
+
 ## Hecho
+
+### Cómo uso la IA (pedido 2026-10-17)
+
+**Pedido por:** Álvaro. **Hecho:** `ia.html` con el compromiso, qué hace la IA
+y qué hace él, los commits firmados con Claude leídos del historial y las vedas
+heredadas que la sujetan; veda propia 6.
 
 ### El codex integrado: esta web tiene cerebro (pedido 2026-10-17)
 
