@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El cerebro de Álvaro Solache</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5f5e5a;--line:#e3e0d8;--ok:#2f7d4f;--ko:#b3261e;--accent:#8a4b16}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe6;--muted:#a8a69e;--line:#33322e;--ok:#6cc08e;--ko:#f2a097;--accent:#e2a36b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 1rem 4rem}
+h1{font-size:clamp(1.5rem,5vw,2.1rem);line-height:1.2;margin:0 0 .6rem}
+h2{font-size:1.1rem;margin:2.2rem 0 .6rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+p,li{color:var(--fg)}.lead{color:var(--muted);font-size:1.05rem;margin:0}
+ul,ol{padding-left:1.2rem}li{margin:.3rem 0}li span{color:var(--muted);font-size:.9rem}
+a{color:var(--accent)}code{font-size:.88em}
+.ok{color:var(--ok)}.ko{color:var(--ko);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:.92rem}td,th{text-align:left;padding:.45rem .4rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500}.cara{font-weight:600;white-space:nowrap}
+details{border-bottom:1px solid var(--line);padding:.45rem 0}summary{cursor:pointer;font-weight:500}
+</style>
+</head>
+<body>
+<main>
+<h1>El cerebro de Álvaro Solache</h1>
+<p class="lead">Lo que una IA lee antes de escribir en este proyecto. Se genera del repositorio y el CI comprueba que dice la verdad: si deja de ser cierto, falla.</p>
+
+<h2>Las piezas</h2>
+<ul>
+<li><strong>La comunicación</strong> · <a href="../CLAUDE.md"><code>CLAUDE.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>La herencia de TeamTowers</strong> · <a href="vedas-heredadas.md"><code>saber/vedas-heredadas.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>La taxonomía</strong> · <a href="taxonomia.md"><code>saber/taxonomia.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>El mapa</strong> · <a href="MAPA.md"><code>saber/MAPA.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>El codex</strong> · <a href="codex.md"><code>saber/codex.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>El contrato de la IA</strong> · <a href="para-la-ia.md"><code>saber/para-la-ia.md</code></a> <span><b class="ok">está</b></span></li>
+<li><strong>El backlog</strong> · <a href="backlog.md"><code>saber/backlog.md</code></a> <span><b class="ok">está</b></span></li>
+</ul>
+
+<h2>El orden de lectura</h2>
+<ol>
+<li><a href="MAPA.md"><code>saber/MAPA.md</code></a> <span>qué hay</span></li>
+<li><a href="codex.md"><code>saber/codex.md</code></a> <span>la ley</span></li>
+<li><a href="para-la-ia.md"><code>saber/para-la-ia.md</code></a> <span>el contrato de trabajo</span></li>
+<li><a href="taxonomia.md"><code>saber/taxonomia.md</code></a> <span>dónde va cada cosa</span></li>
+</ol>
+
+<h2>Dónde va cada cosa</h2>
+<table>
+<tr><th></th><th>carpeta</th><th>qué entra</th></tr>
+<tr><td class="cara">obra</td><td><code>blog/</code></td><td>Las entradas del blog de la web antigua</td></tr>
+<tr><td class="cara">obra</td><td><code>herramientas/</code></td><td>Las herramientas: las propias (`cerebro-codex.mjs`, que genera el cerebro de la web) y las heredadas de TeamTowers (`tools/` y el editor del mapa), que no se editan aquí</td></tr>
+<tr><td class="cara">obra</td><td><code>images/</code></td><td>Las imágenes que usan las páginas</td></tr>
+<tr><td class="cara">prova</td><td><code>.github/</code></td><td>El CI: corre la guarda del cerebro en cada PR</td></tr>
+<tr><td class="cara">prova</td><td><code>guardas/</code></td><td>Las comprobaciones que fallan en CI cuando una promesa deja de ser cierta</td></tr>
+<tr><td class="cara">saber</td><td><code>saber/</code></td><td>El cerebro: mapa, codex, contrato de la IA, taxonomía y backlog</td></tr>
+</table>
+
+<h2>Las vedas · 5 + 58 heredadas</h2>
+<p class="lead">Cada veda es un error que ya se cometió, escrito para que nadie tenga que volver a aprenderlo.</p>
+<ol>
+<li value="1">Siempre hay un backlog</li>
+<li value="2">Un mapa falso es peor que ningún mapa</li>
+<li value="3">Lo que no se sabe va a <code>null</code></li>
+<li value="4">El cerebro de la web lee el codex, no lo copia</li>
+<li value="5">Esta web es hija de la matriz: lo heredado no se repite</li>
+</ol>
+<p>Las heredadas de TeamTowers, por tema. No se editan aquí: llegan con cada actualización. <a href="vedas-heredadas.md"><code>saber/vedas-heredadas.md</code></a></p>
+<details><summary>La veritat del que es diu · 12</summary>
+<ul>
+<li>61 · No es diu «verificat» del que no s'ha verificat</li>
+<li>67 · Una xifra inflada i incompleta és pitjor que cap xifra</li>
+<li>85 · Un número que puja sense que hagi passat res és una mètrica de vanitat</li>
+<li>89 · Una paraula que vol dir dues coses al mateix text no en vol dir cap</li>
+<li>97 · Trobar una cosa no és fiar-se'n, i la pantalla ho ha de dir</li>
+<li>102 · El que es declara i el que es demostra no es poden pintar igual</li>
+<li>128 · Una pàgina que explica un mètode envelleix sense petar mai</li>
+<li>136 · Un avís que acusa ha de poder dir de qui és la culpa</li>
+<li>143 · Una garantia sense la seva condició escrita no és una garantia</li>
+<li>149 · El que qualsevol entén és el que queda pitjor explicat</li>
+<li>156 · Una estimació no entra mai en una casella de comptabilitat</li>
+<li>158 · Un model no suma, i una taula que ja tens no es demana</li>
+</ul>
+</details>
+<details><summary>Guardes i proves · 7</summary>
+<ul>
+<li>50 · Mesurar abans de patir, i comprovar que la prova comprova</li>
+<li>106 · Un test que deixa un camp buit no passa mai per la branca que el llegeix</li>
+<li>112 · La guarda que mira les pàgines i no es mira el codex deixa fora la font</li>
+<li>152 · Una guarda que mira les dades no veu el dibuix</li>
+<li>154 · «Acceptat» no vol dir res si no es podia corregir</li>
+<li>155 · Una guarda que es compta a si mateixa no comprova res</li>
+<li>159 · El que surt a fora passa pel sedàs de sempre, i el bloqueja</li>
+</ul>
+</details>
+<details><summary>Una sola font · 6</summary>
+<ul>
+<li>44 · Dues llistes raonables poden no parlar-se</li>
+<li>71 · Tres còpies d'una regla són tres llocs on afluixar-la</li>
+<li>90 · Dues pantalles que diuen coses contràries sobre la mateixa dada: la pitjor manera de tenir raó</li>
+<li>98 · Un índex que es manté a mà es desincronitza el segon dia</li>
+<li>100 · Dues fonts que no es contradiuen igual es poden desincronitzar</li>
+<li>135 · Un identificador que surt de <code>JSON.stringify</code> identifica l'ordre de les claus, no la clau</li>
+</ul>
+</details>
+<details><summary>Persones i dades · 6</summary>
+<ul>
+<li>39 · Una persona és una, encara que estigui a cinc llocs</li>
+<li>42 · Qui exporta ha de saber què s'emporta</li>
+<li>46 · Una persona no és un rol</li>
+<li>47 · Publicar no és publicar-ho tot</li>
+<li>59 · Unir persones pel nom corromp dades en silenci</li>
+<li>60 · Publicar sense descobriment no és publicar</li>
+</ul>
+</details>
+<details><summary>Pantalles i UX · 10</summary>
+<ul>
+<li>35 · Res no interromp el que estàs fent</li>
+<li>36 · El semàfor no és decoració</li>
+<li>80 · Val més dir «això no ho faig jo» que un botó que ho sembla</li>
+<li>94 · Una porta que existeix i no es pot obrir compta com si no hi fos</li>
+<li>99 · El primer que veu tothom és l'últim que mira ningú</li>
+<li>105 · Una pantalla que peta a mig pintar es queda muda, i el silenci menteix</li>
+<li>122 · No es pregunta a la porta el que el sistema pot deduir</li>
+<li>127 · Sis menús raonables no fan una arquitectura</li>
+<li>138 · Vuit safates és cap safata</li>
+<li>157 · Una pantalla que no es pot prémer és una pantalla que no existeix</li>
+</ul>
+</details>
+<details><summary>Producte i oferta · 13</summary>
+<ul>
+<li>37 · Comparar no pot ser una opinió</li>
+<li>41 · Una càrrega parcial no és una càrrega correcta</li>
+<li>48 · Una versió és un canvi, no una data</li>
+<li>49 · Una capacitat que no hi és s'ha de dir, no suplir a qualsevol preu</li>
+<li>62 · Una eina que només creix acaba sent inservible</li>
+<li>63 · Una llista plana llarga és un calaix, i el que no és de ningú no es fa</li>
+<li>66 · Simplificar és decidir per on comences, no esborrar el que hi ha</li>
+<li>74 · El proper pas surt del que hi ha, no del que falta per estrenar</li>
+<li>87 · Detectar sense oferir res és fer de termòmetre</li>
+<li>107 · Un mètode que només s'entén de dins no és un mètode: és un gremi</li>
+<li>140 · «A mida» sense el mètode és «consulta'ns»</li>
+<li>141 · El que decideix un preu es pregunta, no s'endevina</li>
+<li>146 · Sis peces bones que no es diuen entre elles no són un projecte</li>
+</ul>
+</details>
+<details><summary>Mapa de valor · 2</summary>
+<ul>
+<li>116 · Un graf bonic no és una anàlisi, i cinc portes iguals no són cap porta</li>
+<li>120 · Un rol només pot demanar el que el mapa diu que lliura</li>
+</ul>
+</details>
+<details><summary>El cervell · 2</summary>
+<ul>
+<li>160 · Sempre hi ha un backlog, i el flux de la creativitat acaba en vedes</li>
+<li>161 · El cervell es comprova, i n'hi ha un per a tots</li>
+</ul>
+</details>
+
+<h2>Lo que queda por hacer · 3 bloques en el backlog</h2>
+<ul>
+<li>El CI comprueba que el cerebro está al día (pedido 2026-10-17)</li>
+<li>Lo que viene en la página (pedido 2026-10-16)</li>
+<li>El codex integrado: esta web tiene cerebro (pedido 2026-10-17)</li>
+</ul>
+
+<h2>Cómo se sabe que es cierto</h2>
+<p>Cada cambio pasa por la guarda: ninguna carpeta sin cara, ningún mapa viejo, ninguna cita a un fichero o una función que no existe. <code>node guardas/cervell.js --check</code></p>
+</main>
+</body>
+</html>

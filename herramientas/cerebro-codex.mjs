@@ -6,7 +6,8 @@
    La capa es una PROPUESTA por palabras clave, para pulirla con Álvaro: lo que
    él fije a mano en capas.json manda sobre lo que salga de aquí.
 
-   node herramientas/cerebro-codex.mjs --fuente "TeamTowers Humà=../teamtowershuma"
+   node herramientas/cerebro-codex.mjs --fuente "TeamTowers Humà=../teamtowershuma" --fuente "Álvaro Solache=."
+   La matriz va primero: lee de ella las vedas de la plantilla para no repetirlas.
 */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -44,9 +45,22 @@ const SABERES = {
 const SINT = existsSync(join(RAIZ, 'sintesis.json')) ? JSON.parse(readFileSync(join(RAIZ, 'sintesis.json'), 'utf8')) : { vedas: {}, principios: {} };
 const fijadas = existsSync(join(RAIZ, 'capas.json')) ? JSON.parse(readFileSync(join(RAIZ, 'capas.json'), 'utf8')) : {};
 
+/* Una fuente es la matriz (el codex de SOS) o un hijo con cerebro: su
+   cervell.json dice dónde está su codex. Del hijo no se cuentan las vedas de
+   la plantilla, que ya son de la matriz (veda 5). */
+const deCasa = new Set();
+const codexDe = ruta => {
+  if (existsSync(join(ruta, 'SOS/knowledge/codex.md'))) {
+    const pl = join(ruta, 'SOS/knowledge/cervell/plantilla/saber/codex.md');
+    if (existsSync(pl)) for (const m of readFileSync(pl, 'utf8').matchAll(/^## Veda \d+ — (.+)$/gm)) deCasa.add(m[1].trim());
+    return join(ruta, 'SOS/knowledge/codex.md');
+  }
+  return join(ruta, JSON.parse(readFileSync(join(ruta, 'cervell.json'), 'utf8')).codex);
+};
 const nodos = [], aristas = [];
 for (const { nom, ruta } of fuentes) {
-  const codex = readFileSync(join(ruta, 'SOS/knowledge/codex.md'), 'utf8');
+  const esMatriz = existsSync(join(ruta, 'SOS/knowledge/codex.md'));
+  const codex = readFileSync(codexDe(ruta), 'utf8');
   const her = existsSync(join(ruta, 'SOS/knowledge/cervell/heretat.json'))
     ? JSON.parse(readFileSync(join(ruta, 'SOS/knowledge/cervell/heretat.json'), 'utf8')).vedes : {};
   const temaDe = {};
@@ -54,6 +68,7 @@ for (const { nom, ruta } of fuentes) {
   const caps = [...codex.matchAll(/^##+ (?:Veda (\d+) — (.+)|V(\d+) · (.+))$/gm)];
   caps.forEach((m, i) => {
     const num = +(m[1] || m[3]);
+    if (!esMatriz && deCasa.has((m[2] || m[4]).trim())) return;
     const titulo = (m[2] || m[4]).replace(/^Veda (de |del |d'|dels )?/i, '').trim();
     const cuerpo = codex.slice(m.index + m[0].length, i + 1 < caps.length ? caps[i + 1].index : codex.length);
     const plano = cuerpo.replace(/```[\s\S]*?```/g, '').replace(/[*`#>|]/g, '').replace(/\s+/g, ' ').trim();
@@ -66,20 +81,23 @@ for (const { nom, ruta } of fuentes) {
     const propuesta = max ? CAPAS[puntos.indexOf(max)].id : 'vijnana';
     nodos.push({ id, fuente: nom, n: num, t: titulo, fecha, tema: temaDe[num] || null,
       capa: fijadas[id] || propuesta, fijada: !!fijadas[id],
-      saberes: (SINT.vedas[num] || {}).saberes || [], aprende: (SINT.vedas[num] || {}).aprende || null,
+      saberes: (SINT.vedas[esMatriz ? num : id] || {}).saberes || [], aprende: (SINT.vedas[esMatriz ? num : id] || {}).aprende || null,
       txt: plano.length > 420 ? plano.slice(0, 420).replace(/\s\S*$/, '') + '…' : plano });
+    /* El hijo cita sus vedas y, si no las tiene, las de la matriz. */
     for (const c of new Set([...cuerpo.matchAll(/\b(?:[Vv]ed[ae]s?|V)\s?(\d{1,3})\b/g)].map(x => +x[1])))
-      if (c !== num) aristas.push([id, nom + ':' + c]);
+      if (c !== num) aristas.push([id, nom + ':' + c, esMatriz ? null : fuentes[0].nom + ':' + c]);
   });
 }
 const ids = new Set(nodos.map(n => n.id));
 const vistas = new Set();
-const limpias = aristas.filter(([a, b]) => {
+const limpias = aristas.map(([a, b, m]) => [a, ids.has(b) ? b : m]).filter(([a, b]) => {
   const k = [a, b].sort().join('|');
   if (!ids.has(b) || vistas.has(k)) return false;
   vistas.add(k); return true;
 });
-nodos.sort((a, b) => a.n - b.n);
+/* Primero la matriz y luego cada hijo: el hijo aprende después. */
+const orden = Object.fromEntries(fuentes.map((f, i) => [f.nom, i]));
+nodos.sort((a, b) => orden[a.fuente] - orden[b.fuente] || a.n - b.n);
 const datos = { generado: new Date().toISOString().slice(0, 10), fuentes: fuentes.map(f => f.nom),
   capas: CAPAS.map(({ k, ...c }) => ({ ...c, principios: SINT.principios[c.id] || [] })), saberes: SABERES, nodos, aristas: limpias };
 const raros = nodos.flatMap(n => n.saberes.filter(x => !SABERES[x]));

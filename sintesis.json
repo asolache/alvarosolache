@@ -1092,6 +1092,19 @@
     "conocimiento"
    ],
    "aprende": "Si una persona debe validar lo que hizo una máquina, debe poder corregirlo allí mismo y debe guardarse tanto el original como la corrección."
+  },
+  "Álvaro Solache:4": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Lo que se muestra del codex se genera leyéndolo; a mano solo van las decisiones."
+  },
+  "Álvaro Solache:5": {
+   "saberes": [
+    "conocimiento"
+   ],
+   "aprende": "Lo que ya sabe la matriz se cita, no se repite; lo nuevo sube a ella."
   }
  },
  "principios": {
