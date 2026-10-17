@@ -103,11 +103,26 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .priv p{font-size:.92rem;color:var(--muted);flex:1 1 300px;min-width:0}
 .priv button{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
 .priv button.sec{background:transparent;color:var(--ink);border-color:var(--line)}
+[hidden]{display:none!important}
+.graph3{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);position:relative}
+#c3{display:block;width:100%;height:min(72vh,600px);min-height:340px;cursor:grab;touch-action:pan-y}
+#c3:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.k3{position:absolute;left:12px;bottom:10px;display:flex;flex-wrap:wrap;gap:4px 12px;font:500 .74rem "JetBrains Mono",monospace;color:var(--muted);pointer-events:none}
+.k3 i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:5px;vertical-align:-1px}
+.fz{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.fz article{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 18px;min-width:0}
+.fz h3{font-size:1.05rem;margin-bottom:4px}
+.fz p{font-size:.92rem;color:var(--muted);margin-bottom:6px}
+.fz ol{padding-left:1.2rem;font-size:.9rem}
+.fz li{margin:.35rem 0}
+.fz .go{text-align:left}
+.dispara{font:600 .85rem "Space Grotesk",sans-serif;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;padding:6px 14px;margin:10px 6px 0 0;cursor:pointer}
+.dispara:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.3</span></div></nav>
+<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.4</span></div></nav>
 
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
@@ -123,7 +138,9 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     <div class="capas" id="capas"></div>
 
     <div class="tabs" role="tablist" aria-label="Vista del cerebro">
-      <button class="tab" role="tab" data-v="capas" aria-selected="true">Capas</button>
+      <button class="tab" role="tab" data-v="3d" aria-selected="true">Tres dimensiones</button>
+      <button class="tab" role="tab" data-v="castellera" aria-selected="false">Castellera</button>
+      <button class="tab" role="tab" data-v="capas" aria-selected="false">Cinco capas</button>
       <button class="tab" role="tab" data-v="mov" aria-selected="false">En movimiento</button>
     </div>
     <div class="saberes" id="saberes" role="group" aria-label="Filtrar por saber"></div>
@@ -147,11 +164,24 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
     <div class="priv" id="priv"><p id="privtxt">Capa privada: los codex de tus repos privados se leen en tu navegador con tu sesión de GitHub. Aquí no se publica nada de ellos.</p><span id="privbtn"></span></div>
     <p class="now" id="now" aria-live="polite"></p>
-    <div class="graph">
+    <div class="graph3" id="g3">
+      <canvas id="c3" tabindex="0" role="img" aria-label="El cerebro en tres dimensiones: las cinco koshas como esferas, del cuerpo fuera al propósito en el centro. Gira con las flechas; usa el buscador para elegir una veda y Enter para dispararla."></canvas>
+      <div class="k3" id="k3" aria-hidden="true"></div>
+    </div>
+    <div class="graph" id="g2" hidden>
       <svg id="svg" role="group" aria-label="Grafo de las vedas por capa"><g id="bg"></g><g id="ed"></g><g id="nd"></g><g id="lb"></g></svg>
     </div>
-    <p class="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta. Un borde punteado es privado y solo lo ves tú. Acerca con los botones o con Ctrl y la rueda, arrastra para moverte y usa las flechas para pasar de una veda a la siguiente.</p>
+    <p class="legend" id="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta. Un borde punteado es privado y solo lo ves tú. Acerca con los botones o con Ctrl y la rueda, arrastra para moverte y usa las flechas para pasar de una veda a la siguiente.</p>
     <div class="panel" id="panel" aria-live="polite"><p class="m">Toca una veda para leerla y ver con cuáles conecta.</p></div>
+  </div>
+</section>
+
+<section id="fuerzas">
+  <div class="wrap">
+    <p class="kicker">Las fuerzas del cerebro</p>
+    <h2>Gravedad, enlaces cuánticos y potencial</h2>
+    <p class="lead">Es una metáfora, no física, pero cada número sale del codex. La <b>masa</b> de una veda es cuántas veces cita o la citan, y su gravedad atrae a las que se citan con ella. Un <b>enlace cuántico</b> une dos vedas de koshas distintas que no se citan pero se activan juntas, porque comparten saberes o se apoyan en las mismas vedas. Al <b>disparar</b> una veda se encienden sus citas, cada salto con la mitad de fuerza, y sus entrelazadas a la vez. Su <b>potencial</b> es la suma de lo que enciende.</p>
+    <div class="fz" id="fz"></div>
   </div>
 </section>
 
@@ -197,9 +227,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <script src="cerebro-datos.js"></script>
 <script src="codex-parse.js"></script>
+<script src="cerebro-fuerzas.js"></script>
+<script src="cerebro-3d.js"></script>
 <script>
 (function(){
-  var PUB = window.CEREBRO, CP = window.CodexParse; if (!PUB) return;
+  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas; if (!PUB) return;
   var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
   var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
   var panel = document.getElementById("panel"), now = document.getElementById("now");
@@ -211,7 +243,9 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   function llano(s){ return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
 
   /* El cerebro que se ve: el público, más lo privado que lea tu navegador. Lo privado nunca sale de esta pestaña. */
-  var D, byId, vec, cita, citada, pos, nEls, eEls, sel = null, sabActivo = null;
+  var D, AN, byId, vec, cita, citada, pos, nEls, eEls, sel = null, sabActivo = null, vista = "3d";
+  var C3 = window.Cerebro3D(document.getElementById("c3"), { alElegir: function(id){ if (id) selecciona(id, true); else suelta(); } });
+  document.getElementById("k3").innerHTML = PUB.capas.map(function(c){ return '<span style="--c:' + col(c.id) + '"><i></i>' + esc(c.s) + '</span>'; }).join("");
   var W = 1000, H = 560, top = 24, lane = (H - top - 16) / 5, x0 = 150, x1 = W - 20;
 
   function monta(priv){
@@ -257,18 +291,39 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
         n.saberes.map(function(s){ return ' · ' + esc(PUB.saberes[s]); }).join("") + (n.fecha ? ' · ' + n.fecha.split("-").reverse().join("/") : '') + '</p></article>';
     }).join("");
 
+    AN = FZ.analiza(D);
+    C3.monta(D, AN);
+    fuerzas();
+    dibuja();
+    t.max = D.nodos.length; t.value = D.nodos.length;
+    hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = "";
+    if (sel && byId[sel]) selecciona(sel, true); else sel = null;
+  }
+
+  /* Las bandas del grafo plano: cinco capas, o los tres pisos de la castellera
+     (pinya, tronc y pom de dalt), donde cada piso lleva dentro sus koshas. */
+  function bandas(){
+    return vista === "castellera"
+      ? FZ.CASTELLERA.map(function(p){ return { n:p.n, s:p.capas.map(function(k){ return capaDe[k].s; }).join(" · "), capas:p.capas, piso:true }; })
+      : orden.map(function(c){ return { n:c.n, s:c.s, capas:[c.id] }; });
+  }
+  function dibuja(){
+    var bs = bandas(), alto = (H - top - 16) / bs.length;
     /* Posiciones: x por orden, y por capa con un pequeño vaivén para que no se tapen. */
     pos = {};
     D.nodos.forEach(function(n, i){
-      var li = orden.findIndex(function(c){ return c.id === n.capa; });
-      var jit = ((n.n * 37) % 5 - 2) * (lane / 7);
-      pos[n.id] = { x: x0 + (x1 - x0) * i / Math.max(1, D.nodos.length - 1), y: top + lane * li + lane / 2 + jit };
+      var li = bs.findIndex(function(b){ return b.capas.indexOf(n.capa) >= 0; }), b = bs[li];
+      var sub = alto / b.capas.length, si = b.capas.indexOf(n.capa);
+      var jit = ((n.n * 37) % 5 - 2) * (sub / 7);
+      pos[n.id] = { x: x0 + (x1 - x0) * i / Math.max(1, D.nodos.length - 1), y: top + alto * li + sub * si + sub / 2 + jit };
     });
     gB.innerHTML = gE.innerHTML = gN.innerHTML = gL.innerHTML = "";
-    orden.forEach(function(c, i){
-      el("rect", {x:-W, y:top + lane * i, width:W * 3, height:lane, fill:col(c.id), "class":"band"}, gB);
-      var t = el("text", {x:12, y:top + lane * i + lane / 2 - 2, fill:col(c.id), "class":"lane"}, gB); t.textContent = c.n;
-      var s = el("text", {x:12, y:top + lane * i + lane / 2 + 14, "class":"lane-s"}, gB); s.textContent = c.s.toUpperCase();
+    bs.forEach(function(b, i){
+      var sub = alto / b.capas.length;
+      b.capas.forEach(function(k, j){ el("rect", {x:-W, y:top + alto * i + sub * j, width:W * 3, height:sub, fill:col(k), "class":"band"}, gB); });
+      if (b.piso && i) el("line", {x1:0, x2:W, y1:top + alto * i, y2:top + alto * i, stroke:"var(--line)", "stroke-width":1.5}, gB);
+      var t = el("text", {x:12, y:top + alto * i + alto / 2 - 2, fill:b.piso ? "var(--ink)" : col(b.capas[0]), "class":"lane"}, gB); t.textContent = b.n;
+      var s = el("text", {x:12, y:top + alto * i + alto / 2 + 14, "class":"lane-s"}, gB); s.textContent = b.s.toUpperCase();
     });
     eEls = D.aristas.map(function(a){
       var p = pos[a[0]], q = pos[a[1]], mx = (p.x + q.x) / 2, my = Math.min(p.y, q.y) - Math.abs(p.x - q.x) / 6;
@@ -286,9 +341,42 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       });
       nEls[n.id] = g;
     });
-    t.max = D.nodos.length; t.value = D.nodos.length;
-    hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = "";
-    if (sel && byId[sel]) selecciona(sel, true); else sel = null;
+  }
+
+  /* Las fuerzas: lo que dice el análisis, con cada veda a un toque. */
+  function chip(id, extra){ var n = byId[id]; return '<button class="go" data-id="' + esc(id) + '">' + n.n + ' · ' + esc(n.t) + (extra ? ' <small style="color:var(--muted)">· ' + esc(extra) + '</small>' : '') + '</button>'; }
+  function fuerzas(){
+    var conQ = {}; AN.cuanticos.forEach(function(e){ conQ[e.a] = conQ[e.b] = 1; });
+    var guia = AN.sueltas.filter(function(n){ return conQ[n.id]; }).length, cs = AN.castellera;
+    document.getElementById("fz").innerHTML =
+      '<article style="--c:var(--vishnu-luz)"><h3>Gravedad</h3><p>Las vedas con más masa: las que más citan o más las citan. Sostienen el resto.</p><ol>' +
+        AN.gravedad.map(function(n){ return '<li>' + chip(n.id, AN.masa[n.id] + " citas") + '</li>'; }).join("") + '</ol></article>' +
+      '<article style="--c:var(--brahma-luz)"><h3>Potencial</h3><p>Las que más cerebro encienden al dispararse. Toca una y pulsa «Disparar».</p><ol>' +
+        AN.potentes.map(function(n){ var a = AN.alcance[n.id]; return '<li>' + chip(n.id, "enciende " + a.vedas + " vedas en " + a.capas + (a.capas === 1 ? " kosha" : " koshas")) + '</li>'; }).join("") + '</ol></article>' +
+      '<article style="--c:var(--shiva-luz)"><h3>Enlaces cuánticos</h3><p>' + AN.cuanticos.length + ' pares de koshas distintas que no se citan y se activan juntos. Los más fuertes:</p><ol>' +
+        AN.cuanticos.slice(0, 6).map(function(e){ return '<li>' + chip(e.a) + ' ↔ ' + chip(e.b, porque(e)) + '</li>'; }).join("") + '</ol></article>' +
+      '<article style="--c:var(--ink)"><h3>Optimización</h3>' +
+        '<p><b>Citas que faltan.</b> Estas parejas se apoyan en las mismas vedas y aún no se citan: una cita entre ellas cerraría el circuito.</p><ol>' +
+        AN.faltan.slice(0, 5).map(function(e){ return '<li>' + chip(e.a) + ' ↔ ' + chip(e.b) + '</li>'; }).join("") + '</ol>' +
+        '<p style="margin-top:10px"><b>Vedas sueltas.</b> ' + AN.sueltas.length + ' de ' + D.nodos.length + ' no citan ni las citan. ' + guia + ' de ellas ya tienen un enlace cuántico que dice con cuál conectarlas.</p>' +
+        '<p style="margin-top:10px"><b>La castellera.</b> Pinya ' + cs[2].vedas + ' · tronc ' + cs[1].vedas + ' · pom de dalt ' + cs[0].vedas + '. ' +
+        (AN.aguanta ? 'Aguanta: la pinya es más ancha que el tronco, como pide la regla de los castells.' : 'No aguanta: el tronco ha crecido más que la pinya. Toca bajar vedas a la obra y a la energía.') + '</p></article>';
+  }
+  function porque(e){
+    var s = e.saberes.map(function(k){ return PUB.saberes[k]; }).join(" y ");
+    return (s ? "comparten " + s : "") + (s && e.vecinos.length ? "; " : "") + (e.vecinos.length ? "citan " + (e.vecinos.length === 1 ? "la misma veda" : "las mismas " + e.vecinos.length) : "");
+  }
+  function suelta(){
+    sel = null; C3.selecciona(null); gL.innerHTML = "";
+    Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); });
+    panel.style.removeProperty("--c"); panel.innerHTML = '<p class="m">Toca una veda para leerla y ver con cuáles conecta.</p>';
+  }
+  function dispara(id){
+    if (vista !== "3d") ver("3d");
+    var luz = C3.dispara(id); if (!luz) return;
+    var ks = Object.keys(luz).filter(function(k){ return k !== id; }), q = ks.filter(function(k){ return luz[k].via === "cuantico"; }).length;
+    var capas = {}; ks.forEach(function(k){ capas[byId[k].capa] = 1; });
+    now.textContent = "Disparo desde la veda " + byId[id].n + ": enciende " + ks.length + " vedas en " + Object.keys(capas).length + " koshas, " + q + " por enlace cuántico.";
   }
 
   function etiqueta(id){
@@ -298,7 +386,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     tx.textContent = n.n + " · " + n.t;
   }
   function selecciona(id, quieto){
-    sel = id; var n = byId[id], c = capaDe[n.capa];
+    sel = id; var n = byId[id], c = capaDe[n.capa]; C3.selecciona(id);
     Object.keys(nEls).forEach(function(k){ nEls[k].classList.toggle("sel", k === id); nEls[k].classList.toggle("dim", k !== id && !vec[id][k]); });
     eEls.forEach(function(e){ e.el.classList.toggle("on", e.a[0] === id || e.a[1] === id); });
     if (!quieto) centra(id);
@@ -307,7 +395,10 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     panel.style.setProperty("--c", col(n.capa));
     panel.innerHTML = '<p class="m">Veda ' + n.n + ' · ' + esc(n.fuente) + (n.fecha ? ' · ' + esc(n.fecha) : '') + ' · ' + esc(c.n) + (n.fijada ? ' (fijada)' : ' (propuesta)') + (n.tema ? ' · ' + esc(n.tema) : '') + (n.privado ? ' · privada, solo la ves tú' : '') + '</p>' +
       '<h3>' + esc(n.t) + '</h3>' + (n.aprende ? '<p class="aprende"><b>Lo que enseña:</b> ' + esc(n.aprende) + '</p>' : '') +
-      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(PUB.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
+      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(PUB.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan") +
+      chips(AN.cuanticos.filter(function(e){ return e.a === id || e.b === id; }).map(function(e){ return e.a === id ? e.b : e.a; }), "Entrelazadas") +
+      '<p class="m" style="margin-top:10px">Masa ' + AN.masa[id] + ' · potencial ' + AN.potencial[id] + ' · enciende ' + AN.alcance[id].vedas + ' vedas en ' + AN.alcance[id].capas + ' koshas</p>' +
+      '<button type="button" class="dispara" data-dispara="' + esc(id) + '">Disparar</button>';
     /* Solo las vedas públicas tienen enlace: el nombre de un repo privado no va a la barra de direcciones. */
     try { history.replaceState(null, "", n.privado ? location.pathname + "#privado" : "#" + ancla(n)); } catch (e) {}
   }
@@ -335,9 +426,9 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     sigue(id);
   }
   function punto(e){ var r = svg.getBoundingClientRect(); return { x: vb.x + (e.clientX - r.left) / r.width * vb.w, y: vb.y + (e.clientY - r.top) / r.height * vb.h }; }
-  document.getElementById("zmas").addEventListener("click", function(){ zoom(1 / 1.6, sel ? pos[sel].x : null, sel ? pos[sel].y : null); });
-  document.getElementById("zmenos").addEventListener("click", function(){ zoom(1.6); });
-  document.getElementById("zcero").addEventListener("click", function(){ vb = { x:0, y:0, w:W, h:H }; aplica(); if (sel) etiqueta(sel); });
+  document.getElementById("zmas").addEventListener("click", function(){ if (vista === "3d") return C3.zoom(1 / 1.25); zoom(1 / 1.6, sel ? pos[sel].x : null, sel ? pos[sel].y : null); });
+  document.getElementById("zmenos").addEventListener("click", function(){ if (vista === "3d") return C3.zoom(1.25); zoom(1.6); });
+  document.getElementById("zcero").addEventListener("click", function(){ if (vista === "3d") return C3.centra(); vb = { x:0, y:0, w:W, h:H }; aplica(); if (sel) etiqueta(sel); });
   svg.addEventListener("wheel", function(e){ if (!e.ctrlKey && !e.metaKey) return; e.preventDefault(); var p = punto(e); zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, p.x, p.y); }, { passive:false });
   var arrastre = null;
   svg.addEventListener("pointerdown", function(e){ if (vb.w >= W) return; arrastre = { x:e.clientX, y:e.clientY, vx:vb.x, vy:vb.y }; movido = false; });
@@ -384,10 +475,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       eEls.forEach(function(x){ x.el.classList.remove("on"); }); gL.innerHTML = "";
       return;
     }
+    var dp = e.target.closest("[data-dispara]"); if (dp) { dispara(dp.getAttribute("data-dispara")); return; }
     var b = e.target.closest("[data-id]"); if (!b) return;
     e.preventDefault(); selecciona(b.getAttribute("data-id"));
     if (b.closest(".res")) { res.hidden = true; q.blur(); }
-    if (b.tagName === "A" || b.closest(".res")) document.querySelector(".graph").scrollIntoView({behavior:"smooth", block:"center"});
+    if (b.tagName === "A" || b.closest(".res")) document.querySelector(vista === "3d" ? ".graph3" : ".graph").scrollIntoView({behavior:"smooth", block:"center"});
   });
 
   /* En movimiento: el cerebro crece veda a veda, con sus citas. */
@@ -413,15 +505,23 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     play.textContent = "❚❚ Pausa";
     timer = setInterval(function(){ if (+t.value >= D.nodos.length) return para(); t.value = +t.value + 1; hasta(t.value); }, 140);
   });
-  document.querySelectorAll(".tab").forEach(function(b){
-    b.addEventListener("click", function(){
-      document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
-      var mov = b.getAttribute("data-v") === "mov";
-      document.getElementById("ctl").classList.toggle("on", mov);
-      para();
-      if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel, true); }
-    });
-  });
+  var leyenda = document.getElementById("legend"), LEY = {
+    "3d": "Cada esfera es una kosha: el cuerpo fuera y el propósito en el centro. El tamaño de una veda es su masa. Las líneas grises son citas; las punteadas verdes, enlaces cuánticos. Arrastra para girar; acerca con los botones o con Ctrl y la rueda. Toca una veda y pulsa «Disparar» para ver qué enciende.",
+    castellera: "Los tres pisos del castell: la pinya (cuerpo y energía) aguanta el tronc (mente y discernimiento), que sube el pom de dalt (propósito). Dentro de cada piso, una franja por kosha. De izquierda a derecha, el orden en que se escribió cada veda; las líneas son citas.",
+    capas: leyenda.textContent
+  };
+  LEY.mov = LEY.capas;
+  function ver(v){
+    vista = v;
+    document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-selected", x.getAttribute("data-v") === v ? "true" : "false"); });
+    var tres = v === "3d", mov = v === "mov";
+    document.getElementById("g3").hidden = !tres; document.getElementById("g2").hidden = tres;
+    C3.activa(tres); leyenda.textContent = LEY[v];
+    document.getElementById("ctl").classList.toggle("on", mov);
+    para(); dibuja();
+    if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel, true); }
+  }
+  document.querySelectorAll(".tab").forEach(function(b){ b.addEventListener("click", function(){ ver(b.getAttribute("data-v")); }); });
 
   /* Capa privada. Con tu sesión de GitHub, el navegador busca un codex en cada repo
      privado al que tienes acceso y lo dibuja aquí. Nada de eso se guarda ni se publica:
@@ -484,10 +584,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
   aplica();
   monta();
+  ver("3d");
   cargaPrivado();
   /* Enlace directo a una veda: cerebro.html#veda-12 o #veda-1-4 */
   var m = location.hash.match(/^#veda-(?:(\d+)-)?(\d+)$/), dir = m && PUB.fuentes[+(m[1] || 0)] + ":" + m[2];
-  if (dir && byId[dir]) { selecciona(dir); setTimeout(function(){ document.querySelector(".graph").scrollIntoView({block:"center"}); }, 0); }
+  if (dir && byId[dir]) { selecciona(dir); setTimeout(function(){ document.querySelector(".graph3").scrollIntoView({block:"center"}); }, 0); }
 })();
 </script>
 </body>
