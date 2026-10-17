@@ -20,3 +20,5 @@ Antes de escribir nada, lee en este orden: `saber/MAPA.md`, `saber/codex.md`,
 - El cerebro de la web y el ikigai salen del codex. Tras cambiar un codex:
   `node herramientas/cerebro-codex.mjs --fuente "TeamTowers Humà=../teamtowershuma" --fuente "Álvaro Solache=."`
   y después `node guardas/cervell.js`.
+- La piel es la de la red (veda 7): tras `--actualitza`,
+  `node herramientas/pell.mjs` vuelve a escribir la paleta en `red.css`.

@@ -32,6 +32,18 @@ tiene `/ia`.
 
 ## Hecho
 
+### El diseño de la red (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «Revisa diseño del site para integrar look and feel de
+toda la red». **Hecho:** `red.css` con la piel de TeamTowers leída de la matriz
+(veda 7), en la portada, el cerebro y «Cómo uso la IA»; Space Grotesk como
+letra de texto, igual que la red (fuera Inter); botones de 44 px y radio 10 como
+los de la matriz; el pie «La red» con los cinco sitios. Fuera el modo oscuro de
+estas páginas: la red es clara y el escenario de noche se queda.
+**Medido:** sin errores de consola, sin scroll lateral a 390 px,
+`pell.mjs --check` en verde. **Queda:** las páginas viejas de Nicepage
+(`cv.html`, `valor.html`, `coops.html`…) siguen con su estilo.
+
 ### El linaje, contado por él (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «En mi linaje quita Codorníu y los avis…».

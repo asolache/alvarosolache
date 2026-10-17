@@ -58,3 +58,18 @@ muestra las vedas de la plantilla (1 a 3) como propias: ya están en la matriz.
 **Dicho por Álvaro el 17/10/2026.** Nació aquí y subió a la matriz: hoy es la
 veda 167 heredada (`vedas-heredadas.md`), y por la veda 5 aquí solo se cita.
 Lo propio de esta web es `ia.html`, que usa el contador común de TeamTowers.
+
+## Veda 7 — La piel es la de la red
+
+**Dicho por Álvaro el 17/10/2026:** «Revisa el diseño del site para integrar el
+look and feel de toda la red». La paleta (papel, tinta, bordes y acentos con
+contraste AA medido) la declara TeamTowers una vez en
+SOS/tools/build-pell.js, en el repositorio teamtowershuma. Aquí no se copia: la escribe
+`herramientas/pell.mjs` en `red.css` entre las marcas `TT-PELL`, y las páginas
+nuevas enlazan `red.css` en vez de declarar su propio `--bg`. Lo propio de esta
+web (el escenario de noche con los colores de su dharma, Unbounded y Fraunces)
+va encima, no en lugar de la piel. Es la veda 5 aplicada al diseño.
+
+**Guarda:** `node herramientas/pell.mjs --check` falla si `red.css` se queda
+vieja frente a la matriz. Sin la matriz al lado (el CI) avisa y no falla.
+
