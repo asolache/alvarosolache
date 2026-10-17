@@ -26,7 +26,9 @@ muestre que lo hacemos con transparencia». **Qué:** llevar la veda 6 a los
 otros proyectos y, si vale para todos, subirla a la matriz con `--recull`.
 Una guarda que compruebe que cada página enlaza `ia.html`.
 **Cómo se cierra:** cada web del proyecto tiene su «Cómo uso la IA» leyendo
-su propio historial.
+su propio historial. **Avance:** la veda subió a la matriz como 167, el
+contador es común (`teamtowershuma.com/js/ia-a-la-vista.js`) y molekulon.org
+tiene `/ia`.
 
 ## Hecho
 

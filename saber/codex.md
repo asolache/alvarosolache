@@ -55,16 +55,6 @@ muestra las vedas de la plantilla (1 a 3) como propias: ya están en la matriz.
 
 ## Veda 6 — La IA se declara, y lo que gasta se elige
 
-**Dicho por Álvaro el 17/10/2026:** «quiero que en mis proyectos la IA se
-integre y se muestre que lo hacemos con transparencia», y «cobre lo que cobre
-por token, el codex siempre será lo más inteligente posible al menor coste
-energético». El error que evita: una web hecha con IA que no lo dice, o que lo
-dice con un número escrito a mano que nadie comprueba. Por eso `ia.html` cuenta
-los commits firmados con Claude leyendo el historial (veda 102 heredada) y no
-publica el coste sin fuente (veda 67 heredada). El modelo por tarea y su coste
-real no se copian aquí: viven en el backlog de TeamTowers y en su página de
-servicios conectables.
-
-**Guarda:** la cifra de `ia.html` sale de la API de GitHub al abrir la página;
-si no responde, lo dice. Que una guarda compruebe que cada página enlaza
-`ia.html` queda en el backlog.
+**Dicho por Álvaro el 17/10/2026.** Nació aquí y subió a la matriz: hoy es la
+veda 167 heredada (`vedas-heredadas.md`), y por la veda 5 aquí solo se cita.
+Lo propio de esta web es `ia.html`, que usa el contador común de TeamTowers.

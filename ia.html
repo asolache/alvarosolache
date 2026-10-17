@@ -54,12 +54,13 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .card li{margin:.35rem 0 .35rem 1.1rem}
 .nota{font-size:.9rem;color:var(--muted);margin-top:12px}
 .vivo{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
-.cifra{font:600 clamp(1.6rem,5vw,2.2rem) Unbounded,sans-serif}
-.vivo ul{list-style:none;margin-top:12px}
-.vivo li{display:flex;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding:8px 0;font-size:.92rem}
-.vivo li a{color:var(--ink);text-decoration:none;flex:1;min-width:0;overflow-wrap:anywhere}
-.tag{flex:none;font:500 .72rem "JetBrains Mono",monospace;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.tag.ia{border-color:var(--azul);color:var(--azul)}
+.iav-cifra{font:600 clamp(1.6rem,5vw,2.2rem) Unbounded,sans-serif}
+.iav-nota{font-size:.9rem;color:var(--muted)}
+.iav-llista{list-style:none;margin-top:12px}
+.iav-llista li{display:flex;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding:8px 0;font-size:.92rem}
+.iav-llista a{color:var(--ink);text-decoration:none;flex:1;min-width:0;overflow-wrap:anywhere}
+.iav-tag{flex:none;font:500 .72rem "JetBrains Mono",monospace;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.iav-tag.iav-ia{border-color:var(--azul);color:var(--azul)}
 .vedas li{margin:.6rem 0 .6rem 1.2rem}
 footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
 </style>
@@ -114,7 +115,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <div class="wrap">
     <h2>Lo que se puede comprobar</h2>
     <p class="lead">Esto no lo escribo a mano: sale del historial público de esta web cada vez que abres la página. Un commit hecho con Claude lleva la línea <code>Co-Authored-By: Claude</code>.</p>
-    <div class="vivo" id="vivo" aria-live="polite"><p class="nota">Consultando el historial en GitHub…</p></div>
+    <div class="vivo" data-ia-a-la-vista="asolache/alvarosolache" aria-live="polite"><p class="nota">El historial está en <a href="https://github.com/asolache/alvarosolache/commits/main">github.com/asolache/alvarosolache</a>.</p></div>
   </div>
 </section>
 
@@ -126,38 +127,16 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       <li><b>Veda 67.</b> Una cifra inflada e incompleta es peor que ninguna: lo que no tiene fuente no se publica.</li>
       <li><b>Veda 102.</b> Lo que se declara y lo que se demuestra no se pintan igual: por eso lo de arriba sale del historial.</li>
       <li><b>Veda 158.</b> Un modelo no suma: las cuentas las hace el código, y a la IA se le pide solo lo que no está.</li>
+      <li><b>Veda 167.</b> La IA se declara, y lo que gasta se elige. Nació en esta web y ahora la heredan todos mis proyectos.</li>
       <li><b>Veda 80.</b> Vale más decir «esto no lo hago yo» que un botón que lo parece.</li>
     </ul>
-    <p class="nota">El texto completo, en catalán, en <a href="https://github.com/asolache/alvarosolache/blob/main/saber/vedas-heredadas.md">las vedas heredadas</a>. La regla propia de esta página es la <a href="https://github.com/asolache/alvarosolache/blob/main/saber/codex.md">veda 6</a>.</p>
+    <p class="nota">El texto completo, en catalán, en <a href="https://github.com/asolache/alvarosolache/blob/main/saber/vedas-heredadas.md">las vedas heredadas</a>. La regla de esta página nació aquí y ya es de todos: la <a href="https://teamtowershuma.com/SOS/vedes.html">veda 167</a>.</p>
   </div>
 </section>
 
 <footer><div class="wrap"><a href="index.html">Volver al perfil</a> · <a href="https://github.com/asolache/alvarosolache">El código de esta web</a></div></footer>
 
-<script>
-/* Veda 102: lo demostrado sale del historial, no de un número escrito a mano.
-   Si GitHub no responde, se dice (veda 105): el silencio mentiría. */
-(function () {
-  var box = document.getElementById('vivo');
-  var REPO = 'asolache/alvarosolache';
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  fetch('https://api.github.com/repos/' + REPO + '/commits?per_page=100')
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (cs) {
-      var conIA = cs.filter(function (c) { return /co-authored-by:\s*claude/i.test(c.commit.message); });
-      var ult = cs.slice(0, 8).map(function (c) {
-        var ia = /co-authored-by:\s*claude/i.test(c.commit.message);
-        var t = c.commit.message.split('\n')[0];
-        var f = c.commit.author.date.slice(0, 10).split('-').reverse().join('/');
-        return '<li><span class="tag' + (ia ? ' ia">con Claude' : '">sin IA') + '</span><a href="' + esc(c.html_url) + '">' + esc(t) + '</a><span class="tag">' + f + '</span></li>';
-      }).join('');
-      box.innerHTML = '<p class="cifra">' + conIA.length + ' de ' + cs.length + '</p>' +
-        '<p class="nota">commits de los últimos ' + cs.length + ' llevan la firma de Claude. Los ocho más recientes:</p><ul>' + ult + '</ul>';
-    })
-    .catch(function () {
-      box.innerHTML = '<p class="nota">No he podido consultar GitHub ahora mismo. El historial está en <a href="https://github.com/' + REPO + '/commits/main">github.com/' + REPO + '</a>.</p>';
-    });
-})();
-</script>
+<!-- El contador es el de la matriz, el mismo para todos los proyectos (veda 167). -->
+<script src="https://teamtowershuma.com/js/ia-a-la-vista.js" defer></script>
 </body>
 </html>
