@@ -10,18 +10,21 @@
    La matriz va primero: lee de ella las vedas de la plantilla para no repetirlas.
 */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
-
-/* El lector del codex es el mismo que usa la capa privada en el navegador. */
-const { CAPAS, SABERES, RUTA_CODEX, RUTA_HERENCIA, RUTA_PLANTILLA, RUTA_HIJO, plantilla, lee, limpia } = createRequire(import.meta.url)('../codex-parse.js');
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const fuentes = args.flatMap((a, i) => a === '--fuente' ? [args[i + 1]] : [])
   .map(f => { const [nom, ruta] = f.split('='); return { nom, ruta }; });
 if (!fuentes.length) { console.log('✗ Falta --fuente "Nombre=ruta/al/repositorio"'); process.exit(1); }
+
+/* El lector del codex es el de la matriz (la primera fuente), el mismo que usa
+   la capa privada en el navegador: aquí no se copia (veda 5). */
+const LECTOR = resolve(fuentes[0].ruta, 'SOS/cervell/codex-parse.js');
+if (!existsSync(LECTOR)) { console.log('✗ La primera fuente ha de ser la matriz: falta ' + LECTOR); process.exit(1); }
+const { CAPAS, SABERES, RUTA_CODEX, RUTA_HERENCIA, RUTA_PLANTILLA, RUTA_HIJO, plantilla, lee, limpia } = createRequire(import.meta.url)(LECTOR);
 
 /* En el cerebro público se comparte lo que es público (Álvaro, 17/10/2026).
    Un proyecto que se declara privado en su cervell.json no es fuente de esta

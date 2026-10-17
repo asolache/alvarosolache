@@ -122,7 +122,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.4</span></div></nav>
+<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.5</span></div></nav>
 
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
@@ -185,6 +185,20 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </section>
 
+<section id="llevatelo">
+  <div class="wrap">
+    <p class="kicker">El motor de cada persona</p>
+    <h2>Llévatelo</h2>
+    <p class="lead">Mi cerebro, para mis IA y para un aula. Solo lo público: la capa privada no entra en ningún fichero. Y si quieres el tuyo, el mismo motor dibuja <a href="https://teamtowershuma.com/SOS/cervell.html">el cerebro de cualquier persona</a> con su codex.</p>
+    <div class="fz">
+      <article style="--c:var(--brahma-luz)"><h3>Para tus IA</h3><p>Un cerebro.md con las vedas por kosha, las que sostienen y las que se activan juntas. Se guarda como CLAUDE.md o se pega en las instrucciones de un proyecto.</p><button type="button" class="dispara" data-lleva="md">cerebro.md</button></article>
+      <article style="--c:var(--vishnu-luz)"><h3>Para una herramienta</h3><p>Los mismos datos en JSON, con la masa, el potencial y los enlaces cuánticos de cada veda.</p><button type="button" class="dispara" data-lleva="json">cerebro.json</button></article>
+      <article style="--c:var(--shiva-luz)"><h3>Sin conexión y en tu LMS</h3><p>Todo el cerebro en un HTML que se abre sin internet, o en un paquete SCORM 1.2 para Moodle y casi cualquier LMS local.</p><button type="button" class="dispara" data-lleva="html">cerebro.html</button><button type="button" class="dispara" data-lleva="scorm">SCORM 1.2</button></article>
+    </div>
+    <p class="now" id="lleva-estado" aria-live="polite"></p>
+  </div>
+</section>
+
 <section id="mias">
   <div class="wrap">
     <p class="kicker">Lo que aprende esta web</p>
@@ -218,7 +232,6 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       <li><b>Pulir las capas.</b> Fijar a mano las que la propuesta coloca mal; lo fijado manda.</li>
       <li><b>Los otros cerebros.</b> Events Penedès, TeamTowers, Molekulon y cada cliente, cuando su codex tenga vedas propias. Lo que aprende uno sube a la matriz y vuelve a todos.</li>
       <li><b>Los saberes como dominios.</b> Mapa de valor, contabilidad de valor y tokenomics, DeFi P2P, conocimiento, personas, proyectos y kanban.</li>
-      <li><b>Crea tu cerebro.</b> El mismo mapa para quien quiera ordenar el suyo.</li>
     </ol>
   </div>
 </section>
@@ -226,12 +239,14 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <footer><div class="wrap"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div>Generado del codex público de <a href="https://github.com/asolache/teamtowershuma/blob/main/SOS/knowledge/codex.md">TeamTowers Humà</a> · <span id="gen"></span> · <a href="ia.html">Cómo uso la IA</a> · <a href="index.html">Volver al perfil</a></div></footer>
 
 <script src="cerebro-datos.js"></script>
-<script src="codex-parse.js"></script>
-<script src="cerebro-fuerzas.js"></script>
-<script src="cerebro-3d.js"></script>
+<!-- El motor del cerebro es de la matriz (veda 5): aquí no se copia. -->
+<script src="https://teamtowershuma.com/SOS/cervell/codex-parse.js"></script>
+<script src="https://teamtowershuma.com/SOS/cervell/forces.js"></script>
+<script src="https://teamtowershuma.com/SOS/cervell/3d.js"></script>
+<script src="https://teamtowershuma.com/SOS/cervell/exporta.js"></script>
 <script>
 (function(){
-  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas; if (!PUB) return;
+  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta; if (!PUB || !FZ || !window.Cerebro3D) return;
   var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
   var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
   var panel = document.getElementById("panel"), now = document.getElementById("now");
@@ -522,6 +537,26 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel, true); }
   }
   document.querySelectorAll(".tab").forEach(function(b){ b.addEventListener("click", function(){ ver(b.getAttribute("data-v")); }); });
+
+  /* Llévatelo: solo lo público, con el motor común de la matriz. */
+  document.getElementById("llevatelo").addEventListener("click", function(e){
+    var b = e.target.closest("[data-lleva]"); if (!b || !CX) return;
+    var pub = D.nodos.filter(function(n){ return !n.privado; }), ids = {}; pub.forEach(function(n){ ids[n.id] = 1; });
+    var P = { nodos: pub, aristas: D.aristas.filter(function(a){ return ids[a[0]] && ids[a[1]]; }), capas: PUB.capas };
+    var A = FZ.analiza(P), k = b.getAttribute("data-lleva"), est = document.getElementById("lleva-estado");
+    var meta = { nom: "Álvaro Solache", font: PUB.fuentes.join(" y "), id: "alvaro-solache", lang: "es", data: PUB.generado, url: "alvarosolache.netlify.app/cerebro.html" };
+    var desa = function(nom, cos, tipo){
+      var bl = cos instanceof Blob ? cos : new Blob([cos], { type: tipo }), a = document.createElement("a");
+      a.href = URL.createObjectURL(bl); a.download = nom; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000); est.textContent = "Descargado " + nom + ".";
+    };
+    if (k === "md") return desa("cerebro-alvaro-solache.md", CX.md(P, A, meta), "text/markdown");
+    if (k === "json") return desa("cerebro-alvaro-solache.json", CX.json(P, A, meta), "application/json");
+    est.textContent = "Preparando el fichero…";
+    Promise.all(["forces.js", "3d.js", "vista.js"].map(function(f){ return fetch("https://teamtowershuma.com/SOS/cervell/" + f).then(function(r){ if (!r.ok) throw r.status; return r.text(); }); }))
+      .then(function(c){ if (k === "html") desa("cerebro-alvaro-solache.html", CX.html(P, meta, c), "text/html"); else desa("cerebro-alvaro-solache-scorm.zip", CX.scorm(P, meta, c)); })
+      .catch(function(){ est.textContent = "No se pudo preparar el fichero ahora mismo. Vuelve a intentarlo en un rato."; });
+  });
 
   /* Capa privada. Con tu sesión de GitHub, el navegador busca un codex en cada repo
      privado al que tienes acceso y lo dibuja aquí. Nada de eso se guarda ni se publica:

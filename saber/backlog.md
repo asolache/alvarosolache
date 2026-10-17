@@ -32,6 +32,19 @@ tiene `/ia`.
 
 ## Hecho
 
+### El cerebro, motor de cada persona (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «Y esto para cada persona», «exportable a LMS local» y
+«como motor de cada persona con las IAs». **Hecho:** el motor (lector del
+codex, fuerzas, 3D, vista y exportación) vive en la matriz, en SOS/cervell de
+TeamTowers Humà, y esta web lo carga de allí en lugar de copiarlo (veda 5).
+La matriz publica «El teu cervell», que dibuja el codex de cualquier repo
+público o de un codex.md subido. Desde allí y desde `cerebro.html` el cerebro
+se lleva como cerebro.md (contexto para las IA), JSON, HTML sin conexión y
+paquete SCORM 1.2 para un LMS local. Solo lo público: la capa privada no entra
+en ningún fichero. **Medido:** sin errores de consola, sin scroll lateral a
+390 px, el HTML se abre sin red y el zip SCORM es válido.
+
 ### El cerebro en tres dimensiones, por koshas (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «vista del cerebro tridimensional por koshas y las
@@ -40,7 +53,7 @@ fuerzas gravitacionales y cuánticas… el SVG actual puede ser la castellera co
 **Hecho:** `cerebro.html` 0.4 con cuatro vistas: tres dimensiones (cada kosha
 una esfera, el propósito en el centro), castellera (pinya = annamaya y
 pranamaya, tronc = manomaya y vijnanamaya, pom de dalt = anandamaya), cinco
-capas y en movimiento. Las fuerzas salen de `cerebro-fuerzas.js`, que se
+capas y en movimiento. Las fuerzas salen del motor de la matriz, que se
 calcula del codex sin cifras inventadas: masa (citas), enlaces cuánticos
 (saberes y vecinos en común entre koshas distintas), disparo y potencial, y la
 optimización (citas que faltan, vedas sueltas, si la castellera aguanta). El
