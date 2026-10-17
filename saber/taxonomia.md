@@ -24,5 +24,6 @@ lista y nada más. Crear una carpeta sin declararla rompe el CI.
 - `herramientas` · obra · Las herramientas: las propias (`cerebro-codex.mjs`, que genera el cerebro de la web) y las heredadas de TeamTowers (`tools/` y el editor del mapa), que no se editan aquí
 - `blog` · obra · Las entradas del blog de la web antigua
 - `images` · obra · Las imágenes que usan las páginas
+- `netlify` · obra · Las funciones de Netlify: la entrada con GitHub de la capa privada del cerebro
 - `guardas` · prova · Las comprobaciones que fallan en CI cuando una promesa deja de ser cierta
 - `.github` · prova · El CI: corre la guarda del cerebro en cada PR

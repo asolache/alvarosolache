@@ -14,8 +14,9 @@ La cosa misma: lo que usa la gente. Una sola fuente de verdad por cosa.
 | carpeta | qué entra | ficheros |
 |---|---|---|
 | `blog/` | Las entradas del blog de la web antigua | 7 · 98 KB |
-| `herramientas/` | Las herramientas: las propias (`cerebro-codex.mjs`, que genera el cerebro de la web) y las heredadas de TeamTowers (`tools/` y el editor del mapa), que no se editan aquí | 6 · 738 KB |
+| `herramientas/` | Las herramientas: las propias (`cerebro-codex.mjs`, que genera el cerebro de la web) y las heredadas de TeamTowers (`tools/` y el editor del mapa), que no se editan aquí | 6 · 734 KB |
 | `images/` | Las imágenes que usan las páginas | 100 · 8141 KB |
+| `netlify/` | Las funciones de Netlify: la entrada con GitHub de la capa privada del cerebro | 1 · 3 KB |
 
 ## prova
 
@@ -32,8 +33,8 @@ Lo que sabemos y aún no es obra. Se cita, no se copia.
 
 | carpeta | qué entra | ficheros |
 |---|---|---|
-| `saber/` | El cerebro: mapa, codex, contrato de la IA, taxonomía y backlog | 9 · 147 KB |
+| `saber/` | El cerebro: mapa, codex, contrato de la IA, taxonomía y backlog | 9 · 148 KB |
 
 ---
 
-*6 carpetas declaradas · generado desde el árbol, no escrito.*
+*7 carpetas declaradas · generado desde el árbol, no escrito.*
