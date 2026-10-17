@@ -247,7 +247,13 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <script src="https://teamtowershuma.com/SOS/cervell/exporta.js"></script>
 <script>
 (function(){
-  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta; if (!PUB || !FZ || !window.Cerebro3D || !window.CervellPla) return;
+  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta;
+  /* El motor viene de la matriz. Si no llega, se dice: un hueco en blanco miente (veda 105 heredada). */
+  if (!PUB || !FZ || !window.Cerebro3D || !window.CervellPla) {
+    var aviso = document.getElementById("now");
+    if (aviso) aviso.innerHTML = 'No se ha podido cargar el motor del cerebro desde <a href="https://teamtowershuma.com/SOS/cervell.html">teamtowershuma.com</a>. Recarga la página; si sigue así, la lista de abajo tiene todas las vedas.';
+    return;
+  }
   var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
   var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
   var panel = document.getElementById("panel"), now = document.getElementById("now");
