@@ -41,8 +41,11 @@ letra de texto, igual que la red (fuera Inter); botones de 44 px y radio 10 como
 los de la matriz; el pie «La red» con los cinco sitios. Fuera el modo oscuro de
 estas páginas: la red es clara y el escenario de noche se queda.
 **Medido:** sin errores de consola, sin scroll lateral a 390 px,
-`pell.mjs --check` en verde. **Queda:** las páginas viejas de Nicepage
-(`cv.html`, `valor.html`, `coops.html`…) siguen con su estilo.
+`pell.mjs --check` en verde. **Después (mismo día, pedido por Álvaro):** `cv.html`, `valor.html`, `coops.html`,
+`equipos.html` y `events.html` también enlazan `red.css`: sus colores fijos pasan
+a tokens de la piel, los degradados a azul liso y todas llevan el pie «La red».
+La tabla de `coops.html` ya no desborda a 390 px. **Queda:** las páginas de
+Nicepage (`Acerca-de.html`, `Página-1.html`…) y revisar las cifras del CV.
 
 ### El linaje, contado por él (pedido 2026-10-17)
 

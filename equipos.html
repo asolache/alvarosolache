@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Álvaro Solache – Consultoría RRHH | Formación de Equipos | Comunidades de Práctica | Barcelona</title>
   <meta name="description" content="Consultoría estratégica en RRHH, formación de equipos, comunidades de práctica y outsourcing de recursos humanos. 25+ años transformando organizaciones con metodologías innovadoras como Value Network Analysis y experiencias castelleras únicas.">
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
+<style>
     :root {
-      --color-text: #2d3748;
-      --color-accent: #2a9d8f; /* verde VNL */
-      --color-link: #1d3557;   /* azul oscuro VNL */
-      --color-bg: #fff;
-      --color-border: #e2e8f0;
-      --color-primary: #667eea;
-      --color-secondary: #764ba2;
+      --color-text: var(--text);
+      --color-accent: var(--green); /* verde VNL */
+      --color-link: var(--text);   /* azul oscuro VNL */
+      --color-bg: var(--bg);
+      --color-border: var(--border);
+      --color-primary: var(--blue);
+      --color-secondary: var(--blue);
     }
     * {
       box-sizing: border-box;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
       line-height: 1.6;
       color: var(--color-text);
       background-color: var(--color-bg);
@@ -68,16 +72,16 @@
       margin-bottom: 2rem;
     }
     .intro-box {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: var(--blue);
+      color: var(--on-accent);
       border-left: 4px solid var(--color-accent);
       padding: 2rem;
       margin: 2rem 0;
       border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 4px 15px rgba(0,87,149,0.3);
     }
     .intro-box h2 {
-      color: white;
+      color: var(--on-accent);
       margin-top: 0;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid rgba(255,255,255,0.3);
@@ -87,7 +91,7 @@
       margin-bottom: 1rem;
     }
     .intro-box a {
-      color: white;
+      color: var(--on-accent);
       text-decoration: none;
       font-weight: bold;
       padding: 10px 20px;
@@ -102,7 +106,7 @@
       transform: translateY(-2px);
     }
     .cta-box {
-      background: #f8f9fa;
+      background: var(--panel);
       border-left: 4px solid var(--color-accent);
       padding: 1.5rem;
       margin: 2rem 0;
@@ -114,7 +118,7 @@
       border-left: 3px solid var(--color-accent);
     }
     .experience-date {
-      color: #666;
+      color: var(--muted);
       font-style: italic;
       display: block;
       margin-top: 0.3rem;
@@ -125,7 +129,7 @@
       margin: 2rem 0;
     }
     .service-card {
-      background: #f8f9fa;
+      background: var(--panel);
       padding: 1.5rem;
       border-left: 4px solid var(--color-primary);
       border-radius: 0 4px 4px 0;
@@ -140,8 +144,8 @@
       color: var(--color-link);
     }
     .highlight-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
+      background: #f6edd2;
+      border-left: 4px solid var(--gold);
       padding: 1.5rem;
       margin: 2rem 0;
       border-radius: 4px;
@@ -152,7 +156,7 @@
       margin: 2rem 0;
     }
     .testimonial-card {
-      background: #f8f9fa;
+      background: var(--panel);
       padding: 1.5rem;
       border-radius: 8px;
       border-left: 4px solid var(--color-primary);
@@ -160,7 +164,7 @@
     .testimonial-card blockquote {
       margin: 0;
       font-style: italic;
-      color: #555;
+      color: var(--light);
     }
     .testimonial-card cite {
       display: block;
@@ -176,7 +180,7 @@
       align-items: center;
     }
     .client-logo {
-      background: #f8f9fa;
+      background: var(--panel);
       padding: 15px 25px;
       border-radius: 20px;
       font-size: 0.9em;
@@ -194,8 +198,8 @@
     .quick-link {
       display: inline-block;
       padding: 12px 25px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: var(--blue);
+      color: var(--on-accent);
       text-decoration: none;
       font-weight: bold;
       border-radius: 25px;
@@ -203,7 +207,7 @@
     }
     .quick-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 5px 20px rgba(0,87,149,0.4);
     }
     .benefits-grid {
       display: grid;
@@ -212,7 +216,7 @@
       margin: 2rem 0;
     }
     .benefit-card {
-      background: #f8f9fa;
+      background: var(--panel);
       padding: 1.5rem;
       border-radius: 8px;
       border-left: 4px solid var(--color-primary);
@@ -241,7 +245,11 @@
         flex-direction: column;
       }
     }
-  </style>
+  
+        h1, h2 { font-family: Unbounded, var(--sans); letter-spacing: -.02em; }
+        a { color: var(--blue); }
+        .red-pie { max-width: 1000px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
 
@@ -497,5 +505,6 @@
   <p><strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/alvarosolache" target="_blank">linkedin.com/in/alvarosolache</a></p>
 </footer>
 
+<footer class="red-pie"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="index.html">Álvaro Solache</a><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div></footer>
 </body>
 </html>

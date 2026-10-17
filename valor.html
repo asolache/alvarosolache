@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Álvaro Solache - Value Network Analysis | Experto VNA Barcelona</title>
     <meta name="description" content="Experto en Value Network Analysis (VNA) en Barcelona. Consultoría estratégica en análisis de redes de valor, mapeo de flujos organizativos y optimización de procesos con metodología VNA.">
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +17,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: var(--sans);
             line-height: 1.8;
-            color: #333;
-            background-color: #ffffff;
+            color: var(--text);
+            background-color: var(--bg);
             padding: 20px;
         }
 
@@ -28,23 +32,23 @@
         header {
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border);
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--text);
         }
 
         .subtitle {
             font-size: 1.2em;
-            color: #666;
+            color: var(--muted);
             margin-bottom: 5px;
         }
 
         .tagline {
-            color: #999;
+            color: var(--muted);
             font-size: 0.95em;
         }
 
@@ -55,21 +59,21 @@
         h2 {
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #000;
+            color: var(--text);
             padding-bottom: 10px;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid var(--text);
         }
 
         h3 {
             font-size: 1.4em;
             margin-bottom: 15px;
-            color: #000;
+            color: var(--text);
         }
 
         h4 {
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
         }
 
@@ -85,14 +89,14 @@
 
         li {
             margin-bottom: 8px;
-            color: #444;
+            color: var(--light);
         }
 
         .vna-concept {
-            background-color: #f9f9f9;
+            background-color: var(--panel);
             padding: 25px;
             margin-bottom: 25px;
-            border-left: 3px solid #000;
+            border-left: 3px solid var(--text);
         }
 
         .vna-benefits {
@@ -103,9 +107,9 @@
         }
 
         .benefit-card {
-            background-color: #f9f9f9;
+            background-color: var(--panel);
             padding: 20px;
-            border-left: 3px solid #000;
+            border-left: 3px solid var(--text);
         }
 
         .methodology-steps {
@@ -119,7 +123,7 @@
             padding-left: 25px;
             position: relative;
             padding-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border);
         }
 
         .methodology-step:last-child {
@@ -135,24 +139,24 @@
             top: 0;
             font-size: 1.5em;
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .methodology-step h5 {
             margin-bottom: 8px;
             font-size: 1.1em;
-            color: #000;
+            color: var(--text);
         }
 
         .applications-list li:before {
             content: "✓ ";
             font-weight: bold;
-            color: #000;
+            color: var(--text);
         }
 
         .cta-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             padding: 30px;
             border-radius: 10px;
             margin: 30px 0;
@@ -160,14 +164,14 @@
         }
 
         .cta-box h3 {
-            color: white;
+            color: var(--on-accent);
             margin-bottom: 15px;
         }
 
         .cta-box a {
             display: inline-block;
-            background: white;
-            color: #667eea;
+            background: var(--card);
+            color: var(--blue);
             padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
@@ -183,11 +187,11 @@
 
         .resource-link {
             display: inline-block;
-            background: #f9f9f9;
-            border: 2px solid #000;
+            background: var(--panel);
+            border: 2px solid var(--text);
             padding: 10px 20px;
             text-decoration: none;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
             border-radius: 5px;
             margin: 10px 0;
@@ -195,26 +199,26 @@
         }
 
         .resource-link:hover {
-            background: #000;
-            color: white;
+            background: var(--text);
+            color: var(--on-accent);
             transform: translateY(-2px);
         }
 
         .resource-link.external {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             border: none;
         }
 
         .resource-link.external:hover {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            background: var(--blue);
             transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(0,87,149,0.4);
         }
 
         .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background: #f6edd2;
+            border-left: 4px solid var(--gold);
             padding: 20px;
             margin: 20px 0;
             border-radius: 4px;
@@ -223,11 +227,11 @@
         .contact-section {
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border);
         }
 
         .contact-info a {
-            color: #000;
+            color: var(--text);
             text-decoration: none;
             font-weight: bold;
         }
@@ -246,18 +250,18 @@
         .quick-link {
             display: inline-block;
             padding: 10px 20px;
-            background: #f9f9f9;
-            border: 1px solid #000;
+            background: var(--panel);
+            border: 1px solid var(--text);
             text-decoration: none;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
             border-radius: 4px;
             transition: all 0.3s ease;
         }
 
         .quick-link:hover {
-            background: #000;
-            color: white;
+            background: var(--text);
+            color: var(--on-accent);
             transform: translateY(-2px);
         }
 
@@ -282,7 +286,11 @@
                 flex-direction: column;
             }
         }
-    </style>
+    
+        h1, h2 { font-family: Unbounded, var(--sans); letter-spacing: -.02em; }
+        a { color: var(--blue); }
+        .red-pie { max-width: 1000px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
     <div class="container">
@@ -471,5 +479,6 @@
             </div>
         </section>
     </div>
+<footer class="red-pie"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="index.html">Álvaro Solache</a><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div></footer>
 </body>
 </html>

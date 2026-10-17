@@ -65,7 +65,11 @@
     }
     </script>
     
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -73,10 +77,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: var(--sans);
             line-height: 1.8;
-            color: #333;
-            background-color: #ffffff;
+            color: var(--text);
+            background-color: var(--bg);
             padding: 20px;
         }
 
@@ -88,15 +92,15 @@
         header {
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border);
             text-align: center;
         }
 
         h1 {
             font-size: 2.8em;
             margin-bottom: 10px;
-            color: #000;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: var(--text);
+            background: var(--blue);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -104,28 +108,28 @@
 
         .subtitle {
             font-size: 1.4em;
-            color: #666;
+            color: var(--muted);
             margin-bottom: 5px;
             font-weight: 500;
         }
 
         .tagline {
-            color: #999;
+            color: var(--muted);
             font-size: 1.1em;
             margin-top: 10px;
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             padding: 3rem;
             border-radius: 12px;
             margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 10px 30px rgba(0,87,149,0.3);
         }
 
         .hero-section h2 {
-            color: white;
+            color: var(--on-accent);
             margin-top: 0;
             font-size: 2em;
         }
@@ -138,8 +142,8 @@
 
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #4facfe;
+            background: var(--card);
+            color: var(--blue);
             padding: 15px 40px;
             text-decoration: none;
             font-weight: bold;
@@ -162,21 +166,21 @@
         h2 {
             font-size: 2em;
             margin-bottom: 30px;
-            color: #000;
+            color: var(--text);
             padding-bottom: 15px;
-            border-bottom: 3px solid #4facfe;
+            border-bottom: 3px solid var(--blue);
         }
 
         h3 {
             font-size: 1.5em;
             margin-bottom: 20px;
-            color: #000;
+            color: var(--text);
         }
 
         h4 {
             font-size: 1.2em;
             margin-bottom: 15px;
-            color: #000;
+            color: var(--text);
             font-weight: bold;
         }
 
@@ -192,14 +196,14 @@
 
         li {
             margin-bottom: 10px;
-            color: #444;
+            color: var(--light);
         }
 
         .cop-concept {
-            background-color: #f9f9f9;
+            background-color: var(--panel);
             padding: 25px;
             margin: 25px 0;
-            border-left: 4px solid #4facfe;
+            border-left: 4px solid var(--blue);
             border-radius: 8px;
         }
 
@@ -211,10 +215,10 @@
         }
 
         .benefit-card {
-            background: #f9f9f9;
+            background: var(--panel);
             padding: 25px;
             border-radius: 10px;
-            border-left: 4px solid #4facfe;
+            border-left: 4px solid var(--blue);
             transition: all 0.3s ease;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
@@ -222,11 +226,11 @@
         .benefit-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            background: #f0f0f0;
+            background: var(--panel);
         }
 
         .benefit-card h4 {
-            color: #4facfe;
+            color: var(--blue);
             margin-bottom: 10px;
         }
 
@@ -234,14 +238,14 @@
             width: 100%;
             border-collapse: collapse;
             margin: 30px 0;
-            background: #f9f9f9;
+            background: var(--panel);
             border-radius: 8px;
             overflow: hidden;
         }
 
         .comparison-table th {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             padding: 15px;
             text-align: left;
             font-weight: bold;
@@ -249,7 +253,7 @@
 
         .comparison-table td {
             padding: 12px 15px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border);
         }
 
         .comparison-table tr:last-child td {
@@ -257,11 +261,11 @@
         }
 
         .comparison-table tr:nth-child(even) {
-            background: #f5f5f5;
+            background: var(--panel);
         }
 
         .comparison-table .highlight {
-            background: #fff3cd;
+            background: #f6edd2;
             font-weight: bold;
         }
 
@@ -273,14 +277,14 @@
         }
 
         .service-card {
-            background: #f9f9f9;
+            background: var(--panel);
             padding: 25px;
             border-radius: 10px;
-            border-left: 4px solid #4facfe;
+            border-left: 4px solid var(--blue);
         }
 
         .service-card h4 {
-            color: #4facfe;
+            color: var(--blue);
             margin-bottom: 15px;
         }
 
@@ -297,11 +301,11 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 5px 15px rgba(0,87,149,0.3);
         }
 
         .stat-number {
@@ -326,23 +330,23 @@
         .quick-link {
             display: inline-block;
             padding: 15px 30px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: var(--blue);
+            color: var(--on-accent);
             text-decoration: none;
             font-weight: bold;
             border-radius: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 4px 15px rgba(0,87,149,0.3);
         }
 
         .quick-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+            box-shadow: 0 8px 25px rgba(0,87,149,0.4);
         }
 
         .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            background: #f6edd2;
+            border-left: 4px solid var(--gold);
             padding: 25px;
             margin: 25px 0;
             border-radius: 8px;
@@ -350,37 +354,37 @@
 
         .highlight-box h4 {
             margin-top: 0;
-            color: #856404;
+            color: var(--gold);
         }
 
         .highlight-box ul {
             margin-left: 25px;
-            color: #856404;
+            color: var(--gold);
         }
 
         .case-study {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 30px;
             border-radius: 10px;
             margin: 30px 0;
-            border-left: 4px solid #4facfe;
+            border-left: 4px solid var(--blue);
         }
 
         .case-study h3 {
-            color: #4facfe;
+            color: var(--blue);
             margin-top: 0;
         }
 
         .contact-section {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 40px;
             border-radius: 10px;
             margin: 40px 0;
-            border-left: 4px solid #4facfe;
+            border-left: 4px solid var(--blue);
         }
 
         .contact-section h2 {
-            border-bottom: 2px solid #4facfe;
+            border-bottom: 2px solid var(--blue);
         }
 
         .contact-info {
@@ -388,7 +392,7 @@
         }
 
         .contact-info a {
-            color: #4facfe;
+            color: var(--blue);
             text-decoration: none;
             font-weight: bold;
             display: block;
@@ -402,9 +406,9 @@
         footer {
             margin-top: 50px;
             padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border);
             text-align: center;
-            color: #666;
+            color: var(--muted);
             font-size: 0.95em;
         }
 
@@ -439,7 +443,12 @@
                 font-size: 0.9em;
             }
         }
-    </style>
+    
+        h1, h2 { font-family: Unbounded, var(--sans); letter-spacing: -.02em; }
+        a { color: var(--blue); }
+        .comparison-table { display: block; overflow-x: auto; }
+        .red-pie { max-width: 1000px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
 </head>
 <body>
     <div class="container">
@@ -704,5 +713,6 @@
             </p>
         </footer>
     </div>
+<footer class="red-pie"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="index.html">Álvaro Solache</a><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div></footer>
 </body>
 </html>
