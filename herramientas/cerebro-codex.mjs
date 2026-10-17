@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* El cerebro · las vedas de los codex como grafo
-   Lee el codex de cada proyecto (hoy el de TeamTowers Humà, que es público) y
+   Lee el codex de cada proyecto público (hoy el de TeamTowers Humà) y
    escribe cerebro-datos.js: una veda por nodo, las citas entre vedas como
    aristas, el tema de la herencia cuando lo tiene y una capa de las cinco.
    La capa es una PROPUESTA por palabras clave, para pulirla con Álvaro: lo que
@@ -22,6 +22,15 @@ const args = process.argv.slice(2);
 const fuentes = args.flatMap((a, i) => a === '--fuente' ? [args[i + 1]] : [])
   .map(f => { const [nom, ruta] = f.split('='); return { nom, ruta }; });
 if (!fuentes.length) { console.log('✗ Falta --fuente "Nombre=ruta/al/repositorio"'); process.exit(1); }
+
+/* En el cerebro público se comparte lo que es público (Álvaro, 17/10/2026).
+   Un proyecto que se declara privado en su cervell.json no es fuente de esta
+   página, aunque alguien lo pase por error: su codex se lee en la capa privada
+   del navegador, que no sale del ordenador de quien la abre. */
+const privadas = fuentes.filter(f => {
+  try { return JSON.parse(readFileSync(join(f.ruta, RUTA_HIJO), 'utf8')).privat === true; } catch { return false; }
+});
+if (privadas.length) { console.log('✗ Fuente privada, no se publica: ' + privadas.map(f => f.nom).join(', ')); process.exit(1); }
 
 /* sintesis.json: los saberes y lo aprendido de cada veda, y los principios de
    cada capa. Lo escribe una lectura de las vedas y lo revisa Álvaro; una veda
