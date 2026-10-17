@@ -32,6 +32,16 @@ const CAPAS = [
   { id: 'ananda', n: 'Propósito', s: 'Anandamaya', d: 'Para qué: la misión, la comunidad, las personas, el cuidado y el relato que lo une.',
     k: ['missió', 'comunitat', 'persona', 'cura', 'mitolog', 'shiva', 'shakti', 'molekulon', 'superheroi', 'identitat', 'territori', 'colla', 'castell', 'confiança', 'reconeixement', 'visió', 'propòsit'] }
 ];
+/* Los saberes de Álvaro: la lista cerrada con la que se etiqueta cada veda. */
+const SABERES = {
+  vna: 'Mapa de valor', contabilidad: 'Contabilidad de valor y tokenomics', defi: 'DeFi y P2P',
+  conocimiento: 'Gestión del conocimiento', personas: 'Personas y equipos', proyectos: 'Proyectos, kanban y backlog',
+  desarrollo: 'Desarrollo web y SOS', comunidad: 'Comunidad y territorio', relato: 'Relato y marca'
+};
+/* sintesis.json: los saberes y lo aprendido de cada veda, y los principios de
+   cada capa. Lo escribe una lectura de las vedas y lo revisa Álvaro; una veda
+   nueva sale sin etiquetar hasta que se añade. */
+const SINT = existsSync(join(RAIZ, 'sintesis.json')) ? JSON.parse(readFileSync(join(RAIZ, 'sintesis.json'), 'utf8')) : { vedas: {}, principios: {} };
 const fijadas = existsSync(join(RAIZ, 'capas.json')) ? JSON.parse(readFileSync(join(RAIZ, 'capas.json'), 'utf8')) : {};
 
 const nodos = [], aristas = [];
@@ -56,6 +66,7 @@ for (const { nom, ruta } of fuentes) {
     const propuesta = max ? CAPAS[puntos.indexOf(max)].id : 'vijnana';
     nodos.push({ id, fuente: nom, n: num, t: titulo, fecha, tema: temaDe[num] || null,
       capa: fijadas[id] || propuesta, fijada: !!fijadas[id],
+      saberes: (SINT.vedas[num] || {}).saberes || [], aprende: (SINT.vedas[num] || {}).aprende || null,
       txt: plano.length > 420 ? plano.slice(0, 420).replace(/\s\S*$/, '') + '…' : plano });
     for (const c of new Set([...cuerpo.matchAll(/\b(?:[Vv]ed[ae]s?|V)\s?(\d{1,3})\b/g)].map(x => +x[1])))
       if (c !== num) aristas.push([id, nom + ':' + c]);
@@ -70,7 +81,9 @@ const limpias = aristas.filter(([a, b]) => {
 });
 nodos.sort((a, b) => a.n - b.n);
 const datos = { generado: new Date().toISOString().slice(0, 10), fuentes: fuentes.map(f => f.nom),
-  capas: CAPAS.map(({ k, ...c }) => c), nodos, aristas: limpias };
+  capas: CAPAS.map(({ k, ...c }) => ({ ...c, principios: SINT.principios[c.id] || [] })), saberes: SABERES, nodos, aristas: limpias };
+const raros = nodos.flatMap(n => n.saberes.filter(x => !SABERES[x]));
+if (raros.length) { console.log('✗ Saberes que no están en la lista: ' + [...new Set(raros)].join(', ')); process.exit(1); }
 writeFileSync(join(RAIZ, 'cerebro-datos.js'),
   '/* Generado por herramientas/cerebro-codex.mjs. No se edita a mano: las capas fijadas van en capas.json. */\nwindow.CEREBRO = ' + JSON.stringify(datos) + ';\n');
 const porCapa = CAPAS.map(c => `${c.n} ${nodos.filter(n => n.capa === c.id).length}`).join(' · ');

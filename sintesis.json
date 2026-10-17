@@ -1,0 +1,1436 @@
+{
+ "vedas": {
+  "11": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Antes de añadir una dependencia, prueba si una API nativa del estándar web ya resuelve la necesidad."
+  },
+  "25": {
+   "saberes": [
+    "defi"
+   ],
+   "aprende": "La soberanía sobre una identidad exige poder llevártela cifrada; sustituirla debe pedirse explícitamente y un segundo acceso no es una copia."
+  },
+  "27": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Para colaborar, comparte con un enlace de un clic y muestra siempre con quién conectas antes de mezclar datos."
+  },
+  "34": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "No inventes datos reales que no tienes: obténlos de una fuente verificable o di claramente que faltan."
+  },
+  "35": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Nada que abra la aplicación por su cuenta puede tapar lo que la persona está haciendo; mejor no mostrarlo."
+  },
+  "42": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Al exportar o restaurar, di claramente qué contiene el paquete y qué riesgo implica antes de que alguien lo use."
+  },
+  "47": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Publica solo datos agregados, cerrado por defecto, y que la comprobación contra fugas sea código que bloquee, no un test."
+  },
+  "49": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Si una capacidad falta en un entorno, dilo y ofrece el camino que sí funciona en lugar de suplirla a cualquier precio."
+  },
+  "50": {
+   "saberes": [
+    "desarrollo",
+    "proyectos"
+   ],
+   "aprende": "Mide antes de optimizar y asegúrate de que cada prueba tenga algo real que comprobar antes de fiarte de su verde."
+  },
+  "51": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "Quien participa necesita ver su siguiente paso, ordenado por quién le espera, no la estructura que necesita quien coordina."
+  },
+  "53": {
+   "saberes": [
+    "proyectos"
+   ],
+   "aprende": "Sigue lo que pasa después de cerrar algo y cuenta lo desconocido como desconocido, no como cero."
+  },
+  "58": {
+   "saberes": [
+    "defi"
+   ],
+   "aprende": "Un intermediario solo es aceptable si está diseñado para no poder mandar: opcional, propio, mínimo y sin poder crear nada."
+  },
+  "60": {
+   "saberes": [
+    "defi",
+    "conocimiento"
+   ],
+   "aprende": "Publicar exige que otros puedan encontrarlo; lo que llega de fuera se filtra igual y no se mezcla con lo propio."
+  },
+  "62": {
+   "saberes": [
+    "desarrollo",
+    "proyectos"
+   ],
+   "aprende": "Pon techos declarados que obliguen a decidir y escribir cada crecimiento, y ponlos donde de verdad se ejecutan."
+  },
+  "68": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "Da un camino fácil para avisar de fallos, que recoja el contexto solo y enseñe todo lo que enviará."
+  },
+  "70": {
+   "saberes": [
+    "defi"
+   ],
+   "aprende": "Un transporte que lleva datos cifrados y firmados sin poder leerlos ni crearlos no se convierte en dueño."
+  },
+  "74": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "El siguiente paso sale de lo que falta en el trabajo real; probar cosas nuevas va al final y una sección vacía no ocupa sitio."
+  },
+  "75": {
+   "saberes": [
+    "desarrollo",
+    "proyectos"
+   ],
+   "aprende": "Mide de verdad antes de recortar, y cuando subas un límite escribe por qué; un límite que nunca se discute no sirve."
+  },
+  "76": {
+   "saberes": [
+    "defi",
+    "contabilidad"
+   ],
+   "aprende": "Un registro público de cosas privadas se publica en hashes y totales, verificable por todos y legible solo con el recibo."
+  },
+  "77": {
+   "saberes": [
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Explica tu herramienta como algo que reconoce lo que la gente ya hace, no como algo que la recluta."
+  },
+  "78": {
+   "saberes": [
+    "relato"
+   ],
+   "aprende": "Ante un problema que siempre vuelve, plantea una práctica diaria y mantén las guardas, porque la tentación de inflar no desaparece."
+  },
+  "80": {
+   "saberes": [
+    "desarrollo",
+    "defi"
+   ],
+   "aprende": "Si algo lo hace otro, dilo en el botón; y no guardes un registro de respaldo sin la dirección para volver a él."
+  },
+  "85": {
+   "saberes": [
+    "proyectos",
+    "relato"
+   ],
+   "aprende": "Cuenta solo lo que refleja trabajo hecho y muestra al lado la cifra de inscritos para que la diferencia informe."
+  },
+  "94": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Una acción central necesita varias entradas, ser accesible por teclado y crear lo que falta en vez de mandarte fuera."
+  },
+  "97": {
+   "saberes": [
+    "defi"
+   ],
+   "aprende": "Encontrar una fuente no es confiar en ella: propón, deja que la persona decida y di exactamente qué prueba cada comprobación."
+  },
+  "99": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "La pantalla que todos ven una vez necesita tests propios, poder reabrirse y un final que no pida renunciar a nada."
+  },
+  "100": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Cuando una cosa vive en dos fuentes a propósito, su correspondencia debe vigilarla una guarda, porque el fallo es una ausencia silenciosa."
+  },
+  "101": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Una herramienta de navegación debe abrirse cuando se quiera navegar, sin dejar nada inaccesible al sacarla del marco."
+  },
+  "104": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "Si mueves algo que antes se veía siempre, deja un rastro que lleve a ello y di con números qué falta para avanzar."
+  },
+  "105": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Si una pantalla falla al pintarse, muestra el error y qué sigue a salvo; el silencio hace creer lo peor."
+  },
+  "106": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Un campo vacío en una prueba es una rama sin ejecutar; prueba también con datos dentro."
+  },
+  "110": {
+   "saberes": [
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Si un juego explica tu método, sus reglas deben ser las reales, porque la gente recuerda las reglas más que el texto."
+  },
+  "112": {
+   "saberes": [
+    "conocimiento",
+    "relato",
+    "desarrollo"
+   ],
+   "aprende": "La guarda que vigila la consistencia debe revisar también el documento fuente; la consistencia se automatiza, pero qué nombre es correcto lo decide el autor."
+  },
+  "113": {
+   "saberes": [
+    "relato",
+    "desarrollo"
+   ],
+   "aprende": "La metáfora que explica todo va arriba, debe demostrar algo y su número debe salir del propio dibujo."
+  },
+  "115": {
+   "saberes": [
+    "relato"
+   ],
+   "aprende": "Una sola pieza con dos apariencias mantiene una sola promesa; y una lista negra solo puede contener errores que alguien vio escritos."
+  },
+  "116": {
+   "saberes": [
+    "vna",
+    "relato"
+   ],
+   "aprende": "Un diagrama debe calcular sus conclusiones del grafo y cada acceso debe decir qué es, cuánto dura y qué aporta."
+  },
+  "118": {
+   "saberes": [
+    "comunidad",
+    "desarrollo"
+   ],
+   "aprende": "En un juego que enseña, el ritmo debe salir de reglas que también sean ciertas en la vida real."
+  },
+  "119": {
+   "saberes": [
+    "contabilidad",
+    "vna",
+    "comunidad"
+   ],
+   "aprende": "Prototipa el cálculo antes de la página, da la causa de cada ahorro y compara de forma honesta."
+  },
+  "120": {
+   "saberes": [
+    "vna",
+    "personas"
+   ],
+   "aprende": "A una persona solo se le puede pedir lo que el mapa dice que su rol entrega; proponer, no asignar."
+  },
+  "122": {
+   "saberes": [
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "No preguntes al entrar lo que el sistema puede deducir del uso, y promete solo caminos que el código recorra."
+  },
+  "127": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "La navegación se declara una vez y se genera en todas partes, con las excepciones escritas junto a su motivo."
+  },
+  "128": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Una página que explica lo que hace una herramienta se compara con el código, no se copia de la documentación."
+  },
+  "132": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Las herramientas deben ser accesibles desde dentro y aparecer donde se usan; no basta con que existan."
+  },
+  "134": {
+   "saberes": [
+    "contabilidad",
+    "personas"
+   ],
+   "aprende": "En un reparto proporcional, enseña desde el principio cómo cambia tu parte si paras, para que sea una decisión y no una traición."
+  },
+  "135": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Todo lo que identifica o se firma debe pasar por una forma canónica que dé los mismos bytes en cualquier máquina."
+  },
+  "137": {
+   "saberes": [
+    "proyectos",
+    "relato"
+   ],
+   "aprende": "Un servicio se vuelve contratable cuando dice quién, duración, qué se lleva, precio, financiación y cuántas veces se ha hecho."
+  },
+  "138": {
+   "saberes": [
+    "proyectos"
+   ],
+   "aprende": "Si lo que hay que hacer vive en muchos sitios, únelo en una sola lista que normalice lo que ya existe."
+  },
+  "140": {
+   "saberes": [
+    "relato",
+    "proyectos"
+   ],
+   "aprende": "Si no publicas un precio, publica el método para calcularlo, para que nadie tenga que llamar para saberlo."
+  },
+  "142": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "El HTML inicial debe mostrarlo todo; el script solo resta, nunca suma lo que se ve."
+  },
+  "144": {
+   "saberes": [
+    "defi"
+   ],
+   "aprende": "Si algo parece una identidad y no lo es, dilo en pantalla y deja claro qué identifica de verdad."
+  },
+  "146": {
+   "saberes": [
+    "relato",
+    "proyectos"
+   ],
+   "aprende": "Piezas buenas sueltas no son un proyecto: di qué son juntas y saca las cifras del código que las usa."
+  },
+  "148": {
+   "saberes": [
+    "defi",
+    "personas"
+   ],
+   "aprende": "Nunca crees perfiles en nombre de otros: reserva, invita y deja que cada persona se dé de alta ella misma."
+  },
+  "149": {
+   "saberes": [
+    "conocimiento",
+    "comunidad"
+   ],
+   "aprende": "Explica también lo fácil, incluyendo lo que nadie dice: los saldos desequilibrados y qué hacer cuando algo se rompe."
+  },
+  "150": {
+   "saberes": [
+    "relato"
+   ],
+   "aprende": "Una pieza de comunicación tiene un solo sujeto, y su final debe ofrecer más de una puerta."
+  },
+  "152": {
+   "saberes": [
+    "desarrollo",
+    "vna"
+   ],
+   "aprende": "Si algo se declara en datos y se dibuja a mano, la guarda debe leer el dibujo."
+  },
+  "153": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Antes de copiar un programa para un caso nuevo, comprueba si lo que cambia son solo datos de configuración."
+  },
+  "155": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Toda guarda se prueba rompiendo lo que vigila antes de darla por buena."
+  },
+  "157": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Una función no está hecha hasta que se abre desde donde la abrirá una persona, y su prueba debe hacer clic."
+  },
+  "13": {
+   "saberes": [
+    "comunidad",
+    "contabilidad"
+   ],
+   "aprende": "Si quieres que una comunidad participe, haz que entrar sea aportar y que ganar sea crear valor contable para todos."
+  },
+  "14": {
+   "saberes": [
+    "comunidad",
+    "contabilidad"
+   ],
+   "aprende": "Un fondo común debe pagar en valor contable, reputación y capacidad, reinvirtiendo en su entorno en lugar de repartir dividendos extractivos."
+  },
+  "21": {
+   "saberes": [
+    "vna",
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Cada intercambio de un mapa debe escribirse en ambas direcciones, y todo diagnóstico debe calcularse en un único lugar y ofrecer el siguiente paso."
+  },
+  "22": {
+   "saberes": [
+    "vna",
+    "contabilidad",
+    "comunidad"
+   ],
+   "aprende": "El mapa de valor es el esquema contable: toda función que recoja aportaciones debe decir a qué flujo del mapa corresponde."
+  },
+  "26": {
+   "saberes": [
+    "defi",
+    "contabilidad"
+   ],
+   "aprende": "Una prueba de integridad debe cubrir todo el registro y verificarse en la misma pantalla donde se genera."
+  },
+  "29": {
+   "saberes": [
+    "personas",
+    "contabilidad",
+    "proyectos"
+   ],
+   "aprende": "El acompañamiento es trabajo que cuenta: dale un ámbito, regístralo como aportación y haz visible cuándo un proyecto deja de moverse."
+  },
+  "30": {
+   "saberes": [
+    "defi",
+    "contabilidad"
+   ],
+   "aprende": "Una prueba solo vale si se puede volver a comprobar: guarda qué se selló, dónde se publicó y compárala con el registro actual."
+  },
+  "38": {
+   "saberes": [
+    "contabilidad",
+    "proyectos",
+    "comunidad"
+   ],
+   "aprende": "Calcula la sostenibilidad solo con ingresos propios, separa las ayudas y llama imposible o incompleto a lo que lo es."
+  },
+  "39": {
+   "saberes": [
+    "defi",
+    "contabilidad",
+    "personas"
+   ],
+   "aprende": "Une a las personas por una clave firmada y no por el nombre, y al fusionar duplicados nunca reescribas historia firmada."
+  },
+  "43": {
+   "saberes": [
+    "defi",
+    "contabilidad",
+    "personas"
+   ],
+   "aprende": "Nadie debe poder anotar en nombre de otro que ha reclamado su identidad: el apunte no entra hasta que ambas partes lo aprueban."
+  },
+  "45": {
+   "saberes": [
+    "contabilidad",
+    "comunidad",
+    "vna"
+   ],
+   "aprende": "Distingue regalar de prestar, valora por uso real y nunca sumes un valor estimado con dinero o registro verificado."
+  },
+  "48": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Una versión debe identificar un cambio de contenido, no una fecha; restaurar crea versión nueva y la automatización nunca salta las comprobaciones."
+  },
+  "55": {
+   "saberes": [
+    "contabilidad",
+    "comunidad",
+    "relato"
+   ],
+   "aprende": "Mide el fondo sobre todo el territorio, no sumes lo verificado con lo estimado y no inventes cifras intermedias frente al plan."
+  },
+  "59": {
+   "saberes": [
+    "defi",
+    "personas",
+    "contabilidad"
+   ],
+   "aprende": "Nunca unas registros de personas por el nombre: manda la identidad firmada, y ante la duda se marca en vez de adivinar."
+  },
+  "64": {
+   "saberes": [
+    "defi",
+    "contabilidad"
+   ],
+   "aprende": "Para registrar sin un dueño central, que cada autor encadene lo suyo y que el recibo compartido mande; unir registros nunca destruye datos."
+  },
+  "67": {
+   "saberes": [
+    "desarrollo",
+    "contabilidad"
+   ],
+   "aprende": "Cuenta por separado lo que se une y lo que se sustituye, y avisa claramente cuando algo ha sido sobrescrito."
+  },
+  "82": {
+   "saberes": [
+    "personas",
+    "defi",
+    "relato"
+   ],
+   "aprende": "Un certificado vale si acredita lo hecho desde un registro firmado que cualquiera puede comprobar, y si dice honestamente lo que no es."
+  },
+  "87": {
+   "saberes": [
+    "proyectos",
+    "comunidad",
+    "desarrollo"
+   ],
+   "aprende": "No avises de un problema sin ofrecer una acción concreta, y si no hay nada que hacer, dilo con su motivo."
+  },
+  "90": {
+   "saberes": [
+    "desarrollo",
+    "contabilidad"
+   ],
+   "aprende": "Si dos pantallas pueden contradecirse sobre el mismo dato, la que muestra cero debe explicar cuántos registros no cuenta y por qué."
+  },
+  "92": {
+   "saberes": [
+    "defi",
+    "contabilidad",
+    "desarrollo"
+   ],
+   "aprende": "Un navegador nunca confirma un cobro: el crédito no existe sin recibo verificado y lo pendiente nunca se suma al saldo."
+  },
+  "93": {
+   "saberes": [
+    "desarrollo",
+    "proyectos"
+   ],
+   "aprende": "Reúne en un solo lugar lo que la persona necesita para operar, y no cobres por pasar una puerta que aún no funciona."
+  },
+  "95": {
+   "saberes": [
+    "contabilidad",
+    "defi",
+    "comunidad"
+   ],
+   "aprende": "Un límite vacío significa cero, se comprueba antes de gastar, cambiarlo exige decisión firmada y el dinero ajeno no es gastable."
+  },
+  "124": {
+   "saberes": [
+    "contabilidad",
+    "comunidad",
+    "relato"
+   ],
+   "aprende": "Lleva la caja de un grupo con reparto cerrado, redondeos asignados y palabras que no afirmen pagos que nadie ha verificado."
+  },
+  "125": {
+   "saberes": [
+    "defi",
+    "contabilidad",
+    "relato"
+   ],
+   "aprende": "Un número de orden debe deducirse de un registro público reproducible, nunca asignarlo un servidor ni guardarse, y su coste debe medirse."
+  },
+  "130": {
+   "saberes": [
+    "contabilidad",
+    "comunidad"
+   ],
+   "aprende": "Muestra entera la palanca entre aportación inicial y cuota, di a quién excluye cada opción y calcula con la unidad en que se paga."
+  },
+  "139": {
+   "saberes": [
+    "contabilidad",
+    "relato"
+   ],
+   "aprende": "Cada precio debe decir de dónde sale, qué lo mueve y qué aporta; un precio cerrado sin procedencia es falsa precisión."
+  },
+  "145": {
+   "saberes": [
+    "contabilidad",
+    "desarrollo"
+   ],
+   "aprende": "Antes de construir algo que ya existe en todas partes, define qué hará distinto al final y protege esa parte."
+  },
+  "158": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo",
+    "contabilidad"
+   ],
+   "aprende": "Las sumas se hacen en el código y no con la IA, y una línea que no se puede contar se separa y se declara."
+  },
+  "163": {
+   "saberes": [
+    "conocimiento",
+    "contabilidad"
+   ],
+   "aprende": "Haz que el error por defecto sea el que una persona puede corregir a mano, y no dejes que una máquina redacte facturas o cobros."
+  },
+  "15": {
+   "saberes": [
+    "conocimiento"
+   ],
+   "aprende": "El conocimiento compartido debe crecer con el uso, añadiendo cada comprensión aprobada sin burocracia."
+  },
+  "28": {
+   "saberes": [
+    "comunidad",
+    "conocimiento"
+   ],
+   "aprende": "Agrupa por tema con etiquetas libres, sin altas ni permisos, y muestra enseguida quién más trabaja lo mismo."
+  },
+  "31": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Un formulario de algo que ya existe se abre relleno y al guardar reconcilia cambios, nunca duplica ni rompe dependencias."
+  },
+  "32": {
+   "saberes": [
+    "comunidad",
+    "conocimiento"
+   ],
+   "aprende": "No inventes datos precisos que no tienes; muestra la aproximación honesta y afina solo cuando haya datos reales."
+  },
+  "33": {
+   "saberes": [
+    "desarrollo",
+    "comunidad"
+   ],
+   "aprende": "Cada resultado de búsqueda debe llevar su acción concreta para cerrar el intercambio, no solo mostrarse."
+  },
+  "37": {
+   "saberes": [
+    "proyectos",
+    "vna"
+   ],
+   "aprende": "Una tabla comparativa solo usa cifras ya calculadas en otro sitio y dice claramente cuando un dato está incompleto."
+  },
+  "40": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Separa la cosa de su dirección: ofrecer o buscar es un atributo, y el emparejamiento se hace por categoría compartida."
+  },
+  "44": {
+   "saberes": [
+    "conocimiento"
+   ],
+   "aprende": "Para cruzar dos taxonomías válidas añade una capa puente sin fusionarlas ni inventar equivalencias, y distingue coincidencia aproximada de exacta."
+  },
+  "54": {
+   "saberes": [
+    "conocimiento",
+    "vna",
+    "comunidad"
+   ],
+   "aprende": "Convierte el caso particular en plantilla con datos editables, y valídala con un segundo caso real distinto."
+  },
+  "63": {
+   "saberes": [
+    "desarrollo",
+    "proyectos"
+   ],
+   "aprende": "Agrupa las listas largas según lo que busca el usuario, y asigna cada problema colectivo a alguien con una acción concreta."
+  },
+  "79": {
+   "saberes": [
+    "contabilidad",
+    "desarrollo"
+   ],
+   "aprende": "Al ampliar lo que un sistema puede relacionar, revisa todo lo que suma para no contar dos veces lo mismo."
+  },
+  "86": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Al pasar de una conexión a muchas, decide quién habla con quién y evita bucles y confianza ciega con mensajes firmados."
+  },
+  "91": {
+   "saberes": [
+    "proyectos",
+    "desarrollo"
+   ],
+   "aprende": "Una plantilla dice qué tipo de cosa es, pero el nombre lo pone quien la crea, y el tipo debe seguir visible."
+  },
+  "96": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Cuando una fuente falla, dilo con detalle; nunca muestres un fallo silencioso como si no hubiera datos."
+  },
+  "98": {
+   "saberes": [
+    "defi",
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Genera los índices automáticamente, compruébalos en ambas direcciones y pon cada guarda en el camino real por donde pasan los datos."
+  },
+  "114": {
+   "saberes": [
+    "personas",
+    "comunidad",
+    "relato"
+   ],
+   "aprende": "Una versión simplificada para otro público debe mantener las reglas de fondo del método, y con menores no recoger datos identificables."
+  },
+  "121": {
+   "saberes": [
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "Lo que identifica a alguien en la interfaz debe salir de lo verificado, separando claramente lo que elige de lo que se gana."
+  },
+  "131": {
+   "saberes": [
+    "conocimiento",
+    "personas",
+    "relato"
+   ],
+   "aprende": "Antes de contar algo, clasifica qué es cada elemento; la taxonomía la declara una persona y la máquina comprueba que nada quede fuera."
+  },
+  "147": {
+   "saberes": [
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Si una página invita a varios públicos, cada texto y cada puerta deben reconocer a todos ellos."
+  },
+  "160": {
+   "saberes": [
+    "proyectos",
+    "conocimiento"
+   ],
+   "aprende": "Toda petición entra escrita en el backlog y, si la tarea enseña algo, termina convertida en una lección documentada."
+  },
+  "161": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "La documentación que lee una IA debe comprobarse automáticamente y existir como un único modelo compartido entre proyectos."
+  },
+  "162": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Los datos que vienen de fuera entran por lista blanca elegida por una persona, con la lista negra solo como segundo cierre."
+  },
+  "165": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Todo lo que se guarda debe volver a leerse, y quien lee una fuente no la reescribe."
+  },
+  "166": {
+   "saberes": [
+    "conocimiento",
+    "comunidad"
+   ],
+   "aprende": "En una red el aprendizaje debe poder subir de los hijos a la matriz con un proceso explícito de adopción o descarte."
+  },
+  "36": {
+   "saberes": [
+    "proyectos"
+   ],
+   "aprende": "El estado de una iniciativa sale de hechos comprobables; un riesgo sin plan o un bloqueo sin responsable no cuentan como gestionados."
+  },
+  "41": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "No silencies errores parciales: di qué llegó y qué no, y fusiona estado compartido de una operación en una a la vez."
+  },
+  "46": {
+   "saberes": [
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "Deduce los roles de la evidencia, permite varios por persona y nunca dejes que un valor por defecto cuente como declaración."
+  },
+  "52": {
+   "saberes": [
+    "proyectos",
+    "contabilidad"
+   ],
+   "aprende": "Vigila los plazos que caducan solos y separa siempre lo pedido de lo concedido para no presupuestar dinero inexistente."
+  },
+  "56": {
+   "saberes": [
+    "personas",
+    "comunidad",
+    "contabilidad"
+   ],
+   "aprende": "Un ranking solo debe puntuar lo firmado, premiar la reciprocidad y explicar cada posición desde el mismo cálculo que la produce."
+  },
+  "57": {
+   "saberes": [
+    "comunidad",
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Ata cada conversación a la pieza concreta de la que habla y fusiona los mensajes por unión para no perder ninguno."
+  },
+  "61": {
+   "saberes": [
+    "defi",
+    "desarrollo"
+   ],
+   "aprende": "Nunca digas verificado de lo que no comprobaste; detalla qué se miró, qué no y por qué."
+  },
+  "65": {
+   "saberes": [
+    "defi",
+    "comunidad"
+   ],
+   "aprende": "Usa canales asíncronos y duraderos si la gente no coincide en el tiempo, verificando cada dato que llegue y sin filtrar metadatos."
+  },
+  "66": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "Simplificar es decidir por dónde empieza cada rol, sin esconder nunca lo que tiene contenido ni ocultar nada en silencio."
+  },
+  "71": {
+   "saberes": [
+    "desarrollo",
+    "defi"
+   ],
+   "aprende": "Una garantía repetida en varios sitios acaba aflojándose en alguno; escríbela una sola vez y que todos la llamen."
+  },
+  "72": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Migra de forma incremental sin poder romper nada a medias, mide la deuda en vez de esconderla y di la cobertura real."
+  },
+  "73": {
+   "saberes": [
+    "desarrollo"
+   ],
+   "aprende": "Cada pantalla tiene una sola acción principal, el siguiente paso; si todo destaca, nada destaca."
+  },
+  "83": {
+   "saberes": [
+    "contabilidad",
+    "defi",
+    "relato"
+   ],
+   "aprende": "Lo que acredita una aportación nunca debe poder transferirse, y lo que viaja fuera debe advertir que una imagen no prueba nada."
+  },
+  "84": {
+   "saberes": [
+    "defi",
+    "personas"
+   ],
+   "aprende": "Una firma dice quién escribió algo, no si es cierto; recalcula lo que certificas desde la evidencia al verificar."
+  },
+  "88": {
+   "saberes": [
+    "desarrollo",
+    "defi"
+   ],
+   "aprende": "Mide antes de optimizar, no escribas estimaciones como si fueran medidas y declara lo que queda sin arreglar."
+  },
+  "102": {
+   "saberes": [
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "Lo declarado y lo demostrado se muestran distinto, y nunca se inventa una precisión que nadie ha medido."
+  },
+  "103": {
+   "saberes": [
+    "personas",
+    "comunidad"
+   ],
+   "aprende": "En grupos muy pequeños no ordenes a la gente: muestra lo aportado sin comparar y explica por qué en pantalla."
+  },
+  "107": {
+   "saberes": [
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Explica primero qué es algo en palabras llanas y después su nombre técnico; di también lo que no haces."
+  },
+  "108": {
+   "saberes": [
+    "defi",
+    "personas"
+   ],
+   "aprende": "Publicar un nombre requiere que esa persona lo firme; confía en lo comprobable y da los motivos de rechazo correctos."
+  },
+  "109": {
+   "saberes": [
+    "relato",
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Que algo sea opcional no permite que sea falso; una guarda comprueba coherencia, pero la verdad la confirma quien conoce la obra."
+  },
+  "111": {
+   "saberes": [
+    "desarrollo",
+    "relato"
+   ],
+   "aprende": "Un juego que enseña un modelo debe usar las mismas reglas y moneda que el modelo, sin economía paralela."
+  },
+  "117": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Enseña una regla dejando probarla con las mismas funciones reales, nunca con una copia que se quedará desfasada."
+  },
+  "123": {
+   "saberes": [
+    "desarrollo",
+    "personas"
+   ],
+   "aprende": "No muestres señales visuales inventadas junto a las que significan algo, y mide con la regla de decisión escrita antes."
+  },
+  "126": {
+   "saberes": [
+    "contabilidad",
+    "defi"
+   ],
+   "aprende": "Si la pantalla promete que solo cuenta lo firmado, guarda la firma completa y que la prueba sea portable y verificable."
+  },
+  "129": {
+   "saberes": [
+    "comunidad",
+    "contabilidad",
+    "proyectos"
+   ],
+   "aprende": "Una estimación honesta muestra sus supuestos, topes, costes y exclusiones, y marca qué pasos no dependen del grupo."
+  },
+  "136": {
+   "saberes": [
+    "desarrollo",
+    "defi"
+   ],
+   "aprende": "Un aviso debe dar el motivo realmente observado, no una causa supuesta, y no culpar a terceros sin descartar al propio usuario."
+  },
+  "141": {
+   "saberes": [
+    "relato",
+    "proyectos"
+   ],
+   "aprende": "No calcules un precio que depende de datos que solo sabe el cliente; pregúntalos y di qué queda fuera."
+  },
+  "143": {
+   "saberes": [
+    "relato",
+    "proyectos"
+   ],
+   "aprende": "Toda promesa con coste va junto a su alcance y su condición escritos; sin condición escribible no es una garantía."
+  },
+  "156": {
+   "saberes": [
+    "contabilidad"
+   ],
+   "aprende": "Una estimación nunca va a una casilla contable: la etiqueta viaja con la cifra y el importe desconocido se marca, no se deja vacío."
+  },
+  "159": {
+   "saberes": [
+    "conocimiento",
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "Todo lo que sale fuera pasa por el mismo filtro único; los datos personales bloquean y lo demás solo avisa."
+  },
+  "164": {
+   "saberes": [
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Compara las copias por lo que hacen, no por sus nombres; mejor aún, llama a la regla original en vez de copiarla."
+  },
+  "12": {
+   "saberes": [
+    "relato",
+    "contabilidad"
+   ],
+   "aprende": "Si un relato acompaña a una herramienta, cada historia vivida por una persona real debe quedar en el mismo registro que el valor real."
+  },
+  "16": {
+   "saberes": [
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Traduce los símbolos de fondo al lenguaje de cada cultura como equivalentes funcionales, y deja siempre una versión laica para quien no los comparte."
+  },
+  "17": {
+   "saberes": [
+    "relato",
+    "conocimiento"
+   ],
+   "aprende": "Cuando el relato vive dentro del producto, su resumen legible debe coincidir con la lista única del código y explicar qué significa cada personaje en un equipo."
+  },
+  "18": {
+   "saberes": [
+    "comunidad",
+    "relato"
+   ],
+   "aprende": "Define una sola misión y pon cada herramienta a su servicio; el relato hace deseable la infraestructura pero participar en él debe ser opcional."
+  },
+  "19": {
+   "saberes": [
+    "personas",
+    "comunidad"
+   ],
+   "aprende": "Reconoce competencias como un inventario colectivo y vivo basado en lo que se ha hecho, nunca como etiqueta fija ni por antigüedad."
+  },
+  "20": {
+   "saberes": [
+    "personas",
+    "desarrollo"
+   ],
+   "aprende": "Lo que una persona cuenta de sí misma se guarda aparte de la evidencia, privado por diseño, y la IA solo propone lo que la persona acepta."
+  },
+  "23": {
+   "saberes": [
+    "personas",
+    "contabilidad"
+   ],
+   "aprende": "Una hora vale una hora venga de donde venga, y si cambias qué se cuenta tienes que recalibrar a la vez los umbrales de reconocimiento."
+  },
+  "24": {
+   "saberes": [
+    "contabilidad",
+    "comunidad"
+   ],
+   "aprende": "Nunca sumes totales ya calculados: mide una sola vez sobre los apuntes sin duplicar, separa lo propio de lo agregado y une personas en vez de sumarlas."
+  },
+  "69": {
+   "saberes": [
+    "personas",
+    "defi"
+   ],
+   "aprende": "Nombrar a alguien responsable de una copia no cuenta hasta que la tiene, y restaurar debe unir datos, nunca sustituir los que ya hay."
+  },
+  "81": {
+   "saberes": [
+    "relato",
+    "desarrollo"
+   ],
+   "aprende": "El relato debe poder apagarse sin que la herramienta pierda nada, y solo aparece cuando la persona ya ha aportado algo."
+  },
+  "89": {
+   "saberes": [
+    "relato",
+    "conocimiento"
+   ],
+   "aprende": "No uses una misma palabra para dos ideas en un texto; nombra cada una por lo que mide y corrige en público sin borrar el pasado."
+  },
+  "133": {
+   "saberes": [
+    "personas",
+    "comunidad",
+    "desarrollo"
+   ],
+   "aprende": "En el cuidado, registra compromisos y dependencias para ver quién quedaría solo si alguien lo deja, no solo las horas hechas."
+  },
+  "151": {
+   "saberes": [
+    "desarrollo",
+    "relato",
+    "comunidad"
+   ],
+   "aprende": "Puede haber varias invitaciones con relatos distintos, pero todas deben llevar a un único registro con los mismos nombres de campo."
+  },
+  "154": {
+   "saberes": [
+    "personas",
+    "desarrollo",
+    "conocimiento"
+   ],
+   "aprende": "Si una persona debe validar lo que hizo una máquina, debe poder corregirlo allí mismo y debe guardarse tanto el original como la corrección."
+  }
+ },
+ "principios": {
+  "anna": [
+   {
+    "es": "Una guarda solo vale si se ha probado rompiendo lo que vigila y si mira la fuente y el resultado real, no una copia.",
+    "ca": "Una guarda només val si s'ha provat trencant el que vigila i si mira la font i el resultat real, no una còpia.",
+    "vedas": [
+     50,
+     105,
+     106,
+     112,
+     120,
+     152,
+     155
+    ]
+   },
+   {
+    "es": "Cuando una cosa vive en varios sitios, se declara una vez y se genera, o una guarda compara las copias.",
+    "ca": "Quan una cosa viu a diversos llocs, es declara un cop i es genera, o una guarda en compara les còpies.",
+    "vedas": [
+     100,
+     116,
+     118,
+     127,
+     128,
+     137,
+     149
+    ]
+   },
+   {
+    "es": "Lo que no se puede abrir, encontrar o pulsar no existe; cada función necesita un camino real desde donde la busca la gente.",
+    "ca": "El que no es pot obrir, trobar o prémer no existeix; cada funció necessita un camí real des d'on la busca la gent.",
+    "vedas": [
+     60,
+     94,
+     104,
+     132,
+     146,
+     157
+    ]
+   },
+   {
+    "es": "La pantalla dice la verdad: lo que falta, lo que hace otro y lo que no está verificado se dice, nunca se finge.",
+    "ca": "La pantalla diu la veritat: el que falta, el que fa un altre i el que no està verificat es diu, mai no es fingeix.",
+    "vedas": [
+     34,
+     49,
+     80,
+     97,
+     105,
+     144,
+     148
+    ]
+   },
+   {
+    "es": "Lo que sale fuera se publica agregado o en hashes, cerrado por defecto, y lo que entra pasa por el mismo filtro.",
+    "ca": "El que surt es publica agregat o en hashos, tancat per defecte, i el que entra passa pel mateix sedàs.",
+    "vedas": [
+     47,
+     58,
+     60,
+     68,
+     70,
+     76
+    ]
+   },
+   {
+    "es": "Una cifra solo informa si sale de lo que de verdad ha pasado; las métricas que suben sin trabajo engañan.",
+    "ca": "Una xifra només informa si surt del que ha passat de debò; les mètriques que pugen sense feina enganyen.",
+    "vedas": [
+     53,
+     75,
+     85,
+     113,
+     119,
+     134
+    ]
+   }
+  ],
+  "prana": [
+   {
+    "es": "Todo valor aportado se cuenta, y lo que cuenta lo define el mapa de valor; también el trabajo invisible como acompañar, prestar o enseñar.",
+    "ca": "Tot valor aportat es compta, i el que compta ho defineix el mapa de valor; també la feina invisible com acompanyar, prestar o ensenyar.",
+    "vedas": [
+     21,
+     22,
+     29,
+     45,
+     145
+    ]
+   },
+   {
+    "es": "Lo verificado y lo estimado nunca se suman; lo pendiente no es saldo y cada cifra dice de dónde sale.",
+    "ca": "El verificat i l'estimat no se sumen mai; el pendent no és saldo i cada xifra diu d'on surt.",
+    "vedas": [
+     45,
+     55,
+     92,
+     95,
+     139,
+     158
+    ]
+   },
+   {
+    "es": "La historia firmada no se reescribe: las identidades y correcciones se resuelven al leer y unir registros nunca destruye datos.",
+    "ca": "La història signada no es reescriu: les identitats i correccions es resolen en llegir i unir registres no destrueix mai dades.",
+    "vedas": [
+     39,
+     48,
+     59,
+     64,
+     90
+    ]
+   },
+   {
+    "es": "Las personas se unen por una clave firmada, no por el nombre, y nadie anota en nombre de otro sin su aprobación.",
+    "ca": "Les persones s'uneixen per una clau signada, no pel nom, i ningú apunta en nom d'un altre sense el seu vistiplau.",
+    "vedas": [
+     39,
+     43,
+     59,
+     90
+    ]
+   },
+   {
+    "es": "Una prueba solo vale si cualquiera puede volver a comprobarla contra el registro completo, sin depender de un servidor que mande.",
+    "ca": "Una prova només val si qualsevol la pot tornar a comprovar contra el registre sencer, sense dependre d'un servidor que mani.",
+    "vedas": [
+     26,
+     30,
+     64,
+     82,
+     125
+    ]
+   },
+   {
+    "es": "Un número que miente es peor que ninguno: se dice cuando es parcial, imposible o sustituido, y se acompaña de una acción posible.",
+    "ca": "Un número que menteix és pitjor que cap: es diu quan és parcial, impossible o substituït, i s'acompanya d'una acció possible.",
+    "vedas": [
+     38,
+     67,
+     87,
+     90,
+     124,
+     130
+    ]
+   }
+  ],
+  "mano": [
+   {
+    "es": "No se inventan datos ni se presentan como exactos; si algo falta, falla o está incompleto, se dice claramente.",
+    "ca": "No s'inventen dades ni es presenten com a exactes; si alguna cosa falta, falla o és incompleta, es diu clarament.",
+    "vedas": [
+     32,
+     37,
+     54,
+     96,
+     131
+    ]
+   },
+   {
+    "es": "Cada dato se cuenta una sola vez y tiene una única fuente; ampliar relaciones obliga a revisar lo que se suma.",
+    "ca": "Cada dada es compta una sola vegada i té una sola font; ampliar relacions obliga a revisar el que se suma.",
+    "vedas": [
+     28,
+     37,
+     79,
+     96,
+     161
+    ]
+   },
+   {
+    "es": "Una taxonomía la declara una persona y una máquina comprueba que nada quede fuera ni apunte a lo que no existe.",
+    "ca": "Una taxonomia la declara una persona i una màquina comprova que res no quedi fora ni apunti al que no existeix.",
+    "vedas": [
+     40,
+     44,
+     63,
+     131,
+     161
+    ]
+   },
+   {
+    "es": "El conocimiento vive mientras se usa: cada petición va al backlog, cada lección se escribe y el aprendizaje circula en ambos sentidos.",
+    "ca": "El coneixement viu mentre s'usa: cada petició va al backlog, cada lliçó s'escriu i l'aprenentatge circula en tots dos sentits.",
+    "vedas": [
+     15,
+     160,
+     161,
+     166
+    ]
+   },
+   {
+    "es": "Una guarda solo protege si está en el camino real de los datos, y lo que viene de fuera entra por lista blanca.",
+    "ca": "Una guarda només protegeix si és al camí real de les dades, i el que ve de fora entra per llista blanca.",
+    "vedas": [
+     98,
+     114,
+     162,
+     165
+    ]
+   },
+   {
+    "es": "Guardar y editar reconcilian lo existente sin duplicar ni romper lo que otros necesitan, y cada resultado lleva su acción.",
+    "ca": "Desar i editar reconcilien el que existeix sense duplicar ni trencar el que altres necessiten, i cada resultat porta la seva acció.",
+    "vedas": [
+     31,
+     33,
+     86,
+     91,
+     165
+    ]
+   }
+  ],
+  "vijnana": [
+   {
+    "es": "Solo se afirma lo que se ha comprobado; lo declarado, lo estimado y lo verificado se muestran distinto y cada cifra lleva su etiqueta.",
+    "ca": "Només s'afirma el que s'ha comprovat; el declarat, l'estimat i el verificat es mostren diferent i cada xifra porta la seva etiqueta.",
+    "vedas": [
+     61,
+     84,
+     102,
+     126,
+     156,
+     56,
+     83
+    ]
+   },
+   {
+    "es": "Medir antes de decidir; una estimación escrita se lee igual que una medida y una precisión inventada engaña.",
+    "ca": "Mesurar abans de decidir; una estimació escrita es llegeix igual que una mesura i una precisió inventada enganya.",
+    "vedas": [
+     88,
+     123,
+     72,
+     102,
+     129
+    ]
+   },
+   {
+    "es": "Los fallos, huecos y límites se dicen con su motivo real; callarlos o inventar una causa hace que nadie se fíe del resto.",
+    "ca": "Les fallades, els forats i els límits es diuen amb el seu motiu real; callar-los o inventar una causa fa que ningú es refiï de la resta.",
+    "vedas": [
+     41,
+     136,
+     88,
+     108,
+     72,
+     66,
+     36
+    ]
+   },
+   {
+    "es": "Cada regla vive en un solo sitio y todo lo demás la llama; las copias divergen sin que nadie lo note.",
+    "ca": "Cada regla viu en un sol lloc i tota la resta la crida; les còpies divergeixen sense que ningú se n'adoni.",
+    "vedas": [
+     71,
+     117,
+     109,
+     164,
+     159,
+     84,
+     111
+    ]
+   },
+   {
+    "es": "Lo que sale fuera pasa por el mismo filtro y no publica datos de nadie que no lo haya consentido y firmado.",
+    "ca": "El que surt a fora passa pel mateix sedàs i no publica dades de ningú que no ho hagi consentit i signat.",
+    "vedas": [
+     159,
+     108,
+     83,
+     65,
+     84
+    ]
+   },
+   {
+    "es": "Promesas, precios y comparaciones de personas solo se ofrecen con sus condiciones escritas y sin perjudicar a quien menos puede aportar.",
+    "ca": "Promeses, preus i comparacions de persones només s'ofereixen amb les seves condicions escrites i sense perjudicar qui menys pot aportar.",
+    "vedas": [
+     143,
+     141,
+     107,
+     52,
+     56,
+     103
+    ]
+   }
+  ],
+  "ananda": [
+   {
+    "es": "El relato sirve a la misión y a la comunidad: se puede apagar, se gana aportando y nunca sustituye lo que la herramienta explica.",
+    "ca": "El relat serveix la missió i la comunitat: es pot apagar, es guanya aportant i mai substitueix el que l'eina explica.",
+    "vedas": [
+     12,
+     18,
+     81,
+     16
+    ]
+   },
+   {
+    "es": "Reconocer a las personas se basa en evidencia de lo hecho, con el mismo valor para cada hora y sin etiquetas fijas.",
+    "ca": "Reconèixer les persones es basa en l'evidència del que s'ha fet, amb el mateix valor per a cada hora i sense etiquetes fixes.",
+    "vedas": [
+     19,
+     20,
+     23
+    ]
+   },
+   {
+    "es": "Una cifra que tranquiliza sin ser verdad es peor que no tenerla: no dupliques, no cuentes lo que solo está nombrado y mide lo que de verdad protege.",
+    "ca": "Una xifra que tranquil·litza sense ser certa és pitjor que no tenir-la: no dupliquis, no comptis el que només està designat i mesura el que de debò protegeix.",
+    "vedas": [
+     24,
+     69,
+     133,
+     154
+    ]
+   },
+   {
+    "es": "Un solo registro y un solo nombre por cosa: varias entradas o relatos pueden convivir, pero dos registros o dos significados acaban divergiendo.",
+    "ca": "Un sol registre i un sol nom per cosa: diverses entrades o relats poden conviure, però dos registres o dos significats acaben divergint.",
+    "vedas": [
+     17,
+     89,
+     133,
+     151
+    ]
+   },
+   {
+    "es": "Cuidar a las personas exige proteger sus datos por diseño y dejarles la última palabra sobre lo que se dice de ellas.",
+    "ca": "Tenir cura de les persones exigeix protegir-ne les dades per disseny i deixar-los l'última paraula sobre el que se'n diu.",
+    "vedas": [
+     20,
+     133,
+     154
+    ]
+   }
+  ]
+ }
+}

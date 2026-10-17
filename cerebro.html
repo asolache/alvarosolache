@@ -82,6 +82,15 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .panel p{font-size:.95rem}
 .go{font:500 .82rem Inter,sans-serif;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;cursor:pointer}
 .go:hover{border-color:var(--accent)}
+.saberes{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.sab{font:500 .8rem Inter,sans-serif;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.sab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tag{display:inline-block;font:500 .74rem "JetBrains Mono",monospace;padding:1px 8px;margin:6px 4px 0 0;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.aprende{margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:10px;font-size:.95rem}
+.princ{display:grid;gap:14px}
+.princ article{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;padding:14px 18px}
+.princ h3{color:var(--c);font-size:1.05rem;margin-bottom:6px}
+.princ li{margin:.5rem 0 .2rem 1.1rem}
 .lista details{border-bottom:1px solid var(--line);padding:10px 0}
 .lista summary{cursor:pointer;font-family:"Space Grotesk",sans-serif;font-weight:600}
 .lista ol{padding-left:1.4rem;margin-top:6px;columns:2 300px;font-size:.9rem}
@@ -109,6 +118,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       <button class="tab" role="tab" data-v="capas" aria-selected="true">Capas</button>
       <button class="tab" role="tab" data-v="mov" aria-selected="false">En movimiento</button>
     </div>
+    <div class="saberes" id="saberes" role="group" aria-label="Filtrar por saber"></div>
     <div class="ctl" id="ctl">
       <button id="play" type="button">▶ Reproducir</button>
       <label for="t" style="position:absolute;left:-9999px">Hasta la veda</label>
@@ -121,6 +131,15 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
     <p class="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta.</p>
     <div class="panel" id="panel" aria-live="polite"><p class="m">Toca una veda para leerla y ver con cuáles conecta.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Si aprendemos de los errores</p>
+    <h2>Lo aprendido, por capa</h2>
+    <p class="lead">Lo que enseñan juntas las vedas de cada capa, en pocas frases. Cada principio cita las vedas de las que sale.</p>
+    <div class="princ" id="princ"></div>
   </div>
 </section>
 
@@ -171,7 +190,20 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   document.getElementById("lista").innerHTML = orden.map(function(c){
     var ns = D.nodos.filter(function(n){ return n.capa === c.id; });
     return '<details><summary style="color:' + col(c.id) + '">' + esc(c.n) + ' · ' + ns.length + '</summary><ol>' +
-      ns.map(function(n){ return '<li value="' + n.n + '"><a href="#" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a></li>'; }).join("") + '</ol></details>';
+      ns.map(function(n){ return '<li value="' + n.n + '"><a href="#" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
+  }).join("");
+
+  var sabActivo = null;
+  document.getElementById("saberes").innerHTML = '<button class="sab" data-s="" aria-pressed="true">Todos</button>' +
+    Object.keys(D.saberes).map(function(k){
+      var c = D.nodos.filter(function(n){ return n.saberes.indexOf(k) >= 0; }).length;
+      return '<button class="sab" data-s="' + k + '" aria-pressed="false">' + esc(D.saberes[k]) + ' · ' + c + '</button>';
+    }).join("");
+  document.getElementById("princ").innerHTML = orden.filter(function(c){ return c.principios.length; }).map(function(c){
+    return '<article style="--c:' + col(c.id) + '"><h3>' + esc(c.n) + ' · ' + esc(c.s) + '</h3><ul>' + c.principios.map(function(p){
+      return '<li>' + esc(p.es) + '<br>' + p.vedas.filter(function(v){ return byId[D.fuentes[0] + ":" + v]; }).map(function(v){
+        var n = byId[D.fuentes[0] + ":" + v]; return '<button class="go" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</button>'; }).join("") + '</li>';
+    }).join("") + '</ul></article>';
   }).join("");
 
   /* Posiciones: x por orden de escritura, y por capa con un pequeño vaivén para que no se tapen. */
@@ -217,9 +249,18 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     var chips = function(ids, txt){ return ids && ids.length ? '<p class="m" style="margin-top:10px">' + txt + '</p>' + ids.map(function(k){ return '<button class="go" data-id="' + esc(k) + '">' + byId[k].n + ' · ' + esc(byId[k].t) + '</button>'; }).join("") : ""; };
     panel.style.setProperty("--c", col(n.capa));
     panel.innerHTML = '<p class="m">Veda ' + n.n + ' · ' + esc(n.fuente) + (n.fecha ? ' · ' + esc(n.fecha) : '') + ' · ' + esc(c.n) + (n.fijada ? ' (fijada)' : ' (propuesta)') + (n.tema ? ' · ' + esc(n.tema) : '') + '</p>' +
-      '<h3>' + esc(n.t) + '</h3><p>' + esc(n.txt) + '</p>' + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
+      '<h3>' + esc(n.t) + '</h3>' + (n.aprende ? '<p class="aprende"><b>Lo que enseña:</b> ' + esc(n.aprende) + '</p>' : '') +
+      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(D.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
   }
   document.addEventListener("click", function(e){
+    var f = e.target.closest(".sab");
+    if (f) {
+      sabActivo = f.getAttribute("data-s") || null;
+      document.querySelectorAll(".sab").forEach(function(x){ x.setAttribute("aria-pressed", x === f ? "true" : "false"); });
+      D.nodos.forEach(function(n){ nEls[n.id].classList.toggle("dim", !!sabActivo && n.saberes.indexOf(sabActivo) < 0); nEls[n.id].classList.remove("sel"); });
+      eEls.forEach(function(x){ x.el.classList.remove("on"); }); gL.innerHTML = "";
+      return;
+    }
     var b = e.target.closest("[data-id]"); if (!b) return;
     e.preventDefault(); selecciona(b.getAttribute("data-id"));
     if (b.tagName === "A") panel.scrollIntoView({behavior:"smooth", block:"center"});
