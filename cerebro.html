@@ -243,10 +243,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <script src="https://teamtowershuma.com/SOS/cervell/codex-parse.js"></script>
 <script src="https://teamtowershuma.com/SOS/cervell/forces.js"></script>
 <script src="https://teamtowershuma.com/SOS/cervell/3d.js"></script>
+<script src="https://teamtowershuma.com/SOS/cervell/pla.js"></script>
 <script src="https://teamtowershuma.com/SOS/cervell/exporta.js"></script>
 <script>
 (function(){
-  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta; if (!PUB || !FZ || !window.Cerebro3D) return;
+  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta; if (!PUB || !FZ || !window.Cerebro3D || !window.CervellPla) return;
   var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
   var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
   var panel = document.getElementById("panel"), now = document.getElementById("now");
@@ -315,34 +316,23 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     if (sel && byId[sel]) selecciona(sel, true); else sel = null;
   }
 
-  /* Las bandas del grafo plano: cinco capas, o los tres pisos de la castellera
-     (pinya, tronc y pom de dalt), donde cada piso lleva dentro sus koshas. */
-  function bandas(){
-    return vista === "castellera"
-      ? FZ.CASTELLERA.map(function(p){ return { n:p.n, s:p.capas.map(function(k){ return capaDe[k].s; }).join(" · "), capas:p.capas, piso:true }; })
-      : orden.map(function(c){ return { n:c.n, s:c.s, capas:[c.id] }; });
-  }
+  /* Las bandas del grafo plano (cinco capas, o los tres pisos de la castellera)
+     y dónde va cada veda son de la matriz: SOS/cervell/pla.js, el mismo dibujo
+     que la portada de TeamTowers. Aquí solo va la interacción. */
+  var PL = window.CervellPla;
   function dibuja(){
-    var bs = bandas(), alto = (H - top - 16) / bs.length;
-    /* Posiciones: x por orden, y por capa con un pequeño vaivén para que no se tapen. */
-    pos = {};
-    D.nodos.forEach(function(n, i){
-      var li = bs.findIndex(function(b){ return b.capas.indexOf(n.capa) >= 0; }), b = bs[li];
-      var sub = alto / b.capas.length, si = b.capas.indexOf(n.capa);
-      var jit = ((n.n * 37) % 5 - 2) * (sub / 7);
-      pos[n.id] = { x: x0 + (x1 - x0) * i / Math.max(1, D.nodos.length - 1), y: top + alto * li + sub * si + sub / 2 + jit };
-    });
+    var bs = PL.franges({ capas: PUB.capas }, vista === "castellera" ? "castellera" : "capes"), alto = (H - top - 16) / bs.length;
+    pos = PL.geometria(D, bs, { dalt: top, alt: alto, x0: x0, x1: x1 });
     gB.innerHTML = gE.innerHTML = gN.innerHTML = gL.innerHTML = "";
     bs.forEach(function(b, i){
       var sub = alto / b.capas.length;
       b.capas.forEach(function(k, j){ el("rect", {x:-W, y:top + alto * i + sub * j, width:W * 3, height:sub, fill:col(k), "class":"band"}, gB); });
-      if (b.piso && i) el("line", {x1:0, x2:W, y1:top + alto * i, y2:top + alto * i, stroke:"var(--line)", "stroke-width":1.5}, gB);
-      var t = el("text", {x:12, y:top + alto * i + alto / 2 - 2, fill:b.piso ? "var(--ink)" : col(b.capas[0]), "class":"lane"}, gB); t.textContent = b.n;
+      if (b.pis && i) el("line", {x1:0, x2:W, y1:top + alto * i, y2:top + alto * i, stroke:"var(--line)", "stroke-width":1.5}, gB);
+      var t = el("text", {x:12, y:top + alto * i + alto / 2 - 2, fill:b.pis ? "var(--ink)" : col(b.capas[0]), "class":"lane"}, gB); t.textContent = b.n;
       var s = el("text", {x:12, y:top + alto * i + alto / 2 + 14, "class":"lane-s"}, gB); s.textContent = b.s.toUpperCase();
     });
     eEls = D.aristas.map(function(a){
-      var p = pos[a[0]], q = pos[a[1]], mx = (p.x + q.x) / 2, my = Math.min(p.y, q.y) - Math.abs(p.x - q.x) / 6;
-      return { a:a, el: el("path", {d:"M" + p.x + "," + p.y + " Q" + mx + "," + my + " " + q.x + "," + q.y, "class":"e"}, gE) };
+      return { a:a, el: el("path", {d:PL.corba(pos[a[0]], pos[a[1]]), "class":"e"}, gE) };
     });
     nEls = {};
     D.nodos.forEach(function(n){
