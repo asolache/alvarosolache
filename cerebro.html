@@ -235,7 +235,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     document.getElementById("lista").innerHTML = orden.map(function(c){
       var ns = D.nodos.filter(function(n){ return n.capa === c.id; });
       return '<details><summary style="color:' + col(c.id) + '">' + esc(c.n) + ' · ' + ns.length + '</summary><ol>' +
-        ns.map(function(n){ return '<li value="' + n.n + '"><a href="#veda-' + n.n + '" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.privado ? ' <small style="color:var(--muted)">· privada</small>' : '') + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
+        ns.map(function(n){ return '<li value="' + n.n + '"><a href="#' + (n.privado ? 'privado' : ancla(n)) + '" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.privado ? ' <small style="color:var(--muted)">· privada</small>' : '') + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
     }).join("");
     document.getElementById("saberes").innerHTML = '<button class="sab" data-s="" aria-pressed="true">Todos</button>' +
       Object.keys(PUB.saberes).map(function(k){
@@ -302,8 +302,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       '<h3>' + esc(n.t) + '</h3>' + (n.aprende ? '<p class="aprende"><b>Lo que enseña:</b> ' + esc(n.aprende) + '</p>' : '') +
       '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(PUB.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
     /* Solo las vedas públicas tienen enlace: el nombre de un repo privado no va a la barra de direcciones. */
-    try { history.replaceState(null, "", n.privado ? location.pathname + "#privado" : "#veda-" + n.n); } catch (e) {}
+    try { history.replaceState(null, "", n.privado ? location.pathname + "#privado" : "#" + ancla(n)); } catch (e) {}
   }
+
+  /* El enlace de una veda pública: #veda-12 en la matriz, #veda-1-4 en la segunda fuente. */
+  function ancla(n){ var f = PUB.fuentes.indexOf(n.fuente); return "veda-" + (f > 0 ? f + "-" : "") + n.n; }
 
   /* Zoom y desplazamiento: se mueve la ventana (viewBox) sobre el grafo. */
   var vb = { x:0, y:0, w:W, h:H }, movido = false;
@@ -438,20 +441,29 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
         return rs && rs.length === 100 ? pagina(p + 1) : repos;
       });
     })(1).then(function(rs){
+      /* Las vedas de la plantilla de la matriz (pública): un hijo no las repite. */
+      var plantilla = gh("/repos/asolache/teamtowershuma/contents/" + CP.RUTA_PLANTILLA, true).catch(function(){ return null; }).then(CP.plantilla);
       return Promise.all(rs.map(function(r){
         var base = "/repos/" + r.full_name + "/contents/";
+        /* Matriz: su codex en SOS. Hijo: donde diga su cervell.json. */
         return gh(base + CP.RUTA_CODEX, true).then(function(codex){
-          if (!codex) return null;
-          return gh(base + CP.RUTA_HERENCIA, true).catch(function(){ return null; }).then(function(h){
-            var her = null; try { her = h ? JSON.parse(h) : null; } catch (e) {}
-            return CP.lee(codex, { nom: r.name, herencia: her });
+          if (codex) return { codex: codex, hijo: false };
+          return gh(base + CP.RUTA_HIJO, true).then(function(c){
+            var ruta = null; try { ruta = c ? JSON.parse(c).codex : null; } catch (e) {}
+            return ruta ? gh(base + String(ruta).replace(/^\.?\//, ""), true).then(function(x){ return x ? { codex: x, hijo: true } : null; }) : null;
+          });
+        }).then(function(f){
+          if (!f) return null;
+          return Promise.all([plantilla, gh(base + CP.RUTA_HERENCIA, true).catch(function(){ return null; })]).then(function(v){
+            var her = null; try { her = v[1] ? JSON.parse(v[1]) : null; } catch (e) {}
+            return CP.lee(f.codex, { nom: r.name, herencia: her, matriz: f.hijo ? PUB.fuentes[0] : null, plantilla: v[0] });
           });
         }).catch(function(e){ if (e && e.sesion) throw e; return null; });
       }));
     }).then(function(lecturas){
       var nodos = [], aristas = [], fuentes = [];
       lecturas.forEach(function(l){ if (l && l.nodos.length) { nodos = nodos.concat(l.nodos); aristas = aristas.concat(l.aristas); fuentes.push(l.nodos[0].fuente); } });
-      monta({ nodos: nodos, aristas: CP.limpia(nodos, aristas), fuentes: fuentes });
+      monta({ nodos: nodos, aristas: CP.limpia(nodos, aristas, PUB.nodos.map(function(n){ return n.id; })), fuentes: fuentes });
       privtxt.textContent = nodos.length
         ? "Capa privada abierta: " + nodos.length + " vedas de " + fuentes.length + (fuentes.length === 1 ? " repo privado" : " repos privados") + ", con borde punteado. Solo las ves tú, en esta pestaña."
         : "Has entrado con GitHub, pero ninguno de tus repos privados tiene aún un codex en " + CP.RUTA_CODEX + ". Cuando lo tenga, aparecerá aquí.";
@@ -466,9 +478,9 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   aplica();
   monta();
   cargaPrivado();
-  /* Enlace directo a una veda: cerebro.html#veda-12 */
-  var m = location.hash.match(/^#veda-(\d+)$/);
-  if (m && byId[PUB.fuentes[0] + ":" + m[1]]) { selecciona(PUB.fuentes[0] + ":" + m[1]); setTimeout(function(){ document.querySelector(".graph").scrollIntoView({block:"center"}); }, 0); }
+  /* Enlace directo a una veda: cerebro.html#veda-12 o #veda-1-4 */
+  var m = location.hash.match(/^#veda-(?:(\d+)-)?(\d+)$/), dir = m && PUB.fuentes[+(m[1] || 0)] + ":" + m[2];
+  if (dir && byId[dir]) { selecciona(dir); setTimeout(function(){ document.querySelector(".graph").scrollIntoView({block:"center"}); }, 0); }
 })();
 </script>
 </body>
