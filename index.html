@@ -53,26 +53,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="red.css">
 <style>
 :root{
-  --bg:#f6f8f3; --surface:#ffffff; --ink:#0f1b2d; --muted:#556172; --line:#dde5dc;
-  --accent:#1d4ed8; --on-accent:#ffffff; --accent-soft:#fdf3c4; --maroon:#15803d; --night:#0b1a3a;
-  --c-ama:#ca8a04; --c-sabe:#1d4ed8; --c-mundo:#15803d; --c-paga:#0e7490;
-  --radius:14px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a;
-    --accent:#facc15; --on-accent:#08142b; --accent-soft:#2a2a12; --maroon:#4ade80; --night:#050d1d;
-    --c-ama:#facc15; --c-sabe:#60a5fa; --c-mundo:#4ade80; --c-paga:#22d3ee;
-  }
-}
-:root[data-theme="dark"]{
-    --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a;
-    --accent:#facc15; --on-accent:#08142b; --accent-soft:#2a2a12; --maroon:#4ade80; --night:#050d1d;
-    --c-ama:#facc15; --c-sabe:#60a5fa; --c-mundo:#4ade80; --c-paga:#22d3ee;
+  /* La base (papel, tinta, bordes, azul) es la piel de la red: red.css. Aquí, solo lo propio. */
+  --accent-soft:#f6edd2; --maroon:var(--green); --night:#0b1a3a;
+  --c-ama:var(--gold); --c-sabe:var(--blue); --c-mundo:var(--green); --c-paga:#0e6e85;
 }
 /* escenario: hero y arte, siempre de noche */
 .stage{background:radial-gradient(110% 90% at 85% 0%,#eab308 0%,#15803d 34%,#1e3a8a 66%,#0b1a3a 92%);color:#f3f7ee}
@@ -83,7 +71,7 @@
 .stage .fact{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)}
 .stage .fact span,.stage .source{color:#d7e3dc}
 .alter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.6rem}
-.alter span{font:600 .8rem Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid rgba(252,211,77,.5);color:#fde047}
+.alter span{font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid rgba(252,211,77,.5);color:#fde047}
 .artgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .artcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
 .artcard h3{font-size:1.35rem;margin-bottom:.3rem;color:#fff}
@@ -114,11 +102,11 @@
 .lineage span{color:var(--muted);font-size:.95rem}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+body{line-height:1.65;font-size:17px}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.02em}
-h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+h3{font-family:var(--sans);font-weight:600;line-height:1.2;letter-spacing:-.01em}
 .hero h1{font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 0%,#fef9c3 45%,#bbf7d0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .kicker,.tl .y,.artcard .who,.alter span,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
 .thesis,.lineage b{font-style:italic}
@@ -145,7 +133,7 @@ nav ul a:hover{color:var(--ink)}
 .hero .thesis{font-family:Fraunces,serif;font-size:clamp(1.35rem,2.8vw,1.8rem);max-width:30ch;margin-bottom:1.6rem}
 .hero p.intro{max-width:60ch;margin-bottom:2rem}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:11px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
 .btn.primary{background:var(--accent);color:var(--on-accent)}
 .btn.ghost{color:var(--accent);background:transparent}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:48px}
@@ -160,7 +148,7 @@ nav ul a:hover{color:var(--ink)}
 .ikigai svg{width:100%;height:auto;max-width:480px;display:block;margin:0 auto}
 .ikigai circle{fill-opacity:.14;stroke-width:2;cursor:pointer;transition:fill-opacity .2s}
 .ikigai circle:hover,.ikigai circle.on{fill-opacity:.3}
-.ikigai text{font-family:Inter,sans-serif;font-size:13px;fill:var(--ink);pointer-events:none}
+.ikigai text{font-family:var(--sans);font-size:13px;fill:var(--ink);pointer-events:none}
 .ikigai text.big{font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:600}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:240px}
 .panel h3{font-size:1.3rem;margin-bottom:.5rem}
@@ -170,7 +158,7 @@ nav ul a:hover{color:var(--ink)}
 
 /* timeline */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 .88rem Inter,sans-serif;cursor:pointer}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 .88rem var(--sans);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .tl{list-style:none;position:relative;margin-left:8px}
 .tl::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--line)}
@@ -215,16 +203,14 @@ nav ul a:hover{color:var(--ink)}
 @media(max-width:720px){.flows a i{display:none}}
 section[id],#mv-panel{scroll-margin-top:110px}
 /* mapa vivo */
-:root{--m-raices:#64748b;--m-personas:#b45309;--m-sistemas:#1d4ed8;--m-comunidad:#15803d;--m-digital:#0e7490;--m-arte:#65a30d}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m-raices:#94a3b8;--m-personas:#facc15;--m-sistemas:#60a5fa;--m-comunidad:#4ade80;--m-digital:#22d3ee;--m-arte:#a3e635}}
-:root[data-theme="dark"]{--m-raices:#94a3b8;--m-personas:#facc15;--m-sistemas:#60a5fa;--m-comunidad:#4ade80;--m-digital:#22d3ee;--m-arte:#a3e635}
+:root{--m-raices:#64748b;--m-personas:#b45309;--m-sistemas:var(--blue);--m-comunidad:var(--green);--m-digital:#0e7490;--m-arte:#65a30d}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .mv-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
 .mv-tab{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .mv-tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .mv-graph{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch}
 #mv-svg{display:block;width:100%;height:auto}
-#mv-svg text{font-family:Inter,sans-serif}
+#mv-svg text{font-family:var(--sans)}
 .mv-l{font-size:12px;fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
 .mv-n{cursor:pointer;transition:opacity .25s}
 .mv-n circle,.mv-n rect{stroke-width:2;fill-opacity:.9}
@@ -263,7 +249,7 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .mm-0{grid-column:1;grid-row:1}.mm-1{grid-column:3;grid-row:1}.mm-2{grid-column:1;grid-row:2}.mm-3{grid-column:3;grid-row:2}.mm-4{grid-column:1;grid-row:3}.mm-5{grid-column:3;grid-row:3}
 @media(max-width:720px){.mm{grid-template-columns:1fr;gap:10px}.mm-c,.mm-b{grid-column:1 !important;grid-row:auto !important}.mm-c{order:-1}.mm-lines{display:none}}
 .mv-pend{color:var(--muted);font-style:italic}
-.mv-go{font:500 .85rem Inter,sans-serif;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;cursor:pointer}
+.mv-go{font:500 .85rem var(--sans);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0;cursor:pointer}
 .mv-go:hover{border-color:var(--accent)}
 .av{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:32px}
 .av-top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
@@ -277,7 +263,7 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .av-it>div{background:var(--bg);border:1px solid var(--line);padding:10px 14px;border-radius:16px 16px 16px 4px;max-width:85%}
 .av-it p{font-size:.95rem}
 .av-see{margin-top:6px;font-size:.85rem;color:var(--muted)}
-.av-say{margin-top:6px;font:500 .82rem Inter,sans-serif;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:3px 12px;cursor:pointer}
+.av-say{margin-top:6px;font:500 .82rem var(--sans);border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:3px 12px;cursor:pointer}
 .av-it small{color:var(--muted);font-size:.78rem}
 .av-form{display:flex;gap:8px;margin-top:14px}
 .av-form input{flex:1;min-width:0;font:inherit;padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
@@ -661,6 +647,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 
 <footer>
   <div class="wrap">
+    <div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div>
     <div class="links">
       <a href="mailto:asolache@mac.com">asolache@mac.com</a>
       <a href="tel:+34629867715">+34 629 86 77 15</a>

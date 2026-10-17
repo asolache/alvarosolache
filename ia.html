@@ -13,30 +13,20 @@
 <meta property="og:url" content="https://alvarosolache.netlify.app/ia.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@500;600&family=Fraunces:ital,wght@1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@500;600&family=Fraunces:ital,wght@1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="red.css">
 <style>
 :root{
-  --bg:#f6f8f3; --surface:#ffffff; --ink:#0f1b2d; --muted:#556172; --line:#dde5dc; --accent:#1d4ed8; --radius:14px;
-  --azul:#1d4ed8; --amarillo:#b45309; --verde:#15803d;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a; --accent:#facc15;
-    --azul:#60a5fa; --amarillo:#fbbf24; --verde:#4ade80;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a; --accent:#facc15;
-  --azul:#60a5fa; --amarillo:#fbbf24; --verde:#4ade80;
+  --azul:var(--blue); --amarillo:var(--gold); --verde:var(--green);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+body{line-height:1.65;font-size:17px}
 a{color:var(--accent)}
 .wrap{max-width:900px;margin:0 auto;padding:0 16px}
 h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.02em}
 h1{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:.8rem}
 h2{font-size:clamp(1.3rem,3vw,1.7rem);margin-bottom:.8rem}
-h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;line-height:1.25;margin-bottom:.4rem}
+h3{font-family:var(--sans);font-weight:600;line-height:1.25;margin-bottom:.4rem}
 p+p{margin-top:.8rem}
 .kicker{font:600 .78rem "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .lead{color:var(--muted);max-width:64ch;margin-bottom:1.2rem}
@@ -134,7 +124,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </section>
 
-<footer><div class="wrap"><a href="index.html">Volver al perfil</a> · <a href="https://github.com/asolache/alvarosolache">El código de esta web</a></div></footer>
+<footer><div class="wrap"><div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div><a href="index.html">Volver al perfil</a> · <a href="https://github.com/asolache/alvarosolache">El código de esta web</a></div></footer>
 
 <!-- El contador es el de la matriz, el mismo para todos los proyectos (veda 167). -->
 <script src="https://teamtowershuma.com/js/ia-a-la-vista.js" defer></script>
