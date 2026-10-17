@@ -64,7 +64,7 @@ Lo propio de esta web es `ia.html`, que usa el contador común de TeamTowers.
 **Dicho por Álvaro el 17/10/2026:** «Revisa el diseño del site para integrar el
 look and feel de toda la red». La paleta (papel, tinta, bordes y acentos con
 contraste AA medido) la declara TeamTowers una vez en
-`../teamtowershuma/SOS/tools/build-pell.js`. Aquí no se copia: la escribe
+SOS/tools/build-pell.js, en el repositorio teamtowershuma. Aquí no se copia: la escribe
 `herramientas/pell.mjs` en `red.css` entre las marcas `TT-PELL`, y las páginas
 nuevas enlazan `red.css` en vez de declarar su propio `--bg`. Lo propio de esta
 web (el escenario de noche con los colores de su dharma, Unbounded y Fraunces)
