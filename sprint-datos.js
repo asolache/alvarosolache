@@ -24,6 +24,7 @@ window.SPRINT = {
     {t:"La paleta trinidad y este sprint", eje:"shiva", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"El ikigai y el cerebro, al día con todo lo de hoy", eje:"brahma", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"El cerebro en 3D por koshas, con la castellera y sus fuerzas", eje:"shiva", col:"done", quien:"claude", f:"2026-10-17"},
+    {t:"El cerebro como motor de cada persona: para sus IA y su LMS", eje:"brahma", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"Revisar el análisis del cerebro: citas que faltan y vedas sueltas", eje:"vishnu", col:"todo", quien:"yo", n:"Lo propone el cerebro; decides tú."}
   ]
 };
