@@ -96,17 +96,35 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .lista ol{padding-left:1.4rem;margin-top:6px;columns:2 300px;font-size:.9rem}
 .lista li{break-inside:avoid;margin:.15rem 0}
 .soon li{margin:.4rem 0 .4rem 1.2rem}
+.nav2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.busca{position:relative;flex:1 1 240px;min-width:0}
+.busca input{width:100%;font:500 .95rem Inter,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.busca input:focus-visible,.zoom button:focus-visible,.priv button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.res{position:absolute;z-index:5;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;display:grid;gap:2px;max-height:320px;overflow:auto;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.res[hidden]{display:none}
+.res button{text-align:left;font:500 .9rem Inter,sans-serif;border:0;background:transparent;color:var(--ink);padding:6px 10px;border-radius:8px;cursor:pointer}
+.res button:hover,.res button:focus-visible{background:var(--bg)}
+.res small{color:var(--muted)}
+.zoom{display:flex;gap:4px}
+.zoom button{font:600 .95rem "Space Grotesk",sans-serif;min-width:38px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+#svg.pan{cursor:grab;touch-action:none}#svg.pan:active{cursor:grabbing}
+.n.priv circle{stroke:var(--ink);stroke-dasharray:2 2;stroke-width:1.5}
+.priv{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:14px 18px;margin:0 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.priv p{font-size:.92rem;color:var(--muted);flex:1 1 300px;min-width:0}
+.priv button{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.priv button.sec{background:transparent;color:var(--ink);border-color:var(--line)}
 footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.1</span></div></nav>
+<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>El cerebro · versión 0.2</span></div></nav>
 
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
   <h1>El cerebro</h1>
   <p class="lead">Cada veda es un error que ya se pagó, escrito para no pagarlo dos veces. Aquí están todas las de mis proyectos como un mapa: en cinco capas, de la obra al propósito, unidas por las veces que una cita a otra. Y en movimiento, en el orden en que se aprendieron.</p>
   <p class="lead">El antahkarana es el instrumento interior que une lo que se hace con lo que se es. Este mapa intenta lo mismo con un proyecto: que cada línea de código sepa a qué propósito sirve. <strong>Es un primer orden, propuesto por palabras clave; lo estoy puliendo.</strong></p>
+  <p class="lead">Es una de mis herramientas de trabajo con IA. Nace de los Vedas y de mis años programando.</p>
 </header>
 
 <section>
@@ -125,11 +143,24 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       <input id="t" type="range" min="1" value="1">
       <output id="tv" for="t"></output>
     </div>
+    <div class="nav2">
+      <div class="busca">
+        <label for="q" style="position:absolute;left:-9999px">Buscar una veda</label>
+        <input id="q" type="search" placeholder="Busca una veda por número o palabra" autocomplete="off">
+        <div class="res" id="res" hidden></div>
+      </div>
+      <div class="zoom" role="group" aria-label="Zoom del grafo">
+        <button type="button" id="zmas" aria-label="Acercar">+</button>
+        <button type="button" id="zmenos" aria-label="Alejar">−</button>
+        <button type="button" id="zcero" aria-label="Ver todo">Todo</button>
+      </div>
+    </div>
+    <div class="priv" id="priv"><p id="privtxt">Capa privada: los codex de tus repos privados se leen en tu navegador con tu sesión de GitHub. Aquí no se publica nada de ellos.</p><span id="privbtn"></span></div>
     <p class="now" id="now" aria-live="polite"></p>
     <div class="graph">
       <svg id="svg" role="group" aria-label="Grafo de las vedas por capa"><g id="bg"></g><g id="ed"></g><g id="nd"></g><g id="lb"></g></svg>
     </div>
-    <p class="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta.</p>
+    <p class="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta. Un borde punteado es privado y solo lo ves tú. Acerca con los botones o con Ctrl y la rueda, arrastra para moverte y usa las flechas para pasar de una veda a la siguiente.</p>
     <div class="panel" id="panel" aria-live="polite"><p class="m">Toca una veda para leerla y ver con cuáles conecta.</p></div>
   </div>
 </section>
@@ -165,94 +196,176 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <footer><div class="wrap">Generado del codex público de <a href="https://github.com/asolache/teamtowershuma/blob/main/SOS/knowledge/codex.md">TeamTowers Humà</a> · <span id="gen"></span> · <a href="index.html">Volver al perfil</a></div></footer>
 
 <script src="cerebro-datos.js"></script>
+<script src="codex-parse.js"></script>
 <script>
 (function(){
-  var D = window.CEREBRO; if (!D) return;
+  var PUB = window.CEREBRO, CP = window.CodexParse; if (!PUB) return;
   var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
   var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
   var panel = document.getElementById("panel"), now = document.getElementById("now");
-  var orden = D.capas.slice().reverse(); /* el propósito arriba, la obra abajo */
-  var capaDe = {}; D.capas.forEach(function(c){ capaDe[c.id] = c; });
-  var byId = {}, vec = {};
-  D.nodos.forEach(function(n, i){ n.i = i; byId[n.id] = n; vec[n.id] = {}; });
-  D.aristas.forEach(function(a){ vec[a[0]][a[1]] = vec[a[1]][a[0]] = 1; });
-  var cita = {}, citada = {};
-  D.aristas.forEach(function(a){ (cita[a[0]] = cita[a[0]] || []).push(a[1]); (citada[a[1]] = citada[a[1]] || []).push(a[0]); });
+  var orden = PUB.capas.slice().reverse(); /* el propósito arriba, la obra abajo */
+  var capaDe = {}; PUB.capas.forEach(function(c){ capaDe[c.id] = c; });
   function el(t, at, p){ var e = document.createElementNS(NS, t); for (var k in at) e.setAttribute(k, at[k]); if (p) p.appendChild(e); return e; }
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
   function col(id){ return "var(--k-" + id + ")"; }
-  document.getElementById("gen").textContent = D.nodos.length + " vedas · " + D.aristas.length + " citas · " + D.generado;
+  function llano(s){ return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
 
-  document.getElementById("capas").innerHTML = orden.map(function(c){
-    var k = D.nodos.filter(function(n){ return n.capa === c.id; }).length;
-    return '<div class="capa" style="--c:' + col(c.id) + '"><i>' + esc(c.s) + '</i><b>' + esc(c.n) + '</b><p>' + esc(c.d) + '</p><small>' + k + ' vedas</small></div>';
-  }).join("");
-  document.getElementById("lista").innerHTML = orden.map(function(c){
-    var ns = D.nodos.filter(function(n){ return n.capa === c.id; });
-    return '<details><summary style="color:' + col(c.id) + '">' + esc(c.n) + ' · ' + ns.length + '</summary><ol>' +
-      ns.map(function(n){ return '<li value="' + n.n + '"><a href="#" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
-  }).join("");
-
-  var sabActivo = null;
-  document.getElementById("saberes").innerHTML = '<button class="sab" data-s="" aria-pressed="true">Todos</button>' +
-    Object.keys(D.saberes).map(function(k){
-      var c = D.nodos.filter(function(n){ return n.saberes.indexOf(k) >= 0; }).length;
-      return '<button class="sab" data-s="' + k + '" aria-pressed="false">' + esc(D.saberes[k]) + ' · ' + c + '</button>';
-    }).join("");
-  document.getElementById("princ").innerHTML = orden.filter(function(c){ return c.principios.length; }).map(function(c){
-    return '<article style="--c:' + col(c.id) + '"><h3>' + esc(c.n) + ' · ' + esc(c.s) + '</h3><ul>' + c.principios.map(function(p){
-      return '<li>' + esc(p.es) + '<br>' + p.vedas.filter(function(v){ return byId[D.fuentes[0] + ":" + v]; }).map(function(v){
-        var n = byId[D.fuentes[0] + ":" + v]; return '<button class="go" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</button>'; }).join("") + '</li>';
-    }).join("") + '</ul></article>';
-  }).join("");
-
-  /* Posiciones: x por orden de escritura, y por capa con un pequeño vaivén para que no se tapen. */
+  /* El cerebro que se ve: el público, más lo privado que lea tu navegador. Lo privado nunca sale de esta pestaña. */
+  var D, byId, vec, cita, citada, pos, nEls, eEls, sel = null, sabActivo = null;
   var W = 1000, H = 560, top = 24, lane = (H - top - 16) / 5, x0 = 150, x1 = W - 20;
-  var pos = {};
-  D.nodos.forEach(function(n, i){
-    var li = orden.findIndex(function(c){ return c.id === n.capa; });
-    var jit = ((n.n * 37) % 5 - 2) * (lane / 7);
-    pos[n.id] = { x: x0 + (x1 - x0) * i / Math.max(1, D.nodos.length - 1), y: top + lane * li + lane / 2 + jit };
-  });
-  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
-  orden.forEach(function(c, i){
-    el("rect", {x:0, y:top + lane * i, width:W, height:lane, fill:col(c.id), "class":"band"}, gB);
-    var t = el("text", {x:12, y:top + lane * i + lane / 2 - 2, fill:col(c.id), "class":"lane"}, gB); t.textContent = c.n;
-    var s = el("text", {x:12, y:top + lane * i + lane / 2 + 14, "class":"lane-s"}, gB); s.textContent = c.s.toUpperCase();
-  });
-  var eEls = D.aristas.map(function(a){
-    var p = pos[a[0]], q = pos[a[1]], mx = (p.x + q.x) / 2, my = Math.min(p.y, q.y) - Math.abs(p.x - q.x) / 6;
-    return { a:a, el: el("path", {d:"M" + p.x + "," + p.y + " Q" + mx + "," + my + " " + q.x + "," + q.y, "class":"e"}, gE) };
-  });
-  var nEls = {};
-  D.nodos.forEach(function(n){
-    var g = el("g", {"class":"n" + (n.fijada ? " fix" : ""), tabindex:0, role:"button", "aria-label":"Veda " + n.n + ": " + n.t}, gN);
-    var deg = Object.keys(vec[n.id]).length;
-    el("circle", {cx:pos[n.id].x, cy:pos[n.id].y, r:4 + Math.min(deg, 6), fill:col(n.capa)}, g);
-    g.addEventListener("click", function(){ selecciona(n.id); });
-    g.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selecciona(n.id); } });
-    nEls[n.id] = g;
-  });
 
-  var sel = null;
+  function monta(priv){
+    priv = priv || { nodos: [], aristas: [], fuentes: [] };
+    var pub = PUB.nodos.map(function(n){ return n; });
+    D = { nodos: pub.concat(priv.nodos.map(function(n){ n.privado = true; return n; })).sort(function(a, b){
+            return (a.fecha || "9") < (b.fecha || "9") ? -1 : (a.fecha || "9") > (b.fecha || "9") ? 1 : (a.privado ? 1 : 0) - (b.privado ? 1 : 0) || a.n - b.n; }),
+          aristas: PUB.aristas.concat(priv.aristas) };
+    /* Sin privado, el orden es el de siempre: el de escritura del codex público. */
+    if (!priv.nodos.length) D.nodos = PUB.nodos.slice();
+    byId = {}; vec = {}; cita = {}; citada = {};
+    D.nodos.forEach(function(n, i){ n.i = i; byId[n.id] = n; vec[n.id] = {}; });
+    D.aristas.forEach(function(a){ vec[a[0]][a[1]] = vec[a[1]][a[0]] = 1; (cita[a[0]] = cita[a[0]] || []).push(a[1]); (citada[a[1]] = citada[a[1]] || []).push(a[0]); });
+    document.getElementById("gen").textContent = PUB.nodos.length + " vedas · " + PUB.aristas.length + " citas · " + PUB.generado +
+      (priv.nodos.length ? " · y " + priv.nodos.length + " privadas que solo ves tú" : "");
+
+    document.getElementById("capas").innerHTML = orden.map(function(c){
+      var k = D.nodos.filter(function(n){ return n.capa === c.id; }).length;
+      return '<div class="capa" style="--c:' + col(c.id) + '"><i>' + esc(c.s) + '</i><b>' + esc(c.n) + '</b><p>' + esc(c.d) + '</p><small>' + k + ' vedas</small></div>';
+    }).join("");
+    document.getElementById("lista").innerHTML = orden.map(function(c){
+      var ns = D.nodos.filter(function(n){ return n.capa === c.id; });
+      return '<details><summary style="color:' + col(c.id) + '">' + esc(c.n) + ' · ' + ns.length + '</summary><ol>' +
+        ns.map(function(n){ return '<li value="' + n.n + '"><a href="#veda-' + n.n + '" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.privado ? ' <small style="color:var(--muted)">· privada</small>' : '') + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
+    }).join("");
+    document.getElementById("saberes").innerHTML = '<button class="sab" data-s="" aria-pressed="true">Todos</button>' +
+      Object.keys(PUB.saberes).map(function(k){
+        var c = D.nodos.filter(function(n){ return n.saberes.indexOf(k) >= 0; }).length;
+        return '<button class="sab" data-s="' + k + '" aria-pressed="false">' + esc(PUB.saberes[k]) + ' · ' + c + '</button>';
+      }).join("");
+    sabActivo = null;
+    document.getElementById("princ").innerHTML = orden.filter(function(c){ return c.principios.length; }).map(function(c){
+      return '<article style="--c:' + col(c.id) + '"><h3>' + esc(c.n) + ' · ' + esc(c.s) + '</h3><ul>' + c.principios.map(function(p){
+        return '<li>' + esc(p.es) + '<br>' + p.vedas.filter(function(v){ return byId[PUB.fuentes[0] + ":" + v]; }).map(function(v){
+          var n = byId[PUB.fuentes[0] + ":" + v]; return '<button class="go" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</button>'; }).join("") + '</li>';
+      }).join("") + '</ul></article>';
+    }).join("");
+
+    /* Posiciones: x por orden, y por capa con un pequeño vaivén para que no se tapen. */
+    pos = {};
+    D.nodos.forEach(function(n, i){
+      var li = orden.findIndex(function(c){ return c.id === n.capa; });
+      var jit = ((n.n * 37) % 5 - 2) * (lane / 7);
+      pos[n.id] = { x: x0 + (x1 - x0) * i / Math.max(1, D.nodos.length - 1), y: top + lane * li + lane / 2 + jit };
+    });
+    gB.innerHTML = gE.innerHTML = gN.innerHTML = gL.innerHTML = "";
+    orden.forEach(function(c, i){
+      el("rect", {x:-W, y:top + lane * i, width:W * 3, height:lane, fill:col(c.id), "class":"band"}, gB);
+      var t = el("text", {x:12, y:top + lane * i + lane / 2 - 2, fill:col(c.id), "class":"lane"}, gB); t.textContent = c.n;
+      var s = el("text", {x:12, y:top + lane * i + lane / 2 + 14, "class":"lane-s"}, gB); s.textContent = c.s.toUpperCase();
+    });
+    eEls = D.aristas.map(function(a){
+      var p = pos[a[0]], q = pos[a[1]], mx = (p.x + q.x) / 2, my = Math.min(p.y, q.y) - Math.abs(p.x - q.x) / 6;
+      return { a:a, el: el("path", {d:"M" + p.x + "," + p.y + " Q" + mx + "," + my + " " + q.x + "," + q.y, "class":"e"}, gE) };
+    });
+    nEls = {};
+    D.nodos.forEach(function(n){
+      var g = el("g", {"class":"n" + (n.fijada ? " fix" : "") + (n.privado ? " priv" : ""), tabindex:0, role:"button", "aria-label":"Veda " + n.n + ": " + n.t + (n.privado ? " (privada)" : "")}, gN);
+      var deg = Object.keys(vec[n.id]).length;
+      el("circle", {cx:pos[n.id].x, cy:pos[n.id].y, r:4 + Math.min(deg, 6), fill:col(n.capa)}, g);
+      g.addEventListener("click", function(){ if (!movido) selecciona(n.id); });
+      g.addEventListener("keydown", function(e){
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selecciona(n.id); }
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); var m = D.nodos[n.i + (e.key === "ArrowRight" ? 1 : -1)]; if (m) { selecciona(m.id); nEls[m.id].focus(); } }
+      });
+      nEls[n.id] = g;
+    });
+    t.max = D.nodos.length; t.value = D.nodos.length;
+    hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = "";
+    if (sel && byId[sel]) selecciona(sel, true); else sel = null;
+  }
+
   function etiqueta(id){
     gL.innerHTML = ""; if (!id) return;
-    var p = pos[id], n = byId[id];
-    var t = el("text", {x:p.x > W - 260 ? p.x - 12 : p.x + 12, y:p.y - 10, "class":"lbl", "text-anchor":p.x > W - 260 ? "end" : "start"}, gL);
-    t.textContent = n.n + " · " + n.t;
+    var p = pos[id], n = byId[id], der = p.x > vb.x + vb.w * .72;
+    var tx = el("text", {x:der ? p.x - 12 : p.x + 12, y:p.y - 10, "class":"lbl", "text-anchor":der ? "end" : "start"}, gL);
+    tx.textContent = n.n + " · " + n.t;
   }
-  function selecciona(id){
+  function selecciona(id, quieto){
     sel = id; var n = byId[id], c = capaDe[n.capa];
     Object.keys(nEls).forEach(function(k){ nEls[k].classList.toggle("sel", k === id); nEls[k].classList.toggle("dim", k !== id && !vec[id][k]); });
     eEls.forEach(function(e){ e.el.classList.toggle("on", e.a[0] === id || e.a[1] === id); });
+    if (!quieto) centra(id);
     etiqueta(id);
     var chips = function(ids, txt){ return ids && ids.length ? '<p class="m" style="margin-top:10px">' + txt + '</p>' + ids.map(function(k){ return '<button class="go" data-id="' + esc(k) + '">' + byId[k].n + ' · ' + esc(byId[k].t) + '</button>'; }).join("") : ""; };
     panel.style.setProperty("--c", col(n.capa));
-    panel.innerHTML = '<p class="m">Veda ' + n.n + ' · ' + esc(n.fuente) + (n.fecha ? ' · ' + esc(n.fecha) : '') + ' · ' + esc(c.n) + (n.fijada ? ' (fijada)' : ' (propuesta)') + (n.tema ? ' · ' + esc(n.tema) : '') + '</p>' +
+    panel.innerHTML = '<p class="m">Veda ' + n.n + ' · ' + esc(n.fuente) + (n.fecha ? ' · ' + esc(n.fecha) : '') + ' · ' + esc(c.n) + (n.fijada ? ' (fijada)' : ' (propuesta)') + (n.tema ? ' · ' + esc(n.tema) : '') + (n.privado ? ' · privada, solo la ves tú' : '') + '</p>' +
       '<h3>' + esc(n.t) + '</h3>' + (n.aprende ? '<p class="aprende"><b>Lo que enseña:</b> ' + esc(n.aprende) + '</p>' : '') +
-      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(D.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
+      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(PUB.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan");
+    /* Solo las vedas públicas tienen enlace: el nombre de un repo privado no va a la barra de direcciones. */
+    try { history.replaceState(null, "", n.privado ? location.pathname + "#privado" : "#veda-" + n.n); } catch (e) {}
   }
+
+  /* Zoom y desplazamiento: se mueve la ventana (viewBox) sobre el grafo. */
+  var vb = { x:0, y:0, w:W, h:H }, movido = false;
+  function aplica(){
+    vb.w = Math.min(W, Math.max(W / 8, vb.w)); vb.h = vb.w * H / W;
+    vb.x = Math.min(W - vb.w, Math.max(0, vb.x)); vb.y = Math.min(H - vb.h, Math.max(0, vb.y));
+    svg.setAttribute("viewBox", vb.x + " " + vb.y + " " + vb.w + " " + vb.h);
+    svg.classList.toggle("pan", vb.w < W);
+  }
+  function zoom(f, cx, cy){
+    if (cx == null) { cx = vb.x + vb.w / 2; cy = vb.y + vb.h / 2; }
+    var w = Math.min(W, Math.max(W / 8, vb.w * f)), h = w * H / W;
+    vb.x = cx - (cx - vb.x) * w / vb.w; vb.y = cy - (cy - vb.y) * h / vb.h; vb.w = w; vb.h = h; aplica();
+    if (sel) etiqueta(sel);
+  }
+  function centra(id){
+    var p = pos[id];
+    if (vb.w < W) { vb.x = p.x - vb.w / 2; vb.y = p.y - vb.h / 2; aplica(); }
+    sigue(id);
+  }
+  function punto(e){ var r = svg.getBoundingClientRect(); return { x: vb.x + (e.clientX - r.left) / r.width * vb.w, y: vb.y + (e.clientY - r.top) / r.height * vb.h }; }
+  document.getElementById("zmas").addEventListener("click", function(){ zoom(1 / 1.6, sel ? pos[sel].x : null, sel ? pos[sel].y : null); });
+  document.getElementById("zmenos").addEventListener("click", function(){ zoom(1.6); });
+  document.getElementById("zcero").addEventListener("click", function(){ vb = { x:0, y:0, w:W, h:H }; aplica(); if (sel) etiqueta(sel); });
+  svg.addEventListener("wheel", function(e){ if (!e.ctrlKey && !e.metaKey) return; e.preventDefault(); var p = punto(e); zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, p.x, p.y); }, { passive:false });
+  var arrastre = null;
+  svg.addEventListener("pointerdown", function(e){ if (vb.w >= W) return; arrastre = { x:e.clientX, y:e.clientY, vx:vb.x, vy:vb.y }; movido = false; });
+  window.addEventListener("pointermove", function(e){
+    if (!arrastre) return; var r = svg.getBoundingClientRect();
+    var dx = e.clientX - arrastre.x, dy = e.clientY - arrastre.y;
+    if (Math.abs(dx) + Math.abs(dy) > 4) movido = true;
+    vb.x = arrastre.vx - dx / r.width * vb.w; vb.y = arrastre.vy - dy / r.height * vb.h; aplica();
+  });
+  window.addEventListener("pointerup", function(){ arrastre = null; setTimeout(function(){ movido = false; }, 0); });
+
+  /* Buscar: por número de veda o por palabras del título, de lo que enseña y del texto. */
+  var q = document.getElementById("q"), res = document.getElementById("res");
+  function busca(){
+    var v = llano(q.value.trim()); if (!v) { res.hidden = true; return; }
+    var num = /^\d+$/.test(v) ? +v : null, ps = v.split(/\s+/);
+    var hits = D.nodos.filter(function(n){
+      if (num != null) return n.n === num;
+      var s = llano(n.t + " " + (n.aprende || "") + " " + n.txt);
+      return ps.every(function(p){ return s.indexOf(p) >= 0; });
+    }).sort(function(a, b){ return (llano(b.t).indexOf(ps[0]) >= 0) - (llano(a.t).indexOf(ps[0]) >= 0); }).slice(0, 8);
+    res.innerHTML = hits.length ? hits.map(function(n){ return '<button type="button" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + ' <small>· ' + esc(capaDe[n.capa].n) + (n.privado ? ' · privada' : '') + '</small></button>'; }).join("") : '<p class="m" style="padding:6px 10px;color:var(--muted)">Ninguna veda con eso.</p>';
+    res.hidden = false;
+  }
+  q.addEventListener("input", busca);
+  q.addEventListener("keydown", function(e){
+    if (e.key === "Enter") { var b = res.querySelector("button"); if (b) { e.preventDefault(); b.click(); } }
+    if (e.key === "Escape") { q.value = ""; res.hidden = true; }
+    if (e.key === "ArrowDown") { var f = res.querySelector("button"); if (f) { e.preventDefault(); f.focus(); } }
+  });
+  res.addEventListener("keydown", function(e){
+    var bs = Array.prototype.slice.call(res.querySelectorAll("button")), i = bs.indexOf(document.activeElement);
+    if (e.key === "ArrowDown" && bs[i + 1]) { e.preventDefault(); bs[i + 1].focus(); }
+    if (e.key === "ArrowUp") { e.preventDefault(); (bs[i - 1] || q).focus(); }
+  });
+
   document.addEventListener("click", function(e){
+    if (!e.target.closest(".busca")) res.hidden = true;
     var f = e.target.closest(".sab");
     if (f) {
       sabActivo = f.getAttribute("data-s") || null;
@@ -263,23 +376,23 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     }
     var b = e.target.closest("[data-id]"); if (!b) return;
     e.preventDefault(); selecciona(b.getAttribute("data-id"));
-    if (b.tagName === "A") panel.scrollIntoView({behavior:"smooth", block:"center"});
+    if (b.closest(".res")) { res.hidden = true; q.blur(); }
+    if (b.tagName === "A" || b.closest(".res")) document.querySelector(".graph").scrollIntoView({behavior:"smooth", block:"center"});
   });
 
   /* En movimiento: el cerebro crece veda a veda, con sus citas. */
   var t = document.getElementById("t"), tv = document.getElementById("tv"), play = document.getElementById("play"), timer = null;
-  t.max = D.nodos.length; t.value = D.nodos.length;
   function hasta(k){
     k = +k; tv.textContent = k + " / " + D.nodos.length;
     D.nodos.forEach(function(n){ nEls[n.id].classList.toggle("hid", n.i >= k); });
     eEls.forEach(function(e){ e.el.classList.toggle("hid", byId[e.a[0]].i >= k || byId[e.a[1]].i >= k); });
     var u = D.nodos[k - 1]; if (u) { now.textContent = "Veda " + u.n + " · " + u.t + " · " + capaDe[u.capa].n; etiqueta(u.id); sigue(u.id); }
   }
-  /* En pantalla estrecha el grafo se desliza: que la última veda quede a la vista. */
+  /* En pantalla estrecha el grafo se desliza: que la veda quede a la vista. */
   var graph = document.querySelector(".graph");
   function sigue(id){
     if (graph.scrollWidth <= graph.clientWidth) return;
-    var x = pos[id].x / W * graph.scrollWidth;
+    var x = (pos[id].x - vb.x) / vb.w * graph.scrollWidth;
     graph.scrollLeft = Math.max(0, x - graph.clientWidth * .6);
   }
   t.addEventListener("input", function(){ hasta(t.value); });
@@ -296,10 +409,66 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       var mov = b.getAttribute("data-v") === "mov";
       document.getElementById("ctl").classList.toggle("on", mov);
       para();
-      if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel); }
+      if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel, true); }
     });
   });
-  hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = "";
+
+  /* Capa privada. Con tu sesión de GitHub, el navegador busca un codex en cada repo
+     privado al que tienes acceso y lo dibuja aquí. Nada de eso se guarda ni se publica:
+     el token vive en esta pestaña (sessionStorage) y se borra al cerrarla o al salir. */
+  var privtxt = document.getElementById("privtxt"), privbtn = document.getElementById("privbtn");
+  function token(){ try { return sessionStorage.getItem("gh_token"); } catch (e) { return null; } }
+  function sinSesion(msg){
+    privtxt.textContent = msg || "Capa privada: los codex de tus repos privados se leen en tu navegador con tu sesión de GitHub. Aquí no se publica nada de ellos.";
+    privbtn.innerHTML = '<button type="button" id="entrar">Entrar con GitHub</button>';
+    document.getElementById("entrar").onclick = function(){ location.href = "/.netlify/functions/github?entrar"; };
+  }
+  function salir(){ try { sessionStorage.removeItem("gh_token"); } catch (e) {} monta(); sinSesion(); }
+  function gh(ruta, raw){
+    return fetch("https://api.github.com" + ruta, { headers: { authorization: "Bearer " + token(), accept: raw ? "application/vnd.github.raw" : "application/vnd.github+json" }, cache: "no-store" })
+      .then(function(r){ if (r.status === 404) return null; if (r.status === 401) throw { sesion: true }; if (!r.ok) throw new Error(r.status); return raw ? r.text() : r.json(); });
+  }
+  function cargaPrivado(){
+    if (!token() || !CP) return sinSesion();
+    privtxt.textContent = "Buscando codex en tus repos privados…"; privbtn.innerHTML = "";
+    var repos = [];
+    (function pagina(p){
+      return gh("/user/repos?per_page=100&page=" + p + "&affiliation=owner,collaborator,organization_member").then(function(rs){
+        repos = repos.concat((rs || []).filter(function(r){ return r.private; }));
+        return rs && rs.length === 100 ? pagina(p + 1) : repos;
+      });
+    })(1).then(function(rs){
+      return Promise.all(rs.map(function(r){
+        var base = "/repos/" + r.full_name + "/contents/";
+        return gh(base + CP.RUTA_CODEX, true).then(function(codex){
+          if (!codex) return null;
+          return gh(base + CP.RUTA_HERENCIA, true).catch(function(){ return null; }).then(function(h){
+            var her = null; try { her = h ? JSON.parse(h) : null; } catch (e) {}
+            return CP.lee(codex, { nom: r.name, herencia: her });
+          });
+        }).catch(function(e){ if (e && e.sesion) throw e; return null; });
+      }));
+    }).then(function(lecturas){
+      var nodos = [], aristas = [], fuentes = [];
+      lecturas.forEach(function(l){ if (l && l.nodos.length) { nodos = nodos.concat(l.nodos); aristas = aristas.concat(l.aristas); fuentes.push(l.nodos[0].fuente); } });
+      monta({ nodos: nodos, aristas: CP.limpia(nodos, aristas), fuentes: fuentes });
+      privtxt.textContent = nodos.length
+        ? "Capa privada abierta: " + nodos.length + " vedas de " + fuentes.length + (fuentes.length === 1 ? " repo privado" : " repos privados") + ", con borde punteado. Solo las ves tú, en esta pestaña."
+        : "Has entrado con GitHub, pero ninguno de tus repos privados tiene aún un codex en " + CP.RUTA_CODEX + ". Cuando lo tenga, aparecerá aquí.";
+      privbtn.innerHTML = '<button type="button" class="sec" id="salir">Salir</button>';
+      document.getElementById("salir").onclick = salir;
+    }).catch(function(e){
+      if (e && e.sesion) { try { sessionStorage.removeItem("gh_token"); } catch (x) {} return sinSesion("Tu sesión de GitHub ha caducado. Vuelve a entrar para ver la capa privada."); }
+      sinSesion("No se pudo leer GitHub ahora mismo. Vuelve a intentarlo en un rato.");
+    });
+  }
+
+  aplica();
+  monta();
+  cargaPrivado();
+  /* Enlace directo a una veda: cerebro.html#veda-12 */
+  var m = location.hash.match(/^#veda-(\d+)$/);
+  if (m && byId[PUB.fuentes[0] + ":" + m[1]]) { selecciona(PUB.fuentes[0] + ":" + m[1]); setTimeout(function(){ document.querySelector(".graph").scrollIntoView({block:"center"}); }, 0); }
 })();
 </script>
 </body>
