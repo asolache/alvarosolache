@@ -32,6 +32,16 @@ tiene `/ia`.
 
 ## Hecho
 
+### La barra de la portada, legendaria (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «¿puede ser que no enlace desde la home? Revisa la home,
+la navbar y hazla legendaria». **Causa:** la barra no enlazaba el cerebro; solo
+salía en Recursos y en el ikigai. **Hecho:** un botón «Cerebro» siempre visible,
+del móvil al escritorio; un panel «Todo/Menú» con cuatro grupos (mi vida,
+mi trabajo, mis herramientas y la red, con El teu cervell y la agenda y el Club
+2027 de Events Penedès); la barra marca la sección en la que estás y el panel
+se cierra con Escape o tocando fuera. Sin scroll horizontal a 390 px.
+
 ### El cerebro, motor de cada persona (pedido 2026-10-17)
 
 **Pedido por:** Álvaro: «Y esto para cada persona», «exportable a LMS local» y
