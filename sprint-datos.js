@@ -29,6 +29,7 @@ window.SPRINT = {
     {t:"Fondo de la mente red: ¿ponen dinero solo las socias o también capital de fuera?", eje:"brahma", col:"todo", quien:"yo", n:"Obra en teamtowershuma: SOS/knowledge/vision/fons-ment-xarxa.md"},
     {t:"Fondo de la mente red: ¿«los primeros» en qué? ¿Cerebros conectados o fondo cooperativo de Catalunya?", eje:"brahma", col:"todo", quien:"yo", n:"Sin fuente no se publica «los primeros»."},
     {t:"Hablar con Fèlix: que el margen de Fent Pinya alimente el fondo", eje:"vishnu", col:"todo", quien:"yo"},
-    {t:"Preguntar a un asesor la forma legal del fondo", eje:"vishnu", col:"todo", quien:"yo", n:"Antes de decir «fondo de inversión» en público."}
+    {t:"Preguntar a un asesor la forma legal del fondo", eje:"vishnu", col:"todo", quien:"yo", n:"Antes de decir «fondo de inversión» en público."},
+    {t:"La barra de la portada: el cerebro siempre a mano y la red en un panel", eje:"vishnu", col:"done", quien:"claude", f:"2026-10-17"}
   ]
 };

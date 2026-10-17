@@ -113,16 +113,25 @@ h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:.6rem}
 section{padding:72px 0;border-top:1px solid var(--line)}
 .kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav>.wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
-nav .brand{font-family:Unbounded,sans-serif;font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink)}
-nav ul{display:flex;gap:14px;list-style:none;font-size:.86rem;margin-left:auto;white-space:nowrap}
-nav .brand{white-space:nowrap}
-nav ul a{color:var(--muted);text-decoration:none}
-nav ul a:hover{color:var(--ink)}
-@media(max-width:1100px){nav ul{display:none}}
-@media(max-width:480px){.uni span{display:none}}
+/* nav: lo principal a la vista, el cerebro siempre a mano y todo lo demás
+   en un panel por ejes de la trinidad (Brahma crea, Vishnu sostiene, Shiva transforma) */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{max-width:1240px}
+nav>.wrap{display:flex;align-items:center;gap:12px;height:60px}
+nav .brand{display:inline-flex;align-items:center;gap:9px;font-family:Unbounded,sans-serif;font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;margin-right:auto}
+.tri3{display:inline-flex;gap:3px}.tri3 i{width:7px;height:7px;border-radius:50%;background:var(--brahma-luz)}.tri3 i+i{background:var(--vishnu-luz)}.tri3 i+i+i{background:var(--shiva-luz)}
+.nv{display:flex;gap:2px;list-style:none;font-size:.88rem;white-space:nowrap;margin:0}
+.nv a{display:block;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;position:relative}
+.nv a:hover{color:var(--ink);background:var(--surface)}
+.nv a[aria-current="true"]{color:var(--ink)}
+.nv a[aria-current="true"]::after{content:"";position:absolute;left:10px;right:10px;bottom:2px;height:2px;border-radius:2px;background:var(--vishnu-luz)}
+.cer{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:38px;font:600 .85rem "Space Grotesk",sans-serif;text-decoration:none;color:var(--ink);border:1.5px solid var(--vishnu);border-radius:999px;padding:6px 14px;background:var(--surface)}
+.cer:hover{background:var(--vishnu);color:var(--on-accent)}
+.cer svg{width:16px;height:16px}
+@media(max-width:1180px){.nv{display:none}}
+@media(max-width:560px){.uni span{display:none}}
+@media(max-width:430px){.uni{display:none}nav .brand{font-size:.85rem}.tri3{display:none}}
+nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--vishnu);outline-offset:2px}
 
 /* hero */
 .hero{padding:88px 20px 64px;border-top:0}
@@ -268,15 +277,23 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .av-form .btn{cursor:pointer}
 .soon b{font-family:"Space Grotesk",sans-serif}
 
-/* menú en móvil */
-.menu{display:none;position:relative}
-.menu summary{list-style:none;cursor:pointer;font:600 .85rem "Space Grotesk",sans-serif;padding:7px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink)}
+/* el panel: el mismo en móvil («Menú») y en escritorio («Todo») */
+.menu{position:static}
+.menu summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;min-height:38px;font:600 .85rem "Space Grotesk",sans-serif;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:var(--surface)}
 .menu summary::-webkit-details-marker{display:none}
-.menu ul{display:flex !important;flex-direction:column;gap:0;position:absolute;right:0;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;min-width:200px;box-shadow:0 12px 32px rgba(0,0,0,.18);margin:0}
-.menu ul a{display:block;padding:8px 12px;border-radius:8px;font-size:.95rem}
-.menu ul a:hover{background:var(--bg)}
-@media(max-width:1100px){.menu{display:block}}
-@media(max-width:480px){nav .brand{font-size:.85rem}}
+.menu summary .m{display:none}
+@media(max-width:1180px){.menu summary .m{display:inline}.menu summary .d{display:none}}
+.menu[open] summary{border-color:var(--ink)}
+.mp{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.12);max-height:calc(100vh - 60px);overflow:auto}
+.mp .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-top:22px;padding-bottom:26px}
+@media(max-width:900px){.mp .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.mp .wrap{grid-template-columns:1fr;gap:14px}}
+.mg h3{font:500 .72rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 0 8px;margin:0 0 6px;border-bottom:3px solid var(--g)}
+.mg ul{list-style:none;margin:0}
+.mg a{display:block;padding:7px 0;color:var(--ink);text-decoration:none;font-size:.96rem}
+.mg a:hover{color:var(--g)}
+.mg a small{display:block;color:var(--muted);font-size:.8rem}
+.mg.b{--g:var(--brahma)}.mg.v{--g:var(--vishnu)}.mg.s{--g:var(--shiva)}.mg.r{--g:var(--ink)}
 
 /* el camino del payaso */
 .payaso{padding:80px 0 24px;border-top:0}
@@ -315,36 +332,50 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 </head>
 <body>
 
-<nav>
+<nav aria-label="Principal">
   <div class="wrap">
-    <a class="brand" href="#inicio">Álvaro Solache</a>
-    <ul>
+    <a class="brand" href="#inicio"><span class="tri3" aria-hidden="true"><i></i><i></i><i></i></span>Álvaro Solache</a>
+    <ul class="nv">
       <li><a href="#sprint">Sprint</a></li>
-      <li><a href="#linaje">Linaje</a></li>
       <li><a href="#ikigai">Ikigai</a></li>
+      <li><a href="#linaje">Linaje</a></li>
       <li><a href="#recorrido">Recorrido</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#trabajar">Trabajar</a></li>
-      <li><a href="#payaso">Payaso</a></li>
-      <li><a href="#arte">Arte</a></li>
-      <li><a href="#prensa">Prensa</a></li>
-      <li><a href="#recursos">Recursos</a></li>
     </ul>
-    <details class="menu"><summary aria-label="Abrir el menú">Menú</summary>
-      <ul>
-        <li><a href="#sprint">Sprint</a></li>
-        <li><a href="#linaje">Linaje</a></li>
-        <li><a href="#ikigai">Ikigai</a></li>
-        <li><a href="#recorrido">Recorrido</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#trabajar">Trabajar juntos</a></li>
-        <li><a href="#payaso">El camino del payaso</a></li>
-        <li><a href="#arte">Arte</a></li>
-        <li><a href="#prensa">Prensa</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#pregunta">Pregúntame</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
+    <a class="cer" href="cerebro.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="13" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M8 8l2.4 3.4M16.2 7.4l-2.6 3.8M10.4 14.6l-2.6 2M13.8 14.4l2.6 2.2M8.2 6.8h7.6"/></svg>Cerebro</a>
+    <details class="menu"><summary><span class="d">Todo</span><span class="m">Menú</span></summary>
+      <div class="mp"><div class="wrap">
+        <div class="mg b"><h3>Mi vida · Brahma</h3><ul>
+          <li><a href="#linaje">Linaje</a></li>
+          <li><a href="#ikigai">Ikigai</a></li>
+          <li><a href="#recorrido">Recorrido desde 1971</a></li>
+          <li><a href="#payaso">El camino del payaso</a></li>
+          <li><a href="#arte">Arte y música</a></li>
+        </ul></div>
+        <div class="mg v"><h3>Mi trabajo · Vishnu</h3><ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#trabajar">Trabajar juntos</a></li>
+          <li><a href="#prensa">Prensa</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="cv.html">CV completo</a></li>
+          <li><a href="#pregunta">Pregúntame</a></li>
+        </ul></div>
+        <div class="mg s"><h3>Mis herramientas · Shiva</h3><ul>
+          <li><a href="#sprint">Sprint<small>Lo que tengo en movimiento</small></a></li>
+          <li><a href="cerebro.html">El cerebro<small>Mi codex en 3D, por koshas</small></a></li>
+          <li><a href="cerebro.html#llevatelo">Llévate el cerebro<small>Para tus IA y tu LMS</small></a></li>
+          <li><a href="#mapa">Universo de conocimientos</a></li>
+          <li><a href="ia.html">Cómo uso la IA</a></li>
+        </ul></div>
+        <div class="mg r"><h3>La red</h3><ul>
+          <li><a href="https://www.teamtowers.eu">TeamTowers</a></li>
+          <li><a href="https://teamtowershuma.com">TeamTowers Humà</a></li>
+          <li><a href="https://teamtowershuma.com/SOS/cervell.html">El teu cervell<small>Crea el tuyo en el SOS</small></a></li>
+          <li><a href="https://eventspenedes.com/agenda">Events Penedès<small>Agenda y Club 2027</small></a></li>
+          <li><a href="https://molekulon.org">Comando Molekulon</a></li>
+        </ul></div>
+      </div></div>
     </details>
     <a class="uni" href="#mapa">Universo<span> de conocimientos</span></a>
   </div>
@@ -680,13 +711,14 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 
 <footer>
   <div class="wrap">
-    <div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a></div>
+    <div class="red" role="navigation" aria-label="La red"><span class="red-k">La red</span><a href="https://www.teamtowers.eu">TeamTowers</a><a href="https://teamtowershuma.com">TeamTowers Humà</a><a href="https://teamtowershuma.com/SOS/">El SOS</a><a href="https://teamtowershuma.com/SOS/cervell.html">El teu cervell</a><a href="https://molekulon.org">Comando Molekulon</a><a href="https://eventspenedes.com">Events Penedès</a><a href="https://eventspenedes.com/agenda">Agenda y Club 2027</a></div>
     <div class="links">
       <a href="mailto:asolache@mac.com">asolache@mac.com</a>
       <a href="tel:+34629867715">+34 629 86 77 15</a>
       <a href="https://www.linkedin.com/in/alvarosolache">LinkedIn</a>
       <a href="https://github.com/asolache">GitHub</a>
       <a href="cv.html">CV completo</a>
+      <a href="cerebro.html">El cerebro</a>
       <a href="ia.html">Cómo uso la IA</a>
     </div>
     <p>© 2026 Álvaro Solache · Torrelles de Foix, Penedès</p>
@@ -774,8 +806,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       });
     });
   }
+  /* El panel se cierra al elegir, con Escape o tocando fuera. */
   var menu = document.querySelector('.menu');
-  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') menu.open = false; });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a')) menu.open = false; });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
+  document.addEventListener('click', function(e){ if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  /* La barra marca en qué sección estás. */
+  var nvs = document.querySelectorAll('.nv a');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (!en.isIntersecting) return;
+        nvs.forEach(function(a){ if (a.getAttribute('href') === '#' + en.target.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+      });
+    }, {rootMargin: '-45% 0px -50% 0px'});
+    nvs.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if (s) io.observe(s); });
+  }
 
   var chips = document.querySelectorAll('#recorrido .chip');
   var items = document.querySelectorAll('#timeline li');
