@@ -60,8 +60,8 @@ window.MAPA = {
      links:[["InfoJobs","https://www.infojobs.net"],["UOC","https://www.uoc.edu"],["Foment del Treball","https://www.foment.com"],["RRHH y equipos","equipos.html"]]},
     {id:"boda", s:"Me caso", t:"Me caso", y:1997, ya:"1997", k:"hito", te:["raices"], cx:"familia", lugar:"",
      txt:"Una rama que también sostiene el árbol.", rel:["hijos","comunitats"]},
-    {id:"hijos", s:"Cuatro hijos", t:"Cuatro hijos", y:1996, ya:"c. 1996 – 2007", k:"hito", te:["raices"], cx:"familia", lugar:"La Floresta",
-     txt:"La pinya más importante. Con mis hijos en La Floresta, hasta hoy.", rel:["castells"]},
+    {id:"hijos", s:"Cuatro hijos", t:"Cuatro hijos", y:1996, ya:"c. 1996 – 2007", k:"hito", te:["raices"], cx:"familia", lugar:"",
+     txt:"La pinya más importante.", rel:["castells"]},
     {id:"teamtowers", s:"TeamTowers", t:"TeamTowers y Fent Pinya", y:2005, ya:"2005", k:"hito", te:["personas","sistemas"], cx:"empresa", lugar:"Vilafranca del Penedès",
      txt:"La fundamos Fèlix Miret y yo, y soy su CEO. Fent Pinya nace en Vilafranca; juntos lo hemos llevado a más de 150 organizaciones, con equipos directivos de IKEA, Novartis, Vodafone y Telefónica.", rel:["castells","huma","sos"],
      links:[["teamtowers.eu","https://www.teamtowers.eu"],["Wall Street Journal","https://www.wsj.com/lifestyle/workplace/the-corporate-team-building-exercise-where-you-have-to-climb-on-the-boss-2dc8a5b8"],["TV3","https://www.youtube.com/watch?v=sCCeygsjzZI&list=PL74B5AF79C6C0EE55&index=3"],["El Periódico, 2007","https://www.elperiodico.com/es/sociedad/20070121/castells-integradores-5420703"],["Shareable, 2014","https://www.shareable.net/the-castells-of-catalonia-inside-the-incredible-art-of-human-towers/"],["Diario de León, 2012","https://www.diariodeleon.es/leon/120105/1167049/trepar-horas-trabajo.html"]]},
@@ -69,7 +69,7 @@ window.MAPA = {
      txt:"Vivimos en León. Pongo en marcha el primer banco de tiempo de la ciudad, con lo aprendido en Sant Cugat, donde más de 500 personas ya intercambiaban favores (Diario de León, 2009).", rel:["bancotiempo","comunitats"],
      links:[["Diario de León, 2009","https://www.diariodeleon.es/nacional/90531/459453/nace-leon-primer-banco-intercambiar-gratis-servicios-cosas.html"],["León Alternativo, 2010","https://leonalternativo.blogspot.com/2010/11/alvaro-solache.html"]]},
     {id:"comunitats", s:"comunitats.org", t:"comunitats.org", y:2010, ya:"2010 – 2015", k:"hito", te:["comunidad","digital"], cx:"red", lugar:"León y Barcelona",
-     txt:"La fundo con mi mujer: una red social para intercambiar conocimiento y pagarlo con tiempo. Cofundador, I+D y product owner, con acuerdos con la UOC, La Salle, la Universidad de León y la Agencia de Desarrollo Económico de Castilla y León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona, y cerramos una ronda de 150.000 € con cuatro inversores.", rel:["bancotiempo","cop"],
+     txt:"La cofundo en 2010: una red social para intercambiar conocimiento y pagarlo con tiempo. Cofundador, I+D y product owner, con acuerdos con la UOC, La Salle, la Universidad de León y la Agencia de Desarrollo Económico de Castilla y León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona, y cerramos una ronda de 150.000 € con cuatro inversores.", rel:["bancotiempo","cop"],
      links:[["comunitats.org","https://comunitats.org"],["La Vanguardia, 2013","https://www.lavanguardia.com/internet/20130424/54371495571/el-tiempo-es-el-valor-mas-preciado-en-el-mercado-del-conocimiento.html"],["León en red, 2011","https://www.leonenred.com/entrevistas/alvaro-solache-en-espana-hay-operadoras-que-roban-y-hacen-que-cueste-mas-tener-internet-y-telefono-que-un-piso/4"],["RTVE · La 2","https://www.rtve.es/play/videos/para-todos-la-2/para-todos-2-coloquio-aprendizaje-colaborativo/3119095/"]]},
     {id:"mondragon", s:"Mondragon", t:"Mondragon Team Academy", y:2016, ya:"2016 – 2018", k:"hito", te:["personas"], cx:"aulas", lugar:"Mondragon",
      txt:"Team coach y profesor en el primer grado oficial de Team Entrepreneurship. Posgrado en Team Coaching.", rel:["coaching"],
@@ -95,6 +95,9 @@ window.MAPA = {
      links:[["Entrar al SOS","https://teamtowershuma.com/SOS/"],["Value Network Lab","https://valuenetworklab.netlify.app"]]},
 
     // Arte
+    {id:"calsegue", s:"Cal Segué", t:"Cal Segué", y:2026, ya:"Hoy", k:"hito", te:["raices"], cx:"familia", lugar:"Cal Segué",
+     txt:"Vivo en Cal Segué, una casa pairal: una masía dedicada a Amma y a Swami Tilak.", rel:["vedas","madre","padre"],
+     links:[["Swami Tilak","https://swamitilak.org"]]},
     {id:"mazinguer", s:"Mazinguer", t:"Mazinguer", y:null, ya:"Sin fecha aún", k:"hito", te:["arte"], cx:"escenario", lugar:"",
      txt:"Líder estratega y DJ del Comando Molekulon. Baja a la Tierra con Horacio Motomachi a buscar 150.000 superhéroes reales, montando una banda que recorre los pueblos.", rel:["musica"],
      links:[["El Comando","https://molekulon.org/personatges.html"]]},
@@ -129,7 +132,9 @@ window.MAPA = {
     {id:"sistemico", s:"Pensamiento sistémico", t:"Pensamiento sistémico", y:2021, ya:"Desde 2021", k:"saber", te:["sistemas"], cx:"aulas", lugar:"",
      txt:"Ver el sistema entero antes de tocar una pieza.", rel:["vna"]},
     {id:"musica", s:"Música y performance", t:"La música, el DJ y la performance", y:null, ya:"Siempre", k:"saber", te:["arte"], cx:"escenario", lugar:"",
-     txt:"La misma pregunta, ¿quién sostiene qué?, contada en clave de banda y de cómic.", rel:[]}
+     txt:"La misma pregunta, ¿quién sostiene qué?, contada en clave de banda y de cómic.", rel:[]},
+    {id:"payaso", s:"El camino del payaso", t:"El camino del payaso", y:null, ya:"Siempre", k:"saber", te:["arte","personas"], cx:"escenario", lugar:"",
+     txt:"Caerse delante de todos, reírse de uno mismo y decir lo que nadie dice en la sala. El hilo que une la pinya, el escenario y el mapa de valor.", rel:["castells","musica","mazinguer","grupos","vna"]}
   ],
 
   /* Avatar: respuestas en primera persona, hechas con los textos de la página.
@@ -148,7 +153,7 @@ window.MAPA = {
     {q:"¿De dónde vienes?", k:["donde","vienes","familia","linaje","raices","naciste","infancia"], n:["nace","bisabuelo","codorniu","padre","madre","canet","penedes"],
      a:"Nací en Barcelona en diciembre de 1971. Pasé la infancia entre Ibiza, una masía en Canet d'Adri y el Penedès. Soy bisnieto del modisto Pedro Rodríguez y del hereu de Codorníu, con raíces en Barcelona y en Villarramiel.", audio:null},
     {q:"¿Qué es comunitats.org?", k:["comunitats","banco","tiempo","leon","intercambio"], n:["comunitats","leon","bancotiempo"],
-     a:"Una red social para intercambiar conocimiento y pagarlo con tiempo. La fundé con mi mujer en 2010, después de poner en marcha el primer banco de tiempo de León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona.", audio:null},
+     a:"Una red social para intercambiar conocimiento y pagarlo con tiempo. La cofundé en 2010, después de poner en marcha el primer banco de tiempo de León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona.", audio:null},
     {q:"¿Qué música haces?", k:["musica","dj","mazinguer","psykatxu","house","winds","chicobillies","banda","saxo"], n:["mazinguer","psykatxu","houseofwinds","chicobillies"],
      a:"Soy músico, DJ y performer. Mazinguer en el Comando Molekulon, Psykatxu como DJ, House of Winds con saxo en directo, y Chicobillies, la banda que montamos los ex del Comando.", audio:null},
     {q:"¿Cómo podemos trabajar juntos?", k:["trabajar","juntos","contratar","precio","ayuda","consultoria","equipo","organizacion"], n:["teamtowers","huma","vna"],

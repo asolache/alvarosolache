@@ -32,6 +32,17 @@ tiene `/ia`.
 
 ## Hecho
 
+### La home a su altura y el camino del payaso (pedido 2026-10-17)
+
+**Pedido por:** Álvaro: «Audita la home y mejórala y merge que esté a mi
+altura. El camino del payaso». **Hecho:** datos de vida al día (Cal Segué en
+lugar de La Floresta, comunitats.org sin nombrar a nadie), sección «El camino
+del payaso» con nodo propio en el mapa vivo, menú en móvil, imagen para
+compartir (`images/og.png`, antes apuntaba a un fichero que no existía) y el
+ikigai accesible con teclado y lector. **Medido:** sin errores de consola y
+sin scroll lateral a 390 px. El texto del payaso es un primer trazo: se
+reescribe con sus audios.
+
 ### Cómo uso la IA (pedido 2026-10-17)
 
 **Pedido por:** Álvaro. **Hecho:** `ia.html` con el compromiso, qué hace la IA

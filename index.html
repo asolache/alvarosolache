@@ -13,13 +13,15 @@
 <meta property="og:description" content="Psicólogo social y consultor estratégico sistémico. Mapas de valor, equipos, comunidades y web 3.0, desde el Penedès.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://alvarosolache.netlify.app/">
-<meta property="og:image" content="https://alvarosolache.netlify.app/images/profile.jpg">
+<meta property="og:image" content="https://alvarosolache.netlify.app/images/og.png">
 <meta property="og:site_name" content="Álvaro Solache">
 <meta property="og:locale" content="es_ES">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Álvaro Solache · Hacer visible quién sostiene qué">
 <meta name="twitter:description" content="Mapas de valor, equipos, comunidades y web 3.0, desde el Penedès.">
-<meta name="twitter:image" content="https://alvarosolache.netlify.app/images/profile.jpg">
+<meta name="twitter:image" content="https://alvarosolache.netlify.app/images/og.png">
 
 <script type="application/ld+json">
 {
@@ -29,7 +31,7 @@
   "jobTitle": "Psicólogo social y consultor estratégico sistémico",
   "description": "Psicólogo social y consultor estratégico sistémico. Value Network Analysis, desarrollo de equipos y comunidades, web 3.0 y el SOS. Cofundador, con Fèlix Miret, y CEO de TeamTowers.",
   "url": "https://alvarosolache.netlify.app/",
-  "image": "https://alvarosolache.netlify.app/images/profile.jpg",
+  "image": "https://alvarosolache.netlify.app/images/og.png",
   "email": "mailto:asolache@mac.com",
   "sameAs": [
     "https://www.linkedin.com/in/alvarosolache",
@@ -282,6 +284,29 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .av-form .btn{cursor:pointer}
 .soon b{font-family:"Space Grotesk",sans-serif}
 
+/* menú en móvil */
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font:600 .85rem "Space Grotesk",sans-serif;padding:7px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink)}
+.menu summary::-webkit-details-marker{display:none}
+.menu ul{display:flex !important;flex-direction:column;gap:0;position:absolute;right:0;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;min-width:200px;box-shadow:0 12px 32px rgba(0,0,0,.18);margin:0}
+.menu ul a{display:block;padding:8px 12px;border-radius:8px;font-size:.95rem}
+.menu ul a:hover{background:var(--bg)}
+@media(max-width:1100px){.menu{display:block}}
+@media(max-width:480px){nav .brand{font-size:.85rem}}
+
+/* el camino del payaso */
+.payaso{padding:80px 0 24px;border-top:0}
+.payaso .quote{font:italic 400 clamp(1.5rem,3.4vw,2.3rem)/1.25 Fraunces,serif;max-width:28ch;margin:.4rem 0 1.4rem;color:#fff}
+.payaso .quote em{color:#fde047;font-style:italic}
+.nariz{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fca5a5,#dc2626 60%,#7f1d1d);vertical-align:.05em;margin-left:.15em;box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+.gestos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px}
+.gesto{border-top:2px solid #fde047;padding-top:14px}
+.gesto b{font:600 .78rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#fde047;display:block;margin-bottom:6px}
+.gesto p{color:#e6efe2;font-size:.97rem}
+.payaso .source{margin-top:28px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.ikigai circle:focus-visible{outline:none;stroke:var(--ink);stroke-width:4}
+
 footer{padding:48px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 </style>
@@ -297,11 +322,27 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li><a href="#recorrido">Recorrido</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#trabajar">Trabajar juntos</a></li>
+      <li><a href="#payaso">El payaso</a></li>
       <li><a href="#arte">Arte</a></li>
       <li><a href="#prensa">Prensa</a></li>
       <li><a href="#recursos">Recursos</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
+    <details class="menu"><summary aria-label="Abrir el menú">Menú</summary>
+      <ul>
+        <li><a href="#linaje">Linaje</a></li>
+        <li><a href="#ikigai">Ikigai</a></li>
+        <li><a href="#recorrido">Recorrido</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#trabajar">Trabajar juntos</a></li>
+        <li><a href="#payaso">El camino del payaso</a></li>
+        <li><a href="#arte">Arte</a></li>
+        <li><a href="#prensa">Prensa</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#pregunta">Pregúntame</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </details>
     <a class="uni" href="#mapa">Universo<span> de conocimientos</span></a>
   </div>
   <div class="flows" aria-label="Flujos de valor">
@@ -346,7 +387,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <div><b>Montaña y agua</b><span>Abuelos deportistas de montaña y nadadores. Mi abuelo Pedro Rodríguez, atleta de gimnasia en los años 50 y 60.</span></div>
       <div><b>Mi padre</b><span>Los libros de las escrituras védicas: el Mahabharata, el Yoga Vasishtha, la Gita, las Upanishads, Shankara y Swami Tilak. Y un valor: la palabra dada se cumple.</span></div>
       <div><b>Mi madre</b><span>Amma, Mata Amritanandamayi, y un legado de mujeres poderosas.</span></div>
-      <div><b>La Floresta</b><span>Con mis hijos, hasta hoy.</span></div>
+      <div><b>Cal Segué</b><span>La casa pairal donde vivo hoy: una masía dedicada a Amma y a Swami Tilak. Lo que me dieron mis padres, hecho casa.</span></div>
     </div>
   </div>
 </section>
@@ -359,11 +400,11 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     <div class="ikigai">
       <svg viewBox="0 0 400 400" role="img" aria-labelledby="ik-title">
         <title id="ik-title">Ikigai de Álvaro Solache: lo que amo, lo que sé hacer, lo que el mundo necesita y por lo que me pagan</title>
-        <circle data-k="ama"   cx="200" cy="130" r="105" fill="var(--c-ama)"   stroke="var(--c-ama)"   tabindex="0"/>
-        <circle data-k="sabe"  cx="130" cy="200" r="105" fill="var(--c-sabe)"  stroke="var(--c-sabe)"  tabindex="0"/>
-        <circle data-k="paga"  cx="200" cy="270" r="105" fill="var(--c-paga)"  stroke="var(--c-paga)"  tabindex="0"/>
-        <circle data-k="mundo" cx="270" cy="200" r="105" fill="var(--c-mundo)" stroke="var(--c-mundo)" tabindex="0"/>
-        <circle data-k="centro" cx="200" cy="200" r="34" fill="var(--accent)" stroke="var(--accent)" tabindex="0"/>
+        <circle role="button" aria-label="Lo que amo" data-k="ama"   cx="200" cy="130" r="105" fill="var(--c-ama)"   stroke="var(--c-ama)"   tabindex="0"/>
+        <circle role="button" aria-label="Lo que sé hacer" data-k="sabe"  cx="130" cy="200" r="105" fill="var(--c-sabe)"  stroke="var(--c-sabe)"  tabindex="0"/>
+        <circle role="button" aria-label="Por lo que me pagan" data-k="paga"  cx="200" cy="270" r="105" fill="var(--c-paga)"  stroke="var(--c-paga)"  tabindex="0"/>
+        <circle role="button" aria-label="Lo que el mundo necesita" data-k="mundo" cx="270" cy="200" r="105" fill="var(--c-mundo)" stroke="var(--c-mundo)" tabindex="0"/>
+        <circle role="button" aria-label="El centro: quién sostiene qué" data-k="centro" cx="200" cy="200" r="34" fill="var(--accent)" stroke="var(--accent)" tabindex="0"/>
         <text class="big" x="200" y="62"  text-anchor="middle">Lo que amo</text>
         <text class="big" x="68" y="196" text-anchor="middle">Lo que</text>
         <text class="big" x="68" y="214" text-anchor="middle">sé hacer</text>
@@ -407,7 +448,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li class="t-raices" data-t="raices"><span class="y">c. 1996 – 2007</span><h3>Cuatro hijos</h3><p>La pinya más importante.</p></li>
       <li class="t-personas t-sistemas" data-t="personas sistemas"><span class="y">2005</span><h3>TeamTowers y Fent Pinya</h3><p>La fundamos Fèlix Miret y yo, y soy su CEO. Fent Pinya nace en Vilafranca; juntos lo hemos llevado a más de 150 organizaciones, con equipos directivos de IKEA, Novartis, Vodafone y Telefónica.</p></li>
       <li class="t-raices t-comunidad" data-t="raices comunidad"><span class="y">2009</span><h3>León y su primer banco de tiempo</h3><p>Vivimos en León. Pongo en marcha el primer banco de tiempo de la ciudad, con lo aprendido en Sant Cugat, donde más de 500 personas ya intercambiaban favores (<a href="https://www.diariodeleon.es/nacional/90531/459453/nace-leon-primer-banco-intercambiar-gratis-servicios-cosas.html">Diario de León, 2009</a>).</p></li>
-      <li class="t-comunidad t-digital" data-t="comunidad digital"><span class="y">2010 – 2015</span><h3>comunitats.org</h3><p>La fundo con mi mujer: una red social para intercambiar conocimiento y pagarlo con tiempo. Cofundador, I+D y product owner, con acuerdos con la UOC, La Salle, la Universidad de León y la Agencia de Desarrollo Económico de Castilla y León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona, y cerramos una ronda de 150.000 € con cuatro inversores.</p></li>
+      <li class="t-comunidad t-digital" data-t="comunidad digital"><span class="y">2010 – 2015</span><h3>comunitats.org</h3><p>La cofundo en 2010: una red social para intercambiar conocimiento y pagarlo con tiempo. Cofundador, I+D y product owner, con acuerdos con la UOC, La Salle, la Universidad de León y la Agencia de Desarrollo Económico de Castilla y León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona, y cerramos una ronda de 150.000 € con cuatro inversores.</p></li>
       <li class="t-personas" data-t="personas"><span class="y">2016 – 2018</span><h3>Mondragon Team Academy</h3><p>Team coach y profesor en el primer grado oficial de Team Entrepreneurship. Posgrado en Team Coaching.</p></li>
       <li class="t-sistemas" data-t="sistemas"><span class="y">2019 →</span><h3>Pantheon Work</h3><p>Director de proyectos de consultoría. Cocreé la metodología de mapa de valor: venta, planificación, producción y formación.</p></li>
       <li class="t-comunidad t-digital" data-t="comunidad digital"><span class="y">2019 – 2020</span><h3>Bibliotecas de las Cosas</h3><p>Project manager del software (Rescoio). La misma dinámica que hoy es una herramienta del SOS.</p></li>
@@ -415,6 +456,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
       <li class="t-personas" data-t="personas"><span class="y">Docencia</span><h3>En las aulas</h3><p>Team coach en el máster de psicología de grupos de la UB, en el MBA de IESE y en másteres de La Salle. Profesor en el máster de dirección de RRHH de EADA.</p></li>
       <li class="t-comunidad" data-t="comunidad"><span class="y">Hoy</span><h3>TeamTowers Humà y Comando Molekulon</h3><p>El método llevado al territorio, y un relato para los 27 pueblos del Alt Penedès y los 6 del Garraf.</p></li>
       <li class="t-digital t-sistemas" data-t="digital sistemas"><span class="y">Hoy</span><h3>El SOS</h3><p>El sistema libre que mantiene vivo el mapa de valor: roles, entregas, avisos y una IA por rol, sin atarte a nadie.</p></li>
+      <li class="t-raices" data-t="raices"><span class="y">Hoy</span><h3>Cal Segué</h3><p>Vivo en una casa pairal, una masía dedicada a Amma y a <a href="https://swamitilak.org">Swami Tilak</a>.</p></li>
     </ol>
   </div>
 </section>
@@ -457,7 +499,22 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </section>
 
-<div class="stage"><section id="arte" style="border-top:0">
+<div class="stage"><section id="payaso" class="payaso">
+  <div class="wrap">
+    <p class="kicker">El hilo que lo une todo</p>
+    <h2>El camino del payaso<span class="nariz" aria-hidden="true"></span></h2>
+    <p class="quote">El payaso no finge que no se cae. Se cae delante de todos, <em>y por eso le creen</em>.</p>
+    <p class="lead" style="color:#e6efe2">Psicólogo, consultor, DJ, personaje de cómic. Parecen caminos distintos y son uno: quitarse la máscara de experto, reír juntos y decir lo que nadie dice en la sala.</p>
+    <div class="gestos">
+      <div class="gesto"><b>Caerse</b><p>En Fent Pinya el jefe hace de base y su equipo le sube encima. Nadie sube solo y nadie se libra de tocar al otro. La autoridad que queda después es otra.</p></div>
+      <div class="gesto"><b>Reírse</b><p>La risa abre lo que una reunión cierra. Por eso Mazinguer baja a la Tierra a buscar superhéroes reales, y la historia se cuenta en clave de banda y de cómic.</p></div>
+      <div class="gesto"><b>Decir la verdad</b><p>El payaso dice lo que todos ven y nadie nombra. El mapa de valor hace lo mismo: pone sobre la mesa quién sostiene qué, aunque no salga en el organigrama.</p></div>
+      <div class="gesto"><b>Sin máscara</b><p>Me siento a tu lado de la mesa. No traigo la respuesta: traigo el mapa, la pregunta y las ganas de equivocarme contigo.</p></div>
+    </div>
+    <p class="source">Primer trazo. Lo contaré entero, con mi voz, en los audios del mapa vivo.</p>
+  </div>
+</section>
+<section id="arte" style="border-top:0;padding-top:48px">
   <div class="wrap">
     <p class="kicker">El otro lado</p>
     <h2>Música y personajes</h2>
@@ -589,7 +646,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
         <li><b>Grafo de proyectos y red.</b> Vistas de tiempo, tema y contexto. Con los audios: la gente y los proyectos que faltan.</li>
         <li><b>Mapa mental por nodo.</b> Cada nodo tiene el suyo y su propio enlace.</li>
         <li><b>Avatar con mi voz.</b> Ya responde por escrito. Con los audios: mi voz en cada respuesta.</li>
-        <li><b><a href="cerebro.html">El cerebro</a>.</b> El codex de mis proyectos como grafo, en cinco capas y en movimiento, con buscador, zoom y una capa privada que solo veo yo. Versión 0.2, en revisión.</li>
+        <li><b><a href="cerebro.html">El cerebro</a>.</b> El codex de mis proyectos como grafo, en cinco capas y en movimiento, con buscador, zoom y una capa privada que solo veo yo. Versión 0.2.</li>
         <li><b><a href="ia.html">Cómo uso la IA</a>.</b> Qué hace Claude, qué hago yo y lo que se puede comprobar.</li>
       </ol>
     </div>
@@ -616,7 +673,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <script>
 (function(){
   var IK = {
-    ama:   {t:"Lo que amo", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya","La música, el DJ y la performance: Mazinguer, Psykatxu","Los Vedas, la Gita y el dharma que me dieron mis padres","El oficio bien hecho, como mi bisabuelo modisto","Aprender haciendo, y programar"]},
+    ama:   {t:"Lo que amo", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya","El camino del payaso: reírse de uno mismo y decir la verdad","La música, el DJ y la performance: Mazinguer, Psykatxu","Los Vedas, la Gita y el dharma que me dieron mis padres","El oficio bien hecho, como mi bisabuelo modisto","Aprender haciendo, y programar"]},
     sabe:  {t:"Lo que sé hacer", c:"--c-sabe", l:["Psicología social y comunitaria","Mapas de valor (VNA de Verna Allee)","Dirección de personas y formación","Facilitar en la sala: Fent Pinya, team coaching","Web 3.0, contratos inteligentes y webs abiertas"]},
     mundo: {t:"Lo que el mundo necesita", c:"--c-mundo", l:["Ver quién sostiene lo que no sale en el organigrama","Que el conocimiento no se vaya con quien se va","Comunidades y pueblos que se aguanten solos","Herramientas libres, sin atarse a nadie"]},
     paga:  {t:"Por lo que me pagan", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
@@ -663,6 +720,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     c.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(c.dataset.k); } });
   });
   show('centro');
+
+  var menu = document.querySelector('.menu');
+  menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') menu.open = false; });
 
   var chips = document.querySelectorAll('#recorrido .chip');
   var items = document.querySelectorAll('#timeline li');
