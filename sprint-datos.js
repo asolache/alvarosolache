@@ -21,6 +21,7 @@ window.SPRINT = {
     {t:"El camino del payaso en la portada", eje:"brahma", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"El linaje, contado por mí", eje:"vishnu", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"La piel de la red en toda la web", eje:"shiva", col:"done", quien:"claude", f:"2026-10-17"},
-    {t:"La paleta trinidad y este sprint", eje:"shiva", col:"done", quien:"claude", f:"2026-10-17"}
+    {t:"La paleta trinidad y este sprint", eje:"shiva", col:"done", quien:"claude", f:"2026-10-17"},
+    {t:"El ikigai y el cerebro, al día con todo lo de hoy", eje:"brahma", col:"done", quien:"claude", f:"2026-10-17"}
   ]
 };

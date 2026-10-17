@@ -419,7 +419,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <p class="kicker">El mapa</p>
     <h2>Mi ikigai</h2>
-    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Es la primera versión: se irá llenando con mi historia, contada con mi voz, y crece sola con mi codex.</p>
+    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Los tres primeros llevan los colores de la trinidad: lo que crea, lo que sostiene y lo que transforma. Crece solo con mi codex y se mueve con mi sprint.</p>
     <div class="ikigai">
       <svg viewBox="0 0 400 400" role="img" aria-labelledby="ik-title">
         <title id="ik-title">Ikigai de Álvaro Solache: lo que amo, lo que sé hacer, lo que el mundo necesita y por lo que me pagan</title>
@@ -671,7 +671,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
         <li><b>Grafo de proyectos y red.</b> Vistas de tiempo, tema y contexto. Con los audios: la gente y los proyectos que faltan.</li>
         <li><b>Mapa mental por nodo.</b> Cada nodo tiene el suyo y su propio enlace.</li>
         <li><b>Avatar con mi voz.</b> Ya responde por escrito. Con los audios: mi voz en cada respuesta.</li>
-        <li><b><a href="cerebro.html">El cerebro</a>.</b> El codex de mis proyectos como grafo, en cinco capas y en movimiento, con buscador, zoom y una capa privada que solo veo yo. Versión 0.2.</li>
+        <li><b><a href="cerebro.html">El cerebro</a>.</b> El codex de mis proyectos como grafo, en cinco capas y en movimiento, con buscador, zoom, las vedas que nacen en esta web y una capa privada que solo veo yo. Versión 0.3.</li>
         <li><b><a href="ia.html">Cómo uso la IA</a>.</b> Qué hace Claude, qué hago yo y lo que se puede comprobar.</li>
       </ol>
     </div>
@@ -700,20 +700,22 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <script>
 (function(){
   var IK = {
-    ama:   {t:"Lo que amo", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya","El camino del payaso: reírse de uno mismo y decir la verdad","La música, el DJ y la performance: Mazinguer, Psykatxu","Los Vedas, la Gita y el dharma que me dieron mis padres","El oficio bien hecho, como mi bisabuelo modisto","Aprender haciendo, y programar"]},
-    sabe:  {t:"Lo que sé hacer", c:"--c-sabe", l:["Psicología social y comunitaria","Mapas de valor (VNA de Verna Allee)","Dirección de personas y formación","Facilitar en la sala: Fent Pinya, team coaching","Web 3.0, contratos inteligentes y webs abiertas"]},
-    mundo: {t:"Lo que el mundo necesita", c:"--c-mundo", l:["Ver quién sostiene lo que no sale en el organigrama","Que el conocimiento no se vaya con quien se va","Comunidades y pueblos que se aguanten solos","Herramientas libres, sin atarse a nadie"]},
-    paga:  {t:"Por lo que me pagan", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
-    centro:{t:"El centro: quién sostiene qué", c:"--accent", l:["Hacer visible el valor tangible e intangible de un grupo, y dejar una herramienta para que no se pierda."]}
+    ama:   {t:"Lo que amo", e:"Brahma, lo que crea", c:"--c-ama", l:["Los grupos y lo que pasa entre las personas","Los castells y su pinya",'<a href="#payaso">El camino del payaso</a>: reírme de mí y decir la verdad',"La música: el DJ, el saxo, Mazinguer, Psykatxu, Chicobillies","Los paisajes y los ríos, y pasear solo por la naturaleza","Mis maestros: Swami Tilak desde los 6 años y Amma desde los 20","El oficio bien hecho, como <a href=\"#linaje\">el abuelito modisto</a>","Aprender haciendo, y programar"]},
+    sabe:  {t:"Lo que sé hacer", e:"Vishnu, lo que sostiene", c:"--c-sabe", l:["Psicología social y comunitaria","Mapas de valor (VNA de Verna Allee)","Dirección de personas y formación","Facilitar en la sala: Fent Pinya, team coaching","Web 3.0, contratos inteligentes y webs abiertas","Trabajar con IA sin perder el oficio: el codex"]},
+    mundo: {t:"Lo que el mundo necesita", e:"Shiva, lo que transforma", c:"--c-mundo", l:["Ver quién sostiene lo que no sale en el organigrama","Que el conocimiento no se vaya con quien se va","Comunidades y pueblos que se aguanten solos","Herramientas libres, sin atarse a nadie",'Una IA que se declara y gasta lo justo (<a href="ia.html">cómo la uso</a>)']},
+    paga:  {t:"Por lo que me pagan", e:"Lo que hace viable lo demás", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
+    centro:{t:"El centro: quién sostiene qué", e:"Desde Cal Segué", c:"--accent", l:["Hacer visible el valor tangible e intangible de un grupo, y dejar una herramienta para que no se pierda."]}
   };
   /* El ikigai crece con el codex: lo que sé hacer cuenta las vedas de cada
      saber y el centro dice cuántas llevo y cuál fue la última. Sale de
      cerebro-datos.js, que se regenera cuando cambia el codex (veda 4). */
   function delCodex(k){
-    var D = window.CEREBRO; if (!D || (k !== 'sabe' && k !== 'centro')) return '';
+    var D = window.CEREBRO, SP = window.SPRINT; if (!D || (k !== 'sabe' && k !== 'centro')) return '';
     if (k === 'centro') {
-      var u = D.nodos[D.nodos.length - 1];
-      return '<p class="hint">Del codex: ' + D.nodos.length + ' vedas aprendidas. La última, «' + u.t + '». <a href="cerebro.html">Ver el cerebro</a>.</p>';
+      var u = D.nodos[D.nodos.length - 1], mias = D.nodos.filter(function(n){ return n.fuente !== D.fuentes[0]; }).length;
+      var cuenta = function(c){ return SP ? SP.tareas.filter(function(x){ return x.col === c; }).length : 0; };
+      return '<p class="hint">Del codex: ' + D.nodos.length + ' vedas aprendidas, ' + mias + ' nacidas en esta web. La última, «' + u.t + '». <a href="cerebro.html#mias">Ver el cerebro</a>.</p>' +
+        (SP ? '<p class="hint">En movimiento: ' + cuenta('doing') + ' en marcha, ' + cuenta('todo') + ' por hacer y ' + cuenta('done') + ' hechas en el <a href="#sprint">sprint</a>.</p>' : '');
     }
     return '<p class="hint" style="margin-top:10px">Del codex, las vedas de cada saber:</p><ul>' +
       Object.keys(D.saberes).map(function(s){
@@ -727,7 +729,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   function show(k){
     var d = IK[k];
     circles.forEach(function(c){ c.classList.toggle('on', c.dataset.k === k); });
-    panel.innerHTML = '<h3 style="color:var(' + d.c + ')">' + d.t + '</h3><ul>' +
+    panel.innerHTML = '<h3 style="color:var(' + d.c + ')">' + d.t + '</h3><p class="hint" style="margin:0 0 8px">' + d.e + '</p><ul>' +
       d.l.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' + delCodex(k) +
       '<p class="hint">Toca otro círculo para cambiar.</p>';
   }
