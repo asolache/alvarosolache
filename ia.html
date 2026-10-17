@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo uso la IA</title>
+<meta name="description" content="Cómo trabajo con IA en mis proyectos: qué hace Claude, qué hago yo, qué se puede comprobar y el compromiso de gastar lo menos posible.">
+<meta name="author" content="Álvaro Solache">
+<link rel="canonical" href="https://alvarosolache.netlify.app/ia.html">
+<meta property="og:title" content="Cómo uso la IA · Álvaro Solache">
+<meta property="og:description" content="Cobre lo que cobre por token, el codex será siempre lo más inteligente posible al menor coste energético.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alvarosolache.netlify.app/ia.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Space+Grotesk:wght@500;600&family=Fraunces:ital,wght@1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8f3; --surface:#ffffff; --ink:#0f1b2d; --muted:#556172; --line:#dde5dc; --accent:#1d4ed8; --radius:14px;
+  --azul:#1d4ed8; --amarillo:#b45309; --verde:#15803d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a; --accent:#facc15;
+    --azul:#60a5fa; --amarillo:#fbbf24; --verde:#4ade80;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08142b; --surface:#0f1f3d; --ink:#eef4ea; --muted:#a3b2c2; --line:#22365a; --accent:#facc15;
+  --azul:#60a5fa; --amarillo:#fbbf24; --verde:#4ade80;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+a{color:var(--accent)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:.8rem}
+h2{font-size:clamp(1.3rem,3vw,1.7rem);margin-bottom:.8rem}
+h3{font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;line-height:1.25;margin-bottom:.4rem}
+p+p{margin-top:.8rem}
+.kicker{font:600 .78rem "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:64ch;margin-bottom:1.2rem}
+nav{border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+nav a{font:600 .95rem Unbounded,sans-serif;color:var(--ink);text-decoration:none}
+nav span{font-size:.85rem;color:var(--muted)}
+header{padding:56px 0 24px}
+blockquote{font:italic 400 clamp(1.25rem,3vw,1.6rem)/1.4 Fraunces,Georgia,serif;border-left:4px solid var(--verde);padding:4px 0 4px 18px;margin:8px 0 18px;max-width:40ch}
+blockquote cite{display:block;font:500 .8rem "JetBrains Mono",monospace;font-style:normal;color:var(--muted);margin-top:8px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--radius);padding:16px 18px}
+.card h3{color:var(--c)}
+.card li{margin:.35rem 0 .35rem 1.1rem}
+.nota{font-size:.9rem;color:var(--muted);margin-top:12px}
+.vivo{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.cifra{font:600 clamp(1.6rem,5vw,2.2rem) Unbounded,sans-serif}
+.vivo ul{list-style:none;margin-top:12px}
+.vivo li{display:flex;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding:8px 0;font-size:.92rem}
+.vivo li a{color:var(--ink);text-decoration:none;flex:1;min-width:0;overflow-wrap:anywhere}
+.tag{flex:none;font:500 .72rem "JetBrains Mono",monospace;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tag.ia{border-color:var(--azul);color:var(--azul)}
+.vedas li{margin:.6rem 0 .6rem 1.2rem}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="index.html">Álvaro Solache</a><span>Cómo uso la IA</span></div></nav>
+
+<header class="wrap">
+  <p class="kicker">Transparencia</p>
+  <h1>Cómo uso la IA</h1>
+  <p class="lead">En mis proyectos la IA trabaja a la vista. Aquí digo qué hace, qué hago yo, qué se puede comprobar y cuánto queremos que gaste.</p>
+  <blockquote>Cobre lo que cobre por token, el codex será siempre lo más inteligente posible al menor coste energético.<cite>Álvaro Solache · 17/10/2026</cite></blockquote>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>El compromiso</h2>
+    <p>El precio de cada token lo pone quien vende el modelo. Lo que decidimos nosotros es <strong>cuánto se gasta</strong>: cada tarea va con el modelo más pequeño que la hace bien. Si una tarea pierde calidad con un modelo menor, vuelve al de antes. La propuesta por tarea, con el precio oficial, su fuente y su fecha, está en <a href="https://teamtowershuma.com/conecta/#ia">el coste real de la IA de TeamTowers Humà</a>.</p>
+    <p>Ese coste lo tienen que pagar los <strong>ingresos recurrentes</strong> de los servicios, no la buena voluntad. Es uno de los objetivos del codex: está en el <a href="https://github.com/asolache/teamtowershuma/blob/main/SOS/knowledge/dev/backlog.md">backlog de TeamTowers</a>, en «Serveis connectables, cost real de l'IA i ingressos recurrents» y en «Ingressos recurrents», pedidos el 09/10/2026.</p>
+    <p class="nota">Lo que aún no sé: la energía no la mido directamente. Uso los tokens como aproximación, porque menos tokens y modelos más pequeños son menos cálculo; es una inferencia, no una medida. El coste mensual de esta web tampoco lo publico todavía: sin una cifra con fuente, queda en blanco (veda 67).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Qué hace la IA y qué hago yo</h2>
+    <div class="dos">
+      <article class="card" style="--c:var(--azul)">
+        <h3>Lo que hace Claude</h3>
+        <ul>
+          <li>Escribe el código y los textos que le pido.</li>
+          <li>Propone cada cambio en un PR, y cada commit lleva su firma.</li>
+          <li>Lee el codex antes de escribir, para no repetir errores ya pagados.</li>
+          <li>El avatar «Pregúntame» responde con lo que yo he escrito, no con lo que inventa.</li>
+        </ul>
+      </article>
+      <article class="card" style="--c:var(--verde)">
+        <h3>Lo que hago yo</h3>
+        <ul>
+          <li>Pido, decido y acepto. Nada se publica sin que yo lo mergee.</li>
+          <li>Pongo mi historia, mi voz y mis cifras. Una cifra sin fuente no entra.</li>
+          <li>Escribo las vedas: los errores que no quiero volver a cometer.</li>
+          <li>Reviso lo que la IA propone como borrador, y lo digo cuando lo es.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="nota">El codex no es mi valor central. Es una skill que hice inspirada en los Vedas y en lo que sé de programar: el lugar donde cada error se escribe una vez para que nadie, ni persona ni IA, lo repita. Se ve entero en <a href="cerebro.html">el cerebro</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Lo que se puede comprobar</h2>
+    <p class="lead">Esto no lo escribo a mano: sale del historial público de esta web cada vez que abres la página. Un commit hecho con Claude lleva la línea <code>Co-Authored-By: Claude</code>.</p>
+    <div class="vivo" id="vivo" aria-live="polite"><p class="nota">Consultando el historial en GitHub…</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Las reglas que la sujetan</h2>
+    <p class="lead">No son nuevas: vienen del codex de TeamTowers y esta web las hereda. Se citan, no se copian.</p>
+    <ul class="vedas">
+      <li><b>Veda 67.</b> Una cifra inflada e incompleta es peor que ninguna: lo que no tiene fuente no se publica.</li>
+      <li><b>Veda 102.</b> Lo que se declara y lo que se demuestra no se pintan igual: por eso lo de arriba sale del historial.</li>
+      <li><b>Veda 158.</b> Un modelo no suma: las cuentas las hace el código, y a la IA se le pide solo lo que no está.</li>
+      <li><b>Veda 80.</b> Vale más decir «esto no lo hago yo» que un botón que lo parece.</li>
+    </ul>
+    <p class="nota">El texto completo, en catalán, en <a href="https://github.com/asolache/alvarosolache/blob/main/saber/vedas-heredadas.md">las vedas heredadas</a>. La regla propia de esta página es la <a href="https://github.com/asolache/alvarosolache/blob/main/saber/codex.md">veda 6</a>.</p>
+  </div>
+</section>
+
+<footer><div class="wrap"><a href="index.html">Volver al perfil</a> · <a href="https://github.com/asolache/alvarosolache">El código de esta web</a></div></footer>
+
+<script>
+/* Veda 102: lo demostrado sale del historial, no de un número escrito a mano.
+   Si GitHub no responde, se dice (veda 105): el silencio mentiría. */
+(function () {
+  var box = document.getElementById('vivo');
+  var REPO = 'asolache/alvarosolache';
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  fetch('https://api.github.com/repos/' + REPO + '/commits?per_page=100')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (cs) {
+      var conIA = cs.filter(function (c) { return /co-authored-by:\s*claude/i.test(c.commit.message); });
+      var ult = cs.slice(0, 8).map(function (c) {
+        var ia = /co-authored-by:\s*claude/i.test(c.commit.message);
+        var t = c.commit.message.split('\n')[0];
+        var f = c.commit.author.date.slice(0, 10).split('-').reverse().join('/');
+        return '<li><span class="tag' + (ia ? ' ia">con Claude' : '">sin IA') + '</span><a href="' + esc(c.html_url) + '">' + esc(t) + '</a><span class="tag">' + f + '</span></li>';
+      }).join('');
+      box.innerHTML = '<p class="cifra">' + conIA.length + ' de ' + cs.length + '</p>' +
+        '<p class="nota">commits de los últimos ' + cs.length + ' llevan la firma de Claude. Los ocho más recientes:</p><ul>' + ult + '</ul>';
+    })
+    .catch(function () {
+      box.innerHTML = '<p class="nota">No he podido consultar GitHub ahora mismo. El historial está en <a href="https://github.com/' + REPO + '/commits/main">github.com/' + REPO + '</a>.</p>';
+    });
+})();
+</script>
+</body>
+</html>

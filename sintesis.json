@@ -1105,6 +1105,13 @@
     "conocimiento"
    ],
    "aprende": "Lo que ya sabe la matriz se cita, no se repite; lo nuevo sube a ella."
+  },
+  "Álvaro Solache:6": {
+   "saberes": [
+    "conocimiento",
+    "desarrollo"
+   ],
+   "aprende": "Lo que hace la IA se muestra leyéndolo del historial, y cada tarea va con el modelo más pequeño que la hace bien."
   }
  },
  "principios": {
