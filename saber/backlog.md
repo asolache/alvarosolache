@@ -139,3 +139,14 @@ heredadas que la sujetan; veda propia 6.
 evoluciónate y merge», y «Sé DRY». **Hecho:** cerebro instalado con
 `cervell.js --nou` (58 vedas heredadas), vedas propias 4 y 5, guarda en CI y el
 cerebro de la web leyendo también el codex propio.
+
+### Mi historia en internet y el libro de memorias (pedido 2026-10-19)
+
+**Pedido por:** Álvaro: «Te han pasado info para conocerme más y actualizar el
+cerebro», con sus notas «Mi historia en internet» y la idea de unas memorias
+como un libro de «Elige tu propia aventura», privadas con una parte pública.
+**Hecho:** siete nodos nuevos en el mapa vivo (radioenlace de 1994, HTML, Usenet
+en HP, encuestas en InfoJobs, el wiki de incidencias, BBS y P2P, «Todo es un
+link»), el saber de web 3.0 ampliado y una respuesta del avatar. Lo que nombra
+a terceros o afirma un logro sin fuente se queda en el borrador privado de las
+memorias, fuera de la web. **Medido:** ningún `rel` roto en `mapa-datos.js`.
