@@ -32,8 +32,8 @@ window.MAPA = {
     {id:"padre", s:"Mi padre", t:"Mi padre, Fernando Solache, y los libros de mi vida", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona y la masía",
      txt:"Fernando Solache, hijo de los litos. Estudió ADE en ESADE hasta cuarto y trabajó en finanzas y marketing en multinacionales hasta que nos fuimos a la masía, hacia 1980; después fue fotógrafo de estudio y payés. Fan del conocimiento: una biblioteca de 10.000 libros de ciencias, artes y filosofía. Me dio los libros de mi vida: el Mahabharata, la Gita, los taoístas, el Yoga Vasishtha, el Vivekachudamani de Shankara, los Yoga Sutras, las Upanishads, El saber del ser, el Tao, y Swami Tilak. Y un valor: la palabra dada se cumple.", rel:["nace","vedas","rambla"],
      links:[["swamitilak.org","https://swamitilak.org"]]},
-    {id:"madre", s:"Mi madre", t:"Mi madre: el amor incondicional", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
-     txt:"El amor incondicional. Dar con amor: seva. Alimenta: gran mestressa de casa. Amma, Mata Amritanandamayi, y un legado de mujeres poderosas.", rel:["nace","vedas","amma"]},
+    {id:"madre", s:"Mi madre", t:"Mi madre, M.ª Cristina: el amor incondicional", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
+     txt:"M.ª Cristina Rodríguez Raventós. El amor incondicional. Dar con amor: seva. Alimenta: gran mestressa de casa. Siempre aprendiendo. Referente del equipo de Amma, Mata Amritanandamayi, en España desde antes de sus inicios. Un legado de mujeres poderosas.", rel:["nace","vedas","amma"]},
 
     // Hitos
     {id:"nace", s:"Nazco", t:"Nazco en Barcelona", y:1971, ya:"1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
