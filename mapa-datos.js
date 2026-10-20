@@ -28,7 +28,7 @@ window.MAPA = {
     {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
      txt:"Mis abuelos paternos, la familia de mi padre en Villarramiel.", rel:["nace","padre"]},
     {id:"avis", s:"Los avis", t:"Los avis", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Girona y la Costa Brava",
-     txt:"Mis abuelos. Con ellos subía a Girona a esquiar y bajaba a la Costa Brava, como otros lo hacen con sus padres. Montañeros y nadadores.", rel:["nace","naturaleza","montgri"]},
+     txt:"Mis abuelos maternos, la familia de mi madre. Con ellos subía a Girona a esquiar y bajaba a la Costa Brava, como otros lo hacen con sus padres. Montañeros y nadadores.", rel:["nace","naturaleza","montgri"]},
     {id:"padre", s:"Mi padre", t:"Mi padre y los Vedas", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
      txt:"Los libros de las escrituras védicas: el Mahabharata, el Yoga Vasishtha, la Gita, las Upanishads, Shankara y Swami Tilak. Y un valor: la palabra dada se cumple.", rel:["nace","vedas","rambla"],
      links:[["swamitilak.org","https://swamitilak.org"]]},
