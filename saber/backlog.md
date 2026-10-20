@@ -168,7 +168,7 @@ hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
 
 ### Los litos, contados por mí (pedido 2026-10-20)
 
-**Pedido por:** Álvaro, con sus recuerdos de los litos. **Hecho:** sus nombres
-(Fernando Solache y Josefina Sánchez), Villarramiel y Tierra de Campos, y cómo
+**Pedido por:** Álvaro, con sus recuerdos de los litos y de los avis. **Hecho:** sus nombres
+(Fernando Solache y Josefina Sánchez; Mercedes Raventós Blanc y Pedro Rodríguez Marià), de dónde y cómo
 eran, en el linaje y en el mapa vivo; el detalle va al capítulo «Linaje» de las
 memorias. **Medido:** sin errores de consola.
