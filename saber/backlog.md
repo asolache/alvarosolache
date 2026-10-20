@@ -165,3 +165,10 @@ los inicios en InfoJobs (León en red, 2011) y Grow in Barcelona con su noticia
 hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
 «Mis hijos» en el linaje y en el mapa vivo, sin nombres; el recorrido pasa de
 «c. 1996» a «1997 – 2007». **Medido:** sin `rel` rotos ni errores de consola.
+
+### Los litos, contados por mí (pedido 2026-10-20)
+
+**Pedido por:** Álvaro, con sus recuerdos de los litos. **Hecho:** sus nombres
+(Fernando Solache y Josefina Sánchez), Villarramiel y Tierra de Campos, y cómo
+eran, en el linaje y en el mapa vivo; el detalle va al capítulo «Linaje» de las
+memorias. **Medido:** sin errores de consola.

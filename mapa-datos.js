@@ -25,8 +25,8 @@ window.MAPA = {
     // Linaje (antes de 1971)
     {id:"bisabuelo", s:"Los abuelitos", t:"Los abuelitos: el modisto y la mamita", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
      txt:"Mis bisabuelos: el modisto Pedro Rodríguez y la mamita. Conviví con ellos a diario hasta los 13 años: el oficio, el detalle y la exigencia.", rel:["nace","oficio"]},
-    {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
-     txt:"Mis abuelos paternos, la familia de mi padre en Villarramiel.", rel:["nace","padre"]},
+    {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia), Barcelona y Vilafranca",
+     txt:"Fernando Solache y Josefina Sánchez, mis abuelos paternos, de Villarramiel (Palencia), en Tierra de Campos: trigo, cereales, caballos percherones, palomares y horizontes. Los conocí en Barcelona, donde vivieron hasta que se fueron a Vilafranca y luego a la masía. Él, de bar y cortado, siempre en americana y corbata; me conseguía las chuches con las que hice mi colección. Ella, la lita, mujer palentina, señora de la casa y sostén de la familia: otra de las mujeres poderosas de mi linaje.", rel:["nace","padre","madre"]},
     {id:"avis", s:"Los avis", t:"Los avis", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Girona y la Costa Brava",
      txt:"Mis abuelos maternos, la familia de mi madre. Con ellos subía a Girona a esquiar y bajaba a la Costa Brava, como otros lo hacen con sus padres. Montañeros y nadadores.", rel:["nace","naturaleza","montgri"]},
     {id:"padre", s:"Mi padre", t:"Mi padre y los Vedas", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
