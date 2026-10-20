@@ -150,3 +150,11 @@ en HP, encuestas en InfoJobs, el wiki de incidencias, BBS y P2P, «Todo es un
 link»), el saber de web 3.0 ampliado y una respuesta del avatar. Lo que nombra
 a terceros o afirma un logro sin fuente se queda en el borrador privado de las
 memorias, fuera de la web. **Medido:** ningún `rel` roto en `mapa-datos.js`.
+
+### Hitos públicos con fuente (pedido 2026-10-20)
+
+**Pedido por:** Álvaro: «Los hitos más relevantes que sean públicos, puedes
+analizar de ponerlos públicos». **Hecho:** búsqueda de fuentes; pasan a la web
+los inicios en InfoJobs (León en red, 2011) y Grow in Barcelona con su noticia
+(iymagazine, 2014). Emprendedor XXI y Antena 3 siguen sin fuente encontrada.
+**Medido:** cada enlace nuevo abre y nombra el hecho que respalda.
