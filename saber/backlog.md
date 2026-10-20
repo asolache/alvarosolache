@@ -139,3 +139,29 @@ heredadas que la sujetan; veda propia 6.
 evoluciónate y merge», y «Sé DRY». **Hecho:** cerebro instalado con
 `cervell.js --nou` (58 vedas heredadas), vedas propias 4 y 5, guarda en CI y el
 cerebro de la web leyendo también el codex propio.
+
+### Mi historia en internet y el libro de memorias (pedido 2026-10-19)
+
+**Pedido por:** Álvaro: «Te han pasado info para conocerme más y actualizar el
+cerebro», con sus notas «Mi historia en internet» y la idea de unas memorias
+como un libro de «Elige tu propia aventura», privadas con una parte pública.
+**Hecho:** siete nodos nuevos en el mapa vivo (radioenlace de 1994, HTML, Usenet
+en HP, encuestas en InfoJobs, el wiki de incidencias, BBS y P2P, «Todo es un
+link»), el saber de web 3.0 ampliado y una respuesta del avatar. Lo que nombra
+a terceros o afirma un logro sin fuente se queda en el borrador privado de las
+memorias, fuera de la web. **Medido:** ningún `rel` roto en `mapa-datos.js`.
+
+### Hitos públicos con fuente (pedido 2026-10-20)
+
+**Pedido por:** Álvaro: «Los hitos más relevantes que sean públicos, puedes
+analizar de ponerlos públicos». **Hecho:** búsqueda de fuentes; pasan a la web
+los inicios en InfoJobs (León en red, 2011) y Grow in Barcelona con su noticia
+(iymagazine, 2014). Emprendedor XXI y Antena 3 siguen sin fuente encontrada.
+**Medido:** cada enlace nuevo abre y nombra el hecho que respalda.
+
+### Los avis y mis hijos en el linaje (pedido 2026-10-20)
+
+**Pedido por:** Álvaro: «En linaje faltan los abuelos… los avis» y «falta los
+hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
+«Mis hijos» en el linaje y en el mapa vivo, sin nombres; el recorrido pasa de
+«c. 1996» a «1997 – 2007». **Medido:** sin `rel` rotos ni errores de consola.
