@@ -33,7 +33,7 @@ nav{border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 nav a{font:600 .95rem Unbounded,sans-serif;color:var(--ink);text-decoration:none}
 nav span{font-size:.85rem;color:var(--muted)}
-header{padding:56px 0 24px}
+header{padding:44px 0 16px}
 section{padding:40px 0;border-top:1px solid var(--line)}
 .capas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:8px 0 28px}
 .capa{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:12px 14px}
@@ -41,42 +41,6 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .capa i{font:500 .72rem "JetBrains Mono",monospace;color:var(--c);font-style:normal;letter-spacing:.06em}
 .capa p{font-size:.86rem;color:var(--muted);margin-top:4px}
 .capa small{display:block;margin-top:6px;font-size:.8rem}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.tab,.ctl button{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.graph{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch}
-#svg{display:block;width:100%;min-width:860px;height:auto}
-#svg text{font-family:var(--sans)}
-.band{opacity:.07}
-.lane{font:600 13px "Space Grotesk",sans-serif !important}
-.lane-s{font:500 10px "JetBrains Mono",monospace !important;fill:var(--muted);letter-spacing:.06em}
-.e{fill:none;stroke:var(--muted);stroke-opacity:.25;stroke-width:1}
-.e.on{stroke:var(--accent);stroke-opacity:.9;stroke-width:1.8}
-.n{cursor:pointer;transition:opacity .3s}
-.n circle{stroke:var(--surface);stroke-width:1.5}
-.n.fix circle{stroke:var(--ink);stroke-width:2}
-.n.sel circle{stroke:var(--ink);stroke-width:3}
-.n:focus{outline:none}.n:focus-visible circle{stroke:var(--accent);stroke-width:3}
-.n.dim{opacity:.18}.n.hid{opacity:0;pointer-events:none}
-.e.hid{opacity:0}
-.lbl{font-size:12px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
-.ctl{display:none;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0}
-.ctl.on{display:flex}
-.ctl input{flex:1;min-width:160px;accent-color:var(--accent)}
-.ctl output{font:500 .85rem "JetBrains Mono",monospace;color:var(--muted);min-width:9ch}
-.now{min-height:1.6em;font-family:"Space Grotesk",sans-serif;margin-top:4px}
-.legend{font-size:.85rem;color:var(--muted);margin:10px 0 18px}
-.panel{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c,var(--line));border-radius:var(--radius);padding:18px 20px;min-height:90px}
-.panel .m{font:500 .78rem "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.04em}
-.panel h3{margin:.3rem 0 .5rem;font-size:1.2rem}
-.panel p{font-size:.95rem}
-.go{font:500 .82rem var(--sans);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;margin:4px 4px 0 0;cursor:pointer}
-.go:hover{border-color:var(--accent)}
-.saberes{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
-.sab{font:500 .8rem var(--sans);padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
-.sab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
-.tag{display:inline-block;font:500 .74rem "JetBrains Mono",monospace;padding:1px 8px;margin:6px 4px 0 0;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.aprende{margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:10px;font-size:.95rem}
 .princ{display:grid;gap:14px}
 .princ article{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;padding:14px 18px}
 .princ h3{color:var(--c);font-size:1.05rem;margin-bottom:6px}
@@ -86,38 +50,20 @@ section{padding:40px 0;border-top:1px solid var(--line)}
 .lista ol{padding-left:1.4rem;margin-top:6px;columns:2 300px;font-size:.9rem}
 .lista li{break-inside:avoid;margin:.15rem 0}
 .soon li{margin:.4rem 0 .4rem 1.2rem}
-.nav2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
-.busca{position:relative;flex:1 1 240px;min-width:0}
-.busca input{width:100%;font:500 .95rem var(--sans);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.busca input:focus-visible,.zoom button:focus-visible,.priv button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.res{position:absolute;z-index:5;left:0;right:0;top:calc(100% + 4px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;display:grid;gap:2px;max-height:320px;overflow:auto;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.res[hidden]{display:none}
-.res button{text-align:left;font:500 .9rem var(--sans);border:0;background:transparent;color:var(--ink);padding:6px 10px;border-radius:8px;cursor:pointer}
-.res button:hover,.res button:focus-visible{background:var(--bg)}
-.res small{color:var(--muted)}
-.zoom{display:flex;gap:4px}
-.zoom button{font:600 .95rem "Space Grotesk",sans-serif;min-width:38px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-#svg.pan{cursor:grab;touch-action:none}#svg.pan:active{cursor:grabbing}
-.n.priv circle{stroke:var(--ink);stroke-dasharray:2 2;stroke-width:1.5}
-.priv{background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);padding:14px 18px;margin:0 0 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-.priv p{font-size:.92rem;color:var(--muted);flex:1 1 300px;min-width:0}
-.priv button{font:600 .9rem "Space Grotesk",sans-serif;padding:8px 18px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
-.priv button.sec{background:transparent;color:var(--ink);border-color:var(--line)}
 [hidden]{display:none!important}
-.graph3{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);position:relative}
-#c3{display:block;width:100%;height:min(72vh,600px);min-height:340px;cursor:grab;touch-action:pan-y}
-#c3:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.k3{position:absolute;left:12px;bottom:10px;display:flex;flex-wrap:wrap;gap:4px 12px;font:500 .74rem "JetBrains Mono",monospace;color:var(--muted);pointer-events:none}
-.k3 i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:5px;vertical-align:-1px}
+.go{font:500 .84rem var(--sans);text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 12px;margin:4px 4px 0 0;cursor:pointer}
+.go:hover{border-color:var(--accent)}
+.princ .m{font-size:.85rem;color:var(--muted)}
+.now{min-height:1.6em;font-family:"Space Grotesk",sans-serif;margin-top:4px}
+.lema{font:500 clamp(1rem,2.4vw,1.2rem)/1.5 "Space Grotesk",sans-serif;color:var(--ink);max-width:64ch;margin:0}
+#grafo{border-top:0;padding:8px 0 32px}
 .fz{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
 .fz article{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:14px 18px;min-width:0}
 .fz h3{font-size:1.05rem;margin-bottom:4px}
 .fz p{font-size:.92rem;color:var(--muted);margin-bottom:6px}
-.fz ol{padding-left:1.2rem;font-size:.9rem}
-.fz li{margin:.35rem 0}
-.fz .go{text-align:left}
-.dispara{font:600 .85rem "Space Grotesk",sans-serif;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;padding:6px 14px;margin:10px 6px 0 0;cursor:pointer}
+.dispara{font:600 .9rem "Space Grotesk",sans-serif;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;min-height:40px;padding:8px 16px;margin:10px 6px 0 0;cursor:pointer}
 .dispara:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:599px){header{padding:28px 0 12px}section{padding:32px 0}body{font-size:16px}}
 footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
 </style>
 </head>
@@ -127,52 +73,20 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
   <h1>El cerebro</h1>
-  <p class="lead">Cada veda es un error que ya se pagó, escrito para no pagarlo dos veces. Aquí están todas las de mis proyectos como un mapa: en cinco capas, de la obra al propósito, unidas por las veces que una cita a otra. Y en movimiento, en el orden en que se aprendieron.</p>
-  <p class="lead">El antahkarana es el instrumento interior que une lo que se hace con lo que se es. Este mapa intenta lo mismo con un proyecto: que cada línea de código sepa a qué propósito sirve. <strong>Es un primer orden, propuesto por palabras clave; lo estoy puliendo.</strong></p>
-  <p class="lead">Es una de mis herramientas de trabajo con IA. Nace de los Vedas y de mis años programando.</p>
+  <p class="lema" id="lema" hidden></p>
 </header>
 
-<section>
-  <div class="wrap">
-    <h2>Las cinco capas</h2>
-    <div class="capas" id="capas"></div>
+<section id="grafo" aria-label="El cerebro">
+  <div class="wrap"><div id="cerebro"><p class="now" id="now">Cargando el cerebro…</p></div></div>
+</section>
 
-    <div class="tabs" role="tablist" aria-label="Vista del cerebro">
-      <button class="tab" role="tab" data-v="3d" aria-selected="true">Tres dimensiones</button>
-      <button class="tab" role="tab" data-v="castellera" aria-selected="false">Castellera</button>
-      <button class="tab" role="tab" data-v="capas" aria-selected="false">Cinco capas</button>
-      <button class="tab" role="tab" data-v="mov" aria-selected="false">En movimiento</button>
-    </div>
-    <div class="saberes" id="saberes" role="group" aria-label="Filtrar por saber"></div>
-    <div class="ctl" id="ctl">
-      <button id="play" type="button">▶ Reproducir</button>
-      <label for="t" style="position:absolute;left:-9999px">Hasta la veda</label>
-      <input id="t" type="range" min="1" value="1">
-      <output id="tv" for="t"></output>
-    </div>
-    <div class="nav2">
-      <div class="busca">
-        <label for="q" style="position:absolute;left:-9999px">Buscar una veda</label>
-        <input id="q" type="search" placeholder="Busca una veda por número o palabra" autocomplete="off">
-        <div class="res" id="res" hidden></div>
-      </div>
-      <div class="zoom" role="group" aria-label="Zoom del grafo">
-        <button type="button" id="zmas" aria-label="Acercar">+</button>
-        <button type="button" id="zmenos" aria-label="Alejar">−</button>
-        <button type="button" id="zcero" aria-label="Ver todo">Todo</button>
-      </div>
-    </div>
-    <div class="priv" id="priv"><p id="privtxt">Capa privada: los codex de tus repos privados se leen en tu navegador con tu sesión de GitHub. Aquí no se publica nada de ellos.</p><span id="privbtn"></span></div>
-    <p class="now" id="now" aria-live="polite"></p>
-    <div class="graph3" id="g3">
-      <canvas id="c3" tabindex="0" role="img" aria-label="El cerebro en tres dimensiones: las cinco koshas como esferas, del cuerpo fuera al propósito en el centro. Gira con las flechas; usa el buscador para elegir una veda y Enter para dispararla."></canvas>
-      <div class="k3" id="k3" aria-hidden="true"></div>
-    </div>
-    <div class="graph" id="g2" hidden>
-      <svg id="svg" role="group" aria-label="Grafo de las vedas por capa"><g id="bg"></g><g id="ed"></g><g id="nd"></g><g id="lb"></g></svg>
-    </div>
-    <p class="legend" id="legend">De izquierda a derecha, el orden en que se escribió cada veda. Las líneas son citas entre vedas. Un borde oscuro es una capa que ya fijé yo; el resto es propuesta. Un borde punteado es privado y solo lo ves tú. Acerca con los botones o con Ctrl y la rueda, arrastra para moverte y usa las flechas para pasar de una veda a la siguiente.</p>
-    <div class="panel" id="panel" aria-live="polite"><p class="m">Toca una veda para leerla y ver con cuáles conecta.</p></div>
+<section id="que">
+  <div class="wrap">
+    <p class="kicker">Qué es</p>
+    <h2>Las cinco capas</h2>
+    <p class="lead">Cada veda es un error que ya se pagó, escrito para no pagarlo dos veces. Aquí están todas las de mis proyectos como un mapa: en cinco capas, de la obra al propósito, unidas por las veces que una cita a otra. Y en movimiento, en el orden en que se aprendieron.</p>
+    <p class="lead">El antahkarana es el instrumento interior que une lo que se hace con lo que se es. Este mapa intenta lo mismo con un proyecto: que cada línea de código sepa a qué propósito sirve. <strong>Es un primer orden, propuesto por palabras clave; lo estoy puliendo.</strong> Es una de mis herramientas de trabajo con IA. Nace de los Vedas y de mis años programando.</p>
+    <div class="capas" id="capas"></div>
   </div>
 </section>
 
@@ -245,45 +159,34 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <script src="https://teamtowershuma.com/SOS/cervell/3d.js"></script>
 <script src="https://teamtowershuma.com/SOS/cervell/pla.js"></script>
 <script src="https://teamtowershuma.com/SOS/cervell/exporta.js"></script>
+<script src="https://teamtowershuma.com/SOS/cervell/explora.js"></script>
 <script>
+/* El cerebro lo dibuja la matriz (SOS/cervell/explora.js): las vistas, el buscador,
+   la ficha, el disparo, las fuerzas y la capa privada. Lo que se mejora allí llega
+   aquí sin copiarlo (veda 5). Aquí solo va lo que es de esta página. */
 (function(){
-  var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta;
-  /* El motor viene de la matriz. Si no llega, se dice: un hueco en blanco miente (veda 105 heredada). */
-  if (!PUB || !FZ || !window.Cerebro3D || !window.CervellPla) {
-    var aviso = document.getElementById("now");
-    if (aviso) aviso.innerHTML = 'No se ha podido cargar el motor del cerebro desde <a href="https://teamtowershuma.com/SOS/cervell.html">teamtowershuma.com</a>. Recarga la página; si sigue así, la lista de abajo tiene todas las vedas.';
+  var PUB = window.CEREBRO;
+  /* El lema de la portada: lo lleva el cerebro desde lema.json, no se copia. */
+  (function (L, el) {
+    if (!L || !el) return;
+    el.textContent = L.proyectos.map(function (p) { return p.w + ' ' + p.v + '.'; }).join(' ') + ' ' + L.cierre;
+    el.hidden = false;
+  })(PUB && PUB.lema, document.getElementById('lema'));
+  /* Si el motor no llega, se dice: un hueco en blanco miente (veda 105 heredada). */
+  if (!PUB || !window.CerebroFuerzas || !window.Cerebro3D || !window.CervellPla || !window.CervellExplora) {
+    document.getElementById("now").innerHTML = 'No se ha podido cargar el motor del cerebro desde <a href="https://teamtowershuma.com/SOS/cervell.html">teamtowershuma.com</a>. Recarga la página; si sigue así, la lista de abajo tiene todas las vedas.';
     return;
   }
-  var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("svg");
-  var gB = document.getElementById("bg"), gE = document.getElementById("ed"), gN = document.getElementById("nd"), gL = document.getElementById("lb");
-  var panel = document.getElementById("panel"), now = document.getElementById("now");
-  var orden = PUB.capas.slice().reverse(); /* el propósito arriba, la obra abajo */
-  var capaDe = {}; PUB.capas.forEach(function(c){ capaDe[c.id] = c; });
-  function el(t, at, p){ var e = document.createElementNS(NS, t); for (var k in at) e.setAttribute(k, at[k]); if (p) p.appendChild(e); return e; }
+  var orden = PUB.capas.slice().reverse(), capaDe = {}; PUB.capas.forEach(function(c){ capaDe[c.id] = c; });
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
   function col(id){ return "var(--k-" + id + ")"; }
-  function llano(s){ return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function ancla(n){ var f = PUB.fuentes.indexOf(n.fuente); return "veda-" + (f > 0 ? f + "-" : "") + n.n; }
 
-  /* El cerebro que se ve: el público, más lo privado que lea tu navegador. Lo privado nunca sale de esta pestaña. */
-  var D, AN, byId, vec, cita, citada, pos, nEls, eEls, sel = null, sabActivo = null, vista = "3d";
-  var C3 = window.Cerebro3D(document.getElementById("c3"), { alElegir: function(id){ if (id) selecciona(id, true); else suelta(); } });
-  document.getElementById("k3").innerHTML = PUB.capas.map(function(c){ return '<span style="--c:' + col(c.id) + '"><i></i>' + esc(c.s) + '</span>'; }).join("");
-  var W = 1000, H = 560, top = 24, lane = (H - top - 16) / 5, x0 = 150, x1 = W - 20;
-
-  function monta(priv){
-    priv = priv || { nodos: [], aristas: [], fuentes: [] };
-    var pub = PUB.nodos.map(function(n){ return n; });
-    D = { nodos: pub.concat(priv.nodos.map(function(n){ n.privado = true; return n; })).sort(function(a, b){
-            return (a.fecha || "9") < (b.fecha || "9") ? -1 : (a.fecha || "9") > (b.fecha || "9") ? 1 : (a.privado ? 1 : 0) - (b.privado ? 1 : 0) || a.n - b.n; }),
-          aristas: PUB.aristas.concat(priv.aristas) };
-    /* Sin privado, el orden es el de siempre: el de escritura del codex público. */
-    if (!priv.nodos.length) D.nodos = PUB.nodos.slice();
-    byId = {}; vec = {}; cita = {}; citada = {};
-    D.nodos.forEach(function(n, i){ n.i = i; byId[n.id] = n; vec[n.id] = {}; });
-    D.aristas.forEach(function(a){ vec[a[0]][a[1]] = vec[a[1]][a[0]] = 1; (cita[a[0]] = cita[a[0]] || []).push(a[1]); (citada[a[1]] = citada[a[1]] || []).push(a[0]); });
-    document.getElementById("gen").textContent = PUB.nodos.length + " vedas · " + PUB.aristas.length + " citas · " + PUB.generado +
-      (priv.nodos.length ? " · y " + priv.nodos.length + " privadas que solo ves tú" : "");
-
+  /* Las partes de la página que salen del cerebro: se rehacen al abrir la capa privada. */
+  function pagina(D){
+    var byId = {}; D.nodos.forEach(function(n){ byId[n.id] = n; });
+    var priv = D.nodos.filter(function(n){ return n.privado; }).length;
+    document.getElementById("gen").textContent = PUB.nodos.length + " vedas · " + PUB.aristas.length + " citas · " + PUB.generado + (priv ? " · y " + priv + " privadas que solo ves tú" : "");
     document.getElementById("capas").innerHTML = orden.map(function(c){
       var k = D.nodos.filter(function(n){ return n.capa === c.id; }).length;
       return '<div class="capa" style="--c:' + col(c.id) + '"><i>' + esc(c.s) + '</i><b>' + esc(c.n) + '</b><p>' + esc(c.d) + '</p><small>' + k + ' vedas</small></div>';
@@ -293,333 +196,38 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       return '<details><summary style="color:' + col(c.id) + '">' + esc(c.n) + ' · ' + ns.length + '</summary><ol>' +
         ns.map(function(n){ return '<li value="' + n.n + '"><a href="#' + (n.privado ? 'privado' : ancla(n)) + '" data-id="' + esc(n.id) + '">' + esc(n.t) + '</a>' + (n.privado ? ' <small style="color:var(--muted)">· privada</small>' : '') + (n.aprende ? '<br><small style="color:var(--muted)">' + esc(n.aprende) + '</small>' : '') + '</li>'; }).join("") + '</ol></details>';
     }).join("");
-    document.getElementById("saberes").innerHTML = '<button class="sab" data-s="" aria-pressed="true">Todos</button>' +
-      Object.keys(PUB.saberes).map(function(k){
-        var c = D.nodos.filter(function(n){ return n.saberes.indexOf(k) >= 0; }).length;
-        return '<button class="sab" data-s="' + k + '" aria-pressed="false">' + esc(PUB.saberes[k]) + ' · ' + c + '</button>';
-      }).join("");
-    sabActivo = null;
     document.getElementById("princ").innerHTML = orden.filter(function(c){ return c.principios.length; }).map(function(c){
       return '<article style="--c:' + col(c.id) + '"><h3>' + esc(c.n) + ' · ' + esc(c.s) + '</h3><ul>' + c.principios.map(function(p){
         return '<li>' + esc(p.es) + '<br>' + p.vedas.filter(function(v){ return byId[PUB.fuentes[0] + ":" + v]; }).map(function(v){
           var n = byId[PUB.fuentes[0] + ":" + v]; return '<button class="go" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</button>'; }).join("") + '</li>';
       }).join("") + '</ul></article>';
     }).join("");
-
     /* Mis vedas: las del hijo, no las de la matriz. */
     document.getElementById("mias-l").innerHTML = PUB.nodos.filter(function(n){ return n.fuente !== PUB.fuentes[0]; }).reverse().map(function(n){
       return '<article style="--c:' + col(n.capa) + '"><h3><a href="#" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + '</a></h3>' +
         (n.aprende ? '<p>' + esc(n.aprende) + '</p>' : '') + '<p class="m">' + esc(capaDe[n.capa].n) +
         n.saberes.map(function(s){ return ' · ' + esc(PUB.saberes[s]); }).join("") + (n.fecha ? ' · ' + n.fecha.split("-").reverse().join("/") : '') + '</p></article>';
     }).join("");
-
-    AN = FZ.analiza(D);
-    C3.monta(D, AN);
-    fuerzas();
-    dibuja();
-    t.max = D.nodos.length; t.value = D.nodos.length;
-    hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = "";
-    if (sel && byId[sel]) selecciona(sel, true); else sel = null;
   }
 
-  /* Las bandas del grafo plano (cinco capas, o los tres pisos de la castellera)
-     y dónde va cada veda son de la matriz: SOS/cervell/pla.js, el mismo dibujo
-     que la portada de TeamTowers. Aquí solo va la interacción. */
-  var PL = window.CervellPla;
-  function dibuja(){
-    var bs = PL.franges({ capas: PUB.capas }, vista === "castellera" ? "castellera" : "capes"), alto = (H - top - 16) / bs.length;
-    pos = PL.geometria(D, bs, { dalt: top, alt: alto, x0: x0, x1: x1 });
-    gB.innerHTML = gE.innerHTML = gN.innerHTML = gL.innerHTML = "";
-    bs.forEach(function(b, i){
-      var sub = alto / b.capas.length;
-      b.capas.forEach(function(k, j){ el("rect", {x:-W, y:top + alto * i + sub * j, width:W * 3, height:sub, fill:col(k), "class":"band"}, gB); });
-      if (b.pis && i) el("line", {x1:0, x2:W, y1:top + alto * i, y2:top + alto * i, stroke:"var(--line)", "stroke-width":1.5}, gB);
-      var t = el("text", {x:12, y:top + alto * i + alto / 2 - 2, fill:b.pis ? "var(--ink)" : col(b.capas[0]), "class":"lane"}, gB); t.textContent = b.n;
-      var s = el("text", {x:12, y:top + alto * i + alto / 2 + 14, "class":"lane-s"}, gB); s.textContent = b.s.toUpperCase();
-    });
-    eEls = D.aristas.map(function(a){
-      return { a:a, el: el("path", {d:PL.corba(pos[a[0]], pos[a[1]]), "class":"e"}, gE) };
-    });
-    nEls = {};
-    D.nodos.forEach(function(n){
-      var g = el("g", {"class":"n" + (n.fijada ? " fix" : "") + (n.privado ? " priv" : ""), tabindex:0, role:"button", "aria-label":"Veda " + n.n + ": " + n.t + (n.privado ? " (privada)" : "")}, gN);
-      var deg = Object.keys(vec[n.id]).length;
-      el("circle", {cx:pos[n.id].x, cy:pos[n.id].y, r:4 + Math.min(deg, 6), fill:col(n.capa)}, g);
-      g.addEventListener("click", function(){ if (!movido) selecciona(n.id); });
-      g.addEventListener("keydown", function(e){
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selecciona(n.id); }
-        if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); var m = D.nodos[n.i + (e.key === "ArrowRight" ? 1 : -1)]; if (m) { selecciona(m.id); nEls[m.id].focus(); } }
-      });
-      nEls[n.id] = g;
-    });
-  }
-
-  /* Las fuerzas: lo que dice el análisis, con cada veda a un toque. */
-  function chip(id, extra){ var n = byId[id]; return '<button class="go" data-id="' + esc(id) + '">' + n.n + ' · ' + esc(n.t) + (extra ? ' <small style="color:var(--muted)">· ' + esc(extra) + '</small>' : '') + '</button>'; }
-  function fuerzas(){
-    var conQ = {}; AN.cuanticos.forEach(function(e){ conQ[e.a] = conQ[e.b] = 1; });
-    var guia = AN.sueltas.filter(function(n){ return conQ[n.id]; }).length, cs = AN.castellera;
-    document.getElementById("fz").innerHTML =
-      '<article style="--c:var(--vishnu-luz)"><h3>Gravedad</h3><p>Las vedas con más masa: las que más citan o más las citan. Sostienen el resto.</p><ol>' +
-        AN.gravedad.map(function(n){ return '<li>' + chip(n.id, AN.masa[n.id] + " citas") + '</li>'; }).join("") + '</ol></article>' +
-      '<article style="--c:var(--brahma-luz)"><h3>Potencial</h3><p>Las que más cerebro encienden al dispararse. Toca una y pulsa «Disparar».</p><ol>' +
-        AN.potentes.map(function(n){ var a = AN.alcance[n.id]; return '<li>' + chip(n.id, "enciende " + a.vedas + " vedas en " + a.capas + (a.capas === 1 ? " kosha" : " koshas")) + '</li>'; }).join("") + '</ol></article>' +
-      '<article style="--c:var(--shiva-luz)"><h3>Enlaces cuánticos</h3><p>' + AN.cuanticos.length + ' pares de koshas distintas que no se citan y se activan juntos. Los más fuertes:</p><ol>' +
-        AN.cuanticos.slice(0, 6).map(function(e){ return '<li>' + chip(e.a) + ' ↔ ' + chip(e.b, porque(e)) + '</li>'; }).join("") + '</ol></article>' +
-      '<article style="--c:var(--ink)"><h3>Optimización</h3>' +
-        '<p><b>Citas que faltan.</b> Estas parejas se apoyan en las mismas vedas y aún no se citan: una cita entre ellas cerraría el circuito.</p><ol>' +
-        AN.faltan.slice(0, 5).map(function(e){ return '<li>' + chip(e.a) + ' ↔ ' + chip(e.b) + '</li>'; }).join("") + '</ol>' +
-        '<p style="margin-top:10px"><b>Vedas sueltas.</b> ' + AN.sueltas.length + ' de ' + D.nodos.length + ' no citan ni las citan. ' + guia + ' de ellas ya tienen un enlace cuántico que dice con cuál conectarlas.</p>' +
-        '<p style="margin-top:10px"><b>La castellera.</b> Pinya ' + cs[2].vedas + ' · tronc ' + cs[1].vedas + ' · pom de dalt ' + cs[0].vedas + '. ' +
-        (AN.aguanta ? 'Aguanta: la pinya es más ancha que el tronco, como pide la regla de los castells.' : 'No aguanta: el tronco ha crecido más que la pinya. Toca bajar vedas a la obra y a la energía.') + '</p></article>';
-  }
-  function porque(e){
-    var s = e.saberes.map(function(k){ return PUB.saberes[k]; }).join(" y ");
-    return (s ? "comparten " + s : "") + (s && e.vecinos.length ? "; " : "") + (e.vecinos.length ? "citan " + (e.vecinos.length === 1 ? "la misma veda" : "las mismas " + e.vecinos.length) : "");
-  }
-  function suelta(){
-    sel = null; C3.selecciona(null); gL.innerHTML = "";
-    Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); });
-    panel.style.removeProperty("--c"); panel.innerHTML = '<p class="m">Toca una veda para leerla y ver con cuáles conecta.</p>';
-  }
-  function dispara(id){
-    if (vista !== "3d") ver("3d");
-    var luz = C3.dispara(id); if (!luz) return;
-    var ks = Object.keys(luz).filter(function(k){ return k !== id; }), q = ks.filter(function(k){ return luz[k].via === "cuantico"; }).length;
-    var capas = {}; ks.forEach(function(k){ capas[byId[k].capa] = 1; });
-    now.textContent = "Disparo desde la veda " + byId[id].n + ": enciende " + ks.length + " vedas en " + Object.keys(capas).length + " koshas, " + q + " por enlace cuántico.";
-  }
-
-  function etiqueta(id){
-    gL.innerHTML = ""; if (!id) return;
-    var p = pos[id], n = byId[id], der = p.x > vb.x + vb.w * .72;
-    var tx = el("text", {x:der ? p.x - 12 : p.x + 12, y:p.y - 10, "class":"lbl", "text-anchor":der ? "end" : "start"}, gL);
-    tx.textContent = n.n + " · " + n.t;
-  }
-  function selecciona(id, quieto){
-    sel = id; var n = byId[id], c = capaDe[n.capa]; C3.selecciona(id);
-    Object.keys(nEls).forEach(function(k){ nEls[k].classList.toggle("sel", k === id); nEls[k].classList.toggle("dim", k !== id && !vec[id][k]); });
-    eEls.forEach(function(e){ e.el.classList.toggle("on", e.a[0] === id || e.a[1] === id); });
-    if (!quieto) centra(id);
-    etiqueta(id);
-    var chips = function(ids, txt){ return ids && ids.length ? '<p class="m" style="margin-top:10px">' + txt + '</p>' + ids.map(function(k){ return '<button class="go" data-id="' + esc(k) + '">' + byId[k].n + ' · ' + esc(byId[k].t) + '</button>'; }).join("") : ""; };
-    panel.style.setProperty("--c", col(n.capa));
-    panel.innerHTML = '<p class="m">Veda ' + n.n + ' · ' + esc(n.fuente) + (n.fecha ? ' · ' + esc(n.fecha) : '') + ' · ' + esc(c.n) + (n.fijada ? ' (fijada)' : ' (propuesta)') + (n.tema ? ' · ' + esc(n.tema) : '') + (n.privado ? ' · privada, solo la ves tú' : '') + '</p>' +
-      '<h3>' + esc(n.t) + '</h3>' + (n.aprende ? '<p class="aprende"><b>Lo que enseña:</b> ' + esc(n.aprende) + '</p>' : '') +
-      '<p style="margin-top:10px">' + esc(n.txt) + '</p>' + (n.saberes.length ? '<p>' + n.saberes.map(function(k){ return '<span class="tag">' + esc(PUB.saberes[k]) + '</span>'; }).join("") + '</p>' : '') + chips(cita[id], "Cita a") + chips(citada[id], "La citan") +
-      chips(AN.cuanticos.filter(function(e){ return e.a === id || e.b === id; }).map(function(e){ return e.a === id ? e.b : e.a; }), "Entrelazadas") +
-      '<p class="m" style="margin-top:10px">Masa ' + AN.masa[id] + ' · potencial ' + AN.potencial[id] + ' · enciende ' + AN.alcance[id].vedas + ' vedas en ' + AN.alcance[id].capas + ' koshas</p>' +
-      '<button type="button" class="dispara" data-dispara="' + esc(id) + '">Disparar</button>';
-    /* Solo las vedas públicas tienen enlace: el nombre de un repo privado no va a la barra de direcciones. */
-    try { history.replaceState(null, "", n.privado ? location.pathname + "#privado" : "#" + ancla(n)); } catch (e) {}
-  }
-
-  /* El enlace de una veda pública: #veda-12 en la matriz, #veda-1-4 en la segunda fuente. */
-  function ancla(n){ var f = PUB.fuentes.indexOf(n.fuente); return "veda-" + (f > 0 ? f + "-" : "") + n.n; }
-
-  /* Zoom y desplazamiento: se mueve la ventana (viewBox) sobre el grafo. */
-  var vb = { x:0, y:0, w:W, h:H }, movido = false;
-  function aplica(){
-    vb.w = Math.min(W, Math.max(W / 8, vb.w)); vb.h = vb.w * H / W;
-    vb.x = Math.min(W - vb.w, Math.max(0, vb.x)); vb.y = Math.min(H - vb.h, Math.max(0, vb.y));
-    svg.setAttribute("viewBox", vb.x + " " + vb.y + " " + vb.w + " " + vb.h);
-    svg.classList.toggle("pan", vb.w < W);
-  }
-  function zoom(f, cx, cy){
-    if (cx == null) { cx = vb.x + vb.w / 2; cy = vb.y + vb.h / 2; }
-    var w = Math.min(W, Math.max(W / 8, vb.w * f)), h = w * H / W;
-    vb.x = cx - (cx - vb.x) * w / vb.w; vb.y = cy - (cy - vb.y) * h / vb.h; vb.w = w; vb.h = h; aplica();
-    if (sel) etiqueta(sel);
-  }
-  function centra(id){
-    var p = pos[id];
-    if (vb.w < W) { vb.x = p.x - vb.w / 2; vb.y = p.y - vb.h / 2; aplica(); }
-    sigue(id);
-  }
-  function punto(e){ var r = svg.getBoundingClientRect(); return { x: vb.x + (e.clientX - r.left) / r.width * vb.w, y: vb.y + (e.clientY - r.top) / r.height * vb.h }; }
-  document.getElementById("zmas").addEventListener("click", function(){ if (vista === "3d") return C3.zoom(1 / 1.25); zoom(1 / 1.6, sel ? pos[sel].x : null, sel ? pos[sel].y : null); });
-  document.getElementById("zmenos").addEventListener("click", function(){ if (vista === "3d") return C3.zoom(1.25); zoom(1.6); });
-  document.getElementById("zcero").addEventListener("click", function(){ if (vista === "3d") return C3.centra(); vb = { x:0, y:0, w:W, h:H }; aplica(); if (sel) etiqueta(sel); });
-  svg.addEventListener("wheel", function(e){ if (!e.ctrlKey && !e.metaKey) return; e.preventDefault(); var p = punto(e); zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, p.x, p.y); }, { passive:false });
-  var arrastre = null;
-  svg.addEventListener("pointerdown", function(e){ if (vb.w >= W) return; arrastre = { x:e.clientX, y:e.clientY, vx:vb.x, vy:vb.y }; movido = false; });
-  window.addEventListener("pointermove", function(e){
-    if (!arrastre) return; var r = svg.getBoundingClientRect();
-    var dx = e.clientX - arrastre.x, dy = e.clientY - arrastre.y;
-    if (Math.abs(dx) + Math.abs(dy) > 4) movido = true;
-    vb.x = arrastre.vx - dx / r.width * vb.w; vb.y = arrastre.vy - dy / r.height * vb.h; aplica();
-  });
-  window.addEventListener("pointerup", function(){ arrastre = null; setTimeout(function(){ movido = false; }, 0); });
-
-  /* Buscar: por número de veda o por palabras del título, de lo que enseña y del texto. */
-  var q = document.getElementById("q"), res = document.getElementById("res");
-  function busca(){
-    var v = llano(q.value.trim()); if (!v) { res.hidden = true; return; }
-    var num = /^\d+$/.test(v) ? +v : null, ps = v.split(/\s+/);
-    var hits = D.nodos.filter(function(n){
-      if (num != null) return n.n === num;
-      var s = llano(n.t + " " + (n.aprende || "") + " " + n.txt);
-      return ps.every(function(p){ return s.indexOf(p) >= 0; });
-    }).sort(function(a, b){ return (llano(b.t).indexOf(ps[0]) >= 0) - (llano(a.t).indexOf(ps[0]) >= 0); }).slice(0, 8);
-    res.innerHTML = hits.length ? hits.map(function(n){ return '<button type="button" data-id="' + esc(n.id) + '">' + n.n + ' · ' + esc(n.t) + ' <small>· ' + esc(capaDe[n.capa].n) + (n.privado ? ' · privada' : '') + '</small></button>'; }).join("") : '<p class="m" style="padding:6px 10px;color:var(--muted)">Ninguna veda con eso.</p>';
-    res.hidden = false;
-  }
-  q.addEventListener("input", busca);
-  q.addEventListener("keydown", function(e){
-    if (e.key === "Enter") { var b = res.querySelector("button"); if (b) { e.preventDefault(); b.click(); } }
-    if (e.key === "Escape") { q.value = ""; res.hidden = true; }
-    if (e.key === "ArrowDown") { var f = res.querySelector("button"); if (f) { e.preventDefault(); f.focus(); } }
-  });
-  res.addEventListener("keydown", function(e){
-    var bs = Array.prototype.slice.call(res.querySelectorAll("button")), i = bs.indexOf(document.activeElement);
-    if (e.key === "ArrowDown" && bs[i + 1]) { e.preventDefault(); bs[i + 1].focus(); }
-    if (e.key === "ArrowUp") { e.preventDefault(); (bs[i - 1] || q).focus(); }
+  var cx = CervellExplora.munta(document.getElementById("cerebro"), PUB, {
+    lang: "es", fuerzas: document.getElementById("fz"), privado: { entrar: "/.netlify/functions/github?entrar" }, alMontar: pagina
   });
 
+  /* Un enlace a una veda desde el resto de la página la abre en el cerebro. */
   document.addEventListener("click", function(e){
-    if (!e.target.closest(".busca")) res.hidden = true;
-    var f = e.target.closest(".sab");
-    if (f) {
-      sabActivo = f.getAttribute("data-s") || null;
-      document.querySelectorAll(".sab").forEach(function(x){ x.setAttribute("aria-pressed", x === f ? "true" : "false"); });
-      D.nodos.forEach(function(n){ nEls[n.id].classList.toggle("dim", !!sabActivo && n.saberes.indexOf(sabActivo) < 0); nEls[n.id].classList.remove("sel"); });
-      eEls.forEach(function(x){ x.el.classList.remove("on"); }); gL.innerHTML = "";
-      return;
-    }
-    var dp = e.target.closest("[data-dispara]"); if (dp) { dispara(dp.getAttribute("data-dispara")); return; }
-    var b = e.target.closest("[data-id]"); if (!b) return;
-    e.preventDefault(); selecciona(b.getAttribute("data-id"));
-    if (b.closest(".res")) { res.hidden = true; q.blur(); }
-    if (b.tagName === "A" || b.closest(".res")) document.querySelector(vista === "3d" ? ".graph3" : ".graph").scrollIntoView({behavior:"smooth", block:"center"});
+    var b = e.target.closest("#que [data-id], #mias [data-id], #princ [data-id], #lista [data-id]"); if (!b) return;
+    e.preventDefault(); cx.selecciona(b.getAttribute("data-id"));
+    document.getElementById("grafo").scrollIntoView({ behavior: "smooth", block: "start" });
   });
-
-  /* En movimiento: el cerebro crece veda a veda, con sus citas. */
-  var t = document.getElementById("t"), tv = document.getElementById("tv"), play = document.getElementById("play"), timer = null;
-  function hasta(k){
-    k = +k; tv.textContent = k + " / " + D.nodos.length;
-    D.nodos.forEach(function(n){ nEls[n.id].classList.toggle("hid", n.i >= k); });
-    eEls.forEach(function(e){ e.el.classList.toggle("hid", byId[e.a[0]].i >= k || byId[e.a[1]].i >= k); });
-    var u = D.nodos[k - 1]; if (u) { now.textContent = "Veda " + u.n + " · " + u.t + " · " + capaDe[u.capa].n; etiqueta(u.id); sigue(u.id); }
-  }
-  /* En pantalla estrecha el grafo se desliza: que la veda quede a la vista. */
-  var graph = document.querySelector(".graph");
-  function sigue(id){
-    if (graph.scrollWidth <= graph.clientWidth) return;
-    var x = (pos[id].x - vb.x) / vb.w * graph.scrollWidth;
-    graph.scrollLeft = Math.max(0, x - graph.clientWidth * .6);
-  }
-  t.addEventListener("input", function(){ hasta(t.value); });
-  function para(){ clearInterval(timer); timer = null; play.textContent = "▶ Reproducir"; }
-  play.addEventListener("click", function(){
-    if (timer) return para();
-    if (+t.value >= D.nodos.length) t.value = 1;
-    play.textContent = "❚❚ Pausa";
-    timer = setInterval(function(){ if (+t.value >= D.nodos.length) return para(); t.value = +t.value + 1; hasta(t.value); }, 140);
-  });
-  var leyenda = document.getElementById("legend"), LEY = {
-    "3d": "Cada esfera es una kosha: el cuerpo fuera y el propósito en el centro. El tamaño de una veda es su masa. Las líneas grises son citas; las punteadas verdes, enlaces cuánticos. Arrastra para girar; acerca con los botones o con Ctrl y la rueda. Toca una veda y pulsa «Disparar» para ver qué enciende.",
-    castellera: "Los tres pisos del castell: la pinya (cuerpo y energía) aguanta el tronc (mente y discernimiento), que sube el pom de dalt (propósito). Dentro de cada piso, una franja por kosha. De izquierda a derecha, el orden en que se escribió cada veda; las líneas son citas.",
-    capas: leyenda.textContent
-  };
-  LEY.mov = LEY.capas;
-  function ver(v){
-    vista = v;
-    document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-selected", x.getAttribute("data-v") === v ? "true" : "false"); });
-    var tres = v === "3d", mov = v === "mov";
-    document.getElementById("g3").hidden = !tres; document.getElementById("g2").hidden = tres;
-    C3.activa(tres); leyenda.textContent = LEY[v];
-    document.getElementById("ctl").classList.toggle("on", mov);
-    para(); dibuja();
-    if (mov) { Object.keys(nEls).forEach(function(k){ nEls[k].classList.remove("sel", "dim"); }); eEls.forEach(function(e){ e.el.classList.remove("on"); }); t.value = 1; hasta(1); } else { hasta(D.nodos.length); now.textContent = ""; gL.innerHTML = ""; if (sel) selecciona(sel, true); }
-  }
-  document.querySelectorAll(".tab").forEach(function(b){ b.addEventListener("click", function(){ ver(b.getAttribute("data-v")); }); });
-
-  /* Llévatelo: solo lo público, con el motor común de la matriz. */
+  /* Llévatelo: solo lo público, con el exportador común. */
   document.getElementById("llevatelo").addEventListener("click", function(e){
-    var b = e.target.closest("[data-lleva]"); if (!b || !CX) return;
-    var pub = D.nodos.filter(function(n){ return !n.privado; }), ids = {}; pub.forEach(function(n){ ids[n.id] = 1; });
-    var P = { nodos: pub, aristas: D.aristas.filter(function(a){ return ids[a[0]] && ids[a[1]]; }), capas: PUB.capas };
-    var A = FZ.analiza(P), k = b.getAttribute("data-lleva"), est = document.getElementById("lleva-estado");
-    var meta = { nom: "Álvaro Solache", font: PUB.fuentes.join(" y "), id: "alvaro-solache", lang: "es", data: PUB.generado, url: "alvarosolache.netlify.app/cerebro.html" };
-    var desa = function(nom, cos, tipo){
-      var bl = cos instanceof Blob ? cos : new Blob([cos], { type: tipo }), a = document.createElement("a");
-      a.href = URL.createObjectURL(bl); a.download = nom; document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000); est.textContent = "Descargado " + nom + ".";
-    };
-    if (k === "md") return desa("cerebro-alvaro-solache.md", CX.md(P, A, meta), "text/markdown");
-    if (k === "json") return desa("cerebro-alvaro-solache.json", CX.json(P, A, meta), "application/json");
-    est.textContent = "Preparando el fichero…";
-    Promise.all(["forces.js", "3d.js", "vista.js"].map(function(f){ return fetch("https://teamtowershuma.com/SOS/cervell/" + f).then(function(r){ if (!r.ok) throw r.status; return r.text(); }); }))
-      .then(function(c){ if (k === "html") desa("cerebro-alvaro-solache.html", CX.html(P, meta, c), "text/html"); else desa("cerebro-alvaro-solache-scorm.zip", CX.scorm(P, meta, c)); })
+    var b = e.target.closest("[data-lleva]"); if (!b) return;
+    var est = document.getElementById("lleva-estado"); est.textContent = "Preparando el fichero…";
+    cx.lleva(b.getAttribute("data-lleva"), { nom: "Álvaro Solache", font: PUB.fuentes.join(" y "), id: "cerebro-alvaro-solache", lang: "es", data: PUB.generado, url: "alvarosolache.netlify.app/cerebro.html" })
+      .then(function(nom){ est.textContent = "Descargado " + nom + "."; })
       .catch(function(){ est.textContent = "No se pudo preparar el fichero ahora mismo. Vuelve a intentarlo en un rato."; });
   });
-
-  /* Capa privada. Con tu sesión de GitHub, el navegador busca un codex en cada repo
-     privado al que tienes acceso y lo dibuja aquí. Nada de eso se guarda ni se publica:
-     el token vive en esta pestaña (sessionStorage) y se borra al cerrarla o al salir. */
-  var privtxt = document.getElementById("privtxt"), privbtn = document.getElementById("privbtn");
-  function token(){ try { return sessionStorage.getItem("gh_token"); } catch (e) { return null; } }
-  function sinSesion(msg){
-    privtxt.textContent = msg || "Capa privada: los codex de tus repos privados se leen en tu navegador con tu sesión de GitHub. Aquí no se publica nada de ellos.";
-    privbtn.innerHTML = '<button type="button" id="entrar">Entrar con GitHub</button>';
-    document.getElementById("entrar").onclick = function(){ location.href = "/.netlify/functions/github?entrar"; };
-  }
-  function salir(){ try { sessionStorage.removeItem("gh_token"); } catch (e) {} monta(); sinSesion(); }
-  function gh(ruta, raw){
-    return fetch("https://api.github.com" + ruta, { headers: { authorization: "Bearer " + token(), accept: raw ? "application/vnd.github.raw" : "application/vnd.github+json" }, cache: "no-store" })
-      .then(function(r){ if (r.status === 404) return null; if (r.status === 401) throw { sesion: true }; if (!r.ok) throw new Error(r.status); return raw ? r.text() : r.json(); });
-  }
-  function cargaPrivado(){
-    if (!token() || !CP) return sinSesion();
-    privtxt.textContent = "Buscando codex en tus repos privados…"; privbtn.innerHTML = "";
-    var repos = [];
-    (function pagina(p){
-      return gh("/user/repos?per_page=100&page=" + p + "&affiliation=owner,collaborator,organization_member").then(function(rs){
-        repos = repos.concat((rs || []).filter(function(r){ return r.private; }));
-        return rs && rs.length === 100 ? pagina(p + 1) : repos;
-      });
-    })(1).then(function(rs){
-      /* Las vedas de la plantilla de la matriz (pública): un hijo no las repite. */
-      var plantilla = gh("/repos/asolache/teamtowershuma/contents/" + CP.RUTA_PLANTILLA, true).catch(function(){ return null; }).then(CP.plantilla);
-      return Promise.all(rs.map(function(r){
-        var base = "/repos/" + r.full_name + "/contents/";
-        /* Matriz: su codex en SOS. Hijo: donde diga su cervell.json. */
-        return gh(base + CP.RUTA_CODEX, true).then(function(codex){
-          if (codex) return { codex: codex, hijo: false };
-          return gh(base + CP.RUTA_HIJO, true).then(function(c){
-            var ruta = null; try { ruta = c ? JSON.parse(c).codex : null; } catch (e) {}
-            return ruta ? gh(base + String(ruta).replace(/^\.?\//, ""), true).then(function(x){ return x ? { codex: x, hijo: true } : null; }) : null;
-          });
-        }).then(function(f){
-          if (!f) return null;
-          return Promise.all([plantilla, gh(base + CP.RUTA_HERENCIA, true).catch(function(){ return null; })]).then(function(v){
-            var her = null; try { her = v[1] ? JSON.parse(v[1]) : null; } catch (e) {}
-            return CP.lee(f.codex, { nom: r.name, herencia: her, matriz: f.hijo ? PUB.fuentes[0] : null, plantilla: v[0] });
-          });
-        }).catch(function(e){ if (e && e.sesion) throw e; return null; });
-      }));
-    }).then(function(lecturas){
-      var nodos = [], aristas = [], fuentes = [];
-      lecturas.forEach(function(l){ if (l && l.nodos.length) { nodos = nodos.concat(l.nodos); aristas = aristas.concat(l.aristas); fuentes.push(l.nodos[0].fuente); } });
-      monta({ nodos: nodos, aristas: CP.limpia(nodos, aristas, PUB.nodos.map(function(n){ return n.id; })), fuentes: fuentes });
-      privtxt.textContent = nodos.length
-        ? "Capa privada abierta: " + nodos.length + " vedas de " + fuentes.length + (fuentes.length === 1 ? " repo privado" : " repos privados") + ", con borde punteado. Solo las ves tú, en esta pestaña."
-        : "Has entrado con GitHub, pero ninguno de tus repos privados tiene aún un codex en " + CP.RUTA_CODEX + ". Cuando lo tenga, aparecerá aquí.";
-      privbtn.innerHTML = '<button type="button" class="sec" id="salir">Salir</button>';
-      document.getElementById("salir").onclick = salir;
-    }).catch(function(e){
-      if (e && e.sesion) { try { sessionStorage.removeItem("gh_token"); } catch (x) {} return sinSesion("Tu sesión de GitHub ha caducado. Vuelve a entrar para ver la capa privada."); }
-      sinSesion("No se pudo leer GitHub ahora mismo. Vuelve a intentarlo en un rato.");
-    });
-  }
-
-  aplica();
-  monta();
-  ver("3d");
-  cargaPrivado();
-  /* Enlace directo a una veda: cerebro.html#veda-12 o #veda-1-4 */
-  var m = location.hash.match(/^#veda-(?:(\d+)-)?(\d+)$/), dir = m && PUB.fuentes[+(m[1] || 0)] + ":" + m[2];
-  if (dir && byId[dir]) { selecciona(dir); setTimeout(function(){ document.querySelector(".graph3").scrollIntoView({block:"center"}); }, 0); }
 })();
 </script>
 </body>
