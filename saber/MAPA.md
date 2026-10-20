@@ -33,7 +33,7 @@ Lo que sabemos y aún no es obra. Se cita, no se copia.
 
 | carpeta | qué entra | ficheros |
 |---|---|---|
-| `saber/` | El cerebro: mapa, codex, contrato de la IA, taxonomía y backlog | 9 · 157 KB |
+| `saber/` | El cerebro: mapa, codex, contrato de la IA, taxonomía y backlog | 9 · 158 KB |
 
 ---
 

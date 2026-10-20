@@ -158,3 +158,10 @@ analizar de ponerlos públicos». **Hecho:** búsqueda de fuentes; pasan a la we
 los inicios en InfoJobs (León en red, 2011) y Grow in Barcelona con su noticia
 (iymagazine, 2014). Emprendedor XXI y Antena 3 siguen sin fuente encontrada.
 **Medido:** cada enlace nuevo abre y nombra el hecho que respalda.
+
+### Los avis y mis hijos en el linaje (pedido 2026-10-20)
+
+**Pedido por:** Álvaro: «En linaje faltan los abuelos… los avis» y «falta los
+hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
+«Mis hijos» en el linaje y en el mapa vivo, sin nombres; el recorrido pasa de
+«c. 1996» a «1997 – 2007». **Medido:** sin `rel` rotos ni errores de consola.
