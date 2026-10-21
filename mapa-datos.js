@@ -83,6 +83,10 @@ window.MAPA = {
     {id:"teamtowers", s:"TeamTowers", t:"TeamTowers y Fent Pinya", y:2005, ya:"2005", k:"hito", te:["personas","sistemas"], cx:"empresa", lugar:"Vilafranca del Penedès",
      txt:"La fundamos Fèlix Miret y yo, y soy su CEO. Fent Pinya nace en Vilafranca; juntos lo hemos llevado a más de 150 organizaciones, con equipos directivos de IKEA, Novartis, Vodafone y Telefónica.", rel:["castells","huma","sos"],
      links:[["teamtowers.eu","https://www.teamtowers.eu"],["Wall Street Journal","https://www.wsj.com/lifestyle/workplace/the-corporate-team-building-exercise-where-you-have-to-climb-on-the-boss-2dc8a5b8"],["TV3","https://www.youtube.com/watch?v=sCCeygsjzZI&list=PL74B5AF79C6C0EE55&index=3"],["El Periódico, 2007","https://www.elperiodico.com/es/sociedad/20070121/castells-integradores-5420703"],["Shareable, 2014","https://www.shareable.net/the-castells-of-catalonia-inside-the-incredible-art-of-human-towers/"],["Diario de León, 2012","https://www.diariodeleon.es/leon/120105/1167049/trepar-horas-trabajo.html"]]},
+    {id:"floresta", s:"La Floresta", t:"La Floresta", y:1999, ya:"1999 – 2023", k:"hito", te:["raices","comunidad"], cx:"territorio", lugar:"La Floresta (Sant Cugat)",
+     txt:"Llego a La Floresta en 1999. Es mi casa durante más de veinte años, con etapas fuera como León, y donde crecen mis hijos.", rel:["hijos","leon","rubi"]},
+    {id:"rubi", s:"Rubí y Vallpineda", t:"Rubí y Vallpineda", y:2021, ya:"c. 2021 – 2023", k:"hito", te:["raices"], cx:"territorio", lugar:"Rubí y Vallpineda (Sant Pere de Ribes)",
+     txt:"Antes de venir a la masía vivo un par de veces en Rubí y en Vallpineda.", rel:["floresta","calsegue"]},
     {id:"leon", s:"León", t:"León y su primer banco de tiempo", y:2009, ya:"2009", k:"hito", te:["raices","comunidad"], cx:"territorio", lugar:"León y Sant Cugat",
      txt:"Vivimos en León. Pongo en marcha el primer banco de tiempo de la ciudad, con lo aprendido en Sant Cugat, donde más de 500 personas ya intercambiaban favores (Diario de León, 2009). Y el arte y los artistas de León.", rel:["bancotiempo","comunitats"],
      links:[["Diario de León, 2009","https://www.diariodeleon.es/nacional/90531/459453/nace-leon-primer-banco-intercambiar-gratis-servicios-cosas.html"],["León Alternativo, 2010","https://leonalternativo.blogspot.com/2010/11/alvaro-solache.html"]]},
@@ -113,8 +117,8 @@ window.MAPA = {
      links:[["Entrar al SOS","https://teamtowershuma.com/SOS/"],["Value Network Lab","https://valuenetworklab.netlify.app"]]},
 
     // Arte
-    {id:"calsegue", s:"Cal Segué", t:"Cal Segué", y:2026, ya:"Hoy", k:"hito", te:["raices"], cx:"familia", lugar:"Cal Segué",
-     txt:"Vivo en Cal Segué, una casa pairal: una masía dedicada a Amma y a Swami Tilak.", rel:["vedas","madre","padre"],
+    {id:"calsegue", s:"Cal Segué", t:"Cal Segué", y:2023, ya:"Desde 2023", k:"hito", te:["raices"], cx:"familia", lugar:"Cal Segué",
+     txt:"Desde hace tres años vivo en Cal Segué, una casa pairal: una masía dedicada a Amma y a Swami Tilak.", rel:["vedas","madre","padre","rubi"],
      links:[["Swami Tilak","https://swamitilak.org"]]},
     {id:"mazinguer", s:"Mazinguer", t:"Mazinguer", y:null, ya:"Sin fecha aún", k:"hito", te:["arte"], cx:"escenario", lugar:"",
      txt:"Líder estratega y DJ del Comando Molekulon. Baja a la Tierra con Horacio Motomachi a buscar 150.000 superhéroes reales, montando una banda que recorre los pueblos.", rel:["musica"],

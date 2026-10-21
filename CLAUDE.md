@@ -14,6 +14,8 @@ Antes de escribir nada, lee en este orden: `saber/MAPA.md`, `saber/codex.md`,
 ## Este proyecto
 
 - Web estática en Netlify, publicada desde `main`. Sin build.
+- Despliegues en tanda (veda 179 de la matriz, `../teamtowershuma/SOS/knowledge/codex.md`):
+  se revisa en la preview del PR y se mergea solo cuando Álvaro lo dice.
 - Es hija de TeamTowers: el cerebro se pone al día con
   `node ../teamtowershuma/SOS/tools/cervell.js --actualitza .` y lo que se
   aprende aquí sube con `--recull` (veda 5).

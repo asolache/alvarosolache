@@ -189,3 +189,10 @@ fuente: cuatro palabras que enlazan a sus proyectos (Pinya, Plaça, Xarxa, Joc)
 y lo heredado de su linaje, cada parte un link al mapa vivo. Lo escribe
 `herramientas/cerebro-codex.mjs` en la portada y en el cerebro. Los nombres de
 DJ siguen en la sección de música. **Medido:** sin errores de consola.
+
+### Dónde he vivido: La Floresta, Rubí, Vallpineda y la masía (pedido 2026-10-21)
+
+**Pedido por:** Álvaro: «llego en 1999 a la Floresta… hasta que hace 3 años
+vengo a la masía», con Rubí y Vallpineda antes. **Hecho:** nodos `floresta` y
+`rubi` en el mapa vivo, Cal Segué desde 2023 y La Floresta en el recorrido.
+**Medido:** sin `rel` rotos ni errores de consola.
