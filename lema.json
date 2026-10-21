@@ -1,0 +1,17 @@
+{
+  "_": "El lema de la portada: mis proyectos y lo que heredé. Una sola fuente: herramientas/cerebro-codex.mjs lo escribe en index.html (entre las marcas LEMA) y en cerebro-datos.js. Cada palabra es un link.",
+  "proyectos": [
+    { "w": "Pinya", "v": "que sostiene", "href": "https://www.teamtowers.eu", "titulo": "Fent Pinya, el taller de TeamTowers", "t": "vishnu" },
+    { "w": "Plaça", "v": "que celebra", "href": "https://eventspenedes.com", "titulo": "eventspenedes.com, fiestas y encuentros en el Penedès", "t": "brahma" },
+    { "w": "Xarxa", "v": "que aprende", "href": "https://teamtowershuma.com", "titulo": "TeamTowers Humà, la matriz", "t": "vishnu" },
+    { "w": "Joc", "v": "que transforma", "href": "https://molekulon.org", "titulo": "Molekulon, educación y arte", "t": "shiva" }
+  ],
+  "raices": [
+    { "w": "la aguja del modisto", "href": "#mapa/bisabuelo" },
+    { "w": "el trigo de los litos", "href": "#mapa/litos" },
+    { "w": "la cumbre de los avis", "href": "#mapa/avis" },
+    { "w": "la palabra de mi padre", "href": "#mapa/padre" },
+    { "w": "el seva de mi madre", "href": "#mapa/madre" }
+  ],
+  "cierre": "Todo es un link."
+}

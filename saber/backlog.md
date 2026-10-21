@@ -165,3 +165,13 @@ los inicios en InfoJobs (León en red, 2011) y Grow in Barcelona con su noticia
 hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
 «Mis hijos» en el linaje y en el mapa vivo, sin nombres; el recorrido pasa de
 «c. 1996» a «1997 – 2007». **Medido:** sin `rel` rotos ni errores de consola.
+
+### El lema de la portada (pedido 2026-10-20)
+
+**Pedido por:** Álvaro: «Tras mi nombre quita mis nombres de DJ y promociona mis
+proyectos con un tagline sintético y poético», que sintetice el cerebro y el
+sistema operativo heredado de sus antepasados. **Hecho:** `lema.json`, única
+fuente: cuatro palabras que enlazan a sus proyectos (Pinya, Plaça, Xarxa, Joc)
+y lo heredado de su linaje, cada parte un link al mapa vivo. Lo escribe
+`herramientas/cerebro-codex.mjs` en la portada y en el cerebro. Los nombres de
+DJ siguen en la sección de música. **Medido:** sin errores de consola.

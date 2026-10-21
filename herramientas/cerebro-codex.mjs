@@ -39,6 +39,10 @@ if (privadas.length) { console.log('✗ Fuente privada, no se publica: ' + priva
    cada capa. Lo escribe una lectura de las vedas y lo revisa Álvaro; una veda
    nueva sale sin etiquetar hasta que se añade. */
 const SINT = existsSync(join(RAIZ, 'sintesis.json')) ? JSON.parse(readFileSync(join(RAIZ, 'sintesis.json'), 'utf8')) : { vedas: {}, principios: {} };
+/* lema.json: el lema de la portada, mis proyectos y lo que heredé de mi
+   linaje. Vive aquí y nada más: el cerebro lo lleva y la portada lo recibe
+   escrito entre las marcas LEMA de index.html (veda 9). */
+const LEMA = existsSync(join(RAIZ, 'lema.json')) ? JSON.parse(readFileSync(join(RAIZ, 'lema.json'), 'utf8')) : null;
 const fijadas = existsSync(join(RAIZ, 'capas.json')) ? JSON.parse(readFileSync(join(RAIZ, 'capas.json'), 'utf8')) : {};
 
 /* Una fuente es la matriz (el codex de SOS) o un hijo con cerebro: su
@@ -59,10 +63,22 @@ const limpias = limpia(nodos, aristas);
 const orden = Object.fromEntries(fuentes.map((f, i) => [f.nom, i]));
 nodos.sort((a, b) => orden[a.fuente] - orden[b.fuente] || a.n - b.n);
 const datos = { generado: new Date().toISOString().slice(0, 10), fuentes: fuentes.map(f => f.nom),
-  capas: CAPAS.map(({ k, ...c }) => ({ ...c, principios: SINT.principios[c.id] || [] })), saberes: SABERES, nodos, aristas: limpias };
+  capas: CAPAS.map(({ k, ...c }) => ({ ...c, principios: SINT.principios[c.id] || [] })), saberes: SABERES, nodos, aristas: limpias,
+  lema: LEMA && { proyectos: LEMA.proyectos, raices: LEMA.raices, cierre: LEMA.cierre } };
 const raros = nodos.flatMap(n => n.saberes.filter(x => !SABERES[x]));
 if (raros.length) { console.log('✗ Saberes que no están en la lista: ' + [...new Set(raros)].join(', ')); process.exit(1); }
 writeFileSync(join(RAIZ, 'cerebro-datos.js'),
   '/* Generado por herramientas/cerebro-codex.mjs. No se edita a mano: las capas fijadas van en capas.json. */\nwindow.CEREBRO = ' + JSON.stringify(datos) + ';\n');
+if (LEMA) {
+  const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  const html = '<p class="lema" aria-label="Mis proyectos">' + LEMA.proyectos.map(p =>
+      `<a href="${esc(p.href)}" title="${esc(p.titulo)}" style="--lc:var(--${p.t})"><b>${esc(p.w)}</b> ${esc(p.v)}.</a>`).join(' ') + '</p>\n'
+    + '  <p class="raiz">' + LEMA.raices.map((r, i) => `<a href="${esc(r.href)}">${esc(i ? r.w : r.w[0].toUpperCase() + r.w.slice(1))}</a>`).join(', ')
+    + '. <a href="#linaje">' + esc(LEMA.cierre) + '</a></p>';
+  const ruta = join(RAIZ, 'index.html'), ix = readFileSync(ruta, 'utf8');
+  const re = /(<!-- LEMA[^>]*-->)[\s\S]*?(<!-- \/LEMA -->)/;
+  if (!re.test(ix)) { console.log('✗ Faltan las marcas LEMA en index.html'); process.exit(1); }
+  writeFileSync(ruta, ix.replace(re, (_, a, b) => a + '\n  ' + html + '\n  ' + b));
+}
 const porCapa = CAPAS.map(c => `${c.n} ${nodos.filter(n => n.capa === c.id).length}`).join(' · ');
 console.log(`✅ cerebro-datos.js · ${nodos.length} vedas, ${limpias.length} citas · ${porCapa}`);
