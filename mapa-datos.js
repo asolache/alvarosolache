@@ -25,15 +25,15 @@ window.MAPA = {
     // Linaje (antes de 1971)
     {id:"bisabuelo", s:"Los abuelitos", t:"Los abuelitos: el modisto y la mamita", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
      txt:"Mis bisabuelos: el modisto Pedro Rodríguez y la mamita. Conviví con ellos a diario hasta los 13 años: el oficio, el detalle y la exigencia.", rel:["nace","oficio"]},
-    {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
-     txt:"Mis abuelos paternos, la familia de mi padre en Villarramiel.", rel:["nace","padre"]},
-    {id:"avis", s:"Los avis", t:"Los avis", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Girona y la Costa Brava",
-     txt:"Mis abuelos maternos, la familia de mi madre. Con ellos subía a Girona a esquiar y bajaba a la Costa Brava, como otros lo hacen con sus padres. Montañeros y nadadores.", rel:["nace","naturaleza","montgri"]},
-    {id:"padre", s:"Mi padre", t:"Mi padre y los Vedas", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia)",
-     txt:"Los libros de las escrituras védicas: el Mahabharata, el Yoga Vasishtha, la Gita, las Upanishads, Shankara y Swami Tilak. Y un valor: la palabra dada se cumple.", rel:["nace","vedas","rambla"],
+    {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia), Barcelona y Vilafranca",
+     txt:"El lito, Fernando Solache, y la lita, Josefina Sánchez, mis abuelos paternos, de Villarramiel (Palencia), en Tierra de Campos: trigo, cereales, caballos percherones, palomares y horizontes. Los conocí en Barcelona, donde vivieron hasta que se fueron a Vilafranca y luego a la masía. Él, de bar y cortado, siempre en americana y corbata; me conseguía las chuches con las que hice mi colección. Ella, la lita, mujer palentina, señora de la casa y sostén de la familia: otra de las mujeres poderosas de mi linaje.", rel:["nace","padre","madre"]},
+    {id:"avis", s:"Los avis", t:"Los avis", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona, Girona, la Costa Brava y los Alpes",
+     txt:"Mercedes Raventós Blanc y Pedro Rodríguez Marià, mis abuelos maternos, la familia de mi madre. Mi hermana y yo fuimos para ellos unos hijos más. Con ellos viajamos, esquiamos fuera de pista en los Alpes y bajamos glaciares; fuimos en barco y en avión, y viví con ellos durante la universidad en Barcelona. Con ellos subía a Girona a esquiar y bajaba a la Costa Brava. Grandes deportistas de montaña: trekking, esquí alpino, bolets; y nadadores. Mi avi fue gimnasta de la selección catalana, subcampeón en anillas, y después juez de golf. Ella, mujer dura: otra de las mujeres poderosas de mi linaje.", rel:["nace","madre","naturaleza","montgri","ub"]},
+    {id:"padre", s:"Mi padre", t:"Mi padre, Fernando Solache, y los libros de mi vida", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona y la masía",
+     txt:"Fernando Solache, hijo de los litos. Estudió ADE en ESADE hasta cuarto y trabajó en finanzas y marketing en multinacionales hasta que nos fuimos a la masía, hacia 1980; después fue fotógrafo de estudio y payés. Fan del conocimiento: una biblioteca de 10.000 libros de ciencias, artes y filosofía. Me dio los libros de mi vida: el Mahabharata, la Gita, los taoístas, el Yoga Vasishtha, el Vivekachudamani de Shankara, los Yoga Sutras, las Upanishads, El saber del ser, el Tao, y Swami Tilak. Y un valor: la palabra dada se cumple.", rel:["nace","vedas","rambla"],
      links:[["swamitilak.org","https://swamitilak.org"]]},
-    {id:"madre", s:"Mi madre", t:"Mi madre y Amma", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
-     txt:"Amma, Mata Amritanandamayi, y un legado de mujeres poderosas.", rel:["nace","vedas","amma"]},
+    {id:"madre", s:"Mi madre", t:"Mi madre, M.ª Cristina: el amor incondicional", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
+     txt:"M.ª Cristina Rodríguez Raventós. El amor incondicional. Dar con amor: seva. Alimenta: gran mestressa de casa. Siempre aprendiendo. Referente del equipo de Amma, Mata Amritanandamayi, en España desde antes de sus inicios. Un legado de mujeres poderosas.", rel:["nace","vedas","amma"]},
 
     // Hitos
     {id:"nace", s:"Nazco", t:"Nazco en Barcelona", y:1971, ya:"1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
