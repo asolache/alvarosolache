@@ -166,6 +166,20 @@ hijos, las tres hijas y un hijo, empezando en el 97». **Hecho:** «Los avis» y
 «Mis hijos» en el linaje y en el mapa vivo, sin nombres; el recorrido pasa de
 «c. 1996» a «1997 – 2007». **Medido:** sin `rel` rotos ni errores de consola.
 
+### Los litos, contados por mí (pedido 2026-10-20)
+
+**Pedido por:** Álvaro, con sus recuerdos de los litos y de los avis. **Hecho:** sus nombres
+(Fernando Solache y Josefina Sánchez; Mercedes Raventós Blanc y Pedro Rodríguez Marià), de dónde y cómo
+eran, en el linaje y en el mapa vivo; el detalle va al capítulo «Linaje» de las
+memorias. **Medido:** sin errores de consola.
+
+### Mi padre y mi madre, contados por mí (pedido 2026-10-20)
+
+**Pedido por:** Álvaro. **Hecho:** mi padre, Fernando Solache (ESADE, las
+multinacionales, la masía, la fotografía, el campo, su biblioteca y los libros
+que me dio), distinguido del lito; mi madre, el amor incondicional y el seva.
+**Medido:** sin errores de consola.
+
 ### El lema de la portada (pedido 2026-10-20)
 
 **Pedido por:** Álvaro: «Tras mi nombre quita mis nombres de DJ y promociona mis
