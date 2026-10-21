@@ -127,6 +127,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <header class="wrap">
   <p class="kicker">El codex como grafo</p>
   <h1>El cerebro</h1>
+  <p class="lead" id="lema" hidden></p>
   <p class="lead">Cada veda es un error que ya se pagó, escrito para no pagarlo dos veces. Aquí están todas las de mis proyectos como un mapa: en cinco capas, de la obra al propósito, unidas por las veces que una cita a otra. Y en movimiento, en el orden en que se aprendieron.</p>
   <p class="lead">El antahkarana es el instrumento interior que une lo que se hace con lo que se es. Este mapa intenta lo mismo con un proyecto: que cada línea de código sepa a qué propósito sirve. <strong>Es un primer orden, propuesto por palabras clave; lo estoy puliendo.</strong></p>
   <p class="lead">Es una de mis herramientas de trabajo con IA. Nace de los Vedas y de mis años programando.</p>
@@ -247,6 +248,12 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <script src="https://teamtowershuma.com/SOS/cervell/exporta.js"></script>
 <script>
 (function(){
+  /* El lema de la portada: lo lleva el cerebro desde lema.json, no se copia. */
+  (function (L, el) {
+    if (!L || !el) return;
+    el.textContent = L.proyectos.map(function (p) { return p.w + ' ' + p.v + '.'; }).join(' ') + ' ' + L.cierre;
+    el.hidden = false;
+  })(window.CEREBRO && window.CEREBRO.lema, document.getElementById('lema'));
   var PUB = window.CEREBRO, CP = window.CodexParse, FZ = window.CerebroFuerzas, CX = window.CervellExporta;
   /* El motor viene de la matriz. Si no llega, se dice: un hueco en blanco miente (veda 105 heredada). */
   if (!PUB || !FZ || !window.Cerebro3D || !window.CervellPla) {

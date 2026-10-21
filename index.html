@@ -66,9 +66,13 @@
 /* el escenario ya no es de noche: papel de la red y los colores de la trinidad como acentos */
 .stage .kicker{color:var(--brahma)}
 .stage .intro,.stage .role{color:var(--light)}
-.alter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.6rem}
-.alter span{font:600 .8rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1px solid var(--border-strong);color:var(--ink);background:var(--card)}
-.alter span:nth-child(3n+1){border-left:4px solid var(--brahma-luz)}.alter span:nth-child(3n+2){border-left:4px solid var(--vishnu-luz)}.alter span:nth-child(3n){border-left:4px solid var(--shiva-luz)}
+.lema{display:flex;flex-wrap:wrap;gap:.35em 1.1em;margin:0 0 .7rem;font:400 clamp(1.05rem,2.2vw,1.3rem)/1.35 Fraunces,serif;font-style:italic}
+.lema a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--lc)}
+.lema b{font:700 1em Unbounded,sans-serif;font-style:normal;letter-spacing:-.01em;color:var(--lc)}
+.lema a:hover,.lema a:focus-visible{background:var(--card)}
+.raiz{margin:0 0 1.6rem;max-width:62ch;color:var(--muted);font-size:.95rem}
+.raiz a{color:inherit;text-decoration:underline;text-decoration-color:var(--border-strong);text-underline-offset:3px}
+.raiz a:hover{color:var(--ink)}
 .artgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .artcard{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--shiva-luz);border-radius:var(--radius);padding:22px}
 .artcard:nth-child(3n+1){border-top-color:var(--brahma-luz)}.artcard:nth-child(3n+2){border-top-color:var(--vishnu-luz)}
@@ -106,7 +110,7 @@ a{color:var(--accent)}
 h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.02em}
 h3{font-family:var(--sans);font-weight:600;line-height:1.2;letter-spacing:-.01em}
 .hero h1{font-weight:800;letter-spacing:-.035em;color:var(--ink)}
-.kicker,.tl .y,.artcard .who,.alter span,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
+.kicker,.tl .y,.artcard .who,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
 .thesis,.lineage b{font-style:italic}
 h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:.6rem}
 .lead{color:var(--muted);max-width:62ch;margin-bottom:1.8rem}
@@ -395,7 +399,10 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 <div class="stage"><header class="hero wrap" id="inicio">
   <p class="kicker">Psicólogo social · Consultor estratégico sistémico · Penedès</p>
   <h1>Álvaro Solache</h1>
-  <div class="alter" aria-label="Otros nombres"><span>Mazinguer</span><span>Psykatxu</span><span>House of Winds</span><span>Chicobillies</span></div>
+  <!-- LEMA · lo escribe herramientas/cerebro-codex.mjs desde lema.json; no se edita a mano -->
+  <p class="lema" aria-label="Mis proyectos"><a href="https://www.teamtowers.eu" title="Fent Pinya, el taller de TeamTowers" style="--lc:var(--vishnu)"><b>Pinya</b> que sostiene.</a> <a href="https://eventspenedes.com" title="eventspenedes.com, fiestas y encuentros en el Penedès" style="--lc:var(--brahma)"><b>Plaça</b> que celebra.</a> <a href="https://teamtowershuma.com" title="TeamTowers Humà, la matriz" style="--lc:var(--vishnu)"><b>Xarxa</b> que aprende.</a> <a href="https://molekulon.org" title="Molekulon, educación y arte" style="--lc:var(--shiva)"><b>Joc</b> que transforma.</a></p>
+  <p class="raiz"><a href="#mapa/bisabuelo">La aguja del modisto</a>, <a href="#mapa/litos">el trigo de los litos</a>, <a href="#mapa/avis">la cumbre de los avis</a>, <a href="#mapa/padre">la palabra de mi padre</a>, <a href="#mapa/madre">el seva de mi madre</a>. <a href="#linaje">Todo es un link.</a></p>
+  <!-- /LEMA -->
   <p class="thesis">Un castell no lo aguanta quien sube. Lo aguanta la pinya. Una organización tampoco.</p>
   <p class="intro">Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: <strong>¿quién sostiene qué?</strong> La respondo con el mapa de valor (el método VNA de Verna Allee), con la experiencia castellera de TeamTowers y con herramientas libres, como el SOS, para que lo aprendido no se vaya cuando se va el consultor.</p>
   <div class="btns">
