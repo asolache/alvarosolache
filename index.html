@@ -459,7 +459,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <p class="kicker">El mapa</p>
     <h2>Mi ikigai</h2>
-    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Los tres primeros llevan los colores de la trinidad: lo que crea, lo que sostiene y lo que transforma. Crece solo con mi codex y se mueve con mi sprint.</p>
+    <p class="lead">Cuatro círculos y un centro. Toca cada uno para ver qué hay dentro. Los tres primeros llevan los colores de la trinidad: lo que crea, lo que sostiene y lo que transforma. En el centro, el compromiso con mis raíces. Crece solo con mi codex y se mueve con mi sprint.</p>
     <div class="ikigai">
       <svg viewBox="0 0 400 400" role="img" aria-labelledby="ik-title">
         <title id="ik-title">Ikigai de Álvaro Solache: lo que amo, lo que sé hacer, lo que el mundo necesita y por lo que me pagan</title>
@@ -746,7 +746,7 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     sabe:  {t:"Lo que sé hacer", e:"Vishnu, lo que sostiene", c:"--c-sabe", l:["Psicología social y comunitaria","Mapas de valor (VNA de Verna Allee)","Dirección de personas y formación","Facilitar en la sala: Fent Pinya, team coaching","Web 3.0, contratos inteligentes y webs abiertas","Trabajar con IA sin perder el oficio: el codex"]},
     mundo: {t:"Lo que el mundo necesita", e:"Shiva, lo que transforma", c:"--c-mundo", l:["Ver quién sostiene lo que no sale en el organigrama","Que el conocimiento no se vaya con quien se va","Comunidades y pueblos que se aguanten solos","Herramientas libres, sin atarse a nadie",'Una IA que se declara y gasta lo justo (<a href="ia.html">cómo la uso</a>)']},
     paga:  {t:"Por lo que me pagan", e:"Lo que hace viable lo demás", c:"--c-paga", l:["Fent Pinya y el Programa La Colla","Consultoría con mapa de valor","Formación acción y mentoría","Mapa y web para negocios y proyectos","Producción de eventos"]},
-    centro:{t:"El centro: quién sostiene qué", e:"Desde Cal Segué", c:"--accent", l:["Hacer visible el valor tangible e intangible de un grupo, y dejar una herramienta para que no se pierda."]}
+    centro:{t:"El centro: quién sostiene qué", e:"Desde Cal Segué", c:"--accent", l:["Hacer visible el valor tangible e intangible de un grupo, y dejar una herramienta para que no se pierda.","El compromiso con mis raíces: seguir dando lo que heredé, para hacer el mundo un poco mejor (<a href=\"#linaje\">mi linaje</a>)."]}
   };
   /* El ikigai crece con el codex: lo que sé hacer cuenta las vedas de cada
      saber y el centro dice cuántas llevo y cuál fue la última. Sale de
@@ -756,7 +756,8 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     if (k === 'centro') {
       var u = D.nodos[D.nodos.length - 1], mias = D.nodos.filter(function(n){ return n.fuente !== D.fuentes[0]; }).length;
       var cuenta = function(c){ return SP ? SP.tareas.filter(function(x){ return x.col === c; }).length : 0; };
-      return '<p class="hint">Del codex: ' + D.nodos.length + ' vedas aprendidas, ' + mias + ' nacidas en esta web. La última, «' + u.t + '». <a href="cerebro.html#mias">Ver el cerebro</a>.</p>' +
+      var R = D.lema && D.lema.raices, raiz = R && R.length ? '<p class="hint">Lo que heredé: ' + R.map(function(r){ return '<a href="' + r.href + '">' + r.w + '</a>'; }).join(', ') + '.</p>' : '';
+      return raiz + '<p class="hint">Del codex: ' + D.nodos.length + ' vedas aprendidas, ' + mias + ' nacidas en esta web. La última, «' + u.t + '». <a href="cerebro.html#mias">Ver el cerebro</a>.</p>' +
         (SP ? '<p class="hint">En movimiento: ' + cuenta('doing') + ' en marcha, ' + cuenta('todo') + ' por hacer y ' + cuenta('done') + ' hechas en el <a href="#sprint">sprint</a>.</p>' : '');
     }
     return '<p class="hint" style="margin-top:10px">Del codex, las vedas de cada saber:</p><ul>' +
