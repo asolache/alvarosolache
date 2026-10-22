@@ -24,7 +24,7 @@ window.MAPA = {
   nodos: [
     // Linaje (antes de 1971)
     {id:"tatarabuelo", s:"Mi tatarabuelo", t:"Mi tatarabuelo, el hereu de Codorníu", y:null, ya:"Antes de 1971", k:"hito", te:["raices","sistemas","comunidad"], cx:"familia", lugar:"Sant Sadurní d'Anoia (Penedès)",
-     txt:"El hereu de Codorníu y payés. Estudió la llegada de la filoxera y cambió la cepa a tiempo. Una de las primeras empresas españolas: trabajo, investigación, comunicación, riego, modernismo y filantropía.", rel:["avis","madre","penedes"]},
+     txt:"El hereu de Codorníu y payés. Estudió la llegada de la filoxera y cambió la cepa a tiempo. Una de las primeras empresas españolas: trabajo, investigación, comunicación, riego, modernismo y filantropía.", rel:["avis","madre","penedes","sos"]},
     {id:"bisabuelo", s:"Los abuelitos", t:"Los abuelitos: el modisto y la mamita", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
      txt:"Mis bisabuelos: el modisto Pedro Rodríguez y la mamita. Conviví con ellos a diario hasta los 13 años: el oficio, el detalle y la exigencia.", rel:["nace","oficio"]},
     {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia), Barcelona y Vilafranca",
@@ -115,7 +115,7 @@ window.MAPA = {
      txt:"Un cómic, una banda y una película por hacer, con superhéroes reales: la gente que sostiene su barrio.", rel:["mazinguer","chicobillies"],
      links:[["molekulon.org","https://molekulon.org"],["YouTube","https://youtube.com/@comandomolekulon"]]},
     {id:"sos", s:"El SOS", t:"El SOS", y:2026, ya:"Hoy", k:"hito", te:["digital","sistemas"], cx:"red", lugar:"",
-     txt:"El sistema libre que mantiene vivo el mapa de valor: roles, entregas, avisos y una IA por rol, sin atarte a nadie.", rel:["vna"],
+     txt:"El sistema libre que mantiene vivo el mapa de valor: roles, entregas, avisos y una IA por rol, sin atarte a nadie. Es mi cambio de cepa, como el de mi tatarabuelo ante la filoxera: un modelo evolucionado de la teoría de las especies. No sobrevive el individuo más fuerte, sino la especie social: las que se reparten las tareas y cooperan (hormigas, termitas, abejas y humanos) dominan la masa de los seres vivos, como cuenta E. O. Wilson en The Social Conquest of Earth.", rel:["vna","tatarabuelo"],
      links:[["Entrar al SOS","https://teamtowershuma.com/SOS/"],["Value Network Lab","https://valuenetworklab.netlify.app"]]},
 
     // Arte
