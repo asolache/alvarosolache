@@ -196,3 +196,15 @@ DJ siguen en la sección de música. **Medido:** sin errores de consola.
 vengo a la masía», con Rubí y Vallpineda antes. **Hecho:** nodos `floresta` y
 `rubi` en el mapa vivo, Cal Segué desde 2023 y La Floresta en el recorrido.
 **Medido:** sin `rel` rotos ni errores de consola.
+
+### El SOS como canal y el embudo común (pedido 2026-10-22)
+
+**Pedido por:** Álvaro: «SOS es mi canal para formar y para hacer el mundo un
+poco mejor a través de mi ikigai», y que todo el ecosistema (TeamTowers Humà,
+SOS, Events Penedès, esta web y los cerebros de cliente) opere integrado con un
+embudo común: primero aportamos valor, después una página en nuestro entorno con
+cuota y al final su propia web. **Hecho:** el SOS como canal en el centro del
+ikigai y el camino común en «Por lo que me pagan». El embudo es común, así que
+vive en la matriz (`SOS/knowledge/vision/embut-comu.md` de teamtowershuma) y
+aquí solo se nombra (veda 5). Los pendientes, en el backlog coordinado de
+TeamTowers. **Medido:** sin errores de consola en el ikigai.
