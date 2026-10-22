@@ -208,3 +208,11 @@ ikigai y el camino común en «Por lo que me pagan». El embudo es común, así 
 vive en la matriz (`SOS/knowledge/vision/embut-comu.md` de teamtowershuma) y
 aquí solo se nombra (veda 5). Los pendientes, en el backlog coordinado de
 TeamTowers. **Medido:** sin errores de consola en el ikigai.
+
+### Los hereus y los peritos de pieles (pedido 2026-10-22)
+
+**Pedido por:** Álvaro: el tatarabuelo «fue el hereu que dejó un legado a 4
+generaciones», los memes que le transmitió como emprendedor, y los tíos de su
+padre, peritos de pieles («su palabra era ley»), por los que los litos vinieron
+de Palencia a Barcelona. **Hecho:** en el linaje y en el mapa vivo (tatarabuelo,
+litos y padre), sin nombres de los hereus. **Medido:** sin errores de consola.
