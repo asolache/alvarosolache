@@ -7,6 +7,7 @@
     { "w": "Joc", "v": "que transforma", "href": "https://molekulon.org", "titulo": "Molekulon, educación y arte", "t": "shiva" }
   ],
   "raices": [
+    { "w": "la cepa del tatarabuelo", "href": "#mapa/tatarabuelo" },
     { "w": "la aguja del modisto", "href": "#mapa/bisabuelo" },
     { "w": "el trigo de los litos", "href": "#mapa/litos" },
     { "w": "la cumbre de los avis", "href": "#mapa/avis" },

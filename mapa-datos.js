@@ -23,6 +23,8 @@ window.MAPA = {
   },
   nodos: [
     // Linaje (antes de 1971)
+    {id:"tatarabuelo", s:"Mi tatarabuelo", t:"Mi tatarabuelo, el hereu de Codorníu", y:null, ya:"Antes de 1971", k:"hito", te:["raices","sistemas","comunidad"], cx:"familia", lugar:"Sant Sadurní d'Anoia (Penedès)",
+     txt:"El hereu de Codorníu y payés. Estudió la llegada de la filoxera y cambió la cepa a tiempo. Una de las primeras empresas españolas: trabajo, investigación, comunicación, riego, modernismo y filantropía.", rel:["avis","madre","penedes"]},
     {id:"bisabuelo", s:"Los abuelitos", t:"Los abuelitos: el modisto y la mamita", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Barcelona",
      txt:"Mis bisabuelos: el modisto Pedro Rodríguez y la mamita. Conviví con ellos a diario hasta los 13 años: el oficio, el detalle y la exigencia.", rel:["nace","oficio"]},
     {id:"litos", s:"Los litos", t:"Los litos", y:null, ya:"Antes de 1971", k:"hito", te:["raices"], cx:"familia", lugar:"Villarramiel (Palencia), Barcelona y Vilafranca",
@@ -178,7 +180,7 @@ window.MAPA = {
      a:"TeamTowers es la marca de equipo: Fent Pinya y el Programa La Colla. TeamTowers Humà es todo lo demás hecho producto: consultoría, formación, mentoría, web y eventos para organizaciones, pymes y territorio.", audio:null},
     {q:"¿Qué es el SOS?", k:["sos","herramienta","libre","ia","software"], n:["sos","vna"],
      a:"Es el sistema libre que mantiene vivo el mapa de valor: roles, entregas, avisos y una IA por rol, sin atarte a nadie. Se puede empezar sin cuenta.", audio:null},
-    {q:"¿De dónde vienes?", k:["donde","vienes","familia","linaje","raices","naciste","infancia"], n:["nace","bisabuelo","avis","litos","padre","madre","hermanas","canet","penedes"],
+    {q:"¿De dónde vienes?", k:["donde","vienes","familia","linaje","raices","naciste","infancia"], n:["nace","tatarabuelo","bisabuelo","avis","litos","padre","madre","hermanas","canet","penedes"],
      a:"Nací en Barcelona en diciembre de 1971. Pasé la infancia entre Ibiza, una masía en Canet d'Adri y el Penedès. Soy bisnieto del modisto Pedro Rodríguez, con raíces en Barcelona y en Villarramiel. Conocí a Swami Tilak a los 6 años y a Amma a los 20.", audio:null},
     {q:"¿Qué es comunitats.org?", k:["comunitats","banco","tiempo","leon","intercambio"], n:["comunitats","leon","bancotiempo"],
      a:"Una red social para intercambiar conocimiento y pagarlo con tiempo. La cofundé en 2010, después de poner en marcha el primer banco de tiempo de León. Ganamos el premio Emprendedor XXI de La Caixa y Grow in Barcelona.", audio:null},
