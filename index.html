@@ -53,7 +53,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="red.css">
 <style>
@@ -66,9 +66,9 @@
 /* el escenario ya no es de noche: papel de la red y los colores de la trinidad como acentos */
 .stage .kicker{color:var(--brahma)}
 .stage .intro,.stage .role{color:var(--light)}
-.lema{display:flex;flex-wrap:wrap;gap:.35em 1.1em;margin:0 0 .7rem;font:400 clamp(1.05rem,2.2vw,1.3rem)/1.35 Fraunces,serif;font-style:italic}
+.lema{display:flex;flex-wrap:wrap;gap:.35em 1.1em;margin:0 0 .7rem;font:400 clamp(1rem,2vw,1.15rem)/1.4 var(--sans)}
 .lema a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--lc)}
-.lema b{font:700 1em Unbounded,sans-serif;font-style:normal;letter-spacing:-.01em;color:var(--lc)}
+.lema b{font:700 1em var(--sans);letter-spacing:-.01em;color:var(--lc)}
 .lema a:hover,.lema a:focus-visible{background:var(--card)}
 .raiz{margin:0 0 1.6rem;max-width:62ch;color:var(--muted);font-size:.95rem}
 .raiz a{color:inherit;text-decoration:underline;text-decoration-color:var(--border-strong);text-underline-offset:3px}
@@ -100,29 +100,29 @@
 .award b{font-family:"Space Grotesk",sans-serif;font-size:1.1rem;display:block}
 .award span{color:var(--muted);font-size:.9rem}
 .lineage div{padding:20px 20px 20px 0;border-bottom:1px solid var(--line)}
-.lineage b{font-family:Fraunces,serif;font-size:1.15rem;display:block;margin-bottom:4px;color:var(--maroon)}
+.lineage b{font-family:var(--sans);font-size:1.15rem;display:block;margin-bottom:4px;color:var(--maroon)}
 .lineage span{color:var(--muted);font-size:.95rem}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{line-height:1.65;font-size:17px}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-h1,h2{font-family:Unbounded,"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.02em}
+h1,h2{font-family:var(--sans);font-weight:700;line-height:1.08;letter-spacing:-.02em}
 h3{font-family:var(--sans);font-weight:600;line-height:1.2;letter-spacing:-.01em}
 .hero h1{font-weight:800;letter-spacing:-.035em;color:var(--ink)}
 .kicker,.tl .y,.artcard .who,.source{font-family:"JetBrains Mono",ui-monospace,monospace !important;letter-spacing:.08em}
-.thesis,.lineage b{font-style:italic}
+
 h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:.6rem}
 .lead{color:var(--muted);max-width:62ch;margin-bottom:1.8rem}
 section{padding:72px 0;border-top:1px solid var(--line)}
-.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+.kicker{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:500;margin-bottom:.6rem}
 
 /* nav: lo principal a la vista, el cerebro siempre a mano y todo lo demás
    en un panel por ejes de la trinidad (Brahma crea, Vishnu sostiene, Shiva transforma) */
 nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{max-width:1240px}
 nav>.wrap{display:flex;align-items:center;gap:12px;height:60px}
-nav .brand{display:inline-flex;align-items:center;gap:9px;font-family:Unbounded,sans-serif;font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;margin-right:auto}
+nav .brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:.95rem;letter-spacing:-.01em;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;margin-right:auto}
 .tri3{display:inline-flex;gap:3px}.tri3 i{width:7px;height:7px;border-radius:50%;background:var(--brahma-luz)}.tri3 i+i{background:var(--vishnu-luz)}.tri3 i+i+i{background:var(--shiva-luz)}
 .nv{display:flex;gap:2px;list-style:none;font-size:.88rem;white-space:nowrap;margin:0}
 .nv a{display:block;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;position:relative}
@@ -132,16 +132,24 @@ nav .brand{display:inline-flex;align-items:center;gap:9px;font-family:Unbounded,
 .cer{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:38px;font:600 .85rem "Space Grotesk",sans-serif;text-decoration:none;color:var(--ink);border:1.5px solid var(--vishnu);border-radius:999px;padding:6px 14px;background:var(--surface)}
 .cer:hover{background:var(--vishnu);color:var(--on-accent)}
 .cer svg{width:16px;height:16px}
-@media(max-width:1180px){.nv{display:none}}
+@media(max-width:900px){.nv{display:none}}
 @media(max-width:560px){.uni span{display:none}}
 @media(max-width:430px){.uni{display:none}nav .brand{font-size:.85rem}.tri3{display:none}}
 nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--vishnu);outline-offset:2px}
 
-/* hero */
-.hero{padding:88px 20px 64px;border-top:0}
-.hero h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:.4rem}
+/* hero: el agua primero, centrado, como la portada de la matriz */
+.hero{padding:96px 0 80px;text-align:center;border-top:0}
+.hero .wrap{max-width:820px}
+.hero h1{font-size:var(--t5);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:0 auto 1.2rem;max-width:16ch}
+.hero .agua-txt{font-size:var(--t2);line-height:1.55;color:var(--light);max-width:52ch;margin:0 auto 2rem}
+.hero .agua-txt a{color:var(--vishnu);text-decoration:none;border-bottom:2px solid var(--vishnu-luz)}
+.hero .lema,.hero .raiz{justify-content:center;margin-left:auto;margin-right:auto}
+.hero .btns{justify-content:center;margin-top:2rem}
+.agua-card{border-top:3px solid var(--vishnu-luz)}
+.thesis{font-size:var(--t3);font-weight:500;max-width:34ch;margin-bottom:1.2rem;color:var(--ink)}
+#metodo .intro{max-width:62ch;color:var(--light)}
+section:nth-of-type(even){background:var(--panel)}
 .hero .role{font-size:1.1rem;color:var(--muted);margin-bottom:1.6rem}
-.hero .thesis{font-family:Fraunces,serif;font-size:clamp(1.35rem,2.8vw,1.8rem);max-width:30ch;margin-bottom:1.6rem}
 .hero p.intro{max-width:60ch;margin-bottom:2rem}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:11px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--accent)}
@@ -149,7 +157,7 @@ nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--vishnu);ou
 .btn.ghost{color:var(--accent);background:transparent}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:48px}
 .fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-.fact b{display:block;font-family:Unbounded,sans-serif;font-weight:600;font-size:1.6rem;letter-spacing:-.02em}
+.fact b{display:block;font-family:var(--sans);font-weight:600;font-size:1.6rem;letter-spacing:-.02em}
 .fact span{color:var(--muted);font-size:.9rem}
 .source{font-size:.8rem;color:var(--muted);margin-top:10px}
 
@@ -207,7 +215,7 @@ nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--vishnu);ou
 .flows .wrap::-webkit-scrollbar{display:none}
 .fl-k{font:500 .7rem "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
 .flows a{flex:none;font:600 .8rem "Space Grotesk",sans-serif;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--fc);border-radius:8px;padding:3px 9px;background:var(--surface)}
-.flows a i{font:italic 400 .82rem Fraunces,serif;color:var(--muted);margin-left:4px}
+.flows a i{font:400 .82rem var(--sans);color:var(--muted);margin-left:4px}
 @media(max-width:1180px){.fl-k{display:none}}
 .flows a:hover{border-color:var(--fc)}
 .flows b{flex:none;color:var(--muted);font-weight:400}
@@ -265,7 +273,7 @@ section[id],#mv-panel{scroll-margin-top:110px}
 .av{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:32px}
 .av-top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
 .av-top h3{font-size:1.3rem}
-.av-face{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 70% 20%,var(--brahma-luz),var(--shiva-luz) 55%,var(--vishnu-luz));color:#fff;font:600 .75rem Unbounded,sans-serif}
+.av-face{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 70% 20%,var(--brahma-luz),var(--shiva-luz) 55%,var(--vishnu-luz));color:#fff;font:600 .75rem var(--sans)}
 .av-face.big{width:64px;height:64px;font-size:1.1rem}
 .av .chips{margin-bottom:16px}
 .av-turn{margin:12px 0}
@@ -301,7 +309,7 @@ section[id],#mv-panel{scroll-margin-top:110px}
 
 /* el camino del payaso */
 .payaso{padding:80px 0 24px;border-top:0}
-.payaso .quote{font:italic 400 clamp(1.5rem,3.4vw,2.3rem)/1.25 Fraunces,serif;max-width:28ch;margin:.4rem 0 1.4rem;color:var(--ink)}
+.payaso .quote{font:500 clamp(1.4rem,3.2vw,2.1rem)/1.25 var(--sans);max-width:28ch;margin:.4rem 0 1.4rem;color:var(--ink)}
 .payaso .quote em{color:var(--brahma);font-style:italic}
 .nariz{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fca5a5,#dc2626 60%,#7f1d1d);vertical-align:.05em;margin-left:.15em;box-shadow:0 0 0 3px var(--panel)}
 .gestos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px}
@@ -340,12 +348,11 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   <div class="wrap">
     <a class="brand" href="#inicio"><span class="tri3" aria-hidden="true"><i></i><i></i><i></i></span>Álvaro Solache</a>
     <ul class="nv">
-      <li><a href="#sprint">Sprint</a></li>
-      <li><a href="#ikigai">Ikigai</a></li>
-      <li><a href="#linaje">Linaje</a></li>
-      <li><a href="#recorrido">Recorrido</a></li>
+      <li><a href="#inicio">El agua</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#trabajar">Trabajar</a></li>
+      <li><a href="#linaje">Mi historia</a></li>
+      <li><a href="#mapa">El mapa</a></li>
     </ul>
     <a class="cer" href="cerebro.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="13" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M8 8l2.4 3.4M16.2 7.4l-2.6 3.8M10.4 14.6l-2.6 2M13.8 14.4l2.6 2.2M8.2 6.8h7.6"/></svg>Cerebro</a>
     <details class="menu"><summary><span class="d">Todo</span><span class="m">Menú</span></summary>
@@ -381,34 +388,49 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
         </ul></div>
       </div></div>
     </details>
-    <a class="uni" href="#mapa">Universo<span> de conocimientos</span></a>
-  </div>
-  <div class="flows" aria-label="Flujos de valor">
-    <div class="wrap">
-      <span class="fl-k">Flujos de valor</span>
-      <a href="#mapa/castells" style="--fc:var(--m-personas)">Equipos <i>Fent Pinya</i></a><b aria-hidden="true">→</b>
-      <a href="#mapa/vna" style="--fc:var(--m-sistemas)">Organizaciones <i>VNA</i></a><b aria-hidden="true">→</b>
-      <a href="#mapa/huma" style="--fc:var(--m-comunidad)">Territorio <i>Humà</i></a><b aria-hidden="true">→</b>
-      <a href="#mapa/sos" style="--fc:var(--m-digital)">Conocimiento libre <i>SOS</i></a><b aria-hidden="true">→</b>
-      <a href="#mapa/molekulon" style="--fc:var(--m-arte)">Cultura <i>Molekulon</i></a>
-    </div>
   </div>
   <div class="trinidad" aria-hidden="true"></div>
 </nav>
 
-<div class="stage"><header class="hero wrap" id="inicio">
-  <p class="kicker">Psicólogo social · Consultor estratégico sistémico · Penedès</p>
-  <h1>Álvaro Solache</h1>
+<header class="hero" id="inicio"><div class="wrap">
+  <p class="kicker">Álvaro Solache · Psicólogo social y comunitario · Penedès</p>
+  <h1>Donde hay agua potable, surge todo.</h1>
+  <p class="agua-txt">Conocer <a href="#mapa/boreal">Boreal Light</a> me hizo tomar conciencia de que el agua es la pieza fundamental de la vida. Desde ahí trabajo como psicólogo comunitario: alrededor de una fuente de agua limpia nace una comunidad, con su escuela, sus oficios, sus cultivos y sus servicios.</p>
   <!-- LEMA · lo escribe herramientas/cerebro-codex.mjs desde lema.json; no se edita a mano -->
   <p class="lema" aria-label="Mis proyectos"><a href="https://www.teamtowers.eu" title="Fent Pinya, el taller de TeamTowers" style="--lc:var(--vishnu)"><b>Pinya</b> que sostiene.</a> <a href="https://eventspenedes.com" title="eventspenedes.com, fiestas y encuentros en el Penedès" style="--lc:var(--brahma)"><b>Plaça</b> que celebra.</a> <a href="https://teamtowershuma.com" title="TeamTowers Humà, la matriz" style="--lc:var(--vishnu)"><b>Xarxa</b> que aprende.</a> <a href="https://molekulon.org" title="Molekulon, educación y arte" style="--lc:var(--shiva)"><b>Joc</b> que transforma.</a></p>
   <p class="raiz"><a href="#mapa/tatarabuelo">La cepa del tatarabuelo</a>, <a href="#mapa/bisabuelo">la aguja del modisto</a>, <a href="#mapa/litos">el trigo de los litos</a>, <a href="#mapa/avis">la cumbre de los avis</a>, <a href="#mapa/padre">la palabra de mi padre</a>, <a href="#mapa/madre">el seva de mi madre</a>. <a href="#linaje">Todo es un link.</a></p>
   <!-- /LEMA -->
-  <p class="thesis">Un castell no lo aguanta quien sube. Lo aguanta la pinya. Una organización tampoco.</p>
-  <p class="intro">Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: <strong>¿quién sostiene qué?</strong> La respondo con el mapa de valor (el método VNA de Verna Allee), con la experiencia castellera de TeamTowers y con herramientas libres, como el SOS, para que lo aprendido no se vaya cuando se va el consultor.</p>
   <div class="btns">
     <a class="btn primary" href="mailto:asolache@mac.com">Escríbeme</a>
     <a class="btn ghost" href="#mapa">Recorre el mapa</a>
   </div>
+</div></header>
+
+
+
+<section id="proyectos">
+  <div class="wrap">
+    <p class="kicker">La red</p>
+    <h2>Proyectos</h2>
+    <p class="lead">Un mismo método por debajo, el mapa de valor, y cada proyecto con su sitio.</p>
+    <div class="grid">
+      <article class="card agua-card"><h3>El agua</h3><p>Boreal Light depura y desaliniza agua con el sol. Alrededor de cada planta nace una escuela, oficios, cultivos y un sector nuevo. Ahí es donde trabajo como psicólogo comunitario.</p><a class="more" href="#mapa/boreal">Mi historia con el agua →</a></article>
+      <article class="card"><h3>TeamTowers</h3><p>La marca de equipo. Fent Pinya, el taller de castellers original para empresas, y el Programa La Colla, lo que viene después.</p><a class="more" href="https://www.teamtowers.eu">teamtowers.eu →</a></article>
+      <article class="card"><h3>TeamTowers Humà</h3><p>Todo lo demás, hecho producto: consultoría, formación, mentoría, web y eventos para organizaciones, pymes y territorio. Con diagnóstico gratis.</p><a class="more" href="https://teamtowershuma.com">teamtowershuma.com →</a></article>
+      <article class="card"><h3>El SOS</h3><p>La herramienta libre donde vive el mapa: quién da qué a quién, el registro de entregas y los avisos. Sin cuenta para empezar.</p><a class="more" href="https://teamtowershuma.com/SOS/">Entrar al SOS →</a></article>
+      <article class="card"><h3>Comando Molekulon</h3><p>Un cómic, una banda y una película por hacer, con superhéroes reales: la gente que sostiene su barrio.</p><a class="more" href="https://molekulon.org">molekulon.org →</a></article>
+      <article class="card"><h3>Value Network Analysis</h3><p>Qué es el mapa de valor, cómo se hace y para qué sirve, con casos.</p><a class="more" href="valor.html">Leer más →</a></article>
+      <article class="card"><h3>Comunidades de práctica</h3><p>Para que lo que sabe una persona no salga por la puerta con ella.</p><a class="more" href="coops.html">Leer más →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="wrap">
+    <p class="kicker">Cómo trabajo</p>
+    <h2>¿Quién sostiene qué?</h2>
+  <p class="thesis">Un castell no lo aguanta quien sube. Lo aguanta la pinya. Una organización tampoco.</p>
+  <p class="intro">Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: <strong>¿quién sostiene qué?</strong> La respondo con el mapa de valor (el método VNA de Verna Allee), con la experiencia castellera de TeamTowers y con herramientas libres, como el SOS, para que lo aprendido no se vaya cuando se va el consultor.</p>
   <div class="facts">
     <div class="fact"><b>1997</b><span>Dirigiendo personas y equipos</span></div>
     <div class="fact"><b>2005</b><span>Cofundador y CEO de TeamTowers</span></div>
@@ -416,20 +438,28 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
     <div class="fact"><b>60.000+</b><span>Participantes en Fent Pinya</span></div>
   </div>
   <p class="source">Las dos últimas cifras salen del catálogo comercial de TeamTowers 2026.</p>
-</header></div>
+  </div>
+</section>
 
-<section id="sprint">
+<section id="trabajar">
   <div class="wrap">
-    <p class="kicker">En movimiento</p>
-    <h2 id="sp-nombre">El sprint</h2>
-    <p class="lead">Lo que tengo entre manos, como lo llevo en mis apps. Cada tarea es de un eje de la trinidad: crear, sostener o transformar.</p>
-    <div class="sp-top chips" role="group" aria-label="Filtrar tareas">
-      <button class="chip" data-q="all" aria-pressed="true">Todo</button>
-      <button class="chip" data-q="yo" aria-pressed="false">Lo que me toca</button>
-      <button class="chip" data-q="claude" aria-pressed="false">Lo que hace Claude</button>
+    <p class="kicker">Trabajar juntos</p>
+    <h2>Me siento a tu lado de la mesa</h2>
+    <p class="lead">No vengo de fuera a explicarte cómo organizarte. He dirigido personas dentro de empresas, he mapeado flujos de valor como consultor y he montado proyectos comunitarios que siguen funcionando. Trabajo en tres niveles:</p>
+    <div class="levels">
+      <div><b>Estratégico</b><span>Diseñar el sistema antes de que haya trabajo: el mapa real y el ideal.</span></div>
+      <div><b>Táctico</b><span>Convertirlo en proyectos que alguien pueda llevar: roles, entregas y avisos.</span></div>
+      <div><b>Operativo</b><span>Hacerlo en la sala: la facilitación, la formación acción y Fent Pinya, que sigo haciendo yo.</span></div>
     </div>
-    <div class="kanban" id="sp-board"></div>
-    <p class="ejes"><span><i style="background:var(--brahma-luz)"></i>Brahma · crear</span><span><i style="background:var(--vishnu-luz)"></i>Vishnu · sostener</span><span><i style="background:var(--shiva-luz)"></i>Shiva · transformar</span></p>
+    <div class="grid" style="margin-top:32px">
+      <article class="card"><h3>Tu equipo</h3><p>Fent Pinya y el Programa La Colla, para vivir el equipo y después dibujarlo.</p><a class="more" href="https://www.teamtowers.eu">Ver TeamTowers →</a></article>
+      <article class="card"><h3>Tu organización o tu pueblo</h3><p>Mapa de valor, diagnóstico, comunidades de práctica y formación.</p><a class="more" href="https://teamtowershuma.com">Ver el catálogo →</a></article>
+      <article class="card"><h3>Tu negocio y tu web</h3><p>El mapa de tu negocio y una web abierta, con IA y a tu nombre, que sale de ese mapa.</p><a class="more" href="https://teamtowershuma.com">Ver mapa y web →</a></article>
+    </div>
+    <p style="margin-top:28px"><strong>Han confiado en este trabajo, entre otros:</strong></p>
+    <div class="clients">
+      <span>IKEA</span><span>Novartis</span><span>Vodafone</span><span>Telefónica</span><span>BBVA</span><span>la Caixa</span><span>Porsche</span><span>Mercedes</span><span>Orange</span><span>John Deere</span><span>Codorníu</span><span>ESADE</span><span>IESE</span><span>EADA</span><span>UB</span><span>UAB</span><span>UPC</span><span>UOC</span>
+    </div>
   </div>
 </section>
 
@@ -528,43 +558,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
   </div>
 </section>
 
-<section id="proyectos">
-  <div class="wrap">
-    <p class="kicker">La red</p>
-    <h2>Proyectos</h2>
-    <p class="lead">Un mismo método por debajo, el mapa de valor, y cada proyecto con su sitio.</p>
-    <div class="grid">
-      <article class="card"><h3>TeamTowers</h3><p>La marca de equipo. Fent Pinya, el taller de castellers original para empresas, y el Programa La Colla, lo que viene después.</p><a class="more" href="https://www.teamtowers.eu">teamtowers.eu →</a></article>
-      <article class="card"><h3>TeamTowers Humà</h3><p>Todo lo demás, hecho producto: consultoría, formación, mentoría, web y eventos para organizaciones, pymes y territorio. Con diagnóstico gratis.</p><a class="more" href="https://teamtowershuma.com">teamtowershuma.com →</a></article>
-      <article class="card"><h3>El SOS</h3><p>La herramienta libre donde vive el mapa: quién da qué a quién, el registro de entregas y los avisos. Sin cuenta para empezar.</p><a class="more" href="https://teamtowershuma.com/SOS/">Entrar al SOS →</a></article>
-      <article class="card"><h3>Comando Molekulon</h3><p>Un cómic, una banda y una película por hacer, con superhéroes reales: la gente que sostiene su barrio.</p><a class="more" href="https://molekulon.org">molekulon.org →</a></article>
-      <article class="card"><h3>Value Network Analysis</h3><p>Qué es el mapa de valor, cómo se hace y para qué sirve, con casos.</p><a class="more" href="valor.html">Leer más →</a></article>
-      <article class="card"><h3>Comunidades de práctica</h3><p>Para que lo que sabe una persona no salga por la puerta con ella.</p><a class="more" href="coops.html">Leer más →</a></article>
-    </div>
-  </div>
-</section>
 
-<section id="trabajar">
-  <div class="wrap">
-    <p class="kicker">Trabajar juntos</p>
-    <h2>Me siento a tu lado de la mesa</h2>
-    <p class="lead">No vengo de fuera a explicarte cómo organizarte. He dirigido personas dentro de empresas, he mapeado flujos de valor como consultor y he montado proyectos comunitarios que siguen funcionando. Trabajo en tres niveles:</p>
-    <div class="levels">
-      <div><b>Estratégico</b><span>Diseñar el sistema antes de que haya trabajo: el mapa real y el ideal.</span></div>
-      <div><b>Táctico</b><span>Convertirlo en proyectos que alguien pueda llevar: roles, entregas y avisos.</span></div>
-      <div><b>Operativo</b><span>Hacerlo en la sala: la facilitación, la formación acción y Fent Pinya, que sigo haciendo yo.</span></div>
-    </div>
-    <div class="grid" style="margin-top:32px">
-      <article class="card"><h3>Tu equipo</h3><p>Fent Pinya y el Programa La Colla, para vivir el equipo y después dibujarlo.</p><a class="more" href="https://www.teamtowers.eu">Ver TeamTowers →</a></article>
-      <article class="card"><h3>Tu organización o tu pueblo</h3><p>Mapa de valor, diagnóstico, comunidades de práctica y formación.</p><a class="more" href="https://teamtowershuma.com">Ver el catálogo →</a></article>
-      <article class="card"><h3>Tu negocio y tu web</h3><p>El mapa de tu negocio y una web abierta, con IA y a tu nombre, que sale de ese mapa.</p><a class="more" href="https://teamtowershuma.com">Ver mapa y web →</a></article>
-    </div>
-    <p style="margin-top:28px"><strong>Han confiado en este trabajo, entre otros:</strong></p>
-    <div class="clients">
-      <span>IKEA</span><span>Novartis</span><span>Vodafone</span><span>Telefónica</span><span>BBVA</span><span>la Caixa</span><span>Porsche</span><span>Mercedes</span><span>Orange</span><span>John Deere</span><span>Codorníu</span><span>ESADE</span><span>IESE</span><span>EADA</span><span>UB</span><span>UAB</span><span>UPC</span><span>UOC</span>
-    </div>
-  </div>
-</section>
+
+
 
 <div class="stage"><section id="payaso" class="payaso">
   <div class="wrap">
@@ -717,6 +713,21 @@ footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
         <li><b><a href="ia.html">Cómo uso la IA</a>.</b> Qué hace Claude, qué hago yo y lo que se puede comprobar.</li>
       </ol>
     </div>
+  </div>
+</section>
+
+<section id="sprint">
+  <div class="wrap">
+    <p class="kicker">En movimiento</p>
+    <h2 id="sp-nombre">El sprint</h2>
+    <p class="lead">Lo que tengo entre manos, como lo llevo en mis apps. Cada tarea es de un eje de la trinidad: crear, sostener o transformar.</p>
+    <div class="sp-top chips" role="group" aria-label="Filtrar tareas">
+      <button class="chip" data-q="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-q="yo" aria-pressed="false">Lo que me toca</button>
+      <button class="chip" data-q="claude" aria-pressed="false">Lo que hace Claude</button>
+    </div>
+    <div class="kanban" id="sp-board"></div>
+    <p class="ejes"><span><i style="background:var(--brahma-luz)"></i>Brahma · crear</span><span><i style="background:var(--vishnu-luz)"></i>Vishnu · sostener</span><span><i style="background:var(--shiva-luz)"></i>Shiva · transformar</span></p>
   </div>
 </section>
 
