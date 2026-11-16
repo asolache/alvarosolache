@@ -68,7 +68,9 @@ SOS/tools/build-pell.js, en el repositorio teamtowershuma. Aquí no se copia: la
 `herramientas/pell.mjs` en `red.css` entre las marcas `TT-PELL`, y las páginas
 nuevas enlazan `red.css` en vez de declarar su propio `--bg`. Lo propio de esta
 web (los colores de su dharma, que desde el PR #16 son la trinidad `--brahma`,
-`--vishnu` y `--shiva` sobre el papel, y Unbounded y Fraunces) va encima, no en lugar de la piel. Es la veda 5 aplicada al diseño.
+`--vishnu` y `--shiva` sobre el papel) va encima, no en lugar de la piel. Es la veda 5 aplicada al diseño.
+
+**Y las letras también (dicho por Álvaro el 16/11/2026):** «un diseño acorde a TeamTowers Humà, y que las letras se adapten». Desde el PR #32 la portada usa las letras de la matriz, Space Grotesk y JetBrains Mono, en lugar de Unbounded y Fraunces.
 
 **Guarda:** `node herramientas/pell.mjs --check` falla si `red.css` se queda
 vieja frente a la matriz. Sin la matriz al lado (el CI) avisa y no falla.
