@@ -101,6 +101,8 @@ window.MAPA = {
     {id:"pantheon", s:"Pantheon Work", t:"Pantheon Work", y:2019, ya:"2019 →", k:"hito", te:["sistemas"], cx:"empresa", lugar:"",
      txt:"Director de proyectos de consultoría. Cocreé la metodología de mapa de valor: venta, planificación, producción y formación.", rel:["vna"],
      links:[["pantheon.work","https://pantheon.work"]]},
+    {id:"boreal", s:"Boreal Light", t:"Boreal Light: el agua en el centro", y:2019, ya:"2019 →", k:"hito", te:["comunidad","sistemas"], cx:"territorio", lugar:"",
+     txt:"Conocer Boreal Light, que depura y desaliniza agua con energía solar, me hizo tomar conciencia de que el agua es la pieza fundamental de la vida. Donde hay agua potable surge todo: una escuela, oficios, cultivos, servicios. Desde ahí trabajo como psicólogo comunitario.", rel:["grupos","vna","huma"]},
     {id:"bibliotecas", s:"Bibliotecas de las Cosas", t:"Bibliotecas de las Cosas", y:2019, ya:"2019 – 2020", k:"hito", te:["comunidad","digital"], cx:"territorio", lugar:"",
      txt:"Project manager del software (Rescoio). La misma dinámica que hoy es una herramienta del SOS.", rel:["sos","bancotiempo"]},
     {id:"web3", s:"Web 3.0", t:"Web 3.0 y pensamiento sistémico", y:2021, ya:"2021 – 2024", k:"hito", te:["digital","sistemas"], cx:"aulas", lugar:"Barcelona",
@@ -172,6 +174,8 @@ window.MAPA = {
   respuestas: [
     {q:"¿Quién eres?", k:["quien","eres","presenta","dedicas","haces"], n:["grupos","vna","teamtowers"],
      a:"Soy psicólogo social y consultor estratégico sistémico, desde el Penedès. Llevo desde 1997 haciendo la misma pregunta en empresas, universidades, pueblos y comunidades: ¿quién sostiene qué?", audio:null},
+    {q:"¿Por qué el agua?", k:["agua","boreal","light","potable","centro","depuracion","desalinizacion"], n:["boreal","grupos","huma"],
+     a:"Porque donde hay agua potable surge todo. Lo entendí al conocer Boreal Light: alrededor de cada fuente de agua limpia nace una comunidad, con su escuela, sus oficios, sus cultivos y sus servicios. Es el centro de lo que hago como psicólogo comunitario.", audio:null},
     {q:"¿Qué es un mapa de valor?", k:["mapa","valor","vna","verna","allee","red"], n:["vna","pantheon","sos"],
      a:"Es el método VNA de Verna Allee: dibujar quién da qué a quién en un grupo, lo tangible y lo intangible. Sirve para ver quién sostiene lo que no sale en el organigrama.", audio:null},
     {q:"¿Qué es Fent Pinya?", k:["fent","pinya","castell","castells","castellers","taller"], n:["teamtowers","castells"],

@@ -21,6 +21,7 @@ window.SPRINT = {
     {t:"Crear un repo privado para mis memorias (por ejemplo asolache/memorias) y añadirlo al proyecto", eje:"brahma", col:"todo", quien:"yo", n:"Mientras tanto el borrador vive en los archivos del proyecto."},
     {t:"Decidir qué de mi historia en internet pasa a público", eje:"vishnu", col:"todo", quien:"yo", n:"Nombres de terceros y logros sin fuente, privados por defecto."},
     {t:"Mi historia en internet en el mapa vivo", eje:"brahma", col:"done", quien:"claude", f:"2026-10-19"},
+    {t:"Revisar lo que Claude escribió por mí: el agua en el centro (portada, mapa y avatar)", eje:"shiva", col:"doing", quien:"yo", n:"Boreal Light como la toma de conciencia que lo funda todo."},
     {t:"Revisar lo que Claude escribió por mí: el camino del payaso y los maestros", eje:"vishnu", col:"doing", quien:"yo"},
     {t:"El camino del payaso en la portada", eje:"brahma", col:"done", quien:"claude", f:"2026-10-17"},
     {t:"El linaje, contado por mí", eje:"vishnu", col:"done", quien:"claude", f:"2026-10-17"},
